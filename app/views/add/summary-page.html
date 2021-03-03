@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Director's name - Directors project - GOV.UK{% endblock %}
+  {% set serviceName %}
+    Director's project
+  {% endset%}
+{% block beforeContent %}
+  <a class="govuk-back-link" href="directors-consent-to-act">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+      <h2 class="govuk-heading-l">Director's details <span class="govuk-hint">(Form AP01)</span></h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sarah Philips Davies
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-name">
+              Change
+              <span class="govuk-visually-hidden">surname</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">1 January 1980</dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-date-of-birth">
+              Change
+              <span class="govuk-visually-hidden"> capacity in which the person is acting in relation to the company</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's nationality
+          </dt>
+          <dd class="govuk-summary-list__value">Welsh</dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-nationality">
+              Change
+              <span class="govuk-visually-hidden"> capacity in which the person is acting in relation to the company</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's occupation
+          </dt>
+          <dd class="govuk-summary-list__value">Director</dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-occupation">
+              Change
+              <span class="govuk-visually-hidden"> capacity in which the person is acting in relation to the company</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+                Director's correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Crown Way
+            <br>Cardiff
+            <br>CF14 3UZ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-correspondence-address">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Crown Way
+            <br>Cardiff
+            <br>CF14 3UZ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-home-address">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+                <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's country or state of residence
+          </dt>
+          <dd class="govuk-summary-list__value">Wales</dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-country-of-residence">
+              Change
+              <span class="govuk-visually-hidden"> capacity in which the person is acting in relation to the company</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's date of appointment
+          </dt>
+          <dd class="govuk-summary-list__value">1 11 2021</dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-date-of-appointment">
+              Change
+              <span class="govuk-visually-hidden"> statement of assets and liabilities</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's consent to act
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="directors-consent-to-act">
+              Change
+              <span class="govuk-visually-hidden"> statement of assets and liabilities</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

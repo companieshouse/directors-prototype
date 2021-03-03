@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Director's name - Directors project - GOV.UK{% endblock %}
+  {% set serviceName %}
+    Director's project
+  {% endset%}
+{% block beforeContent %}
+  <a class="govuk-back-link" href="directors-nationality">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="directors-correspondence-address" method="post" novalidate>
+
+    {{ govukInput({
+      label: {
+        text: "What is the director's full name?",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+        hint: {
+          text: "For example, director"
+        },
+        id: "full-name",
+        name: "full-name",
+        autocomplete: "name",
+        spellcheck: false
+    }) }}
+
+        {{ govukButton({
+          text: "Continue"
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

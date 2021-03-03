@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Director's date of birth - Directors project - GOV.UK{% endblock %}
+  {% set serviceName %}
+    Director's project
+  {% endset%}
+{% block beforeContent %}
+  <a class="govuk-back-link" href="directors-name">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="directors-nationality" method="post" novalidate>
+
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "What is the director's date of birth?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 1 11 1980"
+  }
+}) }}
+        {{ govukButton({
+          text: "Continue"
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
