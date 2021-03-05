@@ -16,8 +16,31 @@
         {{company.company_name}}</h1>
       {% for officer in officers.items %}
         <h3 class="govuk-heading-m">{{officer.name}}</h3>
+        <p class="govuk-body">Correspondence address</p>
+        <p class="govuk-body govuk-!-font-weight-bold">
+          {% if officer.address.premises %}
+            {{officer.address.premises}},
+          {% endif %}
+          {% if officer.address.address_line_1 %}
+            {{officer.address.address_line_1}},
+          {% endif %}
+          {% if officer.address.address_line_2 %}
+            {{officer.address.address_line_2}},
+          {% endif %}
+          {% if officer.address.locality %}
+            {{officer.address.locality}},
+          {% endif %}
+          {% if officer.address.region %}
+            {{officer.address.region}},
+          {% endif %}
+          {% if officer.address.postal_code %}
+            {{officer.address.postal_code}}
+          {% endif %}
+        </p>
+        <p class="govuk-body">{{officer.occupation}}</p>
         <a href="#" class="govuk-link">Change details</a>
         <a href="#" class="govuk-link">Remove director</a>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       {% endfor %}
 
       <p class="govuk-body govuk-!-margin-top-9">
