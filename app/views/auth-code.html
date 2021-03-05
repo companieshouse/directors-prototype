@@ -1,0 +1,60 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Enter the company authentication code - Upload a document to Companies House - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "types-of-accounts"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/auth-screen" method="post">
+        {% if errorAuth == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Enter the company authentication code",
+              classes: "govuk-label--l"
+            },
+            classes: "govuk-input--width-5",
+            hint: {
+              text: "You need the authentication code to submit company information for ZLC Ltd."
+            },
+            id: "authNumber",
+            name: "authNumber",
+            errorMessage: {
+              text: "Enter the company authentication code"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "Enter the company authentication code ",
+              classes: "govuk-label--l"
+            },
+            classes: "govuk-input--width-5",
+            hint: {
+              text: "You need the authentication code to submit company information for ZLC LTD."
+            },
+            id: "authNumber",
+            name: "authNumber"
+          }) }}
+        {% endif %}
+        {{ govukDetails({
+          summaryText: "Help with authentication code",
+          html: "<p>Read the <a target='blank' href='https://www.gov.uk/guidance/company-authentication-codes-for-online-filing'>guidance about how to request an authentication code</a> (opens in a new tab/window).</p>"
+         }) }}
+        {{ govukButton({
+         text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

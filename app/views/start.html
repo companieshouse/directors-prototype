@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Start page -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">{{serviceName}}</h1>
+      <p class="govuk-body-l">Use this service to change the details of an individual who is a director.
+        <p class="govuk-body">In this service, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>change a directors details</li>
+          <li>add a new director</li>
+          <li>remove a director</li>
+        </ul>
+        {{ govukButton({
+        text: "Start now",
+        href: "sign-in",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+        isStartButton: true
+      }) }}
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+      </div>
+    </div>
+  {% endblock %}
