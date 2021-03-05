@@ -1,7 +1,8 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Enter the company authentication code - Upload a document to Companies House - GOV.UK
+  {{company.company_name}}
+  - Upload a document to Companies House - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,9 +16,9 @@
       <h1 class="govuk-heading-l">Directors for
         {{company.company_name}}</h1>
       {% for officer in officers.items %}
-        <h3 class="govuk-heading-m">{{officer.name}}</h3>
-        <p class="govuk-body">Correspondence address</p>
-        <p class="govuk-body govuk-!-font-weight-bold">
+        <h2 class="govuk-heading-m">{{officer.name}}</h2>
+        <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-6">
           {% if officer.address.premises %}
             {{officer.address.premises}},
           {% endif %}
@@ -37,8 +38,19 @@
             {{officer.address.postal_code}}
           {% endif %}
         </p>
-        <p class="govuk-body">{{officer.occupation}}</p>
-        <a href="#" class="govuk-link">Change details</a>
+
+        <div class="govuk-grid-row govuk-!-margin-bottom-6">
+          <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+            <p class="govuk-body govuk-!-font-weight-bold">{{officer.officer_role | capitalize}}</p>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+            <p class="govuk-body govuk-!-font-weight-bold">{{officer.appointed_on}}</p>
+          </div>
+        </div>
+        <a href=" #" class="govuk-link govuk-!-margin-right-4">Change details</a>
         <a href="#" class="govuk-link">Remove director</a>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       {% endfor %}
