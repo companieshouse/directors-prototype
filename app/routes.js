@@ -17,4 +17,12 @@ router.get('/directors', function (req, res) {
   })
 })
 
+router.get('/add/add', function (req, res) {
+  // Render the confirm company page
+  res.render('add/add', {
+    // To use the company data on that page use the following
+    company: req.session.company
+  })
+})
+
 module.exports = router
