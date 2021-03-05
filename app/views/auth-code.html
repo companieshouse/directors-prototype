@@ -1,7 +1,9 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Enter the company authentication code - Upload a document to Companies House - GOV.UK
+  Enter the company authentication code -
+  {{serviceName}}
+  - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({

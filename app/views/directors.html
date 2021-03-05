@@ -2,18 +2,31 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{company.company_name}}
-  - Upload a document to Companies House - GOV.UK
+  -
+  {{serviceName}}
+  - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "types-of-accounts"
 }) }}
+  {% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Officer removed
+  </h3>
+  <p class="govuk-body">XXXX removed. This may take up to XXX to process.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">Directors for
+      <h1 class="govuk-heading-l">Officers for
         {{company.company_name}}</h1>
       {% for officer in officers.items %}
         <h2 class="govuk-heading-m">{{officer.name}}</h2>
@@ -51,7 +64,7 @@
           </div>
         </div>
         <a href=" #" class="govuk-link govuk-!-margin-right-4">Change details</a>
-        <a href="#" class="govuk-link">Remove director</a>
+        <a href="remove/remove" class="govuk-link">Remove director</a>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       {% endfor %}
 

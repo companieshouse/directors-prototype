@@ -1,7 +1,9 @@
 {% set title = "Confirm this is the correct company" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Confirm this is the correct company - Upload a document to Companies House - GOV.UK
+  Confirm this is the correct company -
+  {{serviceName}}
+  - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
