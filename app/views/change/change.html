@@ -1,0 +1,94 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{company.company_name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../directors"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">XXX officer details</h1>
+      {{ govukInput({
+        label: {
+          text: "Title (optional)"
+        },
+        id: "title",
+        name: "title"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name",
+        name: "first-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Middle name(s)"
+        },
+        id: "middle-name",
+        name: "middle-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name"
+      }) }}
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "previous-name",
+        name: "previous-name",
+        fieldset: {
+          legend: {
+            text: "Has the director used a different name for business purposes in the last 20 years?"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Nationality"
+        },
+        id: "nationality",
+        name: "nationality"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "Date of birth"
+          }
+        },
+        hint: {
+          text: "The director must be at least 16 years of age. For example, 27 3 2007"
+        }
+      }) }}
+      <p class="govuk-body">
+        {{ govukButton({
+          text: "Change details"
+        }) }}
+      </p>
+    </div>
+  </div>
+{% endblock %}

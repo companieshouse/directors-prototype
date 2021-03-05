@@ -63,14 +63,19 @@
             <p class="govuk-body govuk-!-font-weight-bold">{{officer.appointed_on}}</p>
           </div>
         </div>
-        <a href=" #" class="govuk-link govuk-!-margin-right-4">Change details</a>
-        <a href="remove/remove" class="govuk-link">Remove director</a>
+        <p class="govuk-body">
+          <a href="change/change" class="govuk-link">Change details</a>
+        </p>
+        <p class="govuk-body">
+          <a href="remove/remove" class="govuk-link">Remove director</a>
+        </p>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       {% endfor %}
 
       <p class="govuk-body govuk-!-margin-top-9">
         {{ govukButton({
-        text: "Add new director"
+        text: "Add new director",
+        href: "add/add"
       }) }}
       </p>
     </div>
