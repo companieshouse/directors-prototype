@@ -29,8 +29,18 @@
       <h1 class="govuk-heading-l">Officers for
         {{company.company_name}}</h1>
       {% for officer in officers.items %}
-        <h2 class="govuk-heading-m">{{officer.name}}</h2>
-        <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-8">{{officer.name}}</h2>
+        {% if officer.resigned_on %}
+          {{govukTag({
+          text: "Resigned",
+          classes: "govuk-tag--grey"
+        })}}
+        {% else %}
+          {{govukTag({
+          text: "Active"
+        })}}
+        {% endif %}
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-margin-top-2">Correspondence address</p>
         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-6">
           {% if officer.address.premises %}
             {{officer.address.premises}},
@@ -54,7 +64,8 @@
 
         <div class="govuk-grid-row govuk-!-margin-bottom-6">
           <div class="govuk-grid-column-two-thirds">
-            <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+            <p class="govuk-body govuk-!-margin-bottom-2">Role
+            </p>
             <p class="govuk-body govuk-!-font-weight-bold">{{officer.officer_role | capitalize}}</p>
           </div>
 
