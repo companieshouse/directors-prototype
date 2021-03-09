@@ -15,7 +15,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">XXX officer details</h1>
+      <h1 class="govuk-heading-l">{{director.name}}
+        officer details</h1>
+      {{director | dump | safe}}
       {{ govukInsetText({
         text: "Officer details will appear on the public record except for the full date of birth."
       }) }}
@@ -37,7 +39,7 @@
           text: "Enter first name in full not just initials."
         },
         id: "first-name",
-        value: "First name",
+        value: director.name,
         name: "first-name"
       }) }}
       {{ govukInput({
@@ -317,18 +319,40 @@
         accessibleAutocomplete({element: element, id: id, source: countries})
       </script>
 
-      {{ govukDateInput({
-        id: "dob",
-        namePrefix: "dob",
-        fieldset: {
-          legend: {
-            text: "Date of birth"
-          }
-        },
-        hint: {
-          text: "The director must be at least 16 years of age. For example, 27 3 2007"
-        }
-      }) }}
+      <div class="govuk-form-group govuk-!-margin-top-4">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend">
+            Date of birth
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+            The director must be at least 16 years of age. For example, 27 3 2007
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
       {{ govukInput({
         label: {
           text: "Job title"
@@ -337,6 +361,7 @@
           text: "Enter what the person works as. For example, carpenter."
         },
         id: "event-name",
+        value: director.occupation,
         name: "event-name"
       }) }}
       <p class="govuk-body">

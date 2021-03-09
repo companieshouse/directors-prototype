@@ -15,26 +15,26 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      {{ govukDateInput({
-        id: "passport-issued",
-        namePrefix: "passport-issued",
+      <form action="/remove/remove" method="post">
+        {{ govukDateInput({
+        id: "remove",
+        namePrefix: "remove",
         fieldset: {
           legend: {
-            text: "When was XXX removed?",
+            text: "When was " + director.name + " removed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         hint: {
-          text: "For example, 27 3 2007"
+          text: "For example, 09 3 2021"
         }
       }) }}
-      <p class="govuk-body">
         {{ govukButton({
-          text: "Remove director",
-          classes: "govuk-button--warning"
-        }) }}
-      </p>
+        text: "Remove director",
+        classes: "govuk-button--warning"
+      }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
