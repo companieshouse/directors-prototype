@@ -11,17 +11,6 @@
   text: "Back",
   href: "types-of-accounts"
 }) }}
-  {% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Officer removed
-  </h3>
-  <p class="govuk-body">XXXX removed. This may take up to XXX to process.</p>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
