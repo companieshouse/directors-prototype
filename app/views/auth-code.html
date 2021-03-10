@@ -14,7 +14,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/auth-screen" method="post">
+      <form action="/auth-code" method="post">
         {% if errorAuth == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",
