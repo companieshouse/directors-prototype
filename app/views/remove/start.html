@@ -41,9 +41,15 @@
         </svg>
       </a>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-       <p>Make sure the information is correct. </p>
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      <div class="govuk-grid-row" style="display: flex; align-items: center">      
+        <div>
+        {{ govukInsetText({
+          text: "This page is also available in "
+        }) }}
+        </div>
+        <a class="govuk-inset-text" href="start-c" style="border-left: none; margin-left: -25px">Welsh (Cymraeg)</a>
+      </div>
 
     </div>
 
