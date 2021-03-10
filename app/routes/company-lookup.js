@@ -59,30 +59,6 @@ module.exports = function (router) {
   })
 
   router.get('/confirm-company', function (req, res) {
-    // Render the confirm company page
-    res.render('confirm-company', {
-      // To use the company data on that page use the following
-      company: req.session.company,
-      companyIncorp: req.session.companyIncorp
-    })
-  })
-
-  router.post('/confirm-company', function (req, res) {
-    var request = require('request')
-    var apiKey = process.env.CHS_API_KEY
-    var companyNumber = req.session.number
-    var options = {
-      'method': 'GET',
-      'url': 'https://api.company-information.service.gov.uk/company/' + companyNumber + '/officers',
-      'headers': {
-        'Authorization': apiKey
-      },
-      'json': true
-    }
-    request(options, function (error, response) {
-      if (error) throw new Error(error)
-      req.session.officers = response.body
-      res.redirect('/directors')
-    })
+    res.redirect('/auth-code')
   })
 }

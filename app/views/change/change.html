@@ -1,7 +1,7 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{director.name}}
   -
   {{serviceName}}
   - GOV.UK
@@ -17,7 +17,6 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-l">{{director.name}}
         officer details</h1>
-      {{director | dump | safe}}
       {{ govukInsetText({
         text: "Officer details will appear on the public record except for the full date of birth."
       }) }}
@@ -80,11 +79,37 @@
           }
         ]
       }) }}
+      <p class="govuk-body govuk-!-margin-bottom-1">Address</p>
+      <p class="govuk-body govuk-!-margin-bottom-2 govuk-body govuk-!-font-weight-bold">
+        {% if director.address.premises %}
+          {{director.address.premises}},
+        {% endif %}
+        {% if director.address.address_line_1 %}
+          {{director.address.address_line_1}},
+        {% endif %}
+        {% if director.address.address_line_2 %}
+          {{director.address.address_line_2}},
+        {% endif %}
+        {% if director.address.locality %}
+          {{director.address.locality}},
+        {% endif %}
+        {% if director.address.region %}
+          {{director.address.region}},
+        {% endif %}
+        {% if director.address.postal_code %}
+          {{director.address.postal_code}}
+        {% endif %}
+      </p>
+      <p class="govuk-body govuk-!-margin-bottom-8">
+        <a href="../address/company-address" class="govuk-link govuk-link--no-visited-state">Change address</a>
+      </p>
       <div class="govuk-form-group">
         <label for="autocomplete-default" class="govuk-label">Nationality</label>
         <div id="tt-default" class="autocomplete-wrapper"></div>
       </div>
-      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+      </p>
       <script src="/public/javascripts/accessible-autocomplete.js"></script>
       <script type="text/javascript">
         var countries = [
