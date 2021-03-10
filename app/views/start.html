@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Start page -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">{{serviceName}}</h1>
+      <p class="govuk-body-l">Use this service to change the details of an individual who is a director.
+        <p class="govuk-body">In this service, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>add a new director's details</li>
+          <li>change a director's details</li>
+          <li>remove a director's details</li>
+        </ul>
+        {{ govukButton({
+        text: "Start now",
+        href: "sign-in",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
+        isStartButton: true
+      }) }}
+        <div class="govuk-grid-row" style="display: flex; align-items: center">      
+        <div>
+        {{ govukInsetText({
+          text: "This page is also available in "
+        }) }}
+        </div>
+        <a class="govuk-inset-text" href="start-c" style="border-left: none; margin-left: -25px">Welsh (Cymraeg)</a>
+      </div>
+      </div>
+    </div>
+  {% endblock %}

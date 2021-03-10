@@ -1,0 +1,126 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{company.company_name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "confirm-company"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">Officers for
+        {{company.company_name}}</h1>
+      {{ govukButton({
+        text: "Add new officer",
+        href: "add/add"
+      }) }}
+      {% for officer in officers.items %}
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3 govuk-!-margin-bottom-4" style="display: flex; justify-content: space-between; align-items: center">
+            <div>
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
+            </div>
+            <div>
+              {% if officer.resigned_on %}
+                {{govukTag({
+                  text: "Resigned",
+                  classes: "govuk-tag--orange"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: "Active",
+                  classes: "govuk-tag--green"
+                })}}
+              {% endif %}
+            </div>
+          </div>
+          <div>
+            <div style="display: flex">
+              <div class="govuk-grid-column-one-third">
+                <p>Correspondence address</p>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <p>
+                  {% if officer.address.premises %}
+                    {{officer.address.premises}},
+                  {% endif %}
+                  {% if officer.address.address_line_1 %}
+                    {{officer.address.address_line_1}},
+                  {% endif %}
+                  {% if officer.address.address_line_2 %}
+                    {{officer.address.address_line_2}},
+                  {% endif %}
+                  {% if officer.address.locality %}
+                    {{officer.address.locality}},
+                  {% endif %}
+                  {% if officer.address.region %}
+                    {{officer.address.region}},
+                  {% endif %}
+                  {% if officer.address.postal_code %}
+                    {{officer.address.postal_code}}
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+            <div style="display: flex">
+              <div class="govuk-grid-column-one-third">
+                <p>Role</p>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <p>
+                  {{officer.officer_role | capitalize}}
+                </p>
+              </div>
+            </div>
+            <div style="display: flex">
+              <div class="govuk-grid-column-one-third">
+                <p>Appointed on</p>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <p>
+                  {{officer.appointed_on}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            {% if officer.resigned_on %}
+              <div style="display: flex">
+                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                  <p class="govuk-body">
+                    <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-top-5">
+                  <p class="govuk-body">
+                    <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Reappoint director</a>
+                  </p>
+                </div>
+              </div>
+            {% else %}
+              <div style="display: flex">
+                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                  <p class="govuk-body">
+                    <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-top-5">
+                  <p class="govuk-body">
+                    <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Remove director</a>
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

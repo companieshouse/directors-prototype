@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Start page -
+  Diweddaru manylion swyddogion ar gofrestr Tŷ'r Cwmnïau
+  - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Diweddaru manylion swyddogion ar gofrestr Tŷ'r Cwmnïau</h1>
+      <p class="govuk-body-l">Defnyddiwch y gwasanaeth hwn i newid manylion unigolyn sy'n gyfarwyddwr.
+        <p class="govuk-body">Yn y gwasanaeth hwn, gallwch:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ychwanegu manylion cyfarwyddwr newydd</li>
+          <li>newid manylion cyfarwyddwr</li>
+          <li>dileu manylion cyfarwyddwr</li>
+        </ul>
+        {{ govukButton({
+        text: "Dechreuwch nawr",
+        href: "sign-in",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
+        isStartButton: true
+      }) }}
+        <div class="govuk-grid-row" style="display: flex; align-items: center">      
+        <div>
+        {{ govukInsetText({
+          text: "Mae'r dudalen hon hefyd ar gael yn "
+        }) }}
+        </div>
+        <a class="govuk-inset-text" href="start" style="border-left: none; margin-left: -25px">Saesneg (English)</a>
+      </div>
+      </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,348 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{company.company_name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../directors"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">Add a new officer to
+        {{company.company_name}}</h1>
+      {{ govukInsetText({
+        text: "Officer details will appear on the public record except for the full date of birth."
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Title (optional)"
+        },
+        hint: {
+          text: "For example, Mr, Mrs, Miss, Ms, Dr, Mx."
+        },
+        id: "title",
+        name: "title"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        hint: {
+          text: "Enter first name in full not just initials."
+        },
+        id: "first-name",
+        name: "first-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Middle name(s)"
+        },
+        hint: {
+          text: "Enter middle name(s) in full not just initials."
+        },
+        id: "middle-name",
+        name: "middle-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name"
+      }) }}
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "previous-name",
+        name: "previous-name",
+        fieldset: {
+          legend: {
+            text: "Has the director used a different name for business purposes in the last 20 years?"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+      <div class="govuk-form-group">
+        <label for="autocomplete-default" class="govuk-label">Nationality</label>
+        <div id="tt-default" class="autocomplete-wrapper"></div>
+      </div>
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+      <script src="/public/javascripts/accessible-autocomplete.js"></script>
+      <script type="text/javascript">
+        var countries = [
+          'Afghan',
+          'Albanian',
+          'Algerian',
+          'American',
+          'Andorran',
+          'Angolan',
+          'Anguillan',
+          'Citizen of Antigua and Barbuda',
+          'Argentine',
+          'Armenian',
+          'Australian',
+          'Austrian',
+          'Azerbaijani',
+          'Bahamian',
+          'Bahraini',
+          'Bangladeshi',
+          'Barbadian',
+          'Belarusian',
+          'Belgian',
+          'Belizean',
+          'Beninese',
+          'Bermudian',
+          'Bhutanese',
+          'Bolivian',
+          'Citizen of Bosnia and Herzegovina',
+          'Botswanan',
+          'Brazilian',
+          'British',
+          'British Virgin Islander',
+          'Bruneian',
+          'Bulgarian',
+          'Burkinan',
+          'Burmese',
+          'Burundian',
+          'Cambodian',
+          'Cameroonian',
+          'Canadian',
+          'Cape Verdean',
+          'Cayman Islander',
+          'Central African',
+          'Chadian',
+          'Chilean',
+          'Chinese',
+          'Colombian',
+          'Comoran',
+          'Congolese (Congo)',
+          'Congolese (DRC)',
+          'Cook Islander',
+          'Costa Rican',
+          'Croatian',
+          'Cuban',
+          'Cymraes',
+          'Cymro',
+          'Cypriot',
+          'Czech',
+          'Danish',
+          'Djiboutian',
+          'Dominican',
+          'Citizen of the Dominican Republic',
+          'Dutch',
+          'East Timorese',
+          'Ecuadorean',
+          'Egyptian',
+          'Emirati',
+          'English',
+          'Equatorial Guinean',
+          'Eritrean',
+          'Estonian',
+          'Ethiopian',
+          'Faroese',
+          'Fijian',
+          'Filipino',
+          'Finnish',
+          'French',
+          'Gabonese',
+          'Gambian',
+          'Georgian',
+          'German',
+          'Ghanaian',
+          'Gibraltarian',
+          'Greek',
+          'Greenlandic',
+          'Grenadian',
+          'Guamanian',
+          'Guatemalan',
+          'Citizen of Guinea-Bissau,',
+          'Guinean',
+          'Guyanese',
+          'Haitian',
+          'Honduran',
+          'Hong Konger',
+          'Hungarian',
+          'Icelandic',
+          'Indian',
+          'Indonesian',
+          'Iranian',
+          'Iraqi',
+          'Irish',
+          'Israeli',
+          'Italian',
+          'Ivorian',
+          'Jamaican',
+          'Japanese',
+          'Jordanian',
+          'Kazakh',
+          'Kenyan',
+          'Kittitian',
+          'Citizen of Kiribati',
+          'Kosovan',
+          'Kuwaiti',
+          'Kyrgyz',
+          'Lao',
+          'Latvian',
+          'Lebanese',
+          'Liberian',
+          'Libyan',
+          'Liechtenstein citizen',
+          'Lithuanian',
+          'Luxembourger',
+          'Macanese',
+          'Macedonian',
+          'Malagasy',
+          'Malawian',
+          'Malaysian',
+          'Maldivian',
+          'Malian',
+          'Maltese',
+          'Marshallese',
+          'Martiniquais',
+          'Mauritanian',
+          'Mauritian',
+          'Mexican',
+          'Micronesian',
+          'Moldovan',
+          'Monegasque',
+          'Mongolian',
+          'Montenegrin',
+          'Montserratian',
+          'Moroccan',
+          'Mosotho',
+          'Mozambican',
+          'Namibian',
+          'Nauruan',
+          'Nepalese',
+          'New Zealander',
+          'Nicaraguan',
+          'Nigerian',
+          'Nigerien',
+          'Niuean',
+          'North Korean',
+          'Northern Irish',
+          'Norwegian',
+          'Omani',
+          'Pakistani',
+          'Palauan',
+          'Palestinian',
+          'Panamanian',
+          'Papua New Guinean',
+          'Paraguayan',
+          'Peruvian',
+          'Pitcairn Islander',
+          'Polish',
+          'Portuguese',
+          'Prydeinig',
+          'Puerto Rican',
+          'Qatari',
+          'Romanian',
+          'Russian',
+          'Rwandan',
+          'Salvadorean',
+          'Sammarinese',
+          'Samoan',
+          'Sao Tomean',
+          'Saudi Arabian',
+          'Scottish',
+          'Senegalese',
+          'Serbian',
+          'Citizen of Seychelles',
+          'Sierra Leonean',
+          'Singaporean',
+          'Slovak',
+          'Slovenian',
+          'Solomon Islander',
+          'Somali',
+          'South African',
+          'South Korean',
+          'South Sudanese',
+          'Spanish',
+          'Sri Lankan',
+          'St Helenian',
+          'St Lucian',
+          'Stateless',
+          'Sudanese',
+          'Surinamese',
+          'Swazi',
+          'Swedish',
+          'Swiss',
+          'Syrian',
+          'Taiwanese',
+          'Tajik',
+          'Tanzanian',
+          'Thai',
+          'Togolese',
+          'Tongan',
+          'Trinidadian',
+          'Tristanian',
+          'Tunisian',
+          'Turkish',
+          'Turkmen',
+          'Turks and Caicos Islander',
+          'Tuvaluan',
+          'Ugandan',
+          'Ukrainian',
+          'Uruguayan',
+          'Uzbek',
+          'Vatican citizen',
+          'Citizen of Vanuatu',
+          'Venezuelan',
+          'Vietnamese',
+          'Vincentian',
+          'Wallisian',
+          'Welsh',
+          'Yemeni',
+          'Zambian',
+          'Zimbabwean'
+        ]
+        var element = document.querySelector('#tt-default')
+        var id = 'autocomplete-default'
+        accessibleAutocomplete({element: element, id: id, source: countries})
+      </script>
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "Date of birth"
+          }
+        },
+        hint: {
+          text: "The director must be at least 16 years of age. For example, 27 3 2007"
+        }
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Job title"
+        },
+        hint: {
+          text: "Enter what the person works as. For example, carpenter."
+        },
+        id: "event-name",
+        name: "event-name"
+      }) }}
+      <p class="govuk-body">
+        {{ govukButton({
+          text: "Add officer"
+        }) }}
+      </p>
+    </div>
+  </div>
+{% endblock %}

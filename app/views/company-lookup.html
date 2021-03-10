@@ -1,0 +1,57 @@
+{% set title = "Tell us your company number" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What is the company number? - Upload a document to Companies House - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "sign-in"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/company-lookup" method="post">
+        {% if errorNum == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is the company number? ",
+              classes: "govuk-label--l"
+            },
+            hint: {
+              text: "This is the 8 character reference issued by Companies House when the company was set up."
+            },
+            classes: "govuk-input--width-10",
+            id: "companynumber",
+            name: "companynumber",
+            errorMessage: {
+              text: "Enter the company number"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is the company number? ",
+              classes: "govuk-label--l"
+            },
+            classes: "govuk-input--width-10",
+              id: "companynumber",
+              name: "companynumber"
+            }) }}
+        {% endif %}
+        {{ govukDetails({
+          summaryText: "How do I find the company number?",
+          html: "<p>Use the <a target='blank' href='https://beta.companieshouse.gov.uk/'>Companies House service</a> to find company details (opens in a new window or tab).</p>"
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
