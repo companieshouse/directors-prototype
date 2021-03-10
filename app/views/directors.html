@@ -15,21 +15,22 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">Officers for {{company.company_name}}</h1>
-        {% for officer in officers.items %}
-        <div style="border: 1px solid grey; padding: 20px; margin: 20px">
-          <div class="govuk-!-margin-bottom-3" style="display: flex; justify-content: space-between; align-items: center">
+      <h1 class="govuk-heading-l">Officers for
+        {{company.company_name}}</h1>
+      {% for officer in officers.items %}
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3 govuk-!-margin-bottom-4" style="display: flex; justify-content: space-between; align-items: center">
             <div>
-              <h2 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">{{officer.name}}</h2>
+              <p class="govuk-!-margin-0">{{officer.name}}</p>
             </div>
             <div>
               {% if officer.resigned_on %}
-              {{govukTag({
+                {{govukTag({
                 text: "Resigned",
                 classes: "govuk-tag--grey"
               })}}
               {% else %}
-              {{govukTag({
+                {{govukTag({
               text: "Active"
               })}}
               {% endif %}
@@ -40,7 +41,7 @@
               <div class="govuk-grid-column-one-third">
                 <p>Correspondence address</p>
               </div>
-              <div class="govuk-grid-column-one-half">
+              <div class="govuk-grid-column-two-thirds">
                 <p class="govuk-!-font-weight-bold">
                   {% if officer.address.premises %}
                     {{officer.address.premises}},
@@ -85,7 +86,7 @@
             </div>
           </div>
           <div style="padding-left: 15px">
-              {% if officer.resigned_on %}
+            {% if officer.resigned_on %}
               <div>
                 <p class="govuk-body">
                   <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
@@ -94,7 +95,7 @@
                   <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Reappoint director</a>
                 </p>
               </div>
-              {% else %}
+            {% else %}
               <div>
                 <p class="govuk-body">
                   <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
@@ -103,8 +104,8 @@
                   <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Remove director</a>
                 </p>
               </div>
-              {% endif %}
-            </div>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
