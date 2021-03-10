@@ -21,7 +21,7 @@
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
           <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3 govuk-!-margin-bottom-4" style="display: flex; justify-content: space-between; align-items: center">
             <div>
-              <p class="govuk-!-margin-0">{{officer.name}}</p>
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
             </div>
             <div>
               {% if officer.resigned_on %}
@@ -42,7 +42,7 @@
                 <p>Correspondence address</p>
               </div>
               <div class="govuk-grid-column-two-thirds">
-                <p class="govuk-!-font-weight-bold">
+                <p>
                   {% if officer.address.premises %}
                     {{officer.address.premises}},
                   {% endif %}
@@ -69,7 +69,7 @@
                 <p>Role</p>
               </div>
               <div class="govuk-grid-column-one-third">
-                <p class="govuk-!-font-weight-bold">
+                <p>
                   {{officer.officer_role | capitalize}}
                 </p>
               </div>
@@ -79,30 +79,38 @@
                 <p>Appointed on</p>
               </div>
               <div class="govuk-grid-column-one-half">
-                <p class="govuk-!-font-weight-bold">
+                <p>
                   {{officer.appointed_on}}
                 </p>
               </div>
             </div>
           </div>
-          <div style="padding-left: 15px">
+          <div>
             {% if officer.resigned_on %}
-              <div>
-                <p class="govuk-body">
-                  <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
-                </p>
-                <p class="govuk-body">
-                  <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Reappoint director</a>
-                </p>
+              <div style="display: flex">
+                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3">
+                  <p class="govuk-body">
+                    <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-5">
+                  <p class="govuk-body">
+                    <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Reappoint director</a>
+                  </p>
+                </div>
               </div>
             {% else %}
-              <div>
-                <p class="govuk-body">
-                  <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
-                </p>
-                <p class="govuk-body">
-                  <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Remove director</a>
-                </p>
+              <div style="display: flex">
+                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3">
+                  <p class="govuk-body">
+                    <a href="change/change?director={{officer.links.self}}" class="govuk-link">Change details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-5">
+                  <p class="govuk-body">
+                    <a href="remove/remove?director={{officer.links.self}}" class="govuk-link">Remove director</a>
+                  </p>
+                </div>
               </div>
             {% endif %}
           </div>
