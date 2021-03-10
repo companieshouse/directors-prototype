@@ -17,6 +17,10 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-l">Officers for
         {{company.company_name}}</h1>
+      {{ govukButton({
+        text: "Add new officer",
+        href: "add/add"
+      }) }}
       {% for officer in officers.items %}
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
           <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3 govuk-!-margin-bottom-4" style="display: flex; justify-content: space-between; align-items: center">
@@ -26,13 +30,14 @@
             <div>
               {% if officer.resigned_on %}
                 {{govukTag({
-                text: "Resigned",
-                classes: "govuk-tag--grey"
-              })}}
+                  text: "Resigned",
+                  classes: "govuk-tag--orange"
+                })}}
               {% else %}
                 {{govukTag({
-              text: "Active"
-              })}}
+                  text: "Active",
+                  classes: "govuk-tag--green"
+                })}}
               {% endif %}
             </div>
           </div>
