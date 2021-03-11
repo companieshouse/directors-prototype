@@ -23,31 +23,25 @@
       }) }}
       {% for officer in officers.items %}
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
-          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3 govuk-!-margin-bottom-4" style="display: flex; justify-content: space-between; align-items: center">
-            <div>
-              <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
-            </div>
-            <div>
-              {% if officer.resigned_on %}
-                {{govukTag({
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+            <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
+            {% if officer.resigned_on %}
+              {{govukTag({
                   text: "Resigned",
                   classes: "govuk-tag--orange"
                 })}}
-              {% else %}
-                {{govukTag({
+            {% else %}
+              {{govukTag({
                   text: "Active",
                   classes: "govuk-tag--green"
                 })}}
-              {% endif %}
-            </div>
+            {% endif %}
           </div>
-          <div>
-            <div style="display: flex">
-              <div class="govuk-grid-column-one-third">
-                <p>Correspondence address</p>
-              </div>
-              <div class="govuk-grid-column-two-thirds">
-                <p>
+          <div style="display: flex" class="govuk-!-padding-1">
+            <dl style="display: block" class="govuk-summary-list govuk-!-margin-3">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Correspondence address</dt>
+                <dd class="govuk-summary-list__value">
                   {% if officer.address.premises %}
                     {{officer.address.premises}},
                   {% endif %}
@@ -66,29 +60,21 @@
                   {% if officer.address.postal_code %}
                     {{officer.address.postal_code}}
                   {% endif %}
-                </p>
+                </dd>
               </div>
-            </div>
-            <div style="display: flex">
-              <div class="govuk-grid-column-one-third">
-                <p>Role</p>
-              </div>
-              <div class="govuk-grid-column-one-third">
-                <p>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Role</dt>
+                <dd class="govuk-summary-list__value">
                   {{officer.officer_role | capitalize}}
-                </p>
+                </dd>
               </div>
-            </div>
-            <div style="display: flex">
-              <div class="govuk-grid-column-one-third">
-                <p>Appointed on</p>
-              </div>
-              <div class="govuk-grid-column-one-half">
-                <p>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Appointed on</dt>
+                <dd class="govuk-summary-list__value">
                   {{officer.appointed_on}}
-                </p>
+                </dd>
               </div>
-            </div>
+            </dl>
           </div>
           <div>
             {% if officer.resigned_on %}
