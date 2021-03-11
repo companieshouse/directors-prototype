@@ -71,6 +71,14 @@ router.get('/change/change', function (req, res) {
   // Render the confirm company page
 })
 
+router.get('/auth-code', function (req, res) {
+// Render the confirm company page
+  res.render('auth-code', {
+  // To use the company data on that page use the following
+    company: req.session.company
+  })
+})
+
 router.post('/auth-code', function (req, res) {
   var request = require('request')
   var apiKey = process.env.CHS_API_KEY
