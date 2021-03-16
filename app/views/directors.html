@@ -70,8 +70,9 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Appointed on</dt>
-                <dd class="govuk-summary-list__value">
-                  {{officer.appointed_on}}
+                <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+                  {% set filteredDate = officer.appointed_on %}
+                  {{ filteredDate | replace("-", " ")}}
                 </dd>
               </div>
             </dl>
