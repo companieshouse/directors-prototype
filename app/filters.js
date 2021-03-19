@@ -37,7 +37,12 @@ module.exports = function (env) {
     documentation.
 
   ------------------------------------------------------------------ */
+var nunjucks = require('nunjucks');
+var env = new nunjucks.Environment();
 
+env.addFilter('shorten', function(str, count) {
+    return str.slice(0, 2);
+});
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
