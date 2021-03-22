@@ -20,17 +20,13 @@
       {{ govukInsetText({
         text: "Officer details will appear on the public record except for the full date of birth."
       }) }}
-      {{ govukInput({
-        label: {
-          text: "Title (optional)"
-        },
-        hint: {
-          text: "For example, Mr, Mrs, Miss, Ms, Dr, Mx."
-        },
-        classes: "govuk-input--width-2",
-        id: "title",
-        name: "title"
-      }) }}
+            <div class="govuk-form-group govuk-input--width-20">
+        <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
+          <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms, Mx.</p>
+        <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
+      </div>
+      <script src="/public/javascripts/accessible-autocomplete.js"></script>
+      <script src="/public/javascripts/titles.js"></script>
       {{ govukInput({
         label: {
           text: "First name"
@@ -151,18 +147,13 @@
 
         </fieldset>
       </div>
-      {{ govukInput({
-        label: {
-          text: "Job title"
-        },
-        hint: {
-          text: "Enter what the person works as. For example, carpenter."
-        },
-        classes: "govuk-input--width-20",
-        id: "event-name",
-        value: director.occupation,
-        name: "event-name"
-      }) }}
+           <div class="govuk-!-padding-bottom-6">
+        <label for="autocomplete-default" class="govuk-label">Job title</label>
+          <p class="govuk-hint">What does the person work as. For example, carpenter</p>
+        <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
+      </div>
+      <script src="/public/javascripts/accessible-autocomplete.js"></script>
+      <script src="/public/javascripts/occupation.js"></script>
       <p class="govuk-body">
         {{ govukButton({
           text: "Change details"
