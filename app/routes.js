@@ -24,6 +24,15 @@ router.get('/add/add', function (req, res) {
   })
 })
 
+router.get('/add/check-your-answers', function (req, res) {
+  // Render the confirm company page
+  res.render('add/check-your-answers', {
+    // To use the company data on that page use the following
+    company: req.session.company,
+    officers: req.session.officers
+  })
+})
+
 router.get('/remove/remove', function (req, res) {
   var request = require('request')
   var apiKey = process.env.CHS_API_KEY

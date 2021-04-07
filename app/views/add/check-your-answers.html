@@ -17,96 +17,86 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-l">Check the details for the added director are correct</h1>
       <h2 class="govuk-heading-m">Personal details</h2>
-      {{ govukSummaryList({
-           classes: 'govuk-!-margin-bottom-9',
-           rows: [
-             {
-               key: {
-                 text: "Name"
-               },
-               value: {
-                 text: "Sarah Philips"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "name"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Date of birth"
-               },
-               value: {
-                 text: "5 January 1978"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "date of birth"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Address"
-               },
-               value: {
-                 html: "72 Guild Street<br>London<br>SE23 6FH"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "address"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Contact details"
-               },
-               value: {
-                 html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "contact details"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Date of removal"
-               },
-               value: {
-                 html: '<p class="govuk-body">Date</p>'
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "contact details"
-                   }
-                 ]
-               }
-             }
-           ]
-         }) }}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Officer
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+  
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Job title
+          </dt>
+          <dd class="govuk-summary-list__value">
+           
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
         {{ govukButton({
           text: "Accept and submit",
           href: "confirmation"
