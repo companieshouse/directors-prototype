@@ -48,8 +48,10 @@ module.exports = function (router) {
         // With the response put that as a session variable so it can be used across all pages
         req.session.company = response.body
         //Format date of incorporation
-        const dateOfIncorporation = req.session.company.date_of_creation
-        req.session.companyIncorp = dateOfIncorporation
+        const dayOfIncorporation = req.session.company.date_of_creation.slice(-2)
+        const monthOfIncorporation = req.session.company.date_of_creation.slice(5, 7)
+        const yearOfIncorporation = req.session.company.date_of_creation.slice(0, 4)
+        req.session.companyIncorp = dayOfIncorporation + ' ' + monthOfIncorporation + ' ' + yearOfIncorporation
         // Redirect to the confirm company page
         res.redirect('/confirm-company')
       })
