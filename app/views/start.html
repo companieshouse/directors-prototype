@@ -8,14 +8,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">{{serviceName}}</h1>
-
-        <p class="govuk-body">Use this service to:</p>
+<p class="govuk-body-l">Use this service to update officer details shown on the Companies House register.</p>
+        <p class="govuk-body">You can:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>appoint a new director</li>
           <li>update an existing director's details</li>
           <li>remove a director</li>
           <li>reappoint a director who was previously removed</li>
         </ul>
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "An officer is a director, corporate director or secretary of a company. For now, you can only appoint, update, remove or reappoint directors in this service."
+}) }}
         <p class="govuk-body">To appoint a new director, you'll need to tell us the director's:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>date of birth</li>

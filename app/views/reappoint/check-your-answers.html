@@ -15,7 +15,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">Check the details for the reappointed director are correct</h1>
+      <h1 class="govuk-heading-l">Check your answers before submitting</h1>
       <h2 class="govuk-heading-m">Personal details</h2>
       {{ govukSummaryList({
            classes: 'govuk-!-margin-bottom-9',
@@ -108,7 +108,7 @@
            ]
          }) }}
         {{ govukButton({
-          text: "Accept and submit",
+          text: "Submit",
           href: "confirmation"
         }) }}
       </form>

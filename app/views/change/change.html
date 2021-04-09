@@ -15,14 +15,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">{{director.name}}
-        officer details</h1>
+      <span class="govuk-caption-xl">{{director.name}}</span>
+<h1 class="govuk-heading-l">Change officer's personal details</h1>
+
       {{ govukInsetText({
-        text: "Officer details will appear on the public record except for the full date of birth."
+        text: "The officer's details will be shown on the Companies House public register."
       }) }}
             <div class="govuk-form-group govuk-input--width-20">
         <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
-          <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms, Mx.</p>
+          <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx.</p>
         <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
       </div>
       <script src="/public/javascripts/accessible-autocomplete.js"></script>
@@ -32,7 +33,7 @@
           text: "First name"
         },
         hint: {
-          text: "Enter first name in full not just initials."
+          text: "Enter the officer's full first name."
         },
         classes: "govuk-input--width-20",
         id: "first-name",
@@ -41,10 +42,10 @@
       }) }}
       {{ govukInput({
         label: {
-          text: "Middle name(s)"
+          text: "Middle name or names (optional)"
         },
         hint: {
-          text: "Enter middle name(s) in full not just initials."
+          text: "Enter the officer's full middle name or names."
         },
         classes: "govuk-input--width-20",
         id: "middle-name",
@@ -65,7 +66,7 @@
         name: "previous-name",
         fieldset: {
           legend: {
-            text: "Has the director used a different name for business purposes in the last 20 years?"
+            text: "Has the officer used a different name on the Companies House register in the last 20 years?"
           }
         },
         items: [
@@ -119,7 +120,7 @@
             Date of birth
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
-            The director must be at least 16 years of age. For example, 27 3 2007
+            For example, 27 3 1995. Only the officer's month and year of birth will be shown on the public register.
           </div>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -149,14 +150,14 @@
       </div>
            <div class="govuk-!-padding-bottom-6">
         <label for="autocomplete-default" class="govuk-label">Job title</label>
-          <p class="govuk-hint">What does the person work as. For example, carpenter</p>
+          <p class="govuk-hint">For example, carpenter.</p>
         <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
       </div>
       <script src="/public/javascripts/accessible-autocomplete.js"></script>
       <script src="/public/javascripts/occupation.js"></script>
       <p class="govuk-body">
         {{ govukButton({
-          text: "Change details",
+          text: "Continue",
           href: "check-your-answers"
         }) }}
       </p>
