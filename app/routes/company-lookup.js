@@ -52,8 +52,8 @@ module.exports = function (router) {
         const monthOfIncorporation = req.session.company.date_of_creation.slice(5, 7)
         const yearOfIncorporation = req.session.company.date_of_creation.slice(0, 4)
         req.session.companyIncorp = dayOfIncorporation + ' ' + monthOfIncorporation + ' ' + yearOfIncorporation
-        // Redirect to the confirm company page
-        res.redirect('/confirm-company')
+        // Redirect to the company lookup page
+        res.redirect('/company-lookup')
       })
     }
   })
