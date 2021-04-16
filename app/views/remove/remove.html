@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/remove/check-your-answers" method="post">
         <span class="govuk-caption-xl">{{director.name}}</span>
-  <h1 class="govuk-heading-l">When was the officer removed from the company?</h1>
+  <h1 class="govuk-heading-l">When was this officer removed from the company?</h1>
         {{ govukDateInput({
         id: "remove",
         namePrefix: "remove",
@@ -33,7 +33,7 @@
         }
       }) }}
         {{ govukButton({
-        text: "Remove officer",
+        text: "Continue",
         classes: "govuk-button"
       }) }}
       </form>

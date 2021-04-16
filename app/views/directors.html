@@ -18,9 +18,15 @@
       <span class="govuk-caption-xl">{{company.company_name}}</span>
 <h1 class="govuk-heading-xl">Appoint, update or remove an officer</h1>
   <p class="govuk-body govuk-!-font-weight-regular">You can also reappoint an officer who was previously removed.</p>
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Help with reappointing an officer",
+  text: "If the company has any resigned directors, they will be shown towards the bottom of this page. Find the director you want to reappoint and select 'Reappoint officer'."
+}) }}
   <br>
       {{ govukButton({
-        text: "Appoint an officer",
+        text: "Appoint a new officer",
         href: "add/add"
       }) }}
       {% for officer in officers.items %}

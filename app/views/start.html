@@ -8,24 +8,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">{{serviceName}}</h1>
-<p class="govuk-body-l">Use this service to update officer details shown on the Companies House register.</p>
-        <p class="govuk-body">You can:</p>
+<p class="govuk-body-l">Use this service to update the information we hold about a company's officers on the Companies House register.</p>
+        <p class="govuk-body">An officer is a director, corporate director or secretary of a company. In this service, you can:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>appoint a new director</li>
-          <li>update an existing director's details</li>
-          <li>remove a director</li>
-          <li>reappoint a director who was previously removed</li>
+          <li>appoint a new officer</li>
+          <li>update an existing officer's details</li>
+          <li>remove an officer</li>
+          <li>reappoint an officer who was previously removed</li>
         </ul>
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-{{ govukInsetText({
-  text: "An officer is a director, corporate director or secretary of a company. For now, you can only appoint, update, remove or reappoint directors in this service."
-}) }}
-        <p class="govuk-body">To appoint a new director, you'll need to tell us the director's:</p>
+        <p class="govuk-body">To appoint a new director or secretary, you'll need to tell us their:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>date of birth</li>
           <li>nationality</li>
-          <li>occupation</li>
+          <li>job title</li>
           <li>correspondence address and home address</li>
         </ul>
         {{ govukButton({

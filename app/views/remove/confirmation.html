@@ -16,20 +16,66 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       {{ govukPanel({
-       titleText: "Submission received",
+       titleText: "Update received",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
       }) }}
+      {{ govukTable({
+        rows: [
+        [
+          {
+            text: "Update type"
+          },
+          {
+            text: "Removal of a director"
+          }
+        ],
+          [
+            {
+              text: "Company number"
+            },
+            {
+              text: "00066516"
+            }
+          ],
+          [
+            {
+              text: "Company name"
+            },
+            {
+              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
+            }
+          ],
+          [
+            {
+              text: "Officer name"
+            },
+            {
+              text: "Mr Andrew Hopkins"
+            }
+          ],
+          [
+            {
+              text: "Removed on"
+            },
+            {
+              text: "19 April 2021"
+            }
+          ]
+        ]
+      }) }}
       <h3 class="govuk-heading-m">What happens next</h3>
-      <p class="govuk-body">We will send a confirmation email to
+      <p class="govuk-body">We'll send a confirmation email to
         <strong>pdavies@gmail.com</strong>
         which contains your reference number.</p>
       <p class="govuk-body">An examiner will process the submission to check if it’s acceptable for filing. This can take up to 48 hours.</p>
       <p class="govuk-body">We'll email you to tell you if the submission is acceptable for filing. If the submission is not acceptable, we'll email you to let you know what to do next.</p>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">What do you want to do next?</h2>
       <br>
-        <p><a href="../directors" class="govuk-link">Return to the list of directors</a><br>
+        <p><a href="../directors" class="govuk-link">Make another update for the same company</a><br>
+        <p><a href="../company-lookup" class="govuk-link">Make another update for a different company</a><br><br>
         <a href="../start">Sign out</a></p>
       <p>
+        <br>
         <a href="#" class="govuk-link">What did you think of this service?</a>
         (takes 30 seconds)
       </p>
