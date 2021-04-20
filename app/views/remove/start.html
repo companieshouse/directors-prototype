@@ -7,21 +7,18 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-xl">Add an officer's details on the Companies House register</h1>
-<p class="govuk-body-l">Use this service to add a company officer's details on the Companies House register.</p>
+      <h1 class="govuk-heading-xl">Remove an officer's details on the Companies House register</h1>
+<p class="govuk-body-l">Use this service to remove a company officer's details on the Companies House register.</p>
         <p class="govuk-body">An officer is a director, corporate director or secretary of a company.</p>
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-        <p class="govuk-body">To appoint a new director or secretary, you'll need to tell us their:</p>
+        <p class="govuk-body">To remove an officer, you'll need to tell us their:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>date of birth</li>
-          <li>nationality</li>
-          <li>job title</li>
-          <li>correspondence address and home address</li>
+          <li>date of removal from the register</li>
         </ul>
       {{ govukButton({
         text: "Start now",
-        href: "add",
+        href: "remove",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
         isStartButton: true
       }) }}
@@ -30,7 +27,6 @@
           <br><br>
           <h2 class="govuk-heading-m">Before you start</h2>
             <p class="govuk-body">This page is also available in <a class="govuk-link" href="start-c">Welsh (Cymraeg)</a>.</p>
-
       </div>
       </div>
     </div>

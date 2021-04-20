@@ -27,3 +27,12 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-summary-card_heading {
   background: #f3f2f1;
 }
+
+.flex-center {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.flex {
+  display: flex;
+}  

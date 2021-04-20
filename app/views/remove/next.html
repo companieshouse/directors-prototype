@@ -1,0 +1,22 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">What would you like to do next</h1>
+          <a class="govuk-link" href="confirmation">Continue to the confirmation page</a><br>
+          <a class="govuk-link" href="../directors">Make a change for an officer for the same company</a><br>
+          <a class="govuk-link" href="company-lookup">Make a change for an officer for a different company</a><br>
+          <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Search the register</a><br>
+          <a class="govuk-link" href="#">Continue submitting your confirmation statement</a><br>
+           <a class="govuk-link" href="#">Sign out</a>
+    </div>
+  </div>
+{% endblock %}
