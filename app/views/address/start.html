@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Start page -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Change a registered office address on the Companies House register</h1>
+<p class="govuk-body-l">Use this service to change a company's office address on the Companies House register.</p>
+        <p class="govuk-body">An officer is a director, corporate director or secretary of a company.</p>
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        <p class="govuk-body">To add a new office address, you'll need to tell us the:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>street address</li>
+          <li>town</li>
+          <li>county</li>
+          <li>country</li>
+          <li>post code</li>
+        </ul>
+      {{ govukButton({
+        text: "Start now",
+        href: "address-manual",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
+        isStartButton: true
+      }) }}
+        <div class="govuk-grid-row" style="display: flex; align-items: center">
+        <div>
+          <br><br>
+          <h2 class="govuk-heading-m">Before you start</h2>
+            <p class="govuk-body">This page is also available in <a class="govuk-link" href="start-c">Welsh (Cymraeg)</a>.</p>
+
+      </div>
+      </div>
+    </div>
+  {% endblock %}
