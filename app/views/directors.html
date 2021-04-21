@@ -19,24 +19,27 @@
       <div>
         <h1 class="govuk-heading-xl">{{company.company_name}}</h1>
       </div>
-      <div class="flex"><p>Company number</p><p class="govuk-!-font-weight-bold  govuk-!-padding-left-2">{{company.company_number}}</p></div>
+      <div class="flex">
+        <p>Company number</p>
+        <p class="govuk-!-font-weight-bold  govuk-!-padding-left-2">{{company.company_number}}</p>
+      </div>
       {% extends "layout.html" %}
 
-  {{ govukButton({
+      {{ govukButton({
   text: "Follow this company"
   }) }}
 
-  {{ govukButton({
+      {{ govukButton({
   text: "File for this company"
   }) }}
 
-  {% set peopleHtml %}
-    <h3 class="govuk-heading-m">Appoint, update or remove an officer</h3>
-    {{ govukButton({
+      {% set peopleHtml %}
+      <h3 class="govuk-heading-m">Appoint, update or remove an officer</h3>
+      {{ govukButton({
         text: "Appoint a new officer",
         href: "add/start"
       }) }}
-      
+
       {% for officer in officers.items %}
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
           <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
@@ -105,8 +108,8 @@
           </div>
           <div>
             {% if officer.resigned_on %}
-             <div class="flex">
-                 {# <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+              <div class="flex">
+                {# <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
                   <p class="govuk-body">
                     <a href="change/change?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Change details</a>
                   </p>
@@ -116,7 +119,7 @@
                     <a href="reappoint/reappoint?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Reappoint officer</a>
                   </p>
                 </div> #}
-              </div> 
+              </div>
             {% else %}
               <div style="display: flex">
                 <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
@@ -134,11 +137,11 @@
           </div>
         </div>
       {% endfor %}
-  {% endset -%}
+      {% endset -%}
 
-  {% set filingHistoryHtml %}
+      {% set filingHistoryHtml %}
 
-    {{ govukTable({
+      {{ govukTable({
   head: [
     {
       text: "Date",
@@ -234,13 +237,13 @@
     ]
   ]
 }) }}
-    {% endset -%}
+      {% endset -%}
 
-    {% set socHtml %}
-    <a class="button-link" href="/default-pages/start">Update the Share Capital</a>
-    {% endset -%}
+      {% set socHtml %}
+      <a class="button-link" href="/default-pages/start">Update the Share Capital</a>
+      {% endset -%}
 
-  {{ govukTabs({
+      {{ govukTabs({
   items: [
     {
       label: "Overview",
@@ -280,6 +283,6 @@
   ]
 }) }}
 
-{% endblock %}
-    </div>
+    {% endblock %}
   </div>
+</div>
