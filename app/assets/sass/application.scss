@@ -28,11 +28,29 @@ $govuk-assets-path: '/govuk/assets/';
   background: #f3f2f1;
 }
 
+.flex {
+  display: flex;
+}  
+
 .flex-center {
   display: flex !important;
   justify-content: center !important;
 }
 
-.flex {
+.flex-vertical {
   display: flex;
-}  
+  align-items: center
+}
+.search-the-register-button {
+  background: #005ea5;
+  height: 40px;
+  width: 40px;
+}
+
+.search-the-register-border {
+  border: 8px solid #dee0e2;
+}
+
+.flex-col {
+  width: 100%
+}

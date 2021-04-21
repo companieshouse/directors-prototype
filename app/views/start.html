@@ -16,23 +16,8 @@
           <li>remove an officer</li>
           <li>reappoint an officer who was previously removed</li>
         </ul>
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-        <p class="govuk-body">To appoint a new director or secretary, you'll need to tell us their:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>date of birth</li>
-          <li>nationality</li>
-          <li>job title</li>
-          <li>correspondence address and home address</li>
-        </ul>
         {{ govukButton({
         text: "Start now",
-        href: "sign-in",
-        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
-        isStartButton: true
-      }) }}
-              {{ govukButton({
-        text: "Start now (new)",
         href: "company-lookup",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-2",
         isStartButton: true
