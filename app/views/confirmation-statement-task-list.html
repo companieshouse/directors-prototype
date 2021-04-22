@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+
+{% block content %}
+
+  {% if scenario.company.csDue === 'due' %}
+    and pay
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application complete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 9 of 9 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+
+            1. People
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-officers" aria-describedby="eligibility-status">
+                  Officers
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/psc-exemption" aria-describedby="read-declaration-status">
+                  People with significant control (PSC)
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+
+            2. Addresses
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-ro" aria-describedby="company-information-status">
+                  Registered office address
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-registers" aria-describedby="contact-details-status">
+                  Register locations
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            3. Shareholder information
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-shareholder-capital" aria-describedby="eligibility-status">
+                  Shareholder capital
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-shareholders" aria-describedby="read-declaration-status">
+                  Shareholders
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+
+            4. Nature of business
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-sic" aria-describedby="contact-details-status">
+                  SIC codes
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">
+                Completed</strong>
+
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            5. Confirm and submit
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+
+              <span class="app-task-list__task-name">
+                <a href="/confirmation-statement-review">
+                  Review statement and pay</a>
+              </span>
+
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}
