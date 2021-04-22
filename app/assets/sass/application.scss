@@ -41,6 +41,7 @@ $govuk-assets-path: '/govuk/assets/';
   display: flex;
   align-items: center
 }
+
 .search-the-register-button {
   background: #005ea5;
   height: 40px;
@@ -51,6 +52,11 @@ $govuk-assets-path: '/govuk/assets/';
   border: 8px solid #dee0e2;
 }
 
-.flex-col {
+.full-width {
   width: 100%
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

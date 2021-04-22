@@ -25,21 +25,17 @@
       </div>
       {% extends "layout.html" %}
 
-      {{ govukButton({
-  text: "Follow this company"
-  }) }}
-
-      {{ govukButton({
-  text: "File for this company"
-  }) }}
-
       {% set peopleHtml %}
-      <h3 class="govuk-heading-m">Appoint, update or remove an officer</h3>
-      {{ govukButton({
-        text: "Appoint a new officer",
-        href: "add/start"
-      }) }}
-
+      <div>
+        <p class="govuk-body">
+          <a href="add/start" class="govuk-link govuk-link--no-visited-state">Appoint new Director</a>
+        </p>
+      </div>
+      <div>
+        <p class="govuk-body">
+          <a href="add/start" class="govuk-link govuk-link--no-visited-state">Appoint new Secretary</a>
+        </p>
+      </div>
       {% for officer in officers.items %}
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
           <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
