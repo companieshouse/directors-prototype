@@ -24,7 +24,13 @@
         <p class="govuk-!-font-weight-bold  govuk-!-padding-left-2">{{company.company_number}}</p>
       </div>
       {% extends "layout.html" %}
+      {{ govukButton({
+  text: "Follow this company"
+  }) }}
 
+      {{ govukButton({
+  text: "File for this company"
+  }) }}
       {% set peopleHtml %}
       <div>
         <p class="govuk-body">
@@ -37,6 +43,199 @@
         </p>
       </div>
       {% for officer in officers.items %}
+        {% if officer.officer_role === 'secretary' %}
+          <div class="govuk-summary-card govuk-!-margin-bottom-4">
+            <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
+              {% if officer.resigned_on %}
+                {{govukTag({
+                    text: "Resigned",
+                    classes: "govuk-tag--orange"
+                  })}}
+              {% else %}
+                {{govukTag({
+                    text: "Active",
+                    classes: "govuk-tag--green"
+                  })}}
+              {% endif %}
+            </div>
+            <div style="display: flex" class="govuk-!-padding-1">
+              <dl style="display: block" class="govuk-summary-list govuk-!-margin-3">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Correspondence address</dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if officer.address.premises %}
+                      {{officer.address.premises}},
+                    {% endif %}
+                    {% if officer.address.address_line_1 %}
+                      {{officer.address.address_line_1}},
+                    {% endif %}
+                    {% if officer.address.address_line_2 %}
+                      {{officer.address.address_line_2}},
+                    {% endif %}
+                    {% if officer.address.locality %}
+                      {{officer.address.locality}},
+                    {% endif %}
+                    {% if officer.address.region %}
+                      {{officer.address.region}},
+                    {% endif %}
+                    {% if officer.address.postal_code %}
+                      {{officer.address.postal_code}}
+                    {% endif %}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">
+                    {{officer.officer_role | capitalize}}
+                  </dd>
+                </div>
+                {% if officer.resigned_on %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Resigned on</dt>
+                    <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+                      {% set filteredDate = officer.resigned_on %}
+                      {{ filteredDate | replace("-", " ")}}
+                    </dd>
+                  </div>
+                {% else %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Appointed on</dt>
+                    <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+                      {% set filteredDate = officer.appointed_on %}
+                      {{ filteredDate | replace("-", " ")}}
+                    </dd>
+                  </div>
+                {% endif %}
+              </dl>
+            </div>
+            <div>
+              {% if officer.resigned_on %}
+                <div class="flex">
+                  {# <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                    <p class="govuk-body">
+                      <a href="change/change?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Change details</a>
+                    </p>
+                  </div>
+                  <div class="govuk-!-padding-top-5">
+                    <p class="govuk-body">
+                      <a href="reappoint/reappoint?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Reappoint officer</a>
+                    </p>
+                  </div> #}
+                </div>
+              {% else %}
+                <div style="display: flex">
+                  <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                    <p class="govuk-body">
+                      <a href="change/start?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Update secretary details</a>
+                    </p>
+                  </div>
+                  <div class="govuk-!-padding-top-5">
+                    <p class="govuk-body">
+                      <a href="remove/start?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Remove secretary</a>
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% elif officer.officer_role === 'director' %}
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+            <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
+            {% if officer.resigned_on %}
+              {{govukTag({
+                  text: "Resigned",
+                  classes: "govuk-tag--orange"
+                })}}
+            {% else %}
+              {{govukTag({
+                  text: "Active",
+                  classes: "govuk-tag--green"
+                })}}
+            {% endif %}
+          </div>
+          <div style="display: flex" class="govuk-!-padding-1">
+            <dl style="display: block" class="govuk-summary-list govuk-!-margin-3">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Correspondence address</dt>
+                <dd class="govuk-summary-list__value">
+                  {% if officer.address.premises %}
+                    {{officer.address.premises}},
+                  {% endif %}
+                  {% if officer.address.address_line_1 %}
+                    {{officer.address.address_line_1}},
+                  {% endif %}
+                  {% if officer.address.address_line_2 %}
+                    {{officer.address.address_line_2}},
+                  {% endif %}
+                  {% if officer.address.locality %}
+                    {{officer.address.locality}},
+                  {% endif %}
+                  {% if officer.address.region %}
+                    {{officer.address.region}},
+                  {% endif %}
+                  {% if officer.address.postal_code %}
+                    {{officer.address.postal_code}}
+                  {% endif %}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Role</dt>
+                <dd class="govuk-summary-list__value">
+                  {{officer.officer_role | capitalize}}
+                </dd>
+              </div>
+              {% if officer.resigned_on %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Resigned on</dt>
+                  <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+                    {% set filteredDate = officer.resigned_on %}
+                    {{ filteredDate | replace("-", " ")}}
+                  </dd>
+                </div>
+              {% else %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Appointed on</dt>
+                  <dd class="govuk-summary-list__value" style="direction:rtl; text-align: left">
+                    {% set filteredDate = officer.appointed_on %}
+                    {{ filteredDate | replace("-", " ")}}
+                  </dd>
+                </div>
+              {% endif %}
+            </dl>
+          </div>
+          <div>
+            {% if officer.resigned_on %}
+              <div class="flex">
+                {# <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                  <p class="govuk-body">
+                    <a href="change/change?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Change details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-top-5">
+                  <p class="govuk-body">
+                    <a href="reappoint/reappoint?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Reappoint officer</a>
+                  </p>
+                </div> #}
+              </div>
+            {% else %}
+              <div style="display: flex">
+                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
+                  <p class="govuk-body">
+                    <a href="change/start?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Update director details</a>
+                  </p>
+                </div>
+                <div class="govuk-!-padding-top-5">
+                  <p class="govuk-body">
+                    <a href="remove/start?director={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        {% else %}
         <div class="govuk-summary-card govuk-!-margin-bottom-4">
           <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
             <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
@@ -132,6 +331,7 @@
             {% endif %}
           </div>
         </div>
+        {% endif %}
       {% endfor %}
       {% endset -%}
 
