@@ -7,18 +7,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-xl">Change an officer's details on the Companies House register</h1>
-<p class="govuk-body-l">Use this service to change a company officer's details on the Companies House register.</p>
-        <p class="govuk-body">An officer is a director, corporate director or secretary of a company.</p>
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-        <p class="govuk-body">To change a officer's details, you'll need to tell us their:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>date of birth</li>
-          <li>nationality</li>
-          <li>job title</li>
-          <li>correspondence address and home address</li>
-        </ul>
+      <h1 class="govuk-heading-xl">Change a director's details</h1>
+<p class="govuk-body-l">Use this service to tell us about any changes to a company director's details.</p>
+      
       {{ govukButton({
         text: "Start now",
         href: "change",
@@ -34,4 +25,4 @@
       </div>
       </div>
     </div>
-  {% endblock %} 
+  {% endblock %}
