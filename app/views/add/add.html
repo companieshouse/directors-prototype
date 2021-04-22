@@ -16,9 +16,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
             <span class="govuk-caption-xl">{{company.company_name}}</span>
-      <h1 class="govuk-heading-l">What are the details of the officer you want to appoint?</h1>
+      <h1 class="govuk-heading-l">What are the details of the director you want to appoint?</h1>
       {{ govukInsetText({
-        text: "The officer's details will be shown on the Companies House public register."
+        text: "The director's details will be shown on the Companies House public register."
       }) }}
       <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
@@ -32,7 +32,7 @@
           text: "First name"
         },
         hint: {
-          text: "Enter the officer's full first name."
+          text: "Enter the director's full first name."
         },
         classes: "govuk-input--width-20",
         id: "first-name",
@@ -43,7 +43,7 @@
           text: "Middle name or names (optional)"
         },
         hint: {
-          text: "Enter the officer's full middle name or names."
+          text: "Enter the director's full middle name or names."
         },
         classes: "govuk-input--width-20",
         id: "middle-name",
@@ -63,7 +63,7 @@
         name: "previous-name",
         fieldset: {
           legend: {
-            text: "Has the officer used a different name on the Companies House register in the last 20 years?"
+            text: "Has the director used a different name on the Companies House register in the last 20 years?"
           }
         },
         items: [
@@ -96,7 +96,7 @@
           }
         },
          hint: {
-          text: "For example, 27 3 1995.\nOnly the officer's month and year of birth will be shown on the public register." | striptags(true) | escape | nl2br
+          text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the public register." | striptags(true) | escape | nl2br
         }
       }) }}
      <div class="govuk-!-padding-bottom-6">
