@@ -9,12 +9,33 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-l">What do you want to do next?</h1>
-          <a class="govuk-link" href="check-your-answers">Check your answers and submit changes</a><br>
-          <a class="govuk-link" href="../directors">Update more officer information for this company</a><br>
-          <a class="govuk-link" href="company-lookup">Update officer information for a different company</a><br>
-          <a class="govuk-link" href="../confirmation-statement-task-list">Continue submitting your confirmation statement</a><br>
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What do you want to do next?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Check your answers and submit changes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          Update more officer information for this company
+        </label>
+      </div>
     </div>
-  </div>
+    <div>
+    {{ govukButton({
+        text: "Continue",
+        href: "check-your-answers",
+        classes: "govuk-!-margin-top-5"
+      }) }}</div>
+  </fieldset>
+</div>
 {% endblock %}

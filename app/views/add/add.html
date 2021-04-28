@@ -57,26 +57,6 @@
         id: "last-name",
         name: "last-name"
       }) }}
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "previous-name",
-        name: "previous-name",
-        fieldset: {
-          legend: {
-            text: "Has the director used a different name for business purposes in the last 20 years?"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
             <div class="govuk-form-group govuk-input--width-20">
         <label for="autocomplete-default" class="govuk-label">Nationality</label>
         <div id="nationality" class="autocomplete-wrapper"></div>
@@ -109,7 +89,7 @@
       <p class="govuk-body">
         {{ govukButton({
           text: "Continue",
-          href: "address-lookup"
+          href: "address-lookup-home"
         }) }}
       </p>
     </div>

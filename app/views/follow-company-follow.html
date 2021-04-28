@@ -1,0 +1,32 @@
+{% set title = "Sign in to Companies House" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half-from-desktop">
+      <h1 class="govuk-heading-l">Follow a company</h1>
+      <h2 class="govuk-heading-m">{{company.company_name}} ({{company.company_number}})</h2>
+      <p>The email address we'll use to send notifications of the company's activity is [email]</p>
+      <p>Are you suare you want to follow this company?</p>
+      <p>You can unfollow this company at any time.</p>
+      {{ govukButton({
+        text: "Follow this company",
+        href: "directors"
+      }) }}
+      <p class="govuk-body">
+        <a href="director" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

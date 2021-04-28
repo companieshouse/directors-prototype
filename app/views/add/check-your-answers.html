@@ -13,10 +13,41 @@
 }) }}
 {% endblock %}
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-l">Check your answers before submitting your changes</h1>
-      <h2 class="govuk-heading-m">New director details</h2>
+     
+      <h2 class="govuk-heading-m">Company details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+       <h2 class="govuk-heading-m">New director details</h2>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -97,8 +128,12 @@
           </dd>
         </div>
       </dl>
+      <div>
+        <p>A statement of consent to act is required in the place of a signature.</p><br>
+        <p>By submitting this report the company confirms that the person named has consented to act as a director</p>
+      </div>
         {{ govukButton({
-          text: "Submit",
+          text: "Confirm and submit",
           href: "confirmation"
         }) }}
       </form>

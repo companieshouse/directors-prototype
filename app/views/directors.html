@@ -25,7 +25,9 @@
       </div>
       {% extends "layout.html" %}
       {{ govukButton({
-  text: "Follow this company"
+  text: "Follow this company",
+  href: "follow-company-sign-in"
+
   }) }}
 
       {{ govukButton({
@@ -333,6 +335,43 @@
         </div>
         {% endif %}
       {% endfor %}
+      {% endset -%}
+
+      {% set overviewHtml %}
+
+      <div>
+        <p class="govuk-body">
+          Registered office address
+        </p>
+      </div>
+      <div>
+        <p class="govuk-body">
+          Company status
+        </p>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p>Company type</p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <p>Incorporated on</p>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p>Accounts</p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <p>Confirmation statement</p>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p>Nature of business (SIC)</p>
+        </div>
+      </div>
+
+
       {% endset -%}
 
       {% set filingHistoryHtml %}
