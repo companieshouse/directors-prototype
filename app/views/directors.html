@@ -343,11 +343,47 @@
         <p class="govuk-body">
           Registered office address
         </p>
+        <div>
+          {% if officer.address.premises %}
+            {{officer.address.premises}},
+          {% endif %}
+          {% if officer.address.address_line_1 %}
+            {{officer.address.address_line_1}},
+          {% endif %}
+          {% if officer.address.address_line_2 %}
+            {{officer.address.address_line_2}},
+          {% endif %}
+          {% if officer.address.locality %}
+            {{officer.address.locality}},
+          {% endif %}
+          {% if officer.address.region %}
+            {{officer.address.region}},
+          {% endif %}
+          {% if officer.address.postal_code %}
+            {{officer.address.postal_code}}
+          {% endif %}
+        </div>
       </div>
       <div>
         <p class="govuk-body">
           Company status
+          {% if officer.resigned_on %}
+            {{govukTag({
+              text: "Resigned",
+              classes: "govuk-tag--orange"
+            })
+          }}
+          {% else %}
+            {{govukTag({
+              text: "Active",
+              classes: "govuk-tag--green"
+            })
+          }}
+          {% endif %}
         </p>
+        <div>
+          
+        </div>
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
