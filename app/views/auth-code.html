@@ -14,7 +14,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/directors#people" method="post">
+      <form action="/auth-code" method="post">
         {% if errorAuth == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",
@@ -36,18 +36,16 @@
             }
           }) }}
         {% else %}
-          {{ govukInput({
-            label: {
-              text: "Enter the company authentication code ",
-              classes: "govuk-label--l"
-            },
-            classes: "govuk-input--width-5",
-            hint: {
-              text: "You need the authentication code to submit company information for " + company.company_name + "."
-            },
-            id: "authNumber",
-            name: "authNumber"
-          }) }}
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+              Enter the company authentication code
+            </label>
+          </h1>
+          <div id="event-name-hint" class="govuk-hint">
+           You need the authentication code to submit company information for {{company.company_name}}.
+          </div>
+          <input class="govuk-input" id="authNumber" name="authNumber" type="text" aria-describedby="event-name-hint">
+        </div>
         {% endif %}
         {{ govukDetails({
           summaryText: "Help with authentication code",
