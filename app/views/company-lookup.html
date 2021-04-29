@@ -44,10 +44,16 @@
               name: "companynumber"
             }) }}
         {% endif %}
-        {{ govukDetails({
-          summaryText: "How do I find the company number?",
-          html: "<p>Use the <a target='blank' href='https://beta.companieshouse.gov.uk/'>Companies House service</a> to find company details (opens in a new window or tab).</p>"
-        }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with company number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can find this by searching for the company on the <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+          </div>
+        </details>
         {{ govukButton({
           text: "Continue"
         }) }}
