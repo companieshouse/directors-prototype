@@ -184,7 +184,7 @@ router.post('/auth-code', function (req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error)
     req.session.officers = response.body
-    res.redirect('/directors')
+    res.redirect('/directors#people')
   })
 })
 
