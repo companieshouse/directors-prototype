@@ -6,220 +6,202 @@
 
 {% block content %}
 
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-width">
       <h1 class="govuk-heading-xl">
-        Service name prototype
+        {{serviceName}}
         <span class="govuk-caption-xl">Version 2</span>
       </h1>
-          <div class="govuk-tabs" data-module="govuk-tabs">
-            <h4 class="govuk-tabs__title">
-              Contents
-            </h4>
-            <ul class="govuk-tabs__list">
-              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                <a class="govuk-tabs__tab" href="#code">
-                  Shortcuts
-                </a>
-              </li>
-              <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="#form-versions">
-                  Previous versions
-                </a>
-              </li>
-            </ul>
-            <div class="govuk-tabs__panel" id="code">
-              <ul class="govuk-list govuk-list--bullet">
-                <li>
-                  <a href="start">GOV.UK start page</a>
-                </li>
-                <li>
-                  <a href="start-c">GOV.UK start page (Welsh)</a>
-                </li>
-                <li>
-                  <a href="sign-in">Sign in to Companies House</a>
-                </li>
-                <li>
-                  <a href="company-lookup">Company lookup</a>
-                </li>
-                <li>
-                  <a href="confirm-company">Confirm company</a>
-                </li>
-                <li>
-                  <a href="auth-code">Company authentication code</a>
-                </li>
-                <li>
-                  <a href="directors">Directors</a>
-                </li>
-                
-                <div class="govuk-body">
-                  <h2 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-5">Add a director's details</h2>
-                </div>
-                <li>
-                  <a href="add/add">Add a director's details</a>
-                </li>
-                <li>
-                  <a href="add/address-lookup-home">Add a director's home address lookup</a>
-                </li>
-                <li>
-                  <a href="add/address-manual-home">Add a director's home address manual</a>
-                </li>
-                <li>
-                  <a href="add/address-lookup-postal">Add a director's postal address lookup</a>
-                </li>
-                <li>
-                  <a href="add/address-manual-postal">Add a director's postal address manual</a>
-                </li>
-                <li>
-                  <a href="add/date-of-appointment">Add a director's date of appointment</a>
-                </li>
-                <li>
-                  <a href="add/next">Add a director next page</a>
-                </li>
-                <li>
-                  <a href="add/check-your-answers">Add a director's details check your answers</a>
-                </li>
-                <li>
-                  <a href="add/confirmation">Add a director's details confirmation</a>
-                </li>
-                <div class="govuk-body">
-                  <h2 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-5">Change a director's details</h2>
-                </div>
-                <li>
-                  <a href="change/change">Change a director's details</a>
-                </li>
-                <li>
-                  <a href="change/next">Change a director's details next page</a>
-                </li>
-                 <li>
-                  <a href="change/check-your-answers">Change a director's details check your answers</a>
-                </li>
-                 <li>
-                  <a href="change/confirmation">Change a director's details confirmation</a>
-                </li>
-                <div class="govuk-body">
-                  <h2 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-5">Remove a director's details</h2>
-                </div>
-                <li>
-                  <a href="remove/remove">Remove a director's details</a>
-                </li>
-                <li>
-                  <a href="remove/next">Remove a director's details next page</a>
-                </li>
-                <li>
-                  <a href="remove/check-your-answers">Remove a director's details check your answers</a>
-                </li>
-                <li>
-                  <a href="remove/confirmation">Remove a director's details confirmation</a>
-                </li>
-              </ul>
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h4 class="govuk-tabs__title">
+          Contents
+        </h4>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#code">
+              Shortcuts
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#form-versions">
+              Previous versions
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="code">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="start">GOV.UK start page</a>
+            </li>
+            <li>
+              <a href="sign-in">Sign in to Companies House</a>
+            </li>
+            <li>
+              <a href="company-lookup">Company lookup</a>
+            </li>
+            <li>
+              <a href="confirm-company">Confirm company</a>
+            </li>
+            <li>
+              <a href="auth-code">Company authentication code</a>
+            </li>
+            <li>
+              <a href="directors">Directors</a>
+            </li>
+
+            <div class="govuk-body">
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-5">Add a officer's details</h2>
             </div>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
-              <table class="govuk-table version-history">
-                <caption class="govuk-table__caption govuk-heading-l">Previous versions</caption>
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">Changes</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">Status</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                      <a href="https://directors-project.herokuapp.com/">Version 1</a>
-                    </th>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell">
-                      <details class="govuk-details" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span class="govuk-details__summary-text">
-                            Changes included in version 1
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <ul class="govuk-list--bulletlist">
-                            
-                            <li>
-                              Added the following pages
-                            <a href="start">GOV.UK start page</a>,
-                            <a href="start-c">GOV.UK start page (Welsh)</a>,
-                            <a href="sign-in">Sign in to Companies House</a>,
-                            <a href="company-lookup">Company lookup</a>,
-                            <a href="confirm-company">Confirm company</a>,
-                            <a href="auth-code">Company auth code</a>,
-                            <a href="directors">Directors</a>,
-                            <a href="add/add">Add a director's details</a>,                                      
-                            <a href="add/check-your-answers">Add a director's details check your answers</a>,
-                            <a href="add/confirmation">Add a director's details confirmation</a>,
-                            <a href="change/change">Change a director's details</a>,
-                            <a href="change/check-your-answers">Change a director's details check your answers</a>,
-                            <a href="change/confirmation">Change a director's details confirmation</a>,
-                            <a href="remove/remove">Remove a director's details</a>,
-                            <a href="remove/check-your-answers">Remove a director's details check your anwers</a> and
-                            <a href="remove/confirmation">Remove a director's details confirmation</a>
-                        </li>
-                          </ul>
-                        </div>
-                      </details>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <strong class="govuk-tag govuk-tag--green">
-                        Proof of Concept
-                      </strong>
-                    </td>
-                  </tr>
-                                    <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                      <a href="https://directors-project-v2.herokuapp.com/">Version 2</a>
-                    </th>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell">
-                      <details class="govuk-details" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span class="govuk-details__summary-text">
-                            Changes included in version 2
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <ul class="govuk-list--bulletlist">
-                            
-                            <li>
-                              Added the following pages
-                            <a href="company-lookup">Company lookup</a>,
-                            <a href="directors">Directors</a>,
-                            <a href="add/start">Add an officer's details start page</a>,
-                            <a href="add/address-lookup-home">Add a director's home address lookup</a>,          
-                            <a href="add/address-manual-home">Add a director's home address manual</a>,           
-                            <a href="add/address-lookup-postal">Add a director's postal address lookup</a>,           
-                            <a href="add/address-manual-postal">Add a director's postal address manual</a>,
-                            <a href="add/date-of-appointment">Add a director's date of appointment</a>,
-                            <a href="add/next">Add a director next page</a>,
-                            <a href="change/start">Update an officer's details start page</a>,
-                            <a href="change/next">Update an officer's details next page</a>,
-                            <a href="remove/start">Remove an officer's details start page</a>,
-                            <a href="remove/start">Remove an officer's details next page</a>,
-                            <a href="address/start">Change office address start page</a>,
-                            <a href="add/next">Next (adding an officer's details)</a>,
-                            <a href="change/next">Next (changing an officer's details)</a>,
-                            <a href="remove/next">Next (removing an officer's details)</a>,
-                            <a href="task-list">Confirmation statement task list</a>
-                        </li>
-                          </ul>
-                        </div>
-                      </details>
-                    </td>
-                    <td class="govuk-table__cell">
-                      <strong class="govuk-tag govuk-tag--green">
-                        Proof of Concept
-                      </strong>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <li>
+              <a href="add/add">Add a director's details</a>
+            </li>
+            <li>
+              <a href="add/address-lookup-home">Add a director's home address lookup</a>
+            </li>
+            <li>
+              <a href="add/address-manual-home">Add a director's home address manual</a>
+            </li>
+            <li>
+              <a href="add/address-lookup-postal">Add a director's postal address lookup</a>
+            </li>
+            <li>
+              <a href="add/address-manual-postal">Add a director's postal address manual</a>
+            </li>
+            <li>
+              <a href="add/date-of-appointment">Add a director's date of appointment</a>
+            </li>
+            <li>
+              <a href="add/next">Add a director next page</a>
+            </li>
+            <li>
+              <a href="add/check-your-answers">Add a director's details check your answers</a>
+            </li>
+            <li>
+              <a href="add/confirmation">Add a director's details confirmation</a>
+            </li>
+            <div class="govuk-body">
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-5">Update an officer's details</h2>
             </div>
+            <li>
+              <a href="change/change">Change a director's details</a>
+            </li>
+            <li>
+              <a href="change/next">Change a director's details next page</a>
+            </li>
+            <li>
+              <a href="change/check-your-answers">Change a director's details check your answers</a>
+            </li>
+            <li>
+              <a href="change/confirmation">Change a director's details confirmation</a>
+            </li>
+          </ul>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
+          <table class="govuk-table version-history">
+            <caption class="govuk-table__caption govuk-heading-l">Previous versions</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">Changes</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a href="https://directors-project.herokuapp.com/">Version 1</a>
+                </th>
+                <td class="govuk-table__cell">N/A</td>
+                <td class="govuk-table__cell">
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Changes included in version 1
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <ul class="govuk-list--bulletlist">
+
+                        <li>
+                          Added the following pages
+                          <a href="start">GOV.UK start page</a>,
+                          <a href="start-c">GOV.UK start page (Welsh)</a>,
+                          <a href="sign-in">Sign in to Companies House</a>,
+                          <a href="company-lookup">Company lookup</a>,
+                          <a href="confirm-company">Confirm company</a>,
+                          <a href="auth-code">Company auth code</a>,
+                          <a href="directors">Directors</a>,
+                          <a href="add/add">Add a director's details</a>,
+                          <a href="add/check-your-answers">Add a director's details check your answers</a>,
+                          <a href="add/confirmation">Add a director's details confirmation</a>,
+                          <a href="change/change">Change a director's details</a>,
+                          <a href="change/check-your-answers">Change a director's details check your answers</a>,
+                          <a href="change/confirmation">Change a director's details confirmation</a>,
+                          <a href="remove/remove">Remove a director's details</a>,
+                          <a href="remove/check-your-answers">Remove a director's details check your anwers</a>
+                          and
+                          <a href="remove/confirmation">Remove a director's details confirmation</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Proof of Concept
+                  </strong>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a href="https://directors-project-v2.herokuapp.com/">Version 2</a>
+                </th>
+                <td class="govuk-table__cell">N/A</td>
+                <td class="govuk-table__cell">
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Changes included in version 2
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <ul class="govuk-list--bulletlist">
+
+                        <li>
+                          Added the following pages
+                          <a href="company-lookup">Company lookup</a>,
+                          <a href="directors">Directors</a>,
+                          <a href="add/start">Add an officer's details start page</a>,
+                          <a href="add/address-lookup-home">Add a director's home address lookup</a>,
+                          <a href="add/address-manual-home">Add a director's home address manual</a>,
+                          <a href="add/address-lookup-postal">Add a director's postal address lookup</a>,
+                          <a href="add/address-manual-postal">Add a director's postal address manual</a>,
+                          <a href="add/date-of-appointment">Add a director's date of appointment</a>,
+                          <a href="add/next">Add a director next page</a>,
+                          <a href="change/start">Update an officer's details start page</a>,
+                          <a href="change/next">Update an officer's details next page</a>,
+                          <a href="remove/start">Remove an officer's details start page</a>,
+                          <a href="remove/start">Remove an officer's details next page</a>,
+                          <a href="address/start">Change office address start page</a>,
+                          <a href="add/next">Next (adding an officer's details)</a>,
+                          <a href="change/next">Next (changing an officer's details)</a>,
+                          <a href="remove/next">Next (removing an officer's details)</a>,
+                          <a href="task-list">Confirmation statement task list</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Proof of Concept
+                  </strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
