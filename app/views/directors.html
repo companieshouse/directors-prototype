@@ -17,8 +17,8 @@
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">{{company.company_name}}</h1>
       {{ govukButton({
-       text: "Appoint new officer",
-            href: "add/add"
+         text: "Appoint new officer",
+         href: "add/add"
        }) }}
       <h2 class="govuk-heading-m">Active officers</h2>
       {% for officer in officers.items %}
@@ -31,8 +31,8 @@
                   classes: "govuk-tag--green"
                 })}}
             </div>
-            <div style="display: flex" class="govuk-!-padding-1">
-              <dl style="display: block" class="govuk-summary-list govuk-!-margin-3">
+            <div class="govuk-!-padding-1">
+              <dl class="govuk-summary-list govuk-!-margin-3">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Correspondence address</dt>
                   <dd class="govuk-summary-list__value">
@@ -71,14 +71,10 @@
                 </div>
               </dl>
             </div>
-            <div>
-              <div style="display: flex">
-                <div class="govuk-!-padding-top-5 govuk-!-padding-left-3 govuk-!-padding-right-8">
-                  <p class="govuk-body">
-                    <a href="update/what-do-you-want-to-do?={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Update officer details</a>
-                  </p>
-                </div>
-              </div>
+            <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+              <p class="govuk-body">
+                <a href="update/what-do-you-want-to-do?={{officer.links.self}}" class="govuk-link govuk-link--no-visited-state">Update officer details</a>
+              </p>
             </div>
           </div>
         {% endif %}
