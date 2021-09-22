@@ -15,8 +15,10 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      {% set remove %}
-      {{ govukDateInput({
+      <form action="/update/what-do-you-want-to-do" method="post">
+
+        {% set remove %}
+        {{ govukDateInput({
         id: "passport-issued",
         namePrefix: "passport-issued",
         fieldset: {
@@ -28,10 +30,10 @@
           text: "For example, 27 3 2007"
         }
       }) }}
-      {% endset -%}
-      {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
+        {% endset -%}
+        {{ govukRadios({
+  idPrefix: "what-do-you-want-to-do",
+  name: "what-do-you-want-to-do",
   fieldset: {
     legend: {
       text: "What do you want to do?",
@@ -41,11 +43,11 @@
   },
   items: [
     {
-      value: "england",
+      value: "update",
       text: "Update officer details"
     },
     {
-      value: "scotland",
+      value: "remove",
       text: "Remove officer",
       conditional: {
   html: remove
@@ -53,10 +55,10 @@
     }
   ]
 }) }}
-      {{ govukButton({
-  text: "Continue",
-  href: "check-your-answers"
+        {{ govukButton({
+  text: "Continue"
 }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

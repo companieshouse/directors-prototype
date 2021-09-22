@@ -163,4 +163,42 @@ router.post('/auth-code', function (req, res) {
   })
 })
 
+// Update details options
+router.get('/update/what-do-you-want-to-do', function (req, res) {
+  res.render('update/what-do-you-want-to-do', {
+    backLink: req.headers.referrer || req.headers.referer,
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/update/what-do-you-want-to-do', function (req, res) {
+  // Create a variable called errors
+  const errors = []
+  var value = req.session.data['what-do-you-want-to-do']
+  // Create an if condition
+  // In this if condition it is checking if radio-input is blank
+  if (typeof req.session.data['what-do-you-want-to-do'] === 'undefined') {
+    // If it is blank then update the errors variable with the error text
+    errors.push({
+      text: 'Select an option',
+      href: '#what-do-you-want-to-do'
+    })
+    // Show the user the radio input page again
+    res.render('update/what-do-you-want-to-do', {
+      // Declare there are errors
+      errorRadio: true,
+      // List all of the errors on the page
+      errorList: errors
+    })
+  } if (value === 'remove') {
+    res.redirect('check-your-answers')
+  // If everything is fine then do this
+  } if (value === 'update') {
+    res.redirect('change')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('check-your-answers')
+  }
+})
+
 module.exports = router
