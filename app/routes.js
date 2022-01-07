@@ -114,10 +114,10 @@ router.post('/remove/remove', function (req, res) {
   res.redirect('../directors')
 })
 
-router.get('/change/change', function (req, res) {
+router.get('/update/change', function (req, res) {
   var request = require('request')
   var apiKey = process.env.CHS_API_KEY
-  var directorId = req.query.director
+  var directorId = req.query.officer
   var options = {
     'method': 'GET',
     'url': 'https://api.company-information.service.gov.uk/' + directorId,
@@ -128,7 +128,7 @@ router.get('/change/change', function (req, res) {
   }
   request(options, function (error, response) {
     if (error) throw new Error(error)
-    res.render('change/change', {
+    res.render('update/change', {
       // To use the company data on that page use the following
       director: response.body
     })
@@ -165,6 +165,8 @@ router.post('/auth-code', function (req, res) {
 
 // Update details options
 router.get('/update/what-do-you-want-to-do', function (req, res) {
+  req.session.officerupdate = req.query.officer
+  console.log(req.session.officerupdate)
   res.render('update/what-do-you-want-to-do', {
     backLink: req.headers.referrer || req.headers.referer,
     currentUrl: req.originalUrl
@@ -194,11 +196,13 @@ router.post('/update/what-do-you-want-to-do', function (req, res) {
     res.redirect('check-your-answers')
   // If everything is fine then do this
   } if (value === 'update') {
-    res.redirect('change')
+    res.redirect('change?officer=' + req.session.officerupdate)
   } else {
     // res.redirect goes to whichever page you want
     res.redirect('check-your-answers')
   }
-})
+}
+)
+
 
 module.exports = router
