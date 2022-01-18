@@ -8,12 +8,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">{{serviceName}}</h1>
-      <p class="govuk-body-l">Use this service to update company officer information on the Companies House register.</p>
-      <p class="govuk-body">An officer is a director, corporate director or secretary of a company. In this service, you can:</p>
+      <p class="govuk-body-l">Use this service to update director information on the Companies House register.</p>
+      <p class="govuk-body">In this service, you can:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>appoint a new officer</li>
-        <li>update an existing officer's details</li>
-        <li>remove an officer</li>
+        <li>appoint a new director</li>
+        <li>update an existing director's details</li>
+        <li>remove a director</li>
+      </ul>
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p class="govuk-body">You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to sign in to or create a Companies House account</li>
+        <li>your company authentication code</li>
       </ul>
      {{ govukButton({
         text: "Start now",
@@ -22,12 +28,7 @@
         isStartButton: true
       }) }}
 
-      <h2 class="govuk-heading-m">Before you start</h2>
-      <p class="govuk-body">You'll need:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>email address and password you used to sign up for the Companies House online service</li>
-        <li>authentication code Companies House sent you</li>
-      </ul>
+
     </div>
   </div>
 {% endblock %}
