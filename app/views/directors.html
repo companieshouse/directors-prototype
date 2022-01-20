@@ -20,9 +20,9 @@
          text: "Appoint new director",
          href: "add/add"
        }) }}
-      <h2 class="govuk-heading-m">Active officers</h2>
+      <h2 class="govuk-heading-m">Active directors</h2>
       {% for officer in officers.items %}
-        {% if not officer.resigned_on %}
+        {% if not (officer.resigned_on) and (officer.officer_role == 'director') %}
           <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
               <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
