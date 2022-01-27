@@ -1,28 +1,30 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
+
 {% block pageTitle %}
   {{company.company_name}}
   -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+         <form action="/address-lookup/address-lookup-home" method="post">
+
       <h1 class="govuk-heading-l">What is the director's postal address?</h1>
       <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.</p>
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
       {{ govukInsetText({
-  text: "This address will be publicly available on the Companies House online register."
-}) }}
-
+        text: "This address will be publicly available on the Companies House online register."
+      }) }}
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -58,7 +60,6 @@
         id: "addressOne",
         name: "addressOne"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Address line 2 (optional)"
@@ -66,7 +67,6 @@
         id: "addressTwo",
         name: "addressTwo"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Town"
@@ -74,7 +74,6 @@
         id: "town",
         name: "town"
       }) }}
-
       {{ govukInput({
         label: {
           text: "County (optional)"
@@ -82,7 +81,6 @@
         id: "county",
         name: "county"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Country"
@@ -90,7 +88,6 @@
         id: "country",
         name: "country"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Postcode"
@@ -98,11 +95,11 @@
         id: "postcode",
         name: "postcode"
       }) }}
-
       {{ govukButton({
         text: "Continue",
         href: "date-of-appointment"
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

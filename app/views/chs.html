@@ -1,0 +1,409 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{company.company_name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group border">
+  <input placeholder="Search for a company or officer" value="" title="Search for a company or officer" class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<p class="govuk-body-s"><a href="#" class="govuk-link">Advanced company search</a></p>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">TESCO PLC</h1>
+<p class="govuk-body">Company number 00445790</p>
+{{ govukButton({
+  text: "Follow this company"
+}) }}
+{{ govukButton({
+  text: "File for this company"
+}) }}
+
+{% set pastDayHtml %}
+<p class="govuk-body">Registered office address</p>
+<p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+
+<p class="govuk-body">Company status</p>
+<p class="govuk-body govuk-!-font-weight-bold">Active</p>
+
+<p class="govuk-body">Company type</p>
+<p class="govuk-body govuk-!-font-weight-bold">Public limited Company</p>
+
+<p class="govuk-body">Incorporated on</p>
+<p class="govuk-body govuk-!-font-weight-bold">27 November 1947</p>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">Past week</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "18"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "16"
+      },
+      {
+        text: "20"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "27"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Past month</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98"
+      },
+      {
+        text: "95"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122"
+      },
+      {
+        text: "131"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126"
+      },
+      {
+        text: "142"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Past month</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98"
+      },
+      {
+        text: "95"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122"
+      },
+      {
+        text: "131"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126"
+      },
+      {
+        text: "142"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Past year</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380"
+      },
+      {
+        text: "1472"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129"
+      },
+      {
+        text: "1083"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "1539"
+      },
+      {
+        text: "1265"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Past month</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98"
+      },
+      {
+        text: "95"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122"
+      },
+      {
+        text: "131"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126"
+      },
+      {
+        text: "142"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set people %}
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Filter officers",
+      classes: "govuk-!-font-weight-bold"
+    }
+  },
+  items: [
+    {
+      value: "carcasses",
+      text: "Current officers"
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Appoint a director"
+}) }}
+{{ govukButton({
+  text: "Change the details of a director"
+}) }}
+{{ govukButton({
+  text: "Terminate an appointment of a director"
+}) }}
+
+<p class="govuk-body govuk-!-font-weight-bold"> 68 officers / 54 resignations</p>
+
+<h3 class="govuk-heading-m">WELCH, Robert John</h3>
+<p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+<p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+<p class="govuk-body govuk-!-font-weight-bold">Secretary</p>
+<p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+<p class="govuk-body govuk-!-font-weight-bold">10 August 2016 </p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">ALLAN, John Murray</h3>
+<p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+<p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+<p class="govuk-body govuk-!-font-weight-bold">Director</p>
+<p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">BETHELL, Melissa</h3>
+<p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+<p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+<p class="govuk-body govuk-!-font-weight-bold">Director</p>
+<p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">BODSON, Bertrand</h3>
+<p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
+<p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<p class="govuk-body govuk-!-margin-bottom-2">Role</p>
+<p class="govuk-body govuk-!-font-weight-bold">Director</p>
+<p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Overview",
+      id: "overview",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Filing history",
+      id: "filing-history",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    {
+      label: "People",
+      id: "people",
+      panel: {
+        html: people
+      }
+    },
+    {
+      label: "Charges",
+      id: "charges",
+      panel: {
+        html: pastYearHtml
+      }
+    },
+    {
+      label: "More",
+      id: "more",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+    </div>
+  </div>
+
+{% endblock %}

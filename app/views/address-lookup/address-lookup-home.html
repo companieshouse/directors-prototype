@@ -1,4 +1,5 @@
 {% set title = "Enter the company authentication code" %}
+
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{company.company_name}}
@@ -6,23 +7,22 @@
   {{serviceName}}
   - GOV.UK
 {% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+     <form action="/address-lookup/address-lookup-home" method="post">
       <h1 class="govuk-heading-l">What is the director's home address?</h1>
-
       <div id="changed-name-hint" class="govuk-hint">
         This address will not be shown on the Companies House public register.
       </div>
-
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
       {{ govukInput({
         label: {
           text: "UK postcode"

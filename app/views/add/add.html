@@ -1,5 +1,6 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
+
 {% block pageTitle %}
   {{company.company_name}}
   -
@@ -12,9 +13,11 @@
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/address-lookup-home" method="post">
       <h1 class="govuk-heading-l">What are the details of the director you want to appoint?</h1>
       {{ govukInsetText({
         text: "The director's details will be shown on the Companies House public register."
@@ -24,8 +27,6 @@
         <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx.</p>
         <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
       </div>
-      <script src="/public/javascripts/accessible-autocomplete.js"></script>
-      <script src="/public/javascripts/titles.js"></script>
       {{ govukInput({
         label: {
           text: "First name"
@@ -63,9 +64,6 @@
       <p class="govuk-body">
         <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
       </p>
-      <script src="/public/javascripts/accessible-autocomplete.js"></script>
-      <script src="/public/javascripts/nationality.js"></script>
-
       {{ govukDateInput({
         id: "dob",
         namePrefix: "dob",
@@ -83,14 +81,19 @@
         <p class="govuk-hint">For example, carpenter.</p>
         <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
       </div>
-      <script src="/public/javascripts/accessible-autocomplete.js"></script>
-      <script src="/public/javascripts/occupation.js"></script>
+
       <p class="govuk-body">
         {{ govukButton({
           text: "Continue",
           href: "address-lookup-home"
         }) }}
       </p>
+      </form>
     </div>
   </div>
+  
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/occupation.js"></script>
+<script src="/public/javascripts/nationality.js"></script>
+<script src="/public/javascripts/titles.js"></script>
 {% endblock %}

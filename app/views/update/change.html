@@ -15,165 +15,100 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/change" method="post">
       <span class="govuk-caption-xl">{{director.name}}</span>
       <h1 class="govuk-heading-l">Change a director's details</h1>
       {{ govukInsetText({
         text: "The director's details will be shown on the Companies House public register."
       }) }}
-      <div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
-        <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx.</p>
-        <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
-      </div>
-      <script src="/public/javascripts/accessible-autocomplete.js"></script>
-      <script src="/public/javascripts/titles.js"></script>
-      {{ govukInput({
-        label: {
-          text: "First name"
-        },
-        hint: {
-          text: "Enter the director's full first name."
-        },
-        classes: "govuk-input--width-20",
-        id: "first-name",
-        value: director.name,
-        name: "first-name"
-      }) }}
-      {{ govukInput({
-        label: {
-          text: "Middle name or names (optional)"
-        },
-        hint: {
-          text: "Enter the director's full middle name or names."
-        },
-        classes: "govuk-input--width-20",
-        id: "middle-name",
-        name: "middle-name"
-      }) }}
-      {{ govukInput({
-        label: {
-          text: "Last name"
-        },
-        classes: "govuk-input--width-20",
-        id: "last-name",
-        value: director.name,
-        name: "last-name"
-      }) }}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{director.name}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{director.nationality}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="nationality">
+              Change<span class="govuk-visually-hidden"> nationality</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Job title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{director.occupation}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="job-title">
+              Change<span class="govuk-visually-hidden"> job title</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> correspondence address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of residence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{director.nationality}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="country-of-residence">
+              Change<span class="govuk-visually-hidden"> country</span>
+            </a>
+          </dd>
+        </div>
 
-      {% set formerName %}
-      {{ govukInput({
-        id: "former-name",
-        name: "former-name",
-        type: "text",
-        spellcheck: false,
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          text: "Former first name and surname"
-        }
-      }) }}
-      {% endset -%}
-
-      {{ govukRadios({
-        idPrefix: "contact",
-        name: "contact",
-        fieldset: {
-                legend: {
-                  text: "Has the director used a different name on the Companies House register in the last 20 years?"
-                }
-              },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: formerName
-            }
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-      <p class="govuk-body govuk-!-margin-bottom-1">Address</p>
-      <p class="govuk-body govuk-!-margin-bottom-2 govuk-body govuk-!-font-weight-bold">
-        {% if director.address.premises %}
-          {{director.address.premises}},
-        {% endif %}
-        {% if director.address.address_line_1 %}
-          {{director.address.address_line_1}},
-        {% endif %}
-        {% if director.address.address_line_2 %}
-          {{director.address.address_line_2}},
-        {% endif %}
-        {% if director.address.locality %}
-          {{director.address.locality}},
-        {% endif %}
-        {% if director.address.region %}
-          {{director.address.region}},
-        {% endif %}
-        {% if director.address.postal_code %}
-          {{director.address.postal_code}}
-        {% endif %}
-      </p>
-      <p class="govuk-body govuk-!-margin-bottom-6">
-        <a href="../address/company-address" class="govuk-link govuk-link--no-visited-state">Change address</a>
-      </p>
-        {% if director.officer_role === "director" %}
-      <div class="govuk-form-group govuk-!-margin-bottom-2">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">Nationality</label></h1>
-        <input value="{{director.nationality}}" class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-      </div>
-      <p class="govuk-body govuk-!-margin-bottom-6">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
-      </p>
-            {% endif %}
-      <div class="govuk-form-group govuk-!-margin-top-4">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend">
-            Date of birth
-          </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 1995. Only the director's month and year of birth will be shown on the public register.
-          </div>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" value="20" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="2" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" value="1980" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      {% if director.officer_role === "director" %}
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label" for="occupation">Job title</label></h1>
-        <div id="occupation-hint" class="govuk-hint">For example, carpenter.</div>
-        <input class="govuk-input" value="{{director.occupation}}" id="occupation" name="occupation" type="text">
-      </div>
-      {% endif %}
-      <p class="govuk-body">
+      </dl>
         {{ govukButton({
-          text: "Continue",
-          href: "address-lookup"
+          text: "Submit changes",
+          href: "../confirmation"
         }) }}
-      </p>
+      <p class="govuk-body">
+      <a href="../directors" class="govuk-link govuk-link--no-visited-state">Cancel changes</a><p>
+      </form>
     </div>
   </div>
 {% endblock %}

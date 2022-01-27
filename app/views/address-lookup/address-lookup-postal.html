@@ -15,14 +15,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+         <form action="/address-lookup/address-lookup-home" method="post">
+
       <h1 class="govuk-heading-l">What is the director's postal address?</h1>
       <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.</p>
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
       {{ govukInsetText({
-  text: "This address will be publicly available on the Companies House online register."
-}) }}
-
+        text: "This address will be publicly available on the Companies House online register."
+      }) }}
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -35,13 +34,11 @@
         <div class="govuk-details__text">
           If you run your company from home and do not want your home address to be available to the public, there is a
           <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>.
-
         </div>
         <div class="govuk-details__text">
           A quick online search will show other providers who offer similar services. All providers will charge a fee.
         </div>
       </details>
-
       {{ govukInput({
         label: {
           text: "UK postcode"
@@ -66,6 +63,7 @@
       <p class="govuk-body">
         <a href="address-manual-postal" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
       </p>
+      </form>
     </div>
   </div>
 {% endblock %}
