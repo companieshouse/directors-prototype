@@ -21,4 +21,8 @@ module.exports = function (router) {
     })
     // Render the confirm company page
   })
+
+  router.post('/update/change', function (req, res) {
+    res.redirect('/confirmation?type=change')
+  })
 }

@@ -14,7 +14,7 @@
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">{{company.company_name}}</h1>
       {{ govukButton({
          text: "Appoint new director",
@@ -28,7 +28,7 @@
               <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
             </div>
             <div class="govuk-!-padding-1">
-              <dl class="govuk-summary-list govuk-!-margin-3">
+              <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Role</dt>
                   <dd class="govuk-summary-list__value">

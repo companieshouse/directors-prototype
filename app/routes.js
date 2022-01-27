@@ -31,6 +31,14 @@ router.get('/check-your-answers', function (req, res) {
   })
 })
 
+router.get('/confirmation', function (req, res) {
+  // Render the confirm company page
+  res.render('confirmation', {
+    // To use the company data on that page use the following
+    type: req.query.type,
+  })
+})
+
 router.get('/auth-code', function (req, res) {
 // Render the confirm company page
   res.render('auth-code', {

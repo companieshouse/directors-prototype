@@ -10,7 +10,59 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      {{ govukPanel({
+      <!--Change of the director-->
+      {% if type == 'change' %}
+        {{ govukPanel({
+       titleText: "Update received",
+       html: "Your reference number is<br><strong>HDJ2123F</strong>"
+      }) }}
+      {{ govukTable({
+        rows: [
+        [
+          {
+            text: "Update type"
+          },
+          {
+            text: "Change of a director"
+          }
+        ],
+          [
+            {
+              text: "Company number"
+            },
+            {
+              text: "00066516"
+            }
+          ],
+          [
+            {
+              text: "Company name"
+            },
+            {
+              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
+            }
+          ],
+          [
+            {
+              text: "Officer name"
+            },
+            {
+              text: "Miss Anna Thomas"
+            }
+          ],
+          [
+            {
+              text: "Appointed on"
+            },
+            {
+              text: "28 April 2021"
+            }
+          ]
+        ]
+      }) }}
+      <!--Appointment of the director-->
+      {% elif type == 'appoint' %}
+        {{ govukPanel({
        titleText: "Update received",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
       }) }}
@@ -58,6 +110,57 @@
           ]
         ]
       }) }}
+      <!--Removal of the director-->
+      {% else %}
+        {{ govukPanel({
+       titleText: "Update received",
+       html: "Your reference number is<br><strong>HDJ2123F</strong>"
+      }) }}
+      {{ govukTable({
+        rows: [
+        [
+          {
+            text: "Update type"
+          },
+          {
+            text: "Removal of a director"
+          }
+        ],
+          [
+            {
+              text: "Company number"
+            },
+            {
+              text: "00066516"
+            }
+          ],
+          [
+            {
+              text: "Company name"
+            },
+            {
+              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
+            }
+          ],
+          [
+            {
+              text: "Officer name"
+            },
+            {
+              text: "Miss Anna Thomas"
+            }
+          ],
+          [
+            {
+              text: "Appointed on"
+            },
+            {
+              text: "28 April 2021"
+            }
+          ]
+        ]
+      }) }}
+      {% endif %}
       <h3 class="govuk-heading-m">What happens next</h3>
       <p class="govuk-body">We'll send a confirmation email to
         <strong>pdavies@gmail.com</strong>
