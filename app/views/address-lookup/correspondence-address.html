@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-         <form action="/address-lookup/address-lookup-home" method="post">
+         <form action="/address-lookup/correspondence-address" method="post">
 
       <h1 class="govuk-heading-l">What is the correspondence address for Alan Demo?</h1>
       <p class="govuk-body">We'll use this address to send notifications to the director. You can use a business or home address and it doesn't have to be in UK.</p>
@@ -30,8 +30,8 @@
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
+  idPrefix: "correspondence-address",
+  name: "correspondence-address",
   fieldset: {
     legend: {
       text: "Correspondence address"
@@ -39,7 +39,7 @@
   },
   items: [
     {
-      value: "email",
+      value: "registered-office-address",
       text: "Companies House, Crown Way, Maindy, Cardiff, United Kingdom, CF14 3UZ",
       conditional: {
         html: officeAddress
@@ -53,8 +53,7 @@
 }) }}
 
 {{ govukButton({
-  text: "Continue",
-  href: "home-address"
+  text: "Continue"
 }) }}
       </form>
     </div>

@@ -11,6 +11,8 @@ require('./routes/add-journey.js')(router)
 require('./routes/remove-journey.js')(router)
 // Change a director
 require('./routes/update-journey.js')(router)
+// Address
+require('./routes/address.js')(router)
 
 // Add your routes here - above the module.exports line
 router.get('/directors', function (req, res) {

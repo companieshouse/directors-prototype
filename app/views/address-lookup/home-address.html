@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-         <form action="/address-lookup/address-lookup-home" method="post">
+         <form action="/address-lookup/home-address" method="post">
 
       <h1 class="govuk-heading-l">What is the home address for Alan Demo?</h1>
       <p class="govuk-body">Tell us where the person lives. Only give a business address if they also live there.</p>
@@ -29,8 +29,8 @@
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
+  idPrefix: "home-address",
+  name: "home-address",
   fieldset: {
     legend: {
       text: "Home address"
@@ -52,8 +52,7 @@
 }) }}
 
 {{ govukButton({
-  text: "Continue",
-  href: "../check-your-answers"
+  text: "Continue"
 }) }}
       </form>
     </div>

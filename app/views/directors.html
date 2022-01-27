@@ -9,7 +9,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:history.back()"
+  href: "company-lookup"
 }) }}
 {% endblock %}
 {% block content %}
@@ -53,6 +53,7 @@
           </div>
         {% endif %}
       {% endfor %}
+      {{ govukButton({
+  text: "Continue"
+}) }}
     {% endblock %}
-  </div>
-</div>
