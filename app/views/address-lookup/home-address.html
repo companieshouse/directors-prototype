@@ -1,0 +1,64 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{company.company_name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+         <form action="/address-lookup/address-lookup-home" method="post">
+
+      <h1 class="govuk-heading-l">What is the home address for Alan Demo?</h1>
+      <p class="govuk-body">Tell us where the person lives. Only give a business address if they also live there.</p>
+
+        <p><a href="#" class="govuk-link">Will this address be publicly avaliable?</a></p>
+{% set officeAddress %}
+<p class="govuk-body">This option will make the correspondence address the 'same as the registered office address' so that future changes to the registered office address will apply to the correspondence address</p>
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Home address"
+    }
+  },
+  hint: {
+    text: "Select one option."
+  },
+  items: [
+    {
+      value: "email",
+      text: "Companies House, Crown Way, Maindy, Cardiff, United Kingdom, CF14 3UZ",
+      conditional: {
+        html: officeAddress
+      }
+    },
+    {
+      value: "different-address",
+      text: "A different address"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "../check-your-answers"
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
