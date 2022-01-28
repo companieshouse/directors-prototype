@@ -1,4 +1,4 @@
-{% set title = "Sign in to Companies House" %}
+{% set title = "Sign in to your Companies House account" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -22,7 +22,9 @@
           }) }}
       {% endif %}
       <h1 class="govuk-heading-l">{{title}}</h1>
-      <p class="govuk-body govuk-hint">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
+      {{ govukInsetText({
+      text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
+    }) }}
       <form action="/sign-in" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
@@ -74,7 +76,7 @@
         text: "Sign in"
         }) }}
         <p>
-          <a href="" class="govuk-link govuk-link--no-visited-state">Register a new account</a>
+          <a href="" class="govuk-link govuk-link--no-visited-state">Create an account</a>
         </p>
         <p>
           <a href="" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a>

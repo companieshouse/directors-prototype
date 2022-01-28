@@ -18,13 +18,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-lookup-home" method="post">
-      <h1 class="govuk-heading-l">What are the details of the director you want to appoint?</h1>
+      <h1 class="govuk-heading-l">What are the director's details?</h1>
       {{ govukInsetText({
-        text: "The director's details will be shown on the Companies House public register."
+        text: "The details you enter will be shown publicly on the Companies House online register."
       }) }}
       <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
-        <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx.</p>
+        <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx</p>
         <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
       </div>
       {{ govukInput({
@@ -32,7 +32,7 @@
           text: "First name"
         },
         hint: {
-          text: "Enter the director's full first name."
+          text: "Enter the director's full first name"
         },
         classes: "govuk-input--width-20",
         id: "first-name",
@@ -43,7 +43,7 @@
           text: "Middle name or names (optional)"
         },
         hint: {
-          text: "Enter the director's full middle name or names."
+          text: "Enter the director's full middle name or names"
         },
         classes: "govuk-input--width-20",
         id: "middle-name",
@@ -59,6 +59,7 @@
       }) }}
       <div class="govuk-form-group govuk-input--width-20">
         <label for="autocomplete-default" class="govuk-label">Nationality</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
         <div id="nationality" class="autocomplete-wrapper"></div>
       </div>
       <p class="govuk-body">
@@ -73,12 +74,12 @@
           }
         },
          hint: {
-          text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the public register." | striptags(true) | escape | nl2br
+          text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the online register." | striptags(true) | escape | nl2br
         }
       }) }}
       <div class="govuk-!-padding-bottom-6">
         <label for="autocomplete-default" class="govuk-label">Job title</label>
-        <p class="govuk-hint">For example, carpenter.</p>
+        <p class="govuk-hint">For example, carpenter</p>
         <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
       </div>
 

@@ -13,7 +13,7 @@
       <!--Change of the director-->
       {% if type == 'change' %}
         {{ govukPanel({
-       titleText: "Update received",
+       titleText: "Director update submitted",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
       }) }}
       {{ govukTable({
@@ -63,7 +63,7 @@
       <!--Appointment of the director-->
       {% elif type == 'appoint' %}
         {{ govukPanel({
-       titleText: "Update received",
+       titleText: "Director update submitted",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
       }) }}
       {{ govukTable({
@@ -113,7 +113,7 @@
       <!--Removal of the director-->
       {% else %}
         {{ govukPanel({
-       titleText: "Update received",
+       titleText: "Director update submitted",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
       }) }}
       {{ govukTable({
@@ -144,10 +144,10 @@
           ],
           [
             {
-              text: "Officer name"
+              text: "Director name"
             },
             {
-              text: "Miss Anna Thomas"
+              text: "Alan Demo"
             }
           ],
           [
@@ -166,17 +166,17 @@
         <strong>pdavies@gmail.com</strong>
         which contains your reference number.</p>
       <p class="govuk-body">An examiner will process the submission to check if it’s acceptable for filing. This can take up to 48 hours.</p>
-      <p class="govuk-body">We'll email you to tell you if the submission is acceptable for filing. If the submission is not acceptable, we'll email you to let you know what to do next.</p>
+      <p class="govuk-body">We'll email you to tell you if the submission was accepted. If the submission is rejected, we'll email you to let you know what to do next.</p>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">What do you want to do next?</h2>
       <br>
       <div>
         <p class="govuk-body">
-          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update officer information for the same company</a>
+          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
         </p>
       </div>
       <div>
         <p class="govuk-body">
-          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update officer information for a different company</a>
+          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
         </p>
       </div>
        <div>
