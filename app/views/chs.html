@@ -1,10 +1,10 @@
-{% set title = "Enter the company authentication code" %}
+{% set title = "TESCO PLC" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
-  {{serviceName}}
+  Find and update company information 
   - GOV.UK
 {% endblock %}
 {% block beforeContent %}
@@ -12,6 +12,7 @@
   text: "Back",
   href: "javascript:history.back()"
 }) }}
+<a href="#" class="govuk-link">Sign in / Reigster</a>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +21,7 @@
         <div class="govuk-form-group border">
   <input placeholder="Search for a company or officer" value="" title="Search for a company or officer" class="govuk-input" id="event-name" name="event-name" type="text">
 </div>
-<p class="govuk-body-s"><a href="#" class="govuk-link">Advanced company search</a></p>
+<p class="govuk-body"><a href="#" class="govuk-link">Advanced company search</a></p>
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">TESCO PLC</h1>
 <p class="govuk-body">Company number 00445790</p>
 {{ govukButton({
@@ -333,35 +334,58 @@
 
 <p class="govuk-body govuk-!-font-weight-bold"> 68 officers / 54 resignations</p>
 
-<h3 class="govuk-heading-m">WELCH, Robert John</h3>
+<h3 class="govuk-heading-m"><a href="#" class="govuk-link">WELCH, Robert John</a></h3>
 <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
 <p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
 <p class="govuk-body govuk-!-font-weight-bold">Secretary</p>
+</div>
+<div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
 <p class="govuk-body govuk-!-font-weight-bold">10 August 2016 </p>
+</div>
+</div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 class="govuk-heading-m">ALLAN, John Murray</h3>
+<h3 class="govuk-heading-m"><a href="#" class="govuk-link">ALLAN, John Murray</a></h3>
 <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
 <p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
 <p class="govuk-body govuk-!-font-weight-bold">Director</p>
+</div>
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+</div>
+</div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 class="govuk-heading-m">BETHELL, Melissa</h3>
+<h3 class="govuk-heading-m"><a href="#" class="govuk-link">BETHELL, Melissa</a></h3>
 <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
 <p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
 <p class="govuk-body govuk-!-font-weight-bold">Director</p>
+</div>
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
+</div>
+</div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 class="govuk-heading-m">BODSON, Bertrand</h3>
+<h3 class="govuk-heading-m"><a href="#" class="govuk-link">BODSON, Bertrand</a></h3>
 <p class="govuk-body govuk-!-margin-bottom-2">Correspondence address</p>
 <p class="govuk-body govuk-!-font-weight-bold">Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Role</p>
 <p class="govuk-body govuk-!-font-weight-bold">Director</p>
+</div>
+  <div class="govuk-grid-column-one-half">
 <p class="govuk-body govuk-!-margin-bottom-2">Appointed on</p>
-
+</div>
+</div>
 {% endset -%}
 
 {{ govukTabs({

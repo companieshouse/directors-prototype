@@ -1,5 +1,6 @@
 module.exports = function (router) {
   router.post('/sign-in', function (req, res) {
+    console.log(req.session.journey)
     var errors = []
     var emailHasError = false
     var passwordHasError = false

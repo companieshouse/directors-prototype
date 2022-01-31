@@ -19,6 +19,7 @@ router.get('/directors', function (req, res) {
   // Render the confirm company page
   res.render('directors', {
     // To use the company data on that page use the following
+    journey: req.session.journey,
     company: req.session.company,
     officers: req.session.officers
   })
@@ -37,7 +38,7 @@ router.get('/confirmation', function (req, res) {
   // Render the confirm company page
   res.render('confirmation', {
     // To use the company data on that page use the following
-    type: req.query.type,
+    type: req.session.type
   })
 })
 
@@ -65,6 +66,30 @@ router.post('/auth-code', function (req, res) {
     if (error) throw new Error(error)
     req.session.officers = response.body
     res.redirect('/directors#people')
+  })
+})
+
+router.get('/', function (req, res) {
+  req.session.destroy();
+  res.render('index', {
+  })
+})
+
+router.get('/start', function (req, res) {
+  req.session.journey = req.query.journey
+  res.render('start', {
+  })
+})
+
+router.get('/chs', function (req, res) {
+  req.session.journey = req.query.journey
+  res.render('chs', {
+  })
+})
+
+router.get('/confirmation-statement/task-list', function (req, res) {
+  req.session.journey = req.query.journey
+  res.render('confirmation-statement/task-list', {
   })
 })
 

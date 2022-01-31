@@ -30,13 +30,7 @@
             <dt class="govuk-summary-list__key">Status</dt>
             <dd class="govuk-summary-list__value">
               <!-- a set of if and elif conditions depending on the company status-->
-              {% if company.company_status === 'active' %}
-                <strong class="govuk-tag govuk-tag--green">{{company.company_status | upper}}</strong>
-              {% elif company.company_status === 'dissolved' or company.company_status === 'closed' %}
-                <strong class="govuk-tag govuk-tag--grey">{{company.company_status | upper}}</strong>
-              {% else %}
-                {{company.company_status | capitalize}}
-              {% endif %}
+              {{company.company_status | capitalize}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">

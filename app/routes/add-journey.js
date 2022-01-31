@@ -1,6 +1,7 @@
 module.exports = function (router) {
     
 router.get('/add/add', function (req, res) {
+    req.session.type = req.query.type
     // Render the confirm company page
     res.render('add/add', {
       // To use the company data on that page use the following

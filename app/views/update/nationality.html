@@ -17,16 +17,15 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/nationality" method="post">
         <div class="govuk-form-group govuk-!-margin-bottom-2">
-          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">What is the director's nationality?</label></h1>
-          <input value="{{director.nationality}}" class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="nationality">What is the director's nationality?</label></h1>
+          <input value="{{director.nationality}}" class="govuk-input" id="nationality" name="nationality" type="text" aria-describedby="nationality-hint">
         </div>
         <p class="govuk-body govuk-!-margin-top-6">
           <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
         </p>
         {{ govukButton({
           text: "Continue",
-          classes: "govuk-!-margin-top-6",
-          href: "change"
+          classes: "govuk-!-margin-top-6"
         }) }}
       </form>
     </div>

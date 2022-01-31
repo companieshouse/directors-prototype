@@ -18,42 +18,41 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/date-of-birth" method="post">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Date of birth
           </h1>
         </legend>
-        <div id="passport-issued-hint" class="govuk-hint">
+        <div id="dob-hint" class="govuk-hint">
           For example, 27 3 1995. Only the director's month and year of birth will be shown on the public register.
         </div>
-        <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input" id="dob">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              <label class="govuk-label govuk-date-input__label" for="dob-day">
                 Day
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2"  id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2"  id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
             </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          <label class="govuk-label govuk-date-input__label" for="dob-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
         </div>
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            <label class="govuk-label govuk-date-input__label" for="dob-year">
               Year
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
           </div>
         </div>
       </fieldset>
       {{ govukButton({
-        text: "Continue",
-          href: "change"
+        text: "Continue"
       }) }}
       </form>
     </div>

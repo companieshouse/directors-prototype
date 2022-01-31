@@ -11,7 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!--Change of the director-->
-      {% if type == 'change' %}
+        {% if type == 'update' %}
         {{ govukPanel({
        titleText: "Director update submitted",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
@@ -61,7 +61,7 @@
         ]
       }) }}
       <!--Appointment of the director-->
-      {% elif type == 'appoint' %}
+      {% elif type == 'add' %}
         {{ govukPanel({
        titleText: "Director update submitted",
        html: "Your reference number is<br><strong>HDJ2123F</strong>"
@@ -168,30 +168,22 @@
       <p class="govuk-body">An examiner will process the submission to check if it’s acceptable for filing. This can take up to 48 hours.</p>
       <p class="govuk-body">We'll email you to tell you if the submission was accepted. If the submission is rejected, we'll email you to let you know what to do next.</p>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">What do you want to do next?</h2>
-      <br>
-      <div>
-        <p class="govuk-body">
-          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
-        </p>
-      </div>
-      <div>
-        <p class="govuk-body">
-          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
-        </p>
-      </div>
-       <div>
-        <p class="govuk-body">
+      <ul class="govuk-list">
+  <li>
+              <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
+  </li>
+  <li>
+              <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
+  </li>
+  <li>
           <a href="../start" class="govuk-link govuk-link--no-visited-state">Sign out</a>
-        </p>
-      </div>
-       <div>
-         <br>
+  </li>
+</ul>
+     
            <h3 class="govuk-heading-m">Feedback</h3>
         <p class="govuk-body">This is a new service. Help us improve it by completing our
           <a href="#" class="govuk-link govuk-link--no-visited-state">quick survey</a>.
         </p>
-      </div>
-    </div>
   </div>
 </div>
 {% endblock %}
