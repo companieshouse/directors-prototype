@@ -9,6 +9,10 @@ router.get('/add/add', function (req, res) {
     })
   })
   
+  router.post('/add/add', function (req, res) {
+    res.redirect('../address-lookup/correspondence-address')
+  })
+
   router.get('/add/date-of-appointment', function (req, res) {
     // Render the confirm company page
     res.render('add/date-of-appointment', {
