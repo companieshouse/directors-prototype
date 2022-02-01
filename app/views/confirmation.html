@@ -13,33 +13,33 @@
       <!--Change of the director-->
       {% if type == 'update' %}
         {{ govukPanel({
-          titleText: "Director update submitted",
+          titleText: "Update submitted",
           html: "Your reference number is<br><strong>HDJ2123F</strong>"
         }) }}
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Update type</th>
-              <td class="govuk-table__cell">Change of a director</td>
+              <td class="govuk-table__cell">Update of nationality</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Company number</th>
               <td class="govuk-table__cell">{{company.company_number}}</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Director name</th>
-              <td class="govuk-table__cell">Test</td>
-            </tr>
-            <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Company name</th>
               <td class="govuk-table__cell">{{company.company_name}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Director name</th>
+              <td class="govuk-table__cell">Mr Alan Demo</td>
             </tr>
           </tbody>
         </table>
       <!--Appointment of the director-->
       {% elif type == 'add' %}
         {{ govukPanel({
-          titleText: "Director update submitted",
+          titleText: "Appointment submitted",
           html: "Your reference number is<br><strong>HDJ2123F</strong>"
         }) }}
         <table class="govuk-table">
@@ -69,15 +69,12 @@
       <!--Removal of the director-->
       {% else %}
         {{ govukPanel({
-          titleText: "Director update submitted",
+          titleText: "Removal of director submitted",
           html: "Your reference number is<br><strong>HDJ2123F</strong>"
         }) }}
         <table class="govuk-table">
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Update type</th>
-              <td class="govuk-table__cell">Removal of a director</td>
-            </tr>
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Company number</th>
               <td class="govuk-table__cell">{{company.company_number}}</td>
@@ -88,7 +85,7 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Director name</th>
-              <td class="govuk-table__cell">Test</td>
+              <td class="govuk-table__cell">Mr Alan Demo</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Removed on</th>
@@ -115,7 +112,7 @@
           <a href="../start" class="govuk-link govuk-link--no-visited-state">Sign out</a>
         </li>
       </ul>
-    
+
       <h3 class="govuk-heading-m">Feedback</h3>
       <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="#" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
   </div>

@@ -21,9 +21,9 @@
          <form action="/address-lookup/correspondence-address" method="post">
 
       <h1 class="govuk-heading-l">What is the director's postal address?</h1>
-      <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in UK.</p>
+      <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.</p>
       {{ govukInsetText({
-        text: "The address will be publicly avaliable on the Companies House online register."
+        text: "This address will be publicly available on the Companies House online register."
       }) }}
       <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -32,12 +32,12 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        Your home address is not shown on the online register. However, if you use your home address as your postal address, this will be shown on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a> <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
+        Your home address is not shown on the online register. However, if you use your home address as your postal address, this will be shown on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>. <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
       </div>
     </details>
 
 {% set officeAddress %}
-<p class="govuk-body">This option will make the correspondence address the 'same as the registered office address' so that future changes to the registered office address will apply to the correspondence address</p>
+<p class="govuk-body">If you select this option, this will make the postal address the 'same as' the registered office address. This means that future changes to the registered office address will also apply to the postal address.</p>
 {% endset -%}
 
 {{ govukRadios({
