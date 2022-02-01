@@ -39,6 +39,22 @@ router.get('/add/address-lookup-home', function (req, res) {
     })
   })
 
+  router.get('/address-lookup/correspondence-address', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/correspondence-address', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+
+  router.get('/address-lookup/home-address', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/home-address', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+
   router.post('/address-lookup/correspondence-address', function (req, res) {
     // Create a variable called errors
     const errors = []

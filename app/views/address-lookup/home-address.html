@@ -48,7 +48,7 @@
   items: [
     {
       value: "email",
-      text: "1 Queen Way, Canton, Cardiff, United Kingdom CF5 2PT",
+      html: company.registered_office_address.address_line_1 + ', ' + company.registered_office_address.address_line_2 + ', ' + company.registered_office_address.region + ', ' + company.registered_office_address.locality + ', ' + company.registered_office_address.postal_code,
       conditional: {
         html: officeAddress
       }

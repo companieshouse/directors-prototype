@@ -36,7 +36,6 @@
       </div>
     </details>
 
-
 {% set officeAddress %}
 <p class="govuk-body">This option will make the correspondence address the 'same as the registered office address' so that future changes to the registered office address will apply to the correspondence address</p>
 {% endset -%}
@@ -52,7 +51,7 @@
   items: [
     {
       value: "registered-office-address",
-      text: "1 Queen Way, Canton, Cardiff, United Kingdom CF5 2PT",
+      html: company.registered_office_address.address_line_1 + ', ' + company.registered_office_address.address_line_2 + ', ' + company.registered_office_address.region + ', ' + company.registered_office_address.locality + ', ' + company.registered_office_address.postal_code,
       conditional: {
         html: officeAddress
       }
