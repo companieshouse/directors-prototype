@@ -38,7 +38,8 @@ router.get('/confirmation', function (req, res) {
   // Render the confirm company page
   res.render('confirmation', {
     // To use the company data on that page use the following
-    type: req.session.type
+    type: req.session.type,
+    company: req.session.company
   })
 })
 

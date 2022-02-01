@@ -11,155 +11,91 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!--Change of the director-->
-        {% if type == 'update' %}
+      {% if type == 'update' %}
         {{ govukPanel({
-       titleText: "Director update submitted",
-       html: "Your reference number is<br><strong>HDJ2123F</strong>"
-      }) }}
-      {{ govukTable({
-        rows: [
-        [
-          {
-            text: "Update type"
-          },
-          {
-            text: "Change of a director"
-          }
-        ],
-          [
-            {
-              text: "Company number"
-            },
-            {
-              text: "00066516"
-            }
-          ],
-          [
-            {
-              text: "Company name"
-            },
-            {
-              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
-            }
-          ],
-          [
-            {
-              text: "Officer name"
-            },
-            {
-              text: "Miss Anna Thomas"
-            }
-          ],
-          [
-            {
-              text: "Appointed on"
-            },
-            {
-              text: "28 April 2021"
-            }
-          ]
-        ]
-      }) }}
+          titleText: "Director update submitted",
+          html: "Your reference number is<br><strong>HDJ2123F</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Update type</th>
+              <td class="govuk-table__cell">Change of a director</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">{{company.company_number}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Director name</th>
+              <td class="govuk-table__cell">Test</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">{{company.company_name}}</td>
+            </tr>
+          </tbody>
+        </table>
       <!--Appointment of the director-->
       {% elif type == 'add' %}
         {{ govukPanel({
-       titleText: "Director update submitted",
-       html: "Your reference number is<br><strong>HDJ2123F</strong>"
-      }) }}
-      {{ govukTable({
-        rows: [
-        [
-          {
-            text: "Update type"
-          },
-          {
-            text: "Appointment of a director"
-          }
-        ],
-          [
-            {
-              text: "Company number"
-            },
-            {
-              text: "00066516"
-            }
-          ],
-          [
-            {
-              text: "Company name"
-            },
-            {
-              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
-            }
-          ],
-          [
-            {
-              text: "Officer name"
-            },
-            {
-              text: "Miss Anna Thomas"
-            }
-          ],
-          [
-            {
-              text: "Appointed on"
-            },
-            {
-              text: "28 April 2021"
-            }
-          ]
-        ]
-      }) }}
+          titleText: "Director update submitted",
+          html: "Your reference number is<br><strong>HDJ2123F</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Update type</th>
+              <td class="govuk-table__cell">Appointment of a director</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">{{company.company_number}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">{{company.company_name}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Director name</th>
+              <td class="govuk-table__cell">Test</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Appointed on</th>
+              <td class="govuk-table__cell">28 April 2021</td>
+            </tr>
+          </tbody>
+        </table>
       <!--Removal of the director-->
       {% else %}
         {{ govukPanel({
-       titleText: "Director update submitted",
-       html: "Your reference number is<br><strong>HDJ2123F</strong>"
-      }) }}
-      {{ govukTable({
-        rows: [
-        [
-          {
-            text: "Update type"
-          },
-          {
-            text: "Removal of a director"
-          }
-        ],
-          [
-            {
-              text: "Company number"
-            },
-            {
-              text: "00066516"
-            }
-          ],
-          [
-            {
-              text: "Company name"
-            },
-            {
-              text: "WEST HAM UNITED FOOTBALL CLUB LIMITED"
-            }
-          ],
-          [
-            {
-              text: "Director name"
-            },
-            {
-              text: "Alan Demo"
-            }
-          ],
-          [
-            {
-              text: "Appointed on"
-            },
-            {
-              text: "28 April 2021"
-            }
-          ]
-        ]
-      }) }}
+          titleText: "Director update submitted",
+          html: "Your reference number is<br><strong>HDJ2123F</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Update type</th>
+              <td class="govuk-table__cell">Removal of a director</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">{{company.company_number}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">{{company.company_name}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Director name</th>
+              <td class="govuk-table__cell">Test</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Removed on</th>
+              <td class="govuk-table__cell">28 April 2021</td>
+            </tr>
+          </tbody>
+        </table>
       {% endif %}
       <h3 class="govuk-heading-m">What happens next</h3>
       <p class="govuk-body">We'll send a confirmation email to
@@ -169,21 +105,19 @@
       <p class="govuk-body">We'll email you to tell you if the submission was accepted. If the submission is rejected, we'll email you to let you know what to do next.</p>
       <h2 class="govuk-heading-m">What do you want to do next?</h2>
       <ul class="govuk-list govuk-list--spaced">
-  <li>
-              <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
-  </li>
-  <li>
-              <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
-  </li>
-  <li>
+        <li>
+          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
+        </li>
+        <li>
+          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
+        </li>
+        <li>
           <a href="../start" class="govuk-link govuk-link--no-visited-state">Sign out</a>
-  </li>
-</ul>
-     
-           <h3 class="govuk-heading-m">Feedback</h3>
-        <p class="govuk-body">This is a new service. Help us improve it by completing our
-          <a href="#" class="govuk-link govuk-link--no-visited-state">quick survey</a>.
-        </p>
+        </li>
+      </ul>
+    
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="#" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
   </div>
 </div>
 {% endblock %}
