@@ -58,11 +58,11 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Director name</th>
-              <td class="govuk-table__cell">Test</td>
+              <td class="govuk-table__cell">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Appointed on</th>
-              <td class="govuk-table__cell">28 April 2021</td>
+              <td class="govuk-table__cell">{{data['director-appointed-day']}} {{data['director-appointed-month']}} {{data['director-appointed-year']}}</td>
             </tr>
           </tbody>
         </table>
