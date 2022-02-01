@@ -17,7 +17,8 @@ module.exports = function (router) {
     request(options, function (error, response) {
       if (error) throw new Error(error)
       res.render('update/change', {
-        director: response.body
+        director: response.body,
+        details: req.query.officer
       })
     })
   })
@@ -28,52 +29,62 @@ module.exports = function (router) {
 
   //Updating the country of residence page
   router.get('/update/country-of-residence', function (req, res) {
+    req.session.redirect = req.query.officer
     res.render('update/country-of-residence', {
+      details: req.query.officer
     })
   })
 
   router.post('/update/country-of-residence', function (req, res) {
-    res.redirect('/update/change')
+    res.redirect('/update/change?officer=' + req.session.redirect)
   })
   
   //Updating the date of birth page
   router.get('/update/date-of-birth', function (req, res) {
+    req.session.redirect = req.query.officer
     res.render('update/date-of-birth', {
+      details: req.query.officer
     })
   })
 
   router.post('/update/date-of-birth', function (req, res) {
-    res.redirect('/update/change')
+    res.redirect('/update/change?officer=' + req.session.redirect)
   })
 
   //Updating the job title page
   router.get('/update/job-title', function (req, res) {
+    req.session.redirect = req.query.officer
     res.render('update/job-title', {
+      details: req.query.officer
     })
   })
 
   router.post('/update/job-title', function (req, res) {
-    res.redirect('/update/change')
+    res.redirect('/update/change?officer=' + req.session.redirect)
   })
 
   //Updating the name of the director page
   router.get('/update/name', function (req, res) {
+    req.session.redirect = req.query.officer
     res.render('update/name', {
+      details: req.query.officer
     })
   })
 
   router.post('/update/name', function (req, res) {
-    res.redirect('/update/change')
+    res.redirect('/update/change?officer=' + req.session.redirect)
   })
 
   //Updating the nationality of the director page
   router.get('/update/nationality', function (req, res) {
+    req.session.redirect = req.query.officer
     res.render('update/nationality', {
+      details: req.query.officer
     })
   })
 
   router.post('/update/nationality', function (req, res) {
-    res.redirect('/update/change')
+    res.redirect('/update/change?officer=' + req.session.redirect)
   })
 
 }
