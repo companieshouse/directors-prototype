@@ -125,7 +125,7 @@
             Home address
           </dt>
           <dd class="govuk-summary-list__value">
-             1 High Street <br>Cardiff <br> CF1 1AB
+             {{company.registered_office_address.address_line_1}}, {{company.registered_office_address.address_line_2}}, {{company.registered_office_address.region}}, {{company.registered_office_address.locality}},  {{company.registered_office_address.postal_code}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -138,7 +138,7 @@
             Postal address
           </dt>
           <dd class="govuk-summary-list__value">
-             2 Queen Street <br>Bristol <br>BS1 1YZ
+             {{company.registered_office_address.address_line_1}}, {{company.registered_office_address.address_line_2}}, {{company.registered_office_address.region}}, {{company.registered_office_address.locality}},  {{company.registered_office_address.postal_code}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
