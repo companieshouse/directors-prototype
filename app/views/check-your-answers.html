@@ -26,11 +26,6 @@
           <dd class="govuk-summary-list__value">
             {{company.company_name}}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
            <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -39,13 +34,38 @@
           <dd class="govuk-summary-list__value">
             {{company.company_number}}
           </dd>
+        </div>
+      </dl>
+      {% if type == 'remove' %}
+                <h2 class="govuk-heading-m">Appointment details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Mr Alan Demo
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+           <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date the director was removed from the company
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20 01 2022
+          </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
+              Change<span class="govuk-visually-hidden"> date</span>
             </a>
           </dd>
         </div>
       </dl>
+
+      {% else %}
        <h2 class="govuk-heading-m">Appointment details</h2>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -140,6 +160,8 @@
           </dd>
         </div>
       </dl>
+      {% endif %}
+
       <div>
 
         <p>By submitting this information, you are confirming that the person named has consented to act as a director.</p>
