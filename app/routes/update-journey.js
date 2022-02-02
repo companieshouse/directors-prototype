@@ -36,7 +36,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/country-of-residence', function (req, res) {
-    res.redirect('/update/change?officer=' + req.session.redirect)
+    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
   
   //Updating the date of birth page
@@ -48,7 +48,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/date-of-birth', function (req, res) {
-    res.redirect('/update/change?officer=' + req.session.redirect)
+    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
   //Updating the job title page
@@ -60,7 +60,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/job-title', function (req, res) {
-    res.redirect('/update/change?officer=' + req.session.redirect)
+    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
   //Updating the name of the director page
@@ -72,7 +72,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/name', function (req, res) {
-    res.redirect('/update/change?officer=' + req.session.redirect)
+    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
   //Updating the nationality of the director page
@@ -84,7 +84,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/nationality', function (req, res) {
-    res.redirect('/update/change?officer=' + req.session.redirect)
+    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
 }
