@@ -1,7 +1,7 @@
-{% set title = "Tell us your company number" %}
+{% set title = "What is the company number?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  What is the company number? - Upload a document to Companies House - GOV.UK
+  {{title}} - {{serviceName}} - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
