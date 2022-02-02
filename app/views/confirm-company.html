@@ -1,7 +1,7 @@
 {% set title = "Confirm this is the correct company" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Confirm this is the correct company -
+  {{title}} -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!-- The action will need to change depending on the location of the confirm-company page -->
       <form action="/confirm-company" method="post">
-        <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+        <h1 class="govuk-heading-l">{{title}}</h1>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company name</dt>

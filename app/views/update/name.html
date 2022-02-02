@@ -1,7 +1,7 @@
-{% set title = "Enter the company authentication code" %}
+{% set title = "What is the director's name?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/name" method="post">
-      <h1 class="govuk-heading-l">What is the director's name?</h1>
+      <h1 class="govuk-heading-l">{{title}}</h1>
       {{ govukInput({
         label: {
           text: "First name"

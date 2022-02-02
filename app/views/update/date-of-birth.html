@@ -1,7 +1,7 @@
-{% set title = "Enter the company authentication code" %}
+{% set title = "Date of birth" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -21,7 +21,7 @@
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Date of birth
+            {{title}}
           </h1>
         </legend>
         <div id="dob-hint" class="govuk-hint">

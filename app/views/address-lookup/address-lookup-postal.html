@@ -1,7 +1,7 @@
-{% set title = "Enter the company authentication code" %}
+{% set title = "What is the director's postal address?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
          <form action="/address-lookup/address-lookup-home" method="post">
 
-      <h1 class="govuk-heading-l">What is the director's postal address?</h1>
+      <h1 class="govuk-heading-l">{{title}}</h1>
       <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.</p>
       {{ govukInsetText({
         text: "This address will be publicly available on the Companies House online register."

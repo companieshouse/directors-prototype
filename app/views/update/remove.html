@@ -1,8 +1,8 @@
-{% set title = "Enter the company authentication code" %}
+{% set title = "When was the director removed from the company?" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -23,7 +23,7 @@
   <fieldset class="govuk-fieldset" role="group" aria-describedby="date-removed-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        When was the director removed from the company?
+        {{title}}
       </h1>
     </legend>
     <div id="date-removed-hint" class="govuk-hint">

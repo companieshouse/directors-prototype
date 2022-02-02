@@ -1,7 +1,7 @@
- {% set title = "Enter the company authentication code" %}
+ {% set title = "What is the director's job title?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -19,7 +19,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/job-title" method="post">
               <div class="govuk-!-padding-bottom-6">
-        <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">What is the director's job title?</label></h1>
+        <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
         <p class="govuk-hint">For example, carpenter. <br>Start typing a job title, then choose from the list.</p>
         <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
       </div>

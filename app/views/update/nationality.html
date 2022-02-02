@@ -1,7 +1,7 @@
- {% set title = "Enter the company authentication code" %}
+ {% set title = "What is the director's nationality?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -19,7 +19,7 @@
 
 
               <div class="govuk-form-group ">
-         <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">What is the director's nationality?</label></h1>
+         <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
         <div id="nationality" class="autocomplete-wrapper"></div>
       </div>

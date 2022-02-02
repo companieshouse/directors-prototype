@@ -1,7 +1,7 @@
  {% set title = "What is the director's country of residence?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{company.company_name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/country-of-residence" method="post">
         <div class="govuk-form-group govuk-!-margin-bottom-2">
-          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="country-of-residence">What is the director's country of residence?</label></h1>
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="country-of-residence">{{title}}</label></h1>
           <input value="{{director.nationality}}" class="govuk-input" id="country-of-residence" name="country-of-residence" type="text" aria-describedby="country-of-residence-hint">
         </div>
         {{ govukButton({
