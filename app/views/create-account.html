@@ -1,4 +1,4 @@
-{% set title = "Sign in to Companies House" %}
+{% set title = "Register with Companies House" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -22,14 +22,11 @@
           }) }}
       {% endif %}
       <h1 class="govuk-heading-l">{{title}}</h1>
-      {{ govukInsetText({
-      text: "You must sign in to or create a Companies House account. Your WebFiling details will not work with this service."
-    }) }}
-      <form action="/sign-in" method="post">
+      <form action="/create-account" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
             label: {
-              text: "Email address"
+              text: "Enter email address"
             },
             id: "email",
             type: "email",
@@ -42,7 +39,7 @@
         {% else %}
           {{ govukInput({
             label: {
-              text: "Email address"
+              text: "Enter email address"
             },
             type: "email",
             autocomplete: "email",
@@ -53,11 +50,12 @@
         {% if errorPassword == true %}
           {{ govukInput({
             label: {
-              text: "Password"
+              text: "Re-enter email address"
             },
-            id: "password",
-            name: "password",
-            type: "password",
+            type: "email",
+            autocomplete: "email",
+            id: "email",
+            name: "email",
             errorMessage: {
               text: "Enter your password"
             }
@@ -65,22 +63,17 @@
         {% else %}
           {{ govukInput({
             label: {
-              text: "Password"
+              text: "Re-enter email address"
             },
-            id: "password",
-            name: "password",
-            type: "password"
+            type: "email",
+            autocomplete: "email",
+            id: "email",
+            name: "email"
           }) }}
         {% endif %}
         {{ govukButton({
-        text: "Sign in"
+        text: "Send registration email"
         }) }}
-        <p>
-          <a href="create-account" class="govuk-link govuk-link--no-visited-state">Create an account</a>
-        </p>
-        <p>
-          <a href="forgot-password" class="govuk-link govuk-link--no-visited-state">I've forgotten my password</a>
-        </p>
       </form>
     </div>
   </div>
