@@ -39,7 +39,23 @@
 {% set officeAddress %}
 <p class="govuk-body">If you select this option, this will make the postal address the 'same as' the registered office address. This means that future changes to the registered office address will also apply to the postal address.</p>
 {% endset -%}
-
+{% set roAddress %}
+    {% if company.registered_office_address.address_line_1 %}
+      {{company.registered_office_address.address_line_1}}, 
+    {% endif %}
+    {% if company.registered_office_address.address_line_2 %}
+      {{company.registered_office_address.address_line_2}}, 
+    {% endif %}
+    {% if company.registered_office_address.region %}
+      {{company.registered_office_address.region}}, 
+    {% endif %}
+    {% if company.registered_office_address.locality %}
+      {{company.registered_office_address.locality}}, 
+    {% endif %}
+    {% if company.registered_office_address.postal_code %}
+      {{company.registered_office_address.postal_code}}, 
+    {% endif %}
+{% endset -%}
 {{ govukRadios({
   idPrefix: "correspondence-address",
   name: "correspondence-address",
@@ -51,7 +67,7 @@
   items: [
     {
       value: "registered-office-address",
-      html: company.registered_office_address.address_line_1 + ', ' + company.registered_office_address.address_line_2 + ', ' + company.registered_office_address.region + ', ' + company.registered_office_address.locality + ', ' + company.registered_office_address.postal_code,
+      html: roAddress,
       conditional: {
         html: officeAddress
       }
