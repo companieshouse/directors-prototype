@@ -73,7 +73,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+            {{data['input-autocomplete'] | first}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/add/add?type=add&#firstname">
@@ -112,7 +112,7 @@
             Job title
           </dt>
           <dd class="govuk-summary-list__value">
-            Finance Director
+            {{data['input-autocomplete'] | last}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/add/add?type=add&#occupation">
