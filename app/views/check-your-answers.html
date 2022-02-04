@@ -152,7 +152,11 @@
             Postal address
           </dt>
           <dd class="govuk-summary-list__value">
-               {% if company.registered_office_address.address_line_1 %}
+
+          {% if (data['correspondence-address'] === "different-address") %}
+              {{data['postcode'] | reverse}}
+          {% else %}
+{% if company.registered_office_address.address_line_1 %}
       {{company.registered_office_address.address_line_1}}</br> 
     {% endif %}
     {% if company.registered_office_address.address_line_2 %}
@@ -167,6 +171,9 @@
     {% if company.registered_office_address.postal_code %}
       {{company.registered_office_address.postal_code}} 
     {% endif %}
+          {% endif %}
+
+               
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
