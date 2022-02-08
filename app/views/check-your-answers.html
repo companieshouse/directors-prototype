@@ -99,7 +99,44 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['dob-day']}} {{data['dob-month']}} {{data['dob-year']}}
+            {{data['dob-day']}} 
+                     {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
+January
+{% elif (data['dob-month'] === "02") or (data['dob-month'] === "2")
+ %}
+February
+{% elif (data['dob-month'] === "03") or (data['dob-month'] === "3")
+ %}
+March
+{% elif (data['dob-month'] === "04") or (data['dob-month'] === "4")
+ %}
+April
+{% elif (data['dob-month'] === "05") or (data['dob-month'] === "5")
+ %}
+May
+{% elif (data['dob-month'] === "06") or (data['dob-month'] === "6")
+ %}
+June
+{% elif (data['dob-month'] === "07") or (data['dob-month'] === "7")
+ %}
+July
+{% elif (data['dob-month'] === "08") or (data['dob-month'] === "8")
+ %}
+August
+{% elif (data['dob-month'] === "09") or (data['dob-month'] === "9")
+ %}
+September
+{% elif (data['dob-month'] === "10")%}
+October
+{% elif (data['dob-month'] === "11")%}
+November
+{% elif (data['dob-month'] === "12")%}
+December
+{% else %}
+ {{data['dob-month']}}
+{% endif %}
+
+   {{data['dob-year']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/add/add?type=add&#dob">
@@ -125,21 +162,7 @@
             Home address
           </dt>
           <dd class="govuk-summary-list__value">
-                 {% if company.registered_office_address.address_line_1 %}
-      {{company.registered_office_address.address_line_1}}</br> 
-    {% endif %}
-    {% if company.registered_office_address.address_line_2 %}
-      {{company.registered_office_address.address_line_2}}</br> 
-    {% endif %}
-    {% if company.registered_office_address.region %}
-      {{company.registered_office_address.region}}</br>
-    {% endif %}
-    {% if company.registered_office_address.locality %}
-      {{company.registered_office_address.locality}}</br>
-    {% endif %}
-    {% if company.registered_office_address.postal_code %}
-      {{company.registered_office_address.postal_code}} 
-    {% endif %}
+                 The home address is the same as the registered office address
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -149,28 +172,14 @@
         </div>
                 <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Postal address
+            Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
 
           {% if (data['correspondence-address'] === "different-address") %}
               {{data['postcode'] | reverse}}
           {% else %}
-{% if company.registered_office_address.address_line_1 %}
-      {{company.registered_office_address.address_line_1}}</br> 
-    {% endif %}
-    {% if company.registered_office_address.address_line_2 %}
-      {{company.registered_office_address.address_line_2}}</br> 
-    {% endif %}
-    {% if company.registered_office_address.region %}
-      {{company.registered_office_address.region}}</br>
-    {% endif %}
-    {% if company.registered_office_address.locality %}
-      {{company.registered_office_address.locality}}</br>
-    {% endif %}
-    {% if company.registered_office_address.postal_code %}
-      {{company.registered_office_address.postal_code}} 
-    {% endif %}
+  The correspondence address is the same as the registered office address
           {% endif %}
 
                
@@ -186,7 +195,44 @@
             Date of appointment
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['director-appointed-day']}} {{data['director-appointed-month']}} {{data['director-appointed-year']}}
+            {{data['date-appointed-day']}} 
+
+                     {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+January
+{% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2")
+ %}
+February
+{% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3")
+ %}
+March
+{% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4")
+ %}
+April
+{% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5")
+ %}
+May
+{% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6")
+ %}
+June
+{% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7")
+ %}
+July
+{% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8")
+ %}
+August
+{% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9")
+ %}
+September
+{% elif (data['date-appointed-month'] === "10")%}
+October
+{% elif (data['date-appointed-month'] === "11")%}
+November
+{% elif (data['date-appointed-month'] === "12")%}
+December
+{% else %}
+ {{data['date-appointed-month']}}
+{% endif %}
+{{data['date-appointed-year']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/add/add?type=add&#director-appointed">

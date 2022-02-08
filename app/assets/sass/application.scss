@@ -70,3 +70,7 @@ $govuk-assets-path: '/govuk/assets/';
   .border{
     border: 10px solid #dee0e2
   }
+
+  .almost-full-width .govuk-summary-list__key{
+    width: 40%
+  }

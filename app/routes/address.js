@@ -89,7 +89,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       res.redirect('/address-lookup/address-lookup-postal')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/address-lookup/home-address')
+      res.redirect('/add/date-of-appointment')
     }
   })
   router.post('/address-lookup/home-address', function (req, res) {
@@ -116,7 +116,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     res.redirect('/address-lookup/address-lookup-home')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/address-lookup/correspondence-address')
     }
   })
 }

@@ -22,13 +22,13 @@
 
                 </div>-->
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">{{company.company_name}}</h1>
+    <span class="govuk-caption-l">{{company.company_name}}</span>
+      <h1 class="govuk-heading-l">Active directors </h1>
      {{ govukButton({
          text: "Appoint new director",
          href: "add/name?type=add"
        }) }}
 
-      <h2 class="govuk-heading-m">Active directors</h2>
       {% for officer in officers.items %}
         {% if not (officer.resigned_on) and (officer.officer_role == 'director') %}
           <div class="govuk-summary-card govuk-!-margin-bottom-4">

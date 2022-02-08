@@ -49,7 +49,7 @@ module.exports = function (router) {
   })
   
   router.post('/add/job-title', function (req, res) {
-    res.redirect('../address-lookup/correspondence-address')
+    res.redirect('../address-lookup/home-address')
   })
 
   // Date of appointment
