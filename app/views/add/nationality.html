@@ -1,0 +1,38 @@
+{% set title = "Nationality" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/nationality" method="post">
+
+      <div class="govuk-form-group govuk-input--width-20">
+       <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+        <div id="nationality" class="autocomplete-wrapper"></div>
+      </div>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+      </p>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/nationality.js"></script>
+{% endblock %}

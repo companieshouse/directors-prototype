@@ -116,7 +116,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     res.redirect('/address-lookup/address-lookup-home')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/check-your-answers')
+      res.redirect('/add/date-of-appointment')
     }
   })
 }

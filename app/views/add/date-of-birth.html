@@ -1,0 +1,43 @@
+{% set title = "Date of birth" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/date-of-birth" method="post">
+{{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+         hint: {
+          text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the online register." | striptags(true) | escape | nl2br
+        }
+      }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
