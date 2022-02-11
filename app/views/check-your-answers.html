@@ -99,7 +99,7 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['dob-day']}} 
+            {{data['dob-day']}}
                      {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
 January
 {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2")
@@ -144,6 +144,7 @@ December
             </a>
           </dd>
         </div>
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Job title
@@ -182,7 +183,7 @@ December
   The correspondence address is the same as the registered office address
           {% endif %}
 
-               
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -195,7 +196,7 @@ December
             Date of appointment
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['date-appointed-day']}} 
+            {{data['date-appointed-day']}}
 
                      {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
 January

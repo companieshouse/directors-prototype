@@ -1,4 +1,4 @@
-{% set title = "What is the director's job title?" %}
+{% set title = "What is the director's occupation?" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -21,12 +21,15 @@
 
       <div class="govuk-!-padding-bottom-6">
         <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
-        <p class="govuk-hint">For example, carpenter. <br>Start typing a job title, then choose from the list.</p>
+        <p class="govuk-hint">For example, carpenter. <br>Start typing an occupation, then choose from the list.</p>
         <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
       </div>
-
-            <h2 class="govuk-heading-m govuk-!-margin-top-9">Data on the public register</h2>
-<p class="govuk-body">The director's job title will be publicly available on the Companies House online register.</p>
+      {{ govukDetails({
+        summaryText: "My occupation is not on the list",
+        text: "If your occupation is not shown when you start typing, you can type your occupation directly into the input field."
+      }) }}
+            <h2 class="govuk-heading-m govuk-!-margin-top-9">Information on the online register</h2>
+<p class="govuk-body">The director's occupation will be publicly available on the Companies House online register.</p>
         {{ govukButton({
           text: "Continue"
         }) }}
