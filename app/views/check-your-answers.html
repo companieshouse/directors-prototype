@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       {% if type == 'remove' %}
-        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting the removal of a director</h1>
       {% else %}
         <h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
       {% endif %}
@@ -179,7 +179,7 @@
               Change<span class="govuk-visually-hidden"> contact details</span>
               </a>
             </dd>
-          </div>       
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date of appointment
@@ -229,7 +229,7 @@
           <p>By submitting this information, you are confirming that the person named has consented to act as a director.</p>
         </div>
       {% endif %}
- 
+
       {{ govukButton({
         text: "Confirm and submit",
         href: "confirmation"

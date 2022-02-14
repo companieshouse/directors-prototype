@@ -31,7 +31,7 @@
             {{company.registered_office_address.locality}},
           {% endif %}
           {% if company.registered_office_address.postal_code %}
-            {{company.registered_office_address.postal_code}},
+            {{company.registered_office_address.postal_code}}
           {% endif %}
         {% endset -%}
         {# Radio options to select the correspondence address #}
@@ -46,7 +46,7 @@
             }
           },
           hint: {
-            text: "We'll use this address to send Companies House correspondence to the director."
+            text: "We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK."
           },
           items: [
             {
@@ -72,7 +72,7 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-            Your home address is not shown on the online register. However, if you use your home address as your correspondence address, this will be shown on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>. <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
+            Your home address is not shown on the online register. However, if you use your home address as your correspondence address, this will be publicly available on the online register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>. <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
           </div>
         </details>
         {{ govukButton({
