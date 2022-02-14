@@ -172,7 +172,11 @@
               Home address
             </dt>
             <dd class="govuk-summary-list__value">
-              The home address is the same as the registered office address
+              {% if (data['home-address'] === "different-address") %}
+                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
+              {% else %}
+                The home address is the same as the registered office address
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">

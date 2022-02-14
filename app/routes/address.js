@@ -161,4 +161,17 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   router.post('/address-lookup/confirm-lookup-postal', function (req, res) {
     res.redirect('/address-lookup/home-address')
   })
+
+  //Confirm the postal/correspondence address
+  router.get('/address-lookup/confirm-lookup-home', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/confirm-lookup-home', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+              
+  router.post('/address-lookup/confirm-lookup-home', function (req, res) {
+    res.redirect('/add/date-of-appointment')
+  })
 }
