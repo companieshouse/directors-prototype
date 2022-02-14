@@ -1,7 +1,7 @@
 module.exports = function (router) {
-
   // Name
   router.get('/add/name', function (req, res) {
+    req.session.type = req.query.type
     // Render the confirm company page
     res.render('add/name', {
       // To use the company data on that page use the following
@@ -49,7 +49,7 @@ module.exports = function (router) {
   })
   
   router.post('/add/job-title', function (req, res) {
-    res.redirect('../address-lookup/home-address')
+    res.redirect('../address-lookup/correspondence-address')
   })
 
   // Date of appointment
@@ -63,8 +63,5 @@ module.exports = function (router) {
 
   router.post('/add/date-of-appointment', function (req, res) {
     res.redirect('../check-your-answers')
-  })
-
-
-  
+  }) 
 }

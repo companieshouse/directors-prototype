@@ -9,6 +9,10 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     })
   })
 
+  router.post('/address-lookup/address-lookup-home', function (req, res) {
+    res.redirect('/address-lookup/confirm-lookup-home')
+  })
+
     //Lookup address page for the postal address
   router.get('/address-lookup/address-lookup-postal', function (req, res) {
     // Render the confirm company page
@@ -19,7 +23,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
 
   router.post('/address-lookup/address-lookup-postal', function (req, res) {
-    res.redirect('/address-lookup/home-address')
+    res.redirect('/address-lookup/confirm-lookup-postal')
   })
   
   //Manual address page for the home address
@@ -89,13 +93,12 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       res.redirect('/address-lookup/address-lookup-postal')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/address-lookup/link-correspondence-address')
     }
   })
   router.post('/address-lookup/home-address', function (req, res) {
     // Create a variable called errors
     const errors = []
-
     // Create an if condition
     // In this if condition it is checking if radio-input is blank
     if (typeof req.session.data['home-address'] === 'undefined') {
@@ -112,11 +115,50 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
         errorList: errors
       })
     // If everything is fine then do this
-  } if (req.session.data['home-address'] === 'different-address') {
-    res.redirect('/address-lookup/address-lookup-home')
+    } if (req.session.data['home-address'] === 'different-address') {
+      res.redirect('/address-lookup/address-lookup-home')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/address-lookup/correspondence-address')
+      res.redirect('/address-lookup/link-home-address')
     }
+  })
+
+  //Link the correspondence address to the registered office address
+  router.get('/address-lookup/link-correspondence-address', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/link-correspondence-address', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+    
+  router.post('/address-lookup/link-correspondence-address', function (req, res) {
+    res.redirect('/address-lookup/home-address')
+  })
+
+  //Link the home address to the correspondence address
+  router.get('/address-lookup/link-home-address', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/link-home-address', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+          
+  router.post('/address-lookup/link-home-address', function (req, res) {
+    res.redirect('/add/date-of-appointment')
+  })
+
+  //Confirm the postal/correspondence address
+  router.get('/address-lookup/confirm-lookup-postal', function (req, res) {
+    // Render the confirm company page
+    res.render('address-lookup/confirm-lookup-postal', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+            
+  router.post('/address-lookup/confirm-lookup-postal', function (req, res) {
+    res.redirect('/address-lookup/home-address')
   })
 }

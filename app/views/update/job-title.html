@@ -6,33 +6,31 @@
   {{serviceName}}
   - GOV.UK
 {% endblock %}
-
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/job-title" method="post">
-              <div class="govuk-!-padding-bottom-6">
-        <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
-        <p class="govuk-hint">For example, carpenter. <br>Start typing an occupation, then choose from the list.</p>
-        <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
-      </div>
-      {{ govukDetails({
-        summaryText: "My occupation is not on the list",
-        text: "If your occupation is not shown when you start typing, you can type your occupation directly into the input field."
-      }) }}
+        <div class="govuk-!-padding-bottom-6">
+          <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
+          <p class="govuk-hint">For example, carpenter. <br>Start typing an occupation, then choose from the list.</p>
+          <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
+        </div>
+        {{ govukDetails({
+          summaryText: "My occupation is not on the list",
+          text: "If your occupation is not shown when you start typing, you can type your occupation directly into the input field."
+        }) }}
         {{ govukButton({
           text: "Continue"
         }) }}
       </form>
     </div>
   </div>
-<script src="/public/javascripts/accessible-autocomplete.js"></script>
-<script src="/public/javascripts/occupation.js"></script>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/occupation.js"></script>
 {% endblock %}

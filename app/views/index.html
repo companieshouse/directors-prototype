@@ -1,16 +1,13 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   {{serviceName}} - GOV.UK
 {% endblock %}
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-two-thirds">
       <h1 class="govuk-heading-xl">
         {{serviceName}}
-        <span class="govuk-caption-xl">Version 1</span>
+        <span class="govuk-caption-xl">Version 2</span>
       </h1>
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h4 class="govuk-tabs__title">
@@ -52,9 +49,53 @@
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">
+                  <a href="https://directors-project.herokuapp.com/">Version 2</a>
+                </th>
+                <td class="govuk-table__cell">Week commencing 14 February</td>
+                <td class="govuk-table__cell">
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Changes included in version 2
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <ul class="govuk-list--bulletlist">
+                        <li>
+                          Added the following pages
+                          <a href="start">GOV.UK start page</a>,
+                          <a href="start-c">GOV.UK start page (Welsh)</a>,
+                          <a href="sign-in">Sign in to Companies House</a>,
+                          <a href="company-lookup">Company lookup</a>,
+                          <a href="confirm-company">Confirm company</a>,
+                          <a href="auth-code">Company auth code</a>,
+                          <a href="directors">Directors</a>,
+                          <a href="add/add">Add a director's details</a>,
+                          <a href="add/check-your-answers">Add a director's details check your answers</a>,
+                          <a href="add/confirmation">Add a director's details confirmation</a>,
+                          <a href="change/change">Change a director's details</a>,
+                          <a href="change/check-your-answers">Change a director's details check your answers</a>,
+                          <a href="change/confirmation">Change a director's details confirmation</a>,
+                          <a href="remove/remove">Remove a director's details</a>,
+                          <a href="remove/check-your-answers">Remove a director's details check your anwers</a>
+                          and
+                          <a href="remove/confirmation">Remove a director's details confirmation</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Ready for testing
+                  </strong>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
                   <a href="https://directors-project.herokuapp.com/">Version 1</a>
                 </th>
-                <td class="govuk-table__cell">N/A</td>
+                <td class="govuk-table__cell">Week commencing 31 January</td>
                 <td class="govuk-table__cell">
                   <details class="govuk-details" data-module="govuk-details">
                     <summary class="govuk-details__summary">
@@ -64,7 +105,6 @@
                     </summary>
                     <div class="govuk-details__text">
                       <ul class="govuk-list--bulletlist">
-
                         <li>
                           Added the following pages
                           <a href="start">GOV.UK start page</a>,

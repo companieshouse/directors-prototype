@@ -1,7 +1,7 @@
 module.exports = function (router) {
-
-router.get('/update/remove', function (req, res) {
+  router.get('/update/remove', function (req, res) {
     req.session.type = req.query.type
+    req.session.removename = req.query.directorname
     var request = require('request')
     var apiKey = process.env.CHS_API_KEY
     var directorId = req.query.officer
@@ -19,9 +19,8 @@ router.get('/update/remove', function (req, res) {
         director: response.body
       })
     })
- })
-router.post('/update/remove', function (req, res) {
+  })
+  router.post('/update/remove', function (req, res) {
     res.redirect('../check-your-answers?type=remove')
-})
-
+  })
 }

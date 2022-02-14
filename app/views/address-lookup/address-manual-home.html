@@ -18,32 +18,29 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-         <form action="/address-lookup/address-manual-home" method="post">
-
-      <h1 class="govuk-heading-l">{{title}}</h1>
-      <p class="govuk-body">Tell us where the director lives. Only give a business address if they also live there.</p>
-
-      <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          I do not want my home address to be publicly available
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        Your home address is not shown on the public online register. However, if you use your home address as your postal address, this will be shown on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a> <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
-      </div>
-    </details>
-      {{ govukInput({
-        label: {
-          text: "Property name or number (optional)"
-        },
-        hint: {
-          text: "For example, 'The Mill', '116' or 'Flat 37a'"
-        },
-        id: "propertyName",
-        name: "propertyName"
-      }) }}
-
+      <form action="/address-lookup/address-manual-home" method="post">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        <p class="govuk-body">Tell us where the director lives. Only give a business address if they also live there.</p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I do not want my home address to be publicly available
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Your home address is not shown on the public online register. However, if you use your home address as your postal address, this will be shown on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a> <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
+          </div>
+        </details>
+        {{ govukInput({
+          label: {
+            text: "Property name or number (optional)"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
       {{ govukInput({
         label: {
           text: "Address line 1"
@@ -51,7 +48,6 @@
         id: "addressOne",
         name: "addressOne"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Address line 2 (optional)"
@@ -59,7 +55,6 @@
         id: "addressTwo",
         name: "addressTwo"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Town"
@@ -67,7 +62,6 @@
         id: "town",
         name: "town"
       }) }}
-
       {{ govukInput({
         label: {
           text: "County (optional)"
@@ -75,7 +69,6 @@
         id: "county",
         name: "county"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Country"
@@ -83,7 +76,6 @@
         id: "country",
         name: "country"
       }) }}
-
       {{ govukInput({
         label: {
           text: "Postcode"
@@ -91,7 +83,6 @@
         id: "postcode",
         name: "postcode"
       }) }}
-
       {{ govukButton({
         text: "Continue",
         href: "address-lookup-postal"

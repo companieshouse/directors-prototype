@@ -1,6 +1,5 @@
 {% set title = "What is the director's name?" %}
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   {{title}}
   -
@@ -13,58 +12,54 @@
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/name" method="post">
-            <h1 class="govuk-heading-l">{{title}}</h1>
-      <div class="govuk-form-group govuk-input--width-30">
-        <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
-        <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx. <br>Start typing a title, then choose from the list.<br></p>
-        <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
-      </div>
-      {{ govukInput({
-        label: {
-          text: "First name"
-        },
-        hint: {
-          text: "Enter the director's full first name"
-        },
-        classes: "govuk-input--width-20",
-        id: "firstname",
-        name: "firstname"
-      }) }}
-      {{ govukInput({
-        label: {
-          text: "Middle name or names (optional)"
-        },
-        hint: {
-          text: "Enter the director's full middle name or names"
-        },
-        classes: "govuk-input--width-20",
-        id: "middle-name",
-        name: "middle-name"
-      }) }}
-      {{ govukInput({
-        label: {
-          text: "Last name"
-        },
-        classes: "govuk-input--width-20",
-        id: "last-name",
-        name: "last-name"
-      }) }}
-      <h2 class="govuk-heading-m govuk-!-margin-top-9">Information on the online register</h2>
-<p class="govuk-body">The director's name and title will be publicly available on the Companies House online register.</p>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        <div class="govuk-form-group govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
+          <p class="govuk-hint">For example, Mr, Mrs, Miss, Ms or Mx. <br>Start typing a title, then choose from the list.<br></p>
+          <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-5"></div>
+        </div>
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          hint: {
+            text: "Enter the director's full first name"
+          },
+          classes: "govuk-input--width-20",
+          id: "firstname",
+          name: "firstname"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Middle name or names (optional)"
+          },
+          hint: {
+            text: "Enter the director's full middle name or names"
+          },
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          name: "middle-name"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "last-name",
+          name: "last-name"
+        }) }}
+        <h2 class="govuk-heading-m govuk-!-margin-top-9">Information on the online register</h2>
+        <p class="govuk-body">The director's name and title will be publicly available on the Companies House online register.</p>
         {{ govukButton({
           text: "Continue"
         }) }}
       </form>
-
-
     </div>
   </div>
-
-<script src="/public/javascripts/accessible-autocomplete.js"></script>
-<script src="/public/javascripts/titles.js"></script>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/titles.js"></script>
 {% endblock %}

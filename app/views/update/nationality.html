@@ -16,16 +16,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/nationality" method="post">
-
-
-              <div class="govuk-form-group ">
-         <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
+        <div class="govuk-form-group ">
+          <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-        <div id="nationality" class="autocomplete-wrapper"></div>
-      </div>
-      <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
-      </p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+        </p>
         {{ govukButton({
           text: "Continue",
           classes: "govuk-!-margin-top-6"
@@ -33,6 +31,6 @@
       </form>
     </div>
   </div>
-<script src="/public/javascripts/accessible-autocomplete.js"></script>
-<script src="/public/javascripts/nationality.js"></script>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/nationality.js"></script>
 {% endblock %}

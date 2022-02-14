@@ -34,6 +34,7 @@
             },
             id: "authNumber",
             name: "authNumber",
+            type: "password",
             errorMessage: {
               text: "Enter the company authentication code"
             }
@@ -49,7 +50,8 @@
             text: "You need the authentication code to submit company information for " + company.company_name + "."
           },
           id: "authNumber",
-          name: "authNumber"
+          name: "authNumber",
+          type: "password"
           }) }}
         {% endif %}
         {{ govukDetails({

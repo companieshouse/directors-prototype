@@ -1,7 +1,7 @@
 {% set title = "Check your answers before submitting the update" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{director.name}}
+  {{title}}
   -
   {{serviceName}}
   - GOV.UK
@@ -15,8 +15,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
-
+      {% if type == 'remove' %}
+        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
+      {% else %}
+        <h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
+      {% endif %}
       <h2 class="govuk-heading-m">Company details</h2>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -27,7 +30,7 @@
             {{company.company_name}}
           </dd>
         </div>
-           <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Company number
           </dt>
@@ -36,224 +39,202 @@
           </dd>
         </div>
       </dl>
+      <!--Remove a director-->
       {% if type == 'remove' %}
-                <h2 class="govuk-heading-m">Director details</h2>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+        <h2 class="govuk-heading-m">Director details</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
             Name
-          </dt>
-          <dd class="govuk-summary-list__value">
+            </dt>
+            <dd class="govuk-summary-list__value">
             Mr Alan Demo
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-           <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
             Date the director was removed from the company
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['date-removed-day']}} {{data['date-removed-month']}} {{data['date-removed-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/update/remove">
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['date-removed-day']}} {{data['date-removed-month']}} {{data['date-removed-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/update/remove">
               Change<span class="govuk-visually-hidden"> removed on date</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-
+              </a>
+            </dd>
+          </div>
+        </dl>
       {% else %}
-       <h2 class="govuk-heading-m">Appointment details</h2>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['input-autocomplete'] | first}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/add/add?type=add&#firstname">
+        <h2 class="govuk-heading-m">Appointment details</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['title']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add&#firstname">
               Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-           <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Nationality
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['input-autocomplete'][1]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/add/add?type=add&#nationality">
-              Change<span class="govuk-visually-hidden"> nationality</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['dob-day']}}
-                     {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
-January
-{% elif (data['dob-month'] === "02") or (data['dob-month'] === "2")
- %}
-February
-{% elif (data['dob-month'] === "03") or (data['dob-month'] === "3")
- %}
-March
-{% elif (data['dob-month'] === "04") or (data['dob-month'] === "4")
- %}
-April
-{% elif (data['dob-month'] === "05") or (data['dob-month'] === "5")
- %}
-May
-{% elif (data['dob-month'] === "06") or (data['dob-month'] === "6")
- %}
-June
-{% elif (data['dob-month'] === "07") or (data['dob-month'] === "7")
- %}
-July
-{% elif (data['dob-month'] === "08") or (data['dob-month'] === "8")
- %}
-August
-{% elif (data['dob-month'] === "09") or (data['dob-month'] === "9")
- %}
-September
-{% elif (data['dob-month'] === "10")%}
-October
-{% elif (data['dob-month'] === "11")%}
-November
-{% elif (data['dob-month'] === "12")%}
-December
-{% else %}
- {{data['dob-month']}}
-{% endif %}
-
-   {{data['dob-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/add/add?type=add&#dob">
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['dob-day']}}
+              {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
+                January
+              {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2") %}
+                February
+              {% elif (data['dob-month'] === "03") or (data['dob-month'] === "3") %}
+                March
+              {% elif (data['dob-month'] === "04") or (data['dob-month'] === "4") %}
+                April
+              {% elif (data['dob-month'] === "05") or (data['dob-month'] === "5") %}
+                May
+              {% elif (data['dob-month'] === "06") or (data['dob-month'] === "6") %}
+                June
+              {% elif (data['dob-month'] === "07") or (data['dob-month'] === "7") %}
+                July
+              {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
+                August
+              {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
+                September
+              {% elif (data['dob-month'] === "10") %}
+                October
+              {% elif (data['dob-month'] === "11") %}
+                November
+              {% elif (data['dob-month'] === "12") %}
+                December
+              {% else %}
+                {{data['dob-month']}}
+              {% endif %}
+              {{data['dob-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-birth?type=add&#dob">
               Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Job title
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['input-autocomplete'] | last}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/add/add?type=add&#occupation">
-              Change<span class="govuk-visually-hidden"> job title</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-                 The home address is the same as the registered office address
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['input-autocomplete'][1]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/add?type=add&#nationality">
+              Change<span class="govuk-visually-hidden"> nationality</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Occupation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['input-autocomplete']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/job-title?type=add&#occupation">
+              Change<span class="govuk-visually-hidden"> occupation title</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['correspondence-address'] === "different-address") %}
+                {{data['postcode'] | reverse}}
+              {% else %}
+                The correspondence address is the same as the registered office address
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/address-lookup/correspondence-address">
+              Change<span class="govuk-visually-hidden"> correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              The home address is the same as the registered office address
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-                <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          {% if (data['correspondence-address'] === "different-address") %}
-              {{data['postcode'] | reverse}}
-          {% else %}
-  The correspondence address is the same as the registered office address
-          {% endif %}
-
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of appointment
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['date-appointed-day']}}
-
-                     {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
-January
-{% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2")
- %}
-February
-{% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3")
- %}
-March
-{% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4")
- %}
-April
-{% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5")
- %}
-May
-{% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6")
- %}
-June
-{% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7")
- %}
-July
-{% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8")
- %}
-August
-{% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9")
- %}
-September
-{% elif (data['date-appointed-month'] === "10")%}
-October
-{% elif (data['date-appointed-month'] === "11")%}
-November
-{% elif (data['date-appointed-month'] === "12")%}
-December
-{% else %}
- {{data['date-appointed-month']}}
-{% endif %}
-{{data['date-appointed-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/add/add?type=add&#director-appointed">
+              </a>
+            </dd>
+          </div>       
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of appointment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['date-appointed-day']}}
+              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                September
+              {% elif (data['date-appointed-month'] === "10")%}
+                October
+              {% elif (data['date-appointed-month'] === "11")%}
+                November
+              {% elif (data['date-appointed-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-appointed-month']}}
+              {% endif %}
+              {{data['date-appointed-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-appointment?type=add&#director-appointed">
               Change<span class="govuk-visually-hidden"> appointed on date</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+              </a>
+            </dd>
+          </div>
+        </dl>
       {% endif %}
-
-      <div>
-
-        <p>By submitting this information, you are confirming that the person named has consented to act as a director.</p>
-        <br>
-      </div>
-        {{ govukButton({
-          text: "Confirm and submit",
-          href: "confirmation"
-        }) }}
-      </form>
+      {% if type == 'remove' %}
+      {% else %}
+        <div>
+          <p>By submitting this information, you are confirming that the person named has consented to act as a director.</p>
+        </div>
+      {% endif %}
+ 
+      {{ govukButton({
+        text: "Confirm and submit",
+        href: "confirmation"
+      }) }}
+    </form>
     </div>
   </div>
 {% endblock %}
