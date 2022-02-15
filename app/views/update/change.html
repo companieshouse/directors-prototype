@@ -84,6 +84,25 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {{ [1,2,3,4,5,6,7,8,9] | random }}
+              {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+              {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+              <!--{% set filteredDate = officer.appointed_on %}
+              {{ filteredDate | replace("-", " ")}}-->
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Appointed on
+          </dt>
+          <dd class="govuk-summary-list__value" style="  direction: rtl;text-align:left">
+            {% set filteredDate = director.appointed_on %}
+            {{ filteredDate | replace("-", " ")}}
+          </dd>
+        </div>
       </dl>
 
 {{ govukDateInput({

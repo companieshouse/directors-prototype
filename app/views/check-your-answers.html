@@ -229,9 +229,22 @@
       {% endif %}
       {% if type == 'remove' %}
       {% else %}
-        <div>
-          <p>By submitting this information, you are confirming that the person named has consented to act as a director.</p>
-        </div>
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Consent to act",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "carcasses",
+              text: "By submitting this information, you are confirming that the person named has consented to act as a director."
+            }
+          ]
+        }) }}
       {% endif %}
 
       {{ govukButton({
