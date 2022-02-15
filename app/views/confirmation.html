@@ -62,7 +62,35 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Appointed on</th>
-              <td class="govuk-table__cell">{{data['director-appointed-day']}} {{data['director-appointed-month']}} {{data['director-appointed-year']}}</td>
+              <td class="govuk-table__cell">              {{data['date-appointed-day']}}
+              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                September
+              {% elif (data['date-appointed-month'] === "10")%}
+                October
+              {% elif (data['date-appointed-month'] === "11")%}
+                November
+              {% elif (data['date-appointed-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-appointed-month']}}
+              {% endif %}
+              {{data['date-appointed-year']}}</td>
             </tr>
           </tbody>
         </table>
