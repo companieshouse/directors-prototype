@@ -1,6 +1,11 @@
-# Documentation
+# Appointing, updating and removing a director
 
-[Documentation and examples](https://govuk-prototype-kit.herokuapp.com/docs)
 
-Documentation is also available when running the app locally at http:localhost:3000/docs
-
+```mermaid
+  flowchart LR
+  A[Start] --> B[Sign in]
+  B --> C[Company number]
+  C --> D[Confirm company]
+  D --> E[Auth number]
+  E --> F[All directors for the company]
+```
