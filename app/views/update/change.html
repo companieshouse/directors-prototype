@@ -17,7 +17,6 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
       <h1 class="govuk-heading-l">Update the director's details</h1>
-
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -50,7 +49,11 @@
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{director.occupation}}</p>
+            {% if data['occupationUpdate'] %}
+              <p class="govuk-body">{{data['occupationUpdate']}}</p> 
+            {% else %}
+              <p class="govuk-body">{{director.occupation}}</p>  
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="job-title?officer={{details}}">

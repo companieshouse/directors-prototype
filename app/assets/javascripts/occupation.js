@@ -306,4 +306,4 @@ var occupations = [
 ]
 var element = document.querySelector('#occupation')
 var id = 'autocomplete-default'
-accessibleAutocomplete({element: element, id: id, source: occupations})
+accessibleAutocomplete({element: element, id: id, source: occupations, name: 'occupationUpdate'})
