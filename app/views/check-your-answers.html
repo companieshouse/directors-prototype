@@ -173,9 +173,32 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
-                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
+                {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
+              {% elif (data['home-address'] === "correspodence-address")%}
+                {% if (data['link-home-address'] === "yes") %}
+                  The home address is the same as the correspondence address
               {% else %}
-                The home address is the same as the registered office address
+                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
+          {% endif %}
+
+              {% else %}
+
+          {% if company.registered_office_address.address_line_1 %}
+            {{company.registered_office_address.address_line_1}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.address_line_2 %}
+            {{company.registered_office_address.address_line_2}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.region %}
+            {{company.registered_office_address.region}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.locality %}
+            {{company.registered_office_address.locality}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.postal_code %}
+            {{company.registered_office_address.postal_code}}
+          {% endif %}
+ 
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
