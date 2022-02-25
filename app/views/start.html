@@ -15,7 +15,16 @@
         <li>update an existing director's details</li>
         <li>remove a director</li>
       </ul>
-      <p class="govuk-body">For now, you cannot appoint, update or remove corporate directors in this service. You can make these changes in <a href="https://ewf.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">WebFiling</a> or by filing a <a href="https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies#directors-and-secretaries" class="govuk-link">Companies House form</a>.</p>
+
+      <h3 class="govuk-heading-s">Corporate directors</h3>
+
+      <p class="govuk-body">To appoint, update or remove corporate directors, you'll need to use our <a href="https://ewf.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">WebFiling service</a> or file a <a href="https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies#directors-and-secretaries" class="govuk-link">Companies House form</a>.</p>
+
+      {{ govukDetails({
+        summaryText: "What is a corporate director?",
+        text: "This is a company, firm, or any other kind of corporate body that is appointed as the director of another company."
+      }) }}
+
       <h2 class="govuk-heading-m">Before you start</h2>
       <p class="govuk-body">You'll need:</p>
       <ul class="govuk-list govuk-list--bullet">

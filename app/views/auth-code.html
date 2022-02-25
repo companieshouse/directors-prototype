@@ -47,7 +47,7 @@
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "You need the authentication code to submit company information for " + company.company_name + "."
+            text: "This is a 6 character code issued by us to each company. You need the code to authorise online filings for " + company.company_name + "."
           },
           id: "authNumber",
           name: "authNumber",
@@ -55,10 +55,8 @@
           }) }}
         {% endif %}
         {{ govukDetails({
-          summaryText: "Help with authentication code",
-          html: "<p>This is a 6 character code issued by us to each company. The code is used to authorise online filings.<p>
-
-          </p>Read the <a target='blank' href='https://www.gov.uk/guidance/company-authentication-codes-for-online-filing'>guidance about how to request an authentication code (opens in a new tab)</a>.</p>"
+          summaryText: "I do not have an authentication code",
+          html: "<p>You’ll need to <a target='blank' href='https://www.gov.uk/guidance/company-authentication-codes-for-online-filing'>request an authentication code (opens in a new tab)</a> to file online for this company. We’ll then send the code to the company’s registered office address by post. It can take up to 5 days to arrive.<p>"
          }) }}
         {{ govukButton({
          text: "Continue"
