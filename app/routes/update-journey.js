@@ -3,6 +3,7 @@ module.exports = function (router) {
   //Overall update journey page
   router.get('/update/change', function (req, res) {
     req.session.type = req.query.type
+    req.session.name = req.query.name
     var request = require('request')
     var apiKey = process.env.CHS_API_KEY
     var directorId = req.query.officer
@@ -24,6 +25,10 @@ module.exports = function (router) {
   })
 
   router.post('/update/change', function (req, res) {
+    res.redirect('/update/date-of-change')
+  })
+
+  router.post('/update/date-of-change', function (req, res) {
     res.redirect('/confirmation')
   })
 

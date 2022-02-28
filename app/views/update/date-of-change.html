@@ -1,0 +1,39 @@
+{% set title = "Date of birth" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/date-of-change" method="post">
+        {{ govukDateInput({
+            id: "date-of-change",
+            namePrefix: "date-of-change",
+            fieldset: {
+                legend: {
+                    text: "When did the director's details change?",
+                          isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "For example, 27 1 2022"
+            }
+        }) }}
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

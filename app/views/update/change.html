@@ -107,28 +107,12 @@
           </dd>
         </div>
       </dl>
-
-{{ govukDateInput({
-  id: "date-of-change",
-  namePrefix: "date-of-change",
-  fieldset: {
-    legend: {
-      text: "When did the director's details change?",
-       classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "For example, 27 1 2022"
-  }
-}) }}
-
         {{ govukButton({
-          text: "Submit updates"
+          text: "Continue"
         }) }}
       </form>
       <p class="govuk-body">
       <a href="../directors" class="govuk-link govuk-link--no-visited-state">Cancel updates</a><p>
     </div>
   </div>
-
 {% endblock %}
