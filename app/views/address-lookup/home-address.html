@@ -1,4 +1,4 @@
-{% set title = "What is the director's home address?" %}
+{% set title = "Where does the director live?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -16,6 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/home-address" method="post">
+<p class="govuk-body">Tell us the director's home address. Only give a business address if they also live there.</p>
         {# Get the registered office address #}
         {% set roAddress %}
           {% if company.registered_office_address.address_line_1 %}
@@ -37,6 +38,7 @@
         {# Radio options to select the home address #}
         {# If condition to see if the correspondence address is the same as the RO #}
         {% if (data['correspondence-address'] === "registered-office-address")%}
+
           {{ govukRadios({
             idPrefix: "home-address",
             name: "home-address",
@@ -50,10 +52,7 @@
             items: [
               {
                 value: "registered-office-address",
-                html: roAddress,
-                hint: {
-                  text: "This is the company's registered office address"
-                }
+                html: roAddress
               },
               {
                 value: "different-address",
@@ -62,6 +61,7 @@
             ]
           }) }}
         {# If not then show the RO, correspondence and a different address options #}
+
         {% else %}
           {{ govukRadios({
             idPrefix: "home-address",
@@ -76,17 +76,11 @@
             items: [
               {
                 value: "registered-office-address",
-                html: roAddress,
-                hint: {
-                  text: "This is the company's registered office address"
-                }
+                html: roAddress
               },
               {
                 value: "correspodence-address",
-                html: "Stornoway House, 13 Cleveland Row, London, SW1A 1GG",
-                hint: {
-                  text: "This is the director's correspondence address"
-                }
+                html: "Stornoway House, 13 Cleveland Row, London, SW1A 1GG"
               },
               {
                 value: "different-address",
@@ -94,6 +88,7 @@
               }
             ]
           }) }}
+
         {% endif %}
         {# What information will be on the register #}
         <h2 class="govuk-heading-m govuk-!-margin-top-9">What information is shown on the online register</h2>

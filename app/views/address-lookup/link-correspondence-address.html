@@ -15,35 +15,51 @@
 }) }}
 {% endblock %}
 
+
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/address-lookup/link-correspondence-address" method="post">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Updating your correspondence address
+      </h1>
+
+      <p class="govuk-body">
+      If your registered office address moves to another location in the future, we can update the correspondence address to the same address, at the same time.</p>
+      <p class="govuk-body">This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>when you tell us the company's registered office address has changed, you will not have to tell us your correspondence address has also changed</li>
+        <li>we'll update your correspondence address automatically for you</li>
+
+      </ul>
+<br><br>
+
+
+
+      <form action="/address-lookup/link-correspondence-address" method="post" novalidate>
+
         {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "link-correspondence-address",
-          name: "link-correspondence-address",
+          idPrefix: "interview-needs",
+          name: "interview-needs",
           fieldset: {
             legend: {
-              text: title,
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              text: "If the registered office address changes, do you want us to automatically update the correspondence address as well?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
-          },
-          hint: {
-            text: "This means that future changes to the registered office address will also apply to the director's correspondence address."
           },
           items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+           {
+             value: "yes",
+             text: "Yes"
+           },
+           {
+             value: "no",
+             text: "No"
+           }
+         ]
+       }) }}
+
         {{ govukButton({
           text: "Continue"
         }) }}
