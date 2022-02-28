@@ -16,7 +16,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/home-address" method="post">
-<p class="govuk-body">Tell us the director's home address. Only give a business address if they also live there.</p>
         {# Get the registered office address #}
         {% set roAddress %}
           {% if company.registered_office_address.address_line_1 %}
@@ -42,6 +41,9 @@
           {{ govukRadios({
             idPrefix: "home-address",
             name: "home-address",
+            hint: {
+              text: "Tell us the director's home address. Only give a business address if they also live there."
+            },
             fieldset: {
               legend: {
                 text: title,
@@ -61,11 +63,13 @@
             ]
           }) }}
         {# If not then show the RO, correspondence and a different address options #}
-
         {% else %}
           {{ govukRadios({
             idPrefix: "home-address",
             name: "home-address",
+            hint: {
+              text: "Tell us the director's home address. Only give a business address if they also live there."
+            },
             fieldset: {
               legend: {
                 text: title,

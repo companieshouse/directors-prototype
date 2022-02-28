@@ -117,6 +117,8 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     // If everything is fine then do this
     } if (req.session.data['home-address'] === 'different-address') {
       res.redirect('/address-lookup/address-lookup-home')
+    } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
+      res.redirect('/add/date-of-appointment')
     } else {
       // res.redirect goes to whichever page you want
       res.redirect('/address-lookup/link-home-address')

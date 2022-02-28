@@ -34,7 +34,15 @@ var titles = [
   'The Right Honorable',
   'Professor',
   'The Honorable',
-  
+  'Reverend',
+  'MP',
+  'Judge',
+  'Knight',
+  'Knight Bachelor',
+  'Ministers of religion',
+  'Queen\'s Counsel (QC)',
+  'Dame',
+  'Life Peer'
 ]
 var element = document.querySelector('#title')
 var id = 'autocomplete-default'
