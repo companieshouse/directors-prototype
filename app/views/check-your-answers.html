@@ -106,6 +106,7 @@
         </dl>
 
       {% elif type == 'update' %}
+         <h2 class="govuk-heading-m">Director updates</h2>
               {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -203,7 +204,7 @@
               Nationality
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['nationalityAppoint']}}
+              {{data['nationalityAppoint'] | first}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/add?type=add&#nationality">
