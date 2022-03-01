@@ -5,6 +5,7 @@ module.exports = function (router) {
     req.session.type = req.query.type
     req.session.name = req.query.name
     var request = require('request')
+    //Get the API key from the .env file
     var apiKey = process.env.CHS_API_KEY
     var directorId = req.query.officer
     var options = {
@@ -29,11 +30,12 @@ module.exports = function (router) {
     res.redirect('/update/date-of-change')
   })
 
+  //Date of change page
   router.get('/update/date-of-change', function (req, res) {
     res.render('update/date-of-change', {
       type: req.session.type 
     })
-})
+  })
 
   router.post('/update/date-of-change', function (req, res) {
     res.redirect('/check-your-answers')

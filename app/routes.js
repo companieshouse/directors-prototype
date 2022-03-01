@@ -31,7 +31,8 @@ router.get('/check-your-answers', function (req, res) {
     // To use the company data on that page use the following
     company: req.session.company,
     officers: req.session.officers,
-    type: req.session.type 
+    type: req.session.type,
+    nameRemove: req.session.removename
   })
 })
 
@@ -41,7 +42,8 @@ router.get('/confirmation', function (req, res) {
     // To use the company data on that page use the following
     type: req.session.type,
     company: req.session.company,
-    name: req.session.name
+    name: req.session.name,
+    nameRemove: req.session.removename
   })
 })
 

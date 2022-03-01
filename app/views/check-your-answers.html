@@ -50,7 +50,7 @@
             Name
             </dt>
             <dd class="govuk-summary-list__value">
-            Mr Alan Demo
+           {{nameRemove}}
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -60,7 +60,35 @@
             Date the director was removed from the company
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['date-removed-day']}} {{data['date-removed-month']}} {{data['date-removed-year']}}
+              {{data['date-removed-day']}} 
+              {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+                January
+              {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+                February
+              {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+                March
+              {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+                April
+              {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+                May
+              {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+                June
+              {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+                July
+              {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+                August
+              {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+                September8
+              {% elif (data['date-removed-month'] === "10") %}
+                October
+              {% elif (data['date-removed-month'] === "11") %}
+                November
+              {% elif (data['date-removed-month'] === "12") %}
+                December
+              {% else %}
+                {{data['date-removed-month']}}
+              {% endif %}
+              {{data['date-removed-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/update/remove">
@@ -114,7 +142,7 @@
               Previous names
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+              {{data['previous-names']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add&#firstname">

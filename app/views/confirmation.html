@@ -113,11 +113,39 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name of director</th>
-              <td class="govuk-table__cell">Mr Alan Demo</td>
+              <td class="govuk-table__cell"> {{nameRemove}}</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Date removed</th>
-              <td class="govuk-table__cell">28 April 2021</td>
+              <td class="govuk-table__cell">{{data['date-removed-day']}} 
+              {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+                January
+              {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+                February
+              {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+                March
+              {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+                April
+              {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+                May
+              {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+                June
+              {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+                July
+              {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+                August
+              {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+                September8
+              {% elif (data['date-removed-month'] === "10") %}
+                October
+              {% elif (data['date-removed-month'] === "11") %}
+                November
+              {% elif (data['date-removed-month'] === "12") %}
+                December
+              {% else %}
+                {{data['date-removed-month']}}
+              {% endif %}
+              {{data['date-removed-year']}}</td>
             </tr>
           </tbody>
         </table>
