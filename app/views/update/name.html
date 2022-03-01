@@ -19,6 +19,13 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/name" method="post">
       <h1 class="govuk-heading-l">{{title}}</h1>
+              <div class="govuk-form-group govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
+          <p class="govuk-hint">Start typing a title, then choose from the list.<br>
+
+          </p>
+          <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
+        </div>
       {{ govukInput({
         label: {
           text: "First name"
@@ -93,4 +100,6 @@
       </form>
     </div>
   </div>
+    <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/titles.js"></script>
 {% endblock %}

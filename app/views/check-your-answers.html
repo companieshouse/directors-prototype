@@ -71,9 +71,29 @@
         </dl>
     
       {% elif type == 'update' %}
-        <p>test</p>
+              {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Occupation"
+            },
+            value: {
+              text: "Director"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "previous application number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
       {% else %}
-    
         <h2 class="govuk-heading-m">Appointment details</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -270,6 +290,8 @@
         </dl>
       {% endif %}
       {% if type == 'remove' %}
+
+      {% elif type == 'update' %}
       {% else %}
         {{ govukCheckboxes({
           idPrefix: "waste",
