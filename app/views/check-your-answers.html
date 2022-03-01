@@ -206,7 +206,9 @@
               Nationality
             </dt>
             <dd class="govuk-summary-list__value">
+            {% if data['nationalityAppoint'] %}
               {{data['nationalityAppoint'] | first}}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/add?type=add&#nationality">
