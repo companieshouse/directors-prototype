@@ -226,5 +226,9 @@ var countries = [
   'Zimbabwean'
 ]
 var element = document.querySelector('#nationality')
+var elementTwo = document.querySelector('#nationalityTwo')
+var elementThree = document.querySelector('#nationalityThree')
 var id = 'autocomplete-default'
 accessibleAutocomplete({element: element, id: id, source: countries, name: "nationalityAppoint"})
+accessibleAutocomplete({element: elementTwo, id: id, source: countries, name: "nationalityAppoint"})
+accessibleAutocomplete({element: elementThree, id: id, source: countries, name: "nationalityAppoint"})
