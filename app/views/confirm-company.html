@@ -15,6 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!-- The action will need to change depending on the location of the confirm-company page -->
+      
       <form action="/confirm-company" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
         <dl class="govuk-summary-list">
@@ -35,7 +36,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Incorporation date</dt>
-            <dd class="govuk-summary-list__value">{{companyIncorp}}</dd>
+            <dd class="govuk-summary-list__value">{{company.date_of_creation | date}}</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company type</dt>
