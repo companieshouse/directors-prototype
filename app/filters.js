@@ -39,6 +39,15 @@ module.exports = function (env) {
   ------------------------------------------------------------------ */
 var nunjucks = require('nunjucks');
 var env = new nunjucks.Environment();
+var express = require('express');
+const app = express();
+
+filters.date = function setUpNunjucks(date) {
+  const moment = require('moment');
+  m = moment(date, 'YYYY-MM-DD')
+  d = m.format('DD MMMM YYYY')
+  return d
+}
 
 env.addFilter('shorten', function(str, count) {
     return str.slice(0, 2);
