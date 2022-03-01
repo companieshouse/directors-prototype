@@ -101,9 +101,8 @@
           <dt class="govuk-summary-list__key">
             Appointed on
           </dt>
-          <dd class="govuk-summary-list__value" style="  direction: rtl;text-align:left">
-            {% set filteredDate = director.appointed_on %}
-            {{ filteredDate | replace("-", " ")}}
+          <dd class="govuk-summary-list__value">
+            {{ director.appointed_on | date}}
           </dd>
         </div>
       </dl>
