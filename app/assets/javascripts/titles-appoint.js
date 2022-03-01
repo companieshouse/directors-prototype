@@ -46,4 +46,4 @@ var titles = [
 ]
 var element = document.querySelector('#title')
 var id = 'autocomplete-default'
-accessibleAutocomplete({element: element, id: id, source: titles, name: "titleAppoint"})
+accessibleAutocomplete({element: element, id: id, source: titles, name: "titleAppoint", showNoOptionsFound: false})
