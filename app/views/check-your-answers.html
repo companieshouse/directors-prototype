@@ -18,7 +18,7 @@
       {% if type == 'remove' %}
         <h1 class="govuk-heading-l">Check your answers before submitting the removal of a director</h1>
       {% elif type == 'update' %}
-        <h1 class="govuk-heading-l">Check your answers before submitting the update of a director</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
       {% else %}
         <h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
       {% endif %}
@@ -40,6 +40,13 @@
             {{company.company_number}}
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registered office address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, AL7 1GA
+          </dd>
       </dl>
       <!--Remove a director-->
       {% if type == 'remove' %}
@@ -60,7 +67,7 @@
             Date the director was removed from the company
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['date-removed-day']}} 
+              {{data['date-removed-day']}}
               {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
                 January
               {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
@@ -97,17 +104,17 @@
             </dd>
           </div>
         </dl>
-    
+
       {% elif type == 'update' %}
               {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: {
-              text: "Occupation"
+              text: "Update made"
             },
             value: {
-              text: "Director"
+              text: "Occupation updated to ..."
             },
             actions: {
               items: [

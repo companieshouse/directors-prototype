@@ -18,8 +18,8 @@
       <form action="/add/name" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
         <div class="govuk-form-group govuk-input--width-30">
-          <label for="autocomplete-default" class="govuk-label">Title (optional)</label>
-          <p class="govuk-hint">Start typing a title, then choose from the list.</p>
+          <label for="autocomplete-default" class="govuk-label">Professional or honorary title (optional)</label>
+          <p class="govuk-hint">Start typing a title, then choose from the list</p>
           <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
         </div>
         {{ govukInput({
@@ -67,7 +67,7 @@
           name: "different-name",
           fieldset: {
             legend: {
-              text: "Has the applicant used a different name for business purposes in the last 20 years?"
+              text: "Has the director used a different name for business purposes in the last 20 years?"
             }
           },
           items: [
