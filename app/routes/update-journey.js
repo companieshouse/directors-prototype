@@ -19,7 +19,8 @@ module.exports = function (router) {
       if (error) throw new Error(error)
       res.render('update/change', {
         director: response.body,
-        details: req.query.officer
+        details: req.query.officer,
+        type: req.query.type
       })
     })
   })
@@ -28,8 +29,14 @@ module.exports = function (router) {
     res.redirect('/update/date-of-change')
   })
 
+  router.get('/update/date-of-change', function (req, res) {
+    res.render('update/date-of-change', {
+      type: req.session.type 
+    })
+})
+
   router.post('/update/date-of-change', function (req, res) {
-    res.redirect('/confirmation')
+    res.redirect('/check-your-answers')
   })
 
   //Updating the country of residence page

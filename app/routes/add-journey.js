@@ -62,6 +62,19 @@ module.exports = function (router) {
   })
 
   router.post('/add/date-of-appointment', function (req, res) {
+    res.redirect('/add/243')
+  }) 
+
+  // 243
+  router.get('/add/243', function (req, res) {
+    // Render the confirm company page
+    res.render('add/243', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+  
+  router.post('/add/243', function (req, res) {
     res.redirect('../check-your-answers')
   }) 
 }

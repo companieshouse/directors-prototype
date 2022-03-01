@@ -17,6 +17,8 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       {% if type == 'remove' %}
         <h1 class="govuk-heading-l">Check your answers before submitting the removal of a director</h1>
+      {% elif type == 'update' %}
+        <h1 class="govuk-heading-l">Check your answers before submitting the update of a director</h1>
       {% else %}
         <h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
       {% endif %}
@@ -67,12 +69,29 @@
             </dd>
           </div>
         </dl>
+    
+      {% elif type == 'update' %}
+        <p>test</p>
       {% else %}
+    
         <h2 class="govuk-heading-m">Appointment details</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add&#firstname">
+              Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous names
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
@@ -106,7 +125,7 @@
               {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
                 August
               {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
-                September
+                September8
               {% elif (data['dob-month'] === "10") %}
                 October
               {% elif (data['dob-month'] === "11") %}
