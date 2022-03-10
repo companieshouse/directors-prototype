@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">{{company.company_name}}</span>
-      <h1 class="govuk-heading-l">Active directors </h1>
+      <h1 class="govuk-heading-l">Active directors</h1>
 
       {{ govukButton({
         text: "Appoint new director",
@@ -41,8 +41,6 @@
                     {{ [1,2,3,4,5,6,7,8,9] | random }}
                     {{ ['August','January','December','November','October','March','May','June','July'] | random }}
                     {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
-                    <!--{% set filteredDate = officer.appointed_on %}
-                    {{ filteredDate | replace("-", " ")}}-->
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
