@@ -16,13 +16,15 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">{{company.company_name}}</span>
       <h1 class="govuk-heading-l">Active directors</h1>
-
       {{ govukButton({
         text: "Appoint new director",
         href: "add/name?type=add"
       }) }}
+      <!--The first thing to do is create a for loop. What this does is check the API to see how many officers/directors there are and then loop through this lot of code over and over until it runs out of directors-->
       {% for officer in officers.items %}
+        <!--This just removes any items that are either resigned or who are not directors-->
         {% if not (officer.resigned_on) and (officer.officer_role == 'director') %}
+          <!--The component use to display the directors is a customised version of the summary list component, extra styling can be found in the application.scss file-->
           <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
               <p class="govuk-!-font-weight-bold govuk-!-margin-0">{{officer.name}}</p>
@@ -32,12 +34,14 @@
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Role</dt>
                   <dd class="govuk-summary-list__value">
+                    <!--Capitalize just capitalizes the first letter of each word-->
                     {{officer.officer_role | capitalize}}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Date of birth</dt>
                   <dd class="govuk-summary-list__value">
+                    <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
                     {{ [1,2,3,4,5,6,7,8,9] | random }}
                     {{ ['August','January','December','November','October','March','May','June','July'] | random }}
                     {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
@@ -46,6 +50,7 @@
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Appointed on</dt>
                   <dd class="govuk-summary-list__value" >
+                  <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
                   {{officer.appointed_on | date}}
                   </dd>
                 </div>
@@ -53,6 +58,7 @@
             </div>
             <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
               <p class="govuk-body">
+                <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
                 <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a>
                 <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Remove director</a>
               </p>
