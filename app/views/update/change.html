@@ -66,7 +66,21 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
+            {% if director.address.address_line_1 %}
+            {{director.address.address_line_1}}
+            {% endif %}
+            {% if director.address.address_line_2 %}
+            <br>{{director.address.address_line_2}}
+          {% endif %}
+          {% if director.address.locality %}
+          <br>{{director.address.locality}}
+          {% endif %}
+          {% if director.address.country %}
+          <br>{{director.address.country}}
+          {% endif %}
+          {% if director.address.postal_code %}
+            <br>{{director.address.postal_code}}
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="../address-lookup/correspondence-address?officer={{details}}">
@@ -80,6 +94,9 @@
           </dt>
           <dd class="govuk-summary-list__value">
             72 Guild Street<br>London<br>SE23 6FH
+            {% if director.country_of_residence %}
+            <br>{{director.country_of_residence}}
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="../address-lookup/home-address?officer={{details}}">
