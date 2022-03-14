@@ -19,6 +19,7 @@ module.exports = function (router) {
     request(options, function (error, response) {
       if (error) throw new Error(error)
       res.render('update/change', {
+        company: req.session.company,
         director: response.body,
         details: req.query.officer,
         type: req.query.type

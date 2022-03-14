@@ -42,10 +42,14 @@
             <!-- upper is a way in Nunjucks to convert text into uppercase-->
             <dd class="govuk-summary-list__value">
             {% if company.type === "plc" %}
-            Public Limited Company
-               {% else %}
-            {{company.type | upper}}
-               {% endif %}
+              Public Limited Company
+            {% elif company.type === "private-limited-guarant-nsc" %}
+              Private company limited by guarantee without share capital
+            {% elif company.type === "private-limited-guarant-nsc-limited-exemption" %}
+            Private Limited Company by guarantee without share capital use of 'Limited' exemption
+            {% else %}
+              {{company.type | upper}}
+            {% endif %}
             </dd>
           </div>
           <div class="govuk-summary-list__row">

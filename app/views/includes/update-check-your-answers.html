@@ -1,6 +1,6 @@
 <h2 class="govuk-heading-m">Director updates</h2>
              <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
             <dt class="govuk-summary-list__key">
               Name
             </dt>
@@ -89,8 +89,7 @@
                   The home address is the same as the correspondence address
               {% else %}
                  {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
-          {% endif %}
-
+              {% endif %}
               {% else %}
 
           {% if company.registered_office_address.address_line_1 %}

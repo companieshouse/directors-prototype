@@ -66,21 +66,25 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if director.address.address_line_1 === company.registered_office_address.address_line_1 %}
+              The correspondence address is the same as the registered office address
+            {% else %}
             {% if director.address.address_line_1 %}
-            {{director.address.address_line_1}}
+              {{director.address.address_line_1}}
             {% endif %}
             {% if director.address.address_line_2 %}
-            <br>{{director.address.address_line_2}}
-          {% endif %}
-          {% if director.address.locality %}
-          <br>{{director.address.locality}}
-          {% endif %}
-          {% if director.address.country %}
-          <br>{{director.address.country}}
-          {% endif %}
-          {% if director.address.postal_code %}
-            <br>{{director.address.postal_code}}
-          {% endif %}
+              <br>{{director.address.address_line_2}}
+            {% endif %}
+            {% if director.address.locality %}
+              <br>{{director.address.locality}}
+            {% endif %}
+            {% if director.address.country %}
+              <br>{{director.address.country}}
+            {% endif %}
+            {% if director.address.postal_code %}
+              <br>{{director.address.postal_code}}
+            {% endif %}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="../address-lookup/correspondence-address?officer={{details}}">
@@ -104,17 +108,15 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">Date of birth</dt>
             <dd class="govuk-summary-list__value">
               {{ [1,2,3,4,5,6,7,8,9] | random }}
               {{ ['August','January','December','November','October','March','May','June','July'] | random }}
               {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
-              <!--{% set filteredDate = officer.appointed_on %}
-              {{ filteredDate | replace("-", " ")}}-->
             </dd>
         </div>
-        <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
             Appointed on
           </dt>
