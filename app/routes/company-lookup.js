@@ -48,17 +48,21 @@ module.exports = function (router) {
       }
       request(options, function (error, response) {
         //If there is an error then the prototype will stop working
-        if (error) throw new Error(error)
-        // With the response put that as a session variable so it can be used across all pages. So whenever you need to use the data it will be stored in the req.session.company variable
-        req.session.company = response.body
-        // Format date of incorporation
-        const dayOfIncorporation = req.session.company.date_of_creation.slice(-2)
-        const monthOfIncorporation = req.session.company.date_of_creation.slice(5, 7)
-        const yearOfIncorporation = req.session.company.date_of_creation.slice(0, 4)
-        //Once the date have been sliced, bring it back together to form the date
-        req.session.companyIncorp = dayOfIncorporation + ' ' + monthOfIncorporation + ' ' + yearOfIncorporation
-        // Redirect to the company lookup page
-        res.redirect('/confirm-company')
+        if (error) {
+          res.render('company-lookup', {
+          })
+        } else {
+          // With the response put that as a session variable so it can be used across all pages. So whenever you need to use the data it will be stored in the req.session.company variable
+          req.session.company = response.body
+          // Format date of incorporation
+          const dayOfIncorporation = req.session.company.date_of_creation.slice(-2)
+          const monthOfIncorporation = req.session.company.date_of_creation.slice(5, 7)
+          const yearOfIncorporation = req.session.company.date_of_creation.slice(0, 4)
+          //Once the date have been sliced, bring it back together to form the date
+          req.session.companyIncorp = dayOfIncorporation + ' ' + monthOfIncorporation + ' ' + yearOfIncorporation
+          // Redirect to the company lookup page
+          res.redirect('/confirm-company')
+        }
       })
     }
   })
