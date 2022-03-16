@@ -1,0 +1,39 @@
+{% extends "emails/layout-email.html" %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% set buttonHref = "Your reference number is <br>GOI587U" %}
+      {{ govukPanel({
+        titleText: "Appointment submitted",
+        html: buttonHref
+      }) }}
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell">00445790</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company name</th>
+            <td class="govuk-table__cell">TESCO PLC</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name of director</th>
+            <td class="govuk-table__cell">Mr Alan Demo</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Appointed on</th>
+            <td class="govuk-table__cell">27 January 2022</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">An examiner will process the submission to check if it’s acceptable for filing. This can take up to 2 working days.</p>
+      <p class="govuk-body">We'll email you to tell you if the submission was accepted. If the submission is rejected, we'll email you to let you know what to do next.</p>
+      </ul>
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
+  </div>
+</div>
+{% endblock %}
