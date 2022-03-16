@@ -16,9 +16,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
-      <h1 class="govuk-heading-l">Update the director's details</h1>
+      <h1 class="govuk-heading-l">Update director details</h1>
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Current director's details</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">Director's current details</caption>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Name</th>
@@ -85,10 +85,11 @@
           </tr>
         </tbody>
       </table>
+      <br>
       {{ govukCheckboxes({
         idPrefix: "waste",
         name: "waste",
-        
+
         fieldset: {
           legend: {
             classes: "govuk-fieldset__legend--m",
