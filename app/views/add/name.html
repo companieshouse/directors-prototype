@@ -18,8 +18,8 @@
       <form action="/add/name" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
         <div class="govuk-form-group govuk-input--width-30">
-          <label for="autocomplete-default" class="govuk-label">Professional or honorary title (optional)</label>
-          <p class="govuk-hint">Start typing a title, then choose from the list</p>
+          <label for="autocomplete-default" class="govuk-label">Professional or honorary title (if applicable)</label>
+          <p class="govuk-hint">Start typing a title, such as Dr or Professor, then choose from the list</p>
           <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
         </div>
         {{ govukInput({
@@ -73,6 +73,9 @@
               text: "Has the director used a different name for business purposes in the last 20 years?"
             }
           },
+          hint: {
+    text: "For example, changed their name by deed poll, by marriage, or gone by any other names."
+  },
           items: [
             {
               value: "yes",

@@ -20,17 +20,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">
+        Future changes to addresses
+      </h1>
+
+      <p class="govuk-body">
+    If your registered office address changes in the future, we can apply this change to your correspondence address as well.</p>
+      <p class="govuk-body">This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>when you tell us the company's registered office address has changed, you will not have to tell us your correspondence address has also changed</li>
+        <li>your correspondence address will automatically change to the same address as the registered office address</li>
+
+      </ul>
+<br><br>
+
+
+
       <form action="/address-lookup/link-correspondence-address" method="post" novalidate>
 
         {{ govukRadios({
-            classes: "govuk-radios--inline",
           idPrefix: "link-correspondence-address",
           name: "link-correspondence-address",
           fieldset: {
             legend: {
               text: "If the registered office address changes in the future, do you want this to apply to your correspondence address too?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-font-size-27"
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
