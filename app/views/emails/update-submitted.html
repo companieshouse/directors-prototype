@@ -1,39 +1,58 @@
 {% extends "emails/layout-email.html" %}
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% set buttonHref = "Your reference number is <br>GOI587U" %}
-      {{ govukPanel({
-        titleText: "Appointment submitted",
-        html: buttonHref
-      }) }}
-      <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Company number</th>
-            <td class="govuk-table__cell">00445790</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Company name</th>
-            <td class="govuk-table__cell">TESCO PLC</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Name of director</th>
-            <td class="govuk-table__cell">Mr Alan Demo</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Appointed on</th>
-            <td class="govuk-table__cell">27 January 2022</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p class="govuk-body">An examiner will process the submission to check if it’s acceptable for filing. This can take up to 2 working days.</p>
-      <p class="govuk-body">We'll email you to tell you if the submission was accepted. If the submission is rejected, we'll email you to let you know what to do next.</p>
-      </ul>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set buttonHref = "Your reference number <br><strong>632384-159592-473918<strong>" %}
+    {{ govukPanel({
+      titleText: "Director update submitted",
+      html: buttonHref
+    }) }}
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Company number</th>
+          <td class="govuk-table__cell">00445790</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Company name</th>
+          <td class="govuk-table__cell">TESCO PLC</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name of director</th>
+          <td class="govuk-table__cell">Mr Alan Demo</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Update type</th>
+          <td class="govuk-table__cell">Occupation</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
+    <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the Companies House register. If it's rejected, we'll email you to let you know what to do next.</p>
 
-      <h3 class="govuk-heading-m">Feedback</h3>
-      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
-  </div>
+
+    <h3 class="govuk-heading-m">Feedback</h3>
+    <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
 </div>
+</div>
+<h2 class="govuk-heading-m">Contact us</h2>
+<p class="govuk-body">If you have a question about your submission, you can contact us.</p>
+<h3 class="govuk-heading-s">Telephone</h3>
+<ul class="govuk-list">
+<li>0303 1234 500</li>
+<li>Monday to Friday, 8:30am to 6pm</li>
+</ul>
+<p class="govuk-body">
+<a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+</p>
+
+<h3 class="govuk-heading-s">Email</h3>
+
+<ul class="govuk-list">
+<li>
+  <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+</li>
+</ul>
+
 {% endblock %}
