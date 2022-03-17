@@ -74,3 +74,10 @@ $govuk-assets-path: '/govuk/assets/';
   .almost-full-width .govuk-summary-list__key{
     width: 60%
   }
+
+
+.rejected {
+  background: transparent;
+  border: 6px solid #d4351c;
+  color: #d4351c;
+}
