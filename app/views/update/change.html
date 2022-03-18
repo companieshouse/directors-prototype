@@ -15,119 +15,103 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/update/change" method="post">
-      <h1 class="govuk-heading-l">Update director details</h1>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Director's current details</caption>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">{{director.name}}</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Nationality</th>
-            <td class="govuk-table__cell">{{director.nationality}}</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Occupation</th>
-            <td class="govuk-table__cell">{{director.occupation}}</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Correspondence address</th>
-            <td class="govuk-table__cell">   {% if director.address.address_line_1 === company.registered_office_address.address_line_1 %}The correspondence address is the same as the registered office address
-              {% else %}
-              {% if director.address.address_line_1 %}
-                {{director.address.address_line_1}}
-              {% endif %}
-              {% if director.address.address_line_2 %}
-                <br>{{director.address.address_line_2}}
-              {% endif %}
-              {% if director.address.locality %}
-                <br>{{director.address.locality}}
-              {% endif %}
-              {% if director.address.country %}
-                <br>{{director.address.country}}
-              {% endif %}
-              {% if director.address.postal_code %}
-                <br>{{director.address.postal_code}}
-              {% endif %}
-              {% endif %}</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Home address</th>
-            <td class="govuk-table__cell"><ul class="govuk-list govuk-!-margin-bottom-0">
-              <li>
-                72 Guild Street
-              </li>
-              <li>
-                London
-              </li>
-              <li>
-                SE23 6FH
-              </li>
-              <li>
-                {% if director.country_of_residence %}
-                {{director.country_of_residence}}
-              {% endif %}
-              </li>
-            </ul></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Date of birth</th>
-            <td class="govuk-table__cell">
-              {{ [1,2,3,4,5,6,7,8,9] | random }}
-  {{ ['August','January','December','November','October','March','May','June','July'] | random }}
-  {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Appointed on</th>
-            <td class="govuk-table__cell">{{ director.appointed_on | date}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <br>
-      {{ govukCheckboxes({
-        idPrefix: "waste",
-        name: "waste",
-
-        fieldset: {
-          legend: {
-            classes: "govuk-fieldset__legend--m",
-            text: "What do you want to update?"
-          }
-        },
-        hint: {
-          text: "Select all that apply."
-        },
-        items: [
-          {
-            value: "name",
-            text: "Name"
-          },
-          {
-            value: "nationality",
-            text: "Nationality"
-          },
-          {
-            value: "occupation",
-            text: "Occupation"
-          },
-          {
-            value: "correspondence-address",
-            text: "Correspondence address"
-          },
-          {
-            value: "home-address",
-            text: "Home address"
-          }
-        ]
-      }) }}
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
-      <p class="govuk-body">
-      <a href="../directors" class="govuk-link govuk-link--no-visited-state">Cancel updates</a><p>
+          <form action="/update/change" method="post">
+          <h1 class="govuk-heading-l">Update the director's details</h1>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{director.name}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="name?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Nationality
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">{{director.nationality}}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nationality?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> nationality</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupation
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['occupationUpdate'] %}
+                  <p class="govuk-body">{{data['occupationUpdate']}}</p> 
+                {% else %}
+                  <p class="govuk-body">{{director.occupation}}</p>  
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="job-title?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> job title</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../address-lookup/correspondence-address?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> correspondence address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="../address-lookup/home-address?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> home address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date of birth</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ [1,2,3,4,5,6,7,8,9] | random }}
+                  {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                  {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+                  <!--{% set filteredDate = officer.appointed_on %}
+                  {{ filteredDate | replace("-", " ")}}-->
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Appointed on
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ director.appointed_on | date}}
+              </dd>
+            </div>
+          </dl>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </form>
+          <p class="govuk-body">
+          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Cancel updates</a><p>
     </div>
   </div>
 {% endblock %}
