@@ -10,7 +10,12 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
 
   router.post('/address-lookup/address-lookup-home', function (req, res) {
-    res.redirect('/address-lookup/confirm-lookup-home')
+    if (req.session.data['home-propertyname'] === '') {
+      res.redirect('/address-lookup/static-list-of-addresses')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/address-lookup/confirm-lookup-home')
+    }
   })
 
     //Lookup address page for the postal address
