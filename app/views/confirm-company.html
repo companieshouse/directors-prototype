@@ -14,7 +14,6 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      {{company | dump | safe}}
       <!-- The action will need to change depending on the location of the confirm-company page -->
       <form action="/confirm-company" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
