@@ -17,15 +17,15 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/add/243" method="post">
         {% set emailHtml %}
-{{ govukInput({
+{{ govukRadios({
   id: "contact-by-email",
   name: "contact-by-email",
   type: "email",
   autocomplete: "email",
   spellcheck: false,
   classes: "govuk-!-width-one-third",
-  label: {
-    text: "We’ll need to check that the director has applied to protect their details. This means your submission could take longer to process than usual. Your submission could be rejected if you select ‘yes’ and the director has not applied to protect their details."
+  hint: {
+text: "We’ll need to check that the director has applied to protect their details, so your submission will take longer to process. It could be rejected if you select ‘yes’ and the director has not applied to protect their details."
   }
 }) }}
 {% endset -%}
@@ -80,8 +80,7 @@ criteria.</p>
 
 <p class="govuk-body">You should only select ‘yes’ if the director has:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>already applied to protect their details</li>
-  <li>provided evidence that they are eligible to have their details protected</li>
+  <li>provided evidence that they are eligible to have their details protected </li>
   <li>paid the £100 fee</li>
 </ul>
   </div>
