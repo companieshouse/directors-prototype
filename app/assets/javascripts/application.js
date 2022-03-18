@@ -7,9 +7,14 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
-  $('#multiple-nationalities-link').click(function() {
-    $('#multiple-nationalities').show();
-    $('#multiple-nationalities-link').hide();
+  $('#second-nationality-link').click(function() {
+    $('#second-nationality').show();
+    $('#second-nationality-link').hide();
+    return false;
+  });
+  $('#third-nationality-link').click(function() {
+    $('#third-nationality').show();
+    $('#third-nationality-link').hide();
     return false;
   });       
 })
