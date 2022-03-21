@@ -17,65 +17,51 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/add/243" method="post">
         {% set emailHtml %}
-<p class="govuk-body">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p> 
-<p class="govuk-body">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>
-{% endset -%}
-
-{% set phoneHtml %}
-
-
-{% endset -%}
-
-{% set textHtml %}
-
-{% endset -%}
-
-{{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Has the director ever applied to protect their details at Companies House?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "email",
-      text: "Yes",
-      conditional: {
-        html: emailHtml
-      }
-    },
-    {
-      value: "phone",
-      text: "No",
-      conditional: {
-        html: phoneHtml
-      }
-    }
-  ]
-}) }}
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What applying to protect director details means
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-<p class="govuk-body">Some directors can apply to protect their personal details if they meet certain
-criteria.</p>
-
-<p class="govuk-body">You should only select ‘yes’ if the director has:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>provided evidence that they are eligible to have their details protected </li>
-  <li>paid the £100 fee</li>
-</ul>
-  </div>
-</details>
+          <p class="govuk-body">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p> 
+          <p class="govuk-body">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>
+        {% endset -%}
+        {{ govukRadios({
+          idPrefix: "243Appoint",
+          name: "243Appoint",
+          fieldset: {
+            legend: {
+              text: "Has the director ever applied to protect their details at Companies House?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What applying to protect director details means
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Some directors can apply to protect their personal details if they meet certain criteria.</p>
+            <p class="govuk-body">You should only select ‘yes’ if the director has:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>provided evidence that they are eligible to have their details protected </li>
+              <li>paid the £100 fee</li>
+            </ul>
+          </div>
+        </details>
         {{ govukButton({
           text: "Continue",
           classes: "govuk-!-margin-top-5"

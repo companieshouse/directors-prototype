@@ -6,14 +6,12 @@
   {{serviceName}}
   - GOV.UK
 {% endblock %}
-
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -21,9 +19,7 @@
       <h1 class="govuk-heading-l">{{title}}</h1>
               <div class="govuk-form-group govuk-input--width-30">
           <label for="autocomplete-default" class="govuk-label">Professional or honorary title (optional)</label>
-          <p class="govuk-hint">Start typing a title, then choose from the list.<br>
-
-          </p>
+          <p class="govuk-hint">Start typing a title, then choose from the list.</p>
           <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
         </div>
       {{ govukInput({

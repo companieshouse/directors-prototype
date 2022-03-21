@@ -15,34 +15,33 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-  
-          <form action="/update/change" method="post">
-          <h1 class="govuk-heading-l">Update the director's details</h1>
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{director.name}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="name?officer={{details}}">
+      <form action="/update/change" method="post">
+        <h1 class="govuk-heading-l">Update the director's details</h1>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{director.name}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="name?officer={{details}}">
                   Update<span class="govuk-visually-hidden"> name</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Nationality
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['nationalityUpdate'] %}
-                  <p class="govuk-body">{{data['nationalityUpdate']}}</p> 
-                {% else %}
-                  <p class="govuk-body">{{director.nationality}}</p>  
-                {% endif %}
-              </dd>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nationalityUpdate'] %}
+                <p class="govuk-body">{{data['nationalityUpdate']}}</p> 
+              {% else %}
+                <p class="govuk-body">{{director.nationality}}</p>  
+              {% endif %}
+            </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="nationality?officer={{details}}">
                   Update<span class="govuk-visually-hidden"> nationality</span>
@@ -112,8 +111,6 @@
                   {{ [1,2,3,4,5,6,7,8,9] | random }}
                   {{ ['August','January','December','November','October','March','May','June','July'] | random }}
                   {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
-                  <!--{% set filteredDate = officer.appointed_on %}
-                  {{ filteredDate | replace("-", " ")}}-->
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
