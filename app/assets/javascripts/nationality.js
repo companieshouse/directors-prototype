@@ -227,4 +227,4 @@ var countries = [
 ]
 var element = document.querySelector('#nationality')
 var id = 'autocomplete-default'
-accessibleAutocomplete({element: element, id: id, source: countries})
+accessibleAutocomplete({element: element, id: id, source: countries, name: "nationalityUpdate"})

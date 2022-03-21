@@ -28,15 +28,13 @@
             </dd>
           </div>
           {% endif %}
-
+          {% if data['nationalityUpdate'] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Nationality
             </dt>
             <dd class="govuk-summary-list__value">
-            {% if data['nationalityAppoint'] %}
-              {{data['nationalityAppoint'] | first}}
-              {% endif %}
+              {{data['nationalityUpdate']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/add?type=add&#nationality">
@@ -44,6 +42,7 @@
               </a>
             </dd>
           </div>
+          {% endif %}
           {% if data['occupationUpdate'] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
