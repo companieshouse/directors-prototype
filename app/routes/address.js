@@ -232,4 +232,8 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   router.post('/address-lookup-update-journey/confirm-lookup-postcode', function (req, res) {
     res.redirect('/update/change?type=update&officer=' + req.session.officer)
   })
+
+  router.post('/address-lookup-update-journey/address-manual-home', function (req, res) {
+    res.redirect('/address-lookup-update-journey/confirm-lookup-postcode')
+  })
 }

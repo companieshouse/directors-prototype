@@ -35,7 +35,8 @@ router.get('/check-your-answers', function (req, res) {
     company: req.session.company,
     officers: req.session.officers,
     type: req.session.type,
-    nameRemove: req.session.removename
+    nameRemove: req.session.removename,
+    updateName: req.session.name
   })
 })
 

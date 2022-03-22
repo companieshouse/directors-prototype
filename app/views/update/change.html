@@ -13,6 +13,7 @@
 }) }}
 {% endblock %}
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
@@ -97,7 +98,18 @@
                 Home address
               </dt>
               <dd class="govuk-summary-list__value">
+                {% if data['propertyName-update'] %}
+                        <ul class="govuk-list">
+          <li>{{data['propertyName-update']}} {{data['addressOne-update']}}</li>
+          <li>{{data['addressTwo-update']}}</li>
+          <li>{{data['town-update']}}</li>
+          <li>{{data['county-update']}}</li>
+          <li>{{data['country-update']}}</li>
+          <li>{{data['postcode-update']}}</li>
+        </ul>
+                {% else %}
                 72 Guild Street<br>London<br>SE23 6FH
+                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="../address-lookup-update-journey/home-address?officer={{details}}">

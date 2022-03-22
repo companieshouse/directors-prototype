@@ -5,7 +5,12 @@
       Name
     </dt>
     <dd class="govuk-summary-list__value">
-      {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+      {% if data['titleAppoint'] %}
+     
+            {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+       {% else %}
+ {{updateName}}
+         {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="/add/name?type=add">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -47,6 +52,26 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="/add/job-title?type=add&#occupation">Change<span class="govuk-visually-hidden"> occupation title</span></a>
+      </dd>
+    </div>
+  {% endif %}
+    {% if data['propertyName-update'] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Home address
+      </dt>
+      <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+          <li>{{data['propertyName-update']}} {{data['addressOne-update']}}</li>
+          <li>{{data['addressTwo-update']}}</li>
+          <li>{{data['town-update']}}</li>
+          <li>{{data['county-update']}}</li>
+          <li>{{data['country-update']}}</li>
+          <li>{{data['postcode-update']}}</li>
+        </ul>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/add/job-title?type=add&#occupation">Change<span class="govuk-visually-hidden">home address</span></a>
       </dd>
     </div>
   {% endif %}
