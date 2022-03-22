@@ -32,23 +32,7 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Nationality
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['nationalityUpdate'] %}
-                <p class="govuk-body">{{data['nationalityUpdate']}}</p> 
-              {% else %}
-                <p class="govuk-body">{{director.nationality}}</p>  
-              {% endif %}
-            </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="nationality?officer={{details}}">
-                  Update<span class="govuk-visually-hidden"> nationality</span>
-                </a>
-              </dd>
-            </div>
+          
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Occupation
@@ -117,7 +101,20 @@
                 </a>
               </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nationalityUpdate'] %}
+                <p class="govuk-body">{{data['nationalityUpdate']}}</p> 
+              {% else %}
+                <p class="govuk-body">{{director.nationality}}</p>  
+              {% endif %}
+            </dd>
+     
+            </div>
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
               <dt class="govuk-summary-list__key">Date of birth</dt>
                 <dd class="govuk-summary-list__value">
                   {{ [1,2,3,4,5,6,7,8,9] | random }}
@@ -125,7 +122,7 @@
                   {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
               <dt class="govuk-summary-list__key">
                 Appointed on
               </dt>
