@@ -1,43 +1,32 @@
 {% set title = "Do you want us to link the director's correspondence address to the registered office address?" %}
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   {{title}}
   -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
-
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
-
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <h1 class="govuk-heading-l">
         Future changes to addresses
       </h1>
-
       <p class="govuk-body">
     If your registered office address changes in the future, we can apply this change to your correspondence address as well.</p>
       <p class="govuk-body">This means:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>when you tell us the company's registered office address has changed, you will not have to tell us your correspondence address has also changed</li>
         <li>your correspondence address will automatically change to the same address as the registered office address</li>
-
       </ul>
 <br><br>
-
-
-
       <form action="/address-lookup/link-correspondence-address" method="post" novalidate>
-
         {{ govukRadios({
           idPrefix: "link-correspondence-address",
           name: "link-correspondence-address",

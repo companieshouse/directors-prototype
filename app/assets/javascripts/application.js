@@ -7,6 +7,7 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+  // Code snippet for the nationality page
   $('#second-nationality-link').click(function() {
     $('#second-nationality').show();
     $('#second-nationality-link').hide();
