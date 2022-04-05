@@ -18,7 +18,7 @@
       <form action="/update/name" method="post">
       <h1 class="govuk-heading-l">{{title}}</h1>
               <div class="govuk-form-group govuk-input--width-30">
-          <label for="autocomplete-default" class="govuk-label">Professional or honorary title (optional)</label>
+          <label for="autocomplete-default" class="govuk-label" value="Dr">Professional or honorary title (optional)</label>
           <p class="govuk-hint">Start typing a title, then choose from the list.</p>
           <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
         </div>
@@ -31,7 +31,7 @@
         },
         classes: "govuk-input--width-20",
         id: "updateFirstName",
-        value: director.name,
+        value: "Jane",
         name: "updateFirstName"
       }) }}
       {{ govukInput({
@@ -43,6 +43,7 @@
         },
         classes: "govuk-input--width-20",
         id: "updateMiddleName",
+        value: "Helen",
         name: "updateMiddleName"
       }) }}
       {{ govukInput({
@@ -51,7 +52,7 @@
         },
         classes: "govuk-input--width-20",
         id: "updateLastName",
-    value: director.name,
+        value: "Doe",
     name: "updateLastName"
   }) }}
   {% set formerName %}
@@ -84,7 +85,8 @@
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: "checked"
           }
         ]
       }) }}

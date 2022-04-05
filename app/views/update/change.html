@@ -32,20 +32,20 @@
               </a>
             </dd>
           </div>
-          
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Occupation
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['occupationUpdate'] %}
-                  <p class="govuk-body">{{data['occupationUpdate']}}</p> 
+                  <p class="govuk-body">{{data['occupationUpdate']}}</p>
                 {% else %}
-                  <p class="govuk-body">{{director.occupation}}</p>  
+                  <p class="govuk-body">{{director.occupation}}</p>
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="job-title?officer={{details}}">
+                <a class="govuk-link" href="javascript: void(0);">
                   Update<span class="govuk-visually-hidden"> job title</span>
                 </a>
               </dd>
@@ -72,7 +72,7 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../address-lookup/correspondence-address?officer={{details}}">
+                <a class="govuk-link" href="javascript: void(0);">
                   Update<span class="govuk-visually-hidden"> correspondence address</span>
                 </a>
               </dd>
@@ -96,7 +96,7 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="../address-lookup-update-journey/home-address?officer={{details}}">
+                <a class="govuk-link" href="javascript: void(0);">
                   Update<span class="govuk-visually-hidden"> home address</span>
                 </a>
               </dd>
@@ -107,12 +107,16 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['nationalityUpdate'] %}
-                <p class="govuk-body">{{data['nationalityUpdate']}}</p> 
+                <p class="govuk-body">{{data['nationalityUpdate']}}</p>
               {% else %}
-                <p class="govuk-body">{{director.nationality}}</p>  
+                <p class="govuk-body">{{director.nationality}}</p>
               {% endif %}
             </dd>
-     
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="javascript: void(0);">
+                Update<span class="govuk-visually-hidden"> Nationality</span>
+              </a>
+            </dd>
             </div>
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
               <dt class="govuk-summary-list__key">Date of birth</dt>

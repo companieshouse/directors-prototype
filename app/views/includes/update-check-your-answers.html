@@ -6,15 +6,10 @@
       Name
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['updateFirstName'] %}
-     
-            {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
-       {% else %}
- {{data['name']}}
-         {% endif %}
+  Dr Jane Doe
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/add/name?type=add">Change<span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="javascript: void(0);">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
   {% if data['previous-names'] %}
@@ -26,7 +21,7 @@
         {{data['previous-names']}}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/add/name?type=add&#firstname">Change<span class="govuk-visually-hidden"> name</span></a>
+        <a class="govuk-link" href="javascript: void(0);">Change<span class="govuk-visually-hidden"> Previous name</span></a>
       </dd>
     </div>
   {% endif %}
@@ -112,7 +107,7 @@
       {{data['date-of-change-year']}}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/add/date-of-appointment?type=add">Change<span class="govuk-visually-hidden"> change date</span></a>
+      <a class="govuk-link" href="javascript: void(0);">Change<span class="govuk-visually-hidden"> change date</span></a>
     </dd>
   </div>
 </dl>
