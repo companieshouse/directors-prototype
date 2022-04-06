@@ -70,7 +70,7 @@ var occupations = [
   'Composer',
   'Computer Consultant',
   'Computer Programmer',
-  'Consellor',
+  'Counsellor',
   'Consultant',
   'Councillor',
   'Decorator',
