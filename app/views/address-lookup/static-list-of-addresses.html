@@ -16,59 +16,67 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/static-list-of-addresses" method="post">
-        <h1 class="govuk-heading-l">{{title}}</h1>
-        <h2 class="govuk-heading-m">Area</h2>
-        <ul class="govuk-list">
-            <li>Rumney</li>
-            <li>Cardiff</li>
-            <li>Wales</li>
-            <li>CF3 3EA</li>
-        </ul>
-        <h2 class="govuk-heading-m">All addresses</h2>
-        <ul class="govuk-list govuk-list--spaced">
-        <li class="govuk-body"><a href="confirm-lookup-home">70, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">84, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">90b, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">56, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">106, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">66, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">74, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">102a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">68a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">100a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">78, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">82, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">100, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">106a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">58, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">68, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">80, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">104, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat a. 94, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat B 94, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">86a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">86, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">62, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">92, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat a. 92, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">72, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat 2 94, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat 1 94, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">76, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">60, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">64, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">100b, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat B 92, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">88, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">102, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">96, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">86b, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">104a, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">Flat C 92, Wentloog Road</a></li>
-        <li class="govuk-body"><a href="#">90, Wentloog Road</a></li>
-    </ul>
+
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Choose an address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "wentloog1",
+              text: "1 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog2",
+              text: "2 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog3",
+              text: "3 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog4",
+              text: "4 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog5",
+              text: "5 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog6",
+              text: "6 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog7",
+              text: "7 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog8",
+              text: "8 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog9",
+              text: "9 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            },
+            {
+              value: "wentloog10",
+              text: "10 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
+            }
+          ]
+        }) }}
+
+        <p> <a href="/address-lookup/address-manual-home">Enter address manually </a> </p>
+
+
         {{ govukButton({
-          text: "Enter address manually"
+          text: "Continue"
         }) }}
       </form>
     </div>
