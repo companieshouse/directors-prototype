@@ -15,7 +15,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/address-lookup/link-correspondence-address-alt2" method="post">
+      <form action="/address-lookup/correspondence-address" method="post">
         {# Get the registered office address #}
         {% set roAddress %}
           {% if company.registered_office_address.address_line_1 %}
