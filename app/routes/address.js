@@ -30,7 +30,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   router.post('/address-lookup/address-lookup-postal', function (req, res) {
     res.redirect('/address-lookup/confirm-lookup-postal')
   })
-  
+
   //Manual address page for the home address
   router.get('/address-lookup/address-manual-home', function (req, res) {
     // Render the confirm company page
@@ -39,7 +39,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-  
+
   //Manual address page for the postal address
 
   router.get('/address-lookup/address-manual-postal', function (req, res) {
@@ -49,7 +49,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-  
+
   router.get('/address-lookup/address-lookup-manual', function (req, res) {
     // Render the confirm company page
     res.render('address-lookup/address-lookup-manual', {
@@ -98,7 +98,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       res.redirect('/address-lookup/address-lookup-postal')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/address-lookup/link-correspondence-address')
+      res.redirect('/address-lookup/link-correspondence-address-alt2')
     }
   })
   router.post('/address-lookup/home-address', function (req, res) {
@@ -138,7 +138,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-    
+
   router.post('/address-lookup/link-correspondence-address', function (req, res) {
     res.redirect('/address-lookup/home-address')
   })
@@ -151,7 +151,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-          
+
   router.post('/address-lookup/link-home-address', function (req, res) {
     res.redirect('/add/date-of-appointment')
   })
@@ -164,7 +164,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-            
+
   router.post('/address-lookup/confirm-lookup-postal', function (req, res) {
     res.redirect('/address-lookup/home-address')
   })
@@ -177,7 +177,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       company: req.session.company
     })
   })
-              
+
   router.post('/address-lookup/confirm-lookup-home', function (req, res) {
     res.redirect('/add/date-of-appointment')
   })
