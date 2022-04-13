@@ -20,57 +20,38 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company name</dt>
-            <dd class="govuk-summary-list__value">{{company.company_name}}</dd>
+            <dd class="govuk-summary-list__value">THE GIRLS' DAY SCHOOL TRUST</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company number</dt>
-            <dd class="govuk-summary-list__value">{{company.company_number}}</dd>
+            <dd class="govuk-summary-list__value">00006400</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Status</dt>
             <dd class="govuk-summary-list__value">
               <!-- a set of if and elif conditions depending on the company status-->
-              {{company.company_status | capitalize}}
+              Active
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Incorporation date</dt>
-            <dd class="govuk-summary-list__value">{{company.date_of_creation | date}}</dd>
+            <dd class="govuk-summary-list__value">26 June 1872</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company type</dt>
             <!-- upper is a way in Nunjucks to convert text into uppercase-->
             <dd class="govuk-summary-list__value">
-            {% if company.type === "plc" %}
-              Public Limited Company
-            {% elif company.type === "private-limited-guarant-nsc" %}
-              Private company limited by guarantee without share capital
-            {% elif company.type === "private-limited-guarant-nsc-limited-exemption" %}
-            Private Limited Company by guarantee without share capital use of 'Limited' exemption
-            {% else %}
-              {{company.type | upper}}
-            {% endif %}
+            	PRIVATE-LIMITED-SHARES-SECTION-30-EXEMPTION
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Registered office address</dt>
             <dd class="govuk-summary-list__value">
               <!-- if statements are used to stop gaps showing where there is missing information -->
-              {% if company.registered_office_address.address_line_1 %}
-                {{company.registered_office_address.address_line_1}}
-              {% endif %}
-              {% if company.registered_office_address.address_line_2 %}
-                <br>{{company.registered_office_address.address_line_2}}
-              {% endif %}
-              {% if company.registered_office_address.locality %}
-              <br>{{company.registered_office_address.locality}}
-            {% endif %}
-            {% if company.registered_office_address.country %}
-              <br>{{company.registered_office_address.country}}
-            {% endif %}
-              {% if company.registered_office_address.postal_code %}
-                <br>{{company.registered_office_address.postal_code}}
-              {% endif %}
+              10 Bressenden Place<br>
+              London<br>
+              England<br>
+              SW1E 5DH
             </dd>
           </div>
         </dl>
