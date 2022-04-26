@@ -24,7 +24,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{director.name}}
+              DAVIS, Kathryn Ruth
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="name?officer={{details}}">
@@ -38,11 +38,7 @@
                 Occupation
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['occupationUpdate'] %}
-                  <p class="govuk-body">{{data['occupationUpdate']}}</p>
-                {% else %}
-                  <p class="govuk-body">{{director.occupation}}</p>
-                {% endif %}
+                  <p class="govuk-body">Director</p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="javascript: void(0);">
@@ -55,21 +51,10 @@
                 Correspondence address
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if director.address.address_line_1 %}
-                  {{director.address.address_line_1}}
-                {% endif %}
-                {% if director.address.address_line_2 %}
-                  <br>{{director.address.address_line_2}}
-                {% endif %}
-                {% if director.address.locality %}
-                  <br>{{director.address.locality}}
-                {% endif %}
-                {% if director.address.country %}
-                  <br>{{director.address.country}}
-                {% endif %}
-                {% if director.address.postal_code %}
-                  <br>{{director.address.postal_code}}
-                {% endif %}
+                12 Bressenden Place<br>
+                London<br>
+                England<br>
+                SW1E 5DH
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="javascript: void(0);">
@@ -82,18 +67,7 @@
                 Home address
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['propertyName-update']  %}
-                        <ul class="govuk-list">
-          <li>{{data['propertyName-update']}} {{data['addressOne-update']}}</li>
-          <li>{{data['addressTwo-update']}}</li>
-          <li>{{data['town-update']}}</li>
-          <li>{{data['county-update']}}</li>
-          <li>{{data['country-update']}}</li>
-          <li>{{data['postcode-update']}}</li>
-        </ul>
-                {% else %}
                 72 Guild Street<br>London<br>SE23 6FH
-                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="javascript: void(0);">
@@ -119,11 +93,7 @@
               Nationality
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['nationalityUpdate'] %}
-                <p class="govuk-body">{{data['nationalityUpdate']}}</p>
-              {% else %}
-                <p class="govuk-body">{{director.nationality}}</p>
-              {% endif %}
+              British
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="javascript: void(0);">
@@ -144,7 +114,7 @@
                 Appointed on
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ director.appointed_on | date}}
+                16 December 2015
               </dd>
             </div>
           </dl>

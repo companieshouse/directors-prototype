@@ -30,7 +30,7 @@
             },
             classes: "govuk-input--width-10",
             hint: {
-              text: "You need the authentication code to submit company information for " + company.company_name + "."
+              text: "You need the authentication code to submit company information for THE GIRLS' DAY SCHOOL TRUST."
             },
             id: "authNumber",
             name: "authNumber",
@@ -47,7 +47,7 @@
           },
           classes: "govuk-input--width-10",
           hint: {
-            text: "This is a 6 character code issued by us to each company. You need the code to authorise online filings for " + company.company_name + "."
+            text: "This is a 6 character code issued by us to each company. You need the code to authorise online filings for THE GIRLS' DAY SCHOOL TRUST."
           },
           id: "authNumber",
           name: "authNumber",
@@ -59,7 +59,8 @@
           html: "<p>To file online for this company, you’ll need to <a target='blank' href='https://www.gov.uk/guidance/company-authentication-codes-for-online-filing'>request an authentication code (opens in a new tab)</a>. We’ll then send the code to the company’s registered office address by post. It can take up to 5 days to arrive.<p>"
          }) }}
         {{ govukButton({
-         text: "Continue"
+         text: "Continue",
+         href: "/Directors"
         }) }}
       </form>
     </div>
