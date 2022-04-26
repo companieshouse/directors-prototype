@@ -17,23 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/home-address" method="post">
         {# Get the registered office address #}
-        {% set roAddress %}
-          {% if company.registered_office_address.address_line_1 %}
-            {{company.registered_office_address.address_line_1}},
-          {% endif %}
-          {% if company.registered_office_address.address_line_2 %}
-            {{company.registered_office_address.address_line_2}},
-          {% endif %}
-          {% if company.registered_office_address.region %}
-            {{company.registered_office_address.region}},
-          {% endif %}
-          {% if company.registered_office_address.locality %}
-            {{company.registered_office_address.locality}},
-          {% endif %}
-          {% if company.registered_office_address.postal_code %}
-            {{company.registered_office_address.postal_code}}
-          {% endif %}
-        {% endset -%}
+
         {# Radio options to select the home address #}
         {# If condition to see if the correspondence address is the same as the RO #}
         {% if (data['correspondence-address'] === "registered-office-address")%}
@@ -54,7 +38,7 @@
             items: [
               {
                 value: "registered-office-address",
-                html: roAddress
+                text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
               },
               {
                 value: "different-address",
@@ -80,7 +64,7 @@
             items: [
               {
                 value: "registered-office-address",
-                html: roAddress
+                text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
               },
               {
                 value: "correspodence-address",
