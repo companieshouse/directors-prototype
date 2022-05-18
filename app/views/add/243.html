@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/add/243" method="post">
         {% set emailHtml %}
-          <p class="govuk-body">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p> 
+          <p class="govuk-body">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
           <p class="govuk-body">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>
         {% endset -%}
         {{ govukRadios({
@@ -32,15 +32,17 @@
           },
           items: [
             {
-              value: "Yes",
+              value: "yes",
               text: "Yes",
+              checked: checked("243Appoint", "yes"),
               conditional: {
                 html: emailHtml
               }
             },
             {
-              value: "No",
+              value: "no",
               text: "No",
+              checked: checked("243Appoint", "no"),
               conditional: {
                 html: phoneHtml
               }
