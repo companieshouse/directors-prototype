@@ -1,5 +1,6 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
+$govuk-new-link-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
@@ -13,56 +14,55 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
-@import "accessible-autocomplete";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .autocomplete__menu {
     font-family: 'GDS Transport', arial, sans-serif;
   }
-  
+
   .govuk-summary-card {
     border: 1px solid #b1b4b6;
   }
-  
+
   .govuk-summary-card_heading {
     background: #f3f2f1;
   }
-  
+
   .flex {
     display: flex;
-  }  
-  
+  }
+
   .flex-center {
     display: flex !important;
     justify-content: center !important;
   }
-  
+
   .flex-vertical {
     display: flex;
     align-items: center
   }
-  
+
   .search-the-register-button {
     background: #005ea5;
     height: 40px;
     width: 40px;
   }
-  
+
   .search-the-register-border {
     border: 8px solid #dee0e2;
   }
-  
+
   .full-width {
     width: 100%
   }
 
 
-  
+
   .flex-column {
     display: flex;
     flex-direction: column;
   }
-  
+
   .govuk-summary-list{
     width: auto;
   }
