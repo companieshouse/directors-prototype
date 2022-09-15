@@ -26,10 +26,17 @@
             <dd class="govuk-summary-list__value">
               DAVIS, Kathryn Ruth
             </dd>
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="name?officer={{details}}">
                   Update<span class="govuk-visually-hidden"> name</span>
               </a>
+            </dd>
+            <dd class=“govuk-summary-list__value” style=“float:right”>
+              {{govukTag({
+          text: "Changes made",
+          classes: "govuk-tag--blue"
+        })}}
             </dd>
           </div>
 
@@ -60,6 +67,12 @@
                 <a class="govuk-link" href="javascript: void(0);">
                   Update<span class="govuk-visually-hidden"> correspondence address</span>
                 </a>
+              </dd>
+              <dd class=“govuk-summary-list__value” style=“float:right”>
+                {{govukTag({
+            text: "Changes made",
+            classes: "govuk-tag--blue"
+          })}}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
