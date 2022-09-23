@@ -31,12 +31,6 @@
                   Update<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
-            <dd class=“govuk-summary-list__value” style=“float:right”>
-              <strong class="govuk-tag govuk-tag--blue">
-  Changes made
-</strong>
-
-            </dd>
           </div>
 
             <div class="govuk-summary-list__row">
@@ -86,7 +80,7 @@
        Country of residence
      </dt>
      <dd class="govuk-summary-list__value">
-       United Kingdom
+       France
      </dd>
      <dd class="govuk-summary-list__actions">
        <a class="govuk-link" href="country-of-residence?officer={{details}}">
@@ -107,7 +101,22 @@
               </a>
             </dd>
             </div>
-       
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">Date of birth</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ [1,2,3,4,5,6,7,8,9] | random }}
+                  {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                  {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Appointed on
+              </dt>
+              <dd class="govuk-summary-list__value">
+                16 December 2015
+              </dd>
+            </div>
           </dl>
             {{ govukButton({
               text: "Continue"
