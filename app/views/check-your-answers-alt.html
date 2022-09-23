@@ -1,0 +1,114 @@
+{% set title = "Check your answers before submitting the update" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
+
+
+      <h2 class="govuk-heading-m">Updates made</h2>
+
+{{ govukTable({
+  caption: "Updates",
+  captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
+  head: [
+    {
+      html: '<span class="govuk-visually-hidden">Type</span>'
+    },
+    {
+      text: "Previous"
+    },
+    {
+      text: "Updated"
+    },
+    {
+      html: '<span class="govuk-visually-hidden">Update the details</span>'
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Name"
+      },
+      {
+        text: "DAVIS, Kathryn Ruth"
+      },
+      {
+        text: "ROBERTS, Kathryn Ruth"
+      },
+      {
+      html: '<a class="govuk-link" href="name?officer={{details}}">
+                  Change<span class="govuk-visually-hidden"> name</span>
+              </a>'
+      }
+    ],
+    [
+      {
+        text: "Occupation"
+      },
+      {
+        text: "Director"
+      },
+      {
+        text: "Accountant"
+      },
+      {
+      html: ' <a class="govuk-link" href="job-title?officer={{details}}">
+                  Change<span class="govuk-visually-hidden"> job title</span>
+                </a>'
+      }
+    ]
+  ]
+}) }}
+
+
+      <h2 class="govuk-heading-m">Date of change</h2>
+
+
+  {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+        {
+            key: {
+              text: "Date of change"
+            },
+            value: {
+              text: "23 September 2022"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Date of change"
+         }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Confirm and submit",
+        href: "confirmation"
+      }) }}
+    </form>
+    </div>
+  </div>
+{% endblock %}
