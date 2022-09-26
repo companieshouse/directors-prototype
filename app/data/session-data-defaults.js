@@ -19,6 +19,8 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  "updateFirstName": "Kathryn",
+  "updateMiddleName": "Ryan",
+  "updateLastName": "DAVIS"
 
 }

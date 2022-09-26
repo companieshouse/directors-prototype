@@ -33,12 +33,9 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name of director</th>
-              <td class="govuk-table__cell">{{name}}</td>
+              <td class="govuk-table__cell">              <span style="text-transform: uppercase">{{ data['updateLastName'] }}</span>, {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }}</td>
             </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Update type</th>
-              <td class="govuk-table__cell">Occupation</td>
-            </tr>
+   
           </tbody>
         </table>
       <!--Appointment of the director-->

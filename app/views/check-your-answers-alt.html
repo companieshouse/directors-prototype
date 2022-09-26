@@ -21,59 +21,42 @@
 
       <h2 class="govuk-heading-m">Updates made</h2>
 
-{{ govukTable({
-  caption: "Updates",
-  captionClasses: "govuk-visually-hidden",
-  firstCellIsHeader: true,
-  head: [
-    {
-      html: '<span class="govuk-visually-hidden">Type</span>'
-    },
-    {
-      text: "Previous"
-    },
-    {
-      text: "Updated"
-    },
-    {
-      html: '<span class="govuk-visually-hidden">Update the details</span>'
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Name"
-      },
-      {
-        text: "DAVIS, Kathryn Ruth"
-      },
-      {
-        text: "ROBERTS, Kathryn Ruth"
-      },
-      {
-      html: '<a class="govuk-link" href="name?officer={{details}}">
-                  Change<span class="govuk-visually-hidden"> name</span>
-              </a>'
-      }
-    ],
-    [
-      {
-        text: "Occupation"
-      },
-      {
-        text: "Director"
-      },
-      {
-        text: "Accountant"
-      },
-      {
-      html: ' <a class="govuk-link" href="job-title?officer={{details}}">
-                  Change<span class="govuk-visually-hidden"> job title</span>
-                </a>'
-      }
-    ]
-  ]
-}) }}
+<table class="govuk-table">
+  
+  <caption class="govuk-table__caption govuk-visually-hidden">Updates</caption>
+  
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Type</span></th>
+    
+      <th scope="col" class="govuk-table__header">Previous</th>
+    
+      <th scope="col" class="govuk-table__header">Updated</th>
+    
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Update the details</span></th>
+    
+    </tr>
+  </thead>
+  
+  <tbody class="govuk-table__body">
+    
+        <tr class="govuk-table__row">
+          
+          <th scope="row" class="govuk-table__header">Name</th>
+
+          <td class="govuk-table__cell">DAVIS, Kathryn Ruth</td>
+
+          <td class="govuk-table__cell"><span style="text-transform: uppercase">{{ data['updateLastName'] }}</span>, {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }}</td>
+
+          <td class="govuk-table__cell"><a class="govuk-link" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
+
+        </tr>
+      
+    
+  </tbody>
+</table>
 
 
       <h2 class="govuk-heading-m">Date of change</h2>
@@ -102,22 +85,7 @@
         ]
       }) }}
 
-{{ govukCheckboxes({
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Consent to act as a director",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "consent",
-      text: "By submitting this information, you are confirming that the person named has consented to act as a director."
-    }
-  ]
-}) }}
+
   
 
       {{ govukButton({

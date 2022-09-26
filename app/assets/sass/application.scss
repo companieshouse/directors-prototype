@@ -83,3 +83,10 @@ $govuk-assets-path: '/govuk/assets/';
   border: 6px solid #d4351c;
   color: #d4351c;
 }
+
+/* Changes made tag */
+.changes-made {
+  float:right;
+  position: relative;
+  top:1.5em;
+}
