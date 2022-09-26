@@ -1,18 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-
-
 // Sign in
 require('./routes/sign-in.js')(router)
+
 // Company lookup
 require('./routes/company-lookup.js')(router)
+
 // Adding a director
 require('./routes/add-journey.js')(router)
+
 // Removing a director
 require('./routes/remove-journey.js')(router)
+
 // Change a director
 require('./routes/update-journey.js')(router)
+
 // Address
 require('./routes/address.js')(router)
 

@@ -28,6 +28,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/change', function (req, res) {
+
     res.redirect('/update/date-of-change')
   })
 
@@ -87,6 +88,9 @@ module.exports = function (router) {
   })
 
   router.post('/update/name', function (req, res) {
+    // Regaedless of changes having been made, hitting the [Comtinue] button will set the global variable gChangesMade to equal TRUE. 
+    // This will then display the CHANGES MADE tag on the next page.
+    req.session.data['gChangesMade'] = true;
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
