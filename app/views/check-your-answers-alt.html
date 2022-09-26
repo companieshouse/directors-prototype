@@ -33,7 +33,7 @@
     
       <th scope="col" class="govuk-table__header">Previous</th>
     
-      <th scope="col" class="govuk-table__header">Updated</th>
+      <th scope="col" class="govuk-table__header">Updated to</th>
     
       <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Update the details</span></th>
     
@@ -48,7 +48,7 @@
 
           <td class="govuk-table__cell">DAVIS, Kathryn Ruth</td>
 
-          <td class="govuk-table__cell"><span style="text-transform: uppercase">{{ data['updateLastName'] }}</span>, {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }}</td>
+          <td class="govuk-table__cell">{{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}</td>
 
           <td class="govuk-table__cell"><a class="govuk-link" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
 

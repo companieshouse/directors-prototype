@@ -24,7 +24,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              <span style="text-transform: uppercase">{{ data['updateLastName'] }}</span>, {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }}
+               {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="name?officer={{details}}">
@@ -33,6 +33,7 @@
             </dd>
 
             <dd class=“govuk-summary-list__value”>
+<<<<<<< HEAD
 
               <!-- If the variable gChangesMade = TRUE then show the following... -->
               {% if data['gChangesMade'] == true %}
@@ -43,6 +44,11 @@
               {% else %}
                 <!-- No changes made -->
               {% endif %}
+=======
+              <strong class="govuk-tag govuk-tag--blue changes-made">
+  Change made
+</strong>
+>>>>>>> 8c309cefa61a04d212bc4d60cb7537497ed48fca
 
             </dd>
 
