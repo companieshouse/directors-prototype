@@ -40,7 +40,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/date-of-change', function (req, res) {
-    res.redirect('/check-your-answers')
+    res.redirect('/check-your-answers-alt')
   })
 
   //Updating the country of residence page
