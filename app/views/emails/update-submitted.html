@@ -2,7 +2,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% set buttonHref = "Your reference number <br><strong>632384-159592-473918<strong>" %}
+    {% set buttonHref = "Your reference number <br><strong>489252-732373-448728<strong>" %}
     {{ govukPanel({
       titleText: "Director update submitted",
       html: buttonHref
@@ -11,20 +11,17 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Company number</th>
-          <td class="govuk-table__cell">00445790</td>
+          <td class="govuk-table__cell">02050399</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Company name</th>
-          <td class="govuk-table__cell">TESCO PLC</td>
+          <td class="govuk-table__cell">	ZENITH PRINT (UK) LIMITED</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Name of director</th>
-          <td class="govuk-table__cell">Mr Alan Demo</td>
+          <th scope="row" class="govuk-table__header">Name</th>
+          <td class="govuk-table__cell">{{ data['updateLastName'] }}</span>, {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }}o</td>
         </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Update type</th>
-          <td class="govuk-table__cell">Occupation</td>
-        </tr>
+
       </tbody>
     </table>
     <h2 class="govuk-heading-m">What happens next</h2>
