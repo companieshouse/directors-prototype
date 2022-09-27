@@ -37,7 +37,7 @@
               <!-- If the variable gChangesMade = TRUE then show the following... -->
               {% if data['gChangesMade'] == true %}
                 <strong class="govuk-tag govuk-tag--blue changes-made">
-                  Changes made
+                  Change made (pending)
                 </strong>
               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
               {% else %}
@@ -82,7 +82,7 @@
                 Home address
               </dt>
               <dd class="govuk-summary-list__value">
-                72 Guild Street<br>London<br>SE23 6FH
+                72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="javascript: void(0);">
@@ -90,19 +90,7 @@
                 </a>
               </dd>
             </div>
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-     <dt class="govuk-summary-list__key">
-       Country of residence
-     </dt>
-     <dd class="govuk-summary-list__value">
-       United Kingdom
-     </dd>
-     <dd class="govuk-summary-list__actions">
-       <a class="govuk-link" href="country-of-residence?officer={{details}}">
-         Update<span class="govuk-visually-hidden"> Country of residence </span>
-       </a>
-     </dd>
-     </div>
+       
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
             <dt class="govuk-summary-list__key">
               Nationality
