@@ -37,7 +37,7 @@
               <!-- If the variable gChangesMade = TRUE then show the following... -->
               {% if data['gChangesMade'] == true %}
                 <strong class="govuk-tag govuk-tag--blue changes-made">
-                  Change made (pending)
+                  Change made: pending
                 </strong>
               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
               {% else %}
@@ -90,7 +90,7 @@
                 </a>
               </dd>
             </div>
-       
+
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
             <dt class="govuk-summary-list__key">
               Nationality
@@ -104,7 +104,7 @@
               </a>
             </dd>
             </div>
-       
+
           </dl>
             {{ govukButton({
               text: "Continue"
@@ -112,9 +112,8 @@
           </form>
           <p class="govuk-body">
             <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
-            <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel updates</a>
+            <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
           <p>
       </div>
     </div>
   {% endblock %}
-  
