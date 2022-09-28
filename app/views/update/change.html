@@ -106,14 +106,16 @@
             </div>
 
           </dl>
+
+          <div class="govuk-button-group">
+
             {{ govukButton({
               text: "Continue"
             }) }}
           </form>
-          <p class="govuk-body">
             <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
             <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
-          <p>
+         </div>
       </div>
     </div>
   {% endblock %}
