@@ -1,0 +1,173 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{director.name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<!-- To generate a random reference number it just has the values 1 through to 9 and then it says random at the end so it'll randomly generate a number between 1 and 9 -->
+{% set reference %}
+    {{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}-{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}-{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}{{ [1,2,3,4,5,6,7,8,9] | random }}
+{% endset -%}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <!--Change of the director-->
+      {% if type == 'update' %}
+        {{ govukPanel({
+          titleText: "Director update submitted",
+          html: "Reference number<br><strong>" + reference + "</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">02050399</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name</th>
+              <td class="govuk-table__cell"> {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}</td>
+            </tr>
+   
+          </tbody>
+        </table>
+      <!--Appointment of the director-->
+      {% elif type == 'add' %}
+        {{ govukPanel({
+          titleText: "Appointment submitted",
+          html: "Reference number<br><strong>" + reference + "</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">02050399</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name of director</th>
+              <td class="govuk-table__cell">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date of appointment</th>
+              <td class="govuk-table__cell">              {{data['date-appointed-day']}}
+              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                September
+              {% elif (data['date-appointed-month'] === "10")%}
+                October
+              {% elif (data['date-appointed-month'] === "11")%}
+                November
+              {% elif (data['date-appointed-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-appointed-month']}}
+              {% endif %}
+              {{data['date-appointed-year']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      <!--Removal of the director-->
+      {% else %}
+        {{ govukPanel({
+          titleText: "Removal of director submitted",
+          html: "Reference number<br><strong>" + reference + "</strong>"
+        }) }}
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company number</th>
+              <td class="govuk-table__cell">02050399</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Company name</th>
+              <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name of director</th>
+              <td class="govuk-table__cell"> {{nameRemove}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date removed</th>
+              <td class="govuk-table__cell">{{data['date-removed-day']}}
+              {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+                January
+              {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+                February
+              {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+                March
+              {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+                April
+              {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+                May
+              {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+                June
+              {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+                July
+              {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+                August
+              {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+                September8
+              {% elif (data['date-removed-month'] === "10") %}
+                October
+              {% elif (data['date-removed-month'] === "11") %}
+                November
+              {% elif (data['date-removed-month'] === "12") %}
+                December
+              {% else %}
+                {{data['date-removed-month']}}
+              {% endif %}
+              {{data['date-removed-year']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
+      <h3 class="govuk-heading-m">What happens next</h3>
+      <p class="govuk-body">We'll send a confirmation email to
+        <strong>{{ data['email'] }}</strong>
+        which contains your reference number.</p>
+      <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
+      <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>. If it's rejected, we'll email you to let you know what to do next.</p>
+      <h2 class="govuk-heading-m">What do you want to do next?</h2>
+      <ul class="govuk-list govuk-list--spaced">
+        <li>
+          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
+        </li>
+        <li>
+          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
+        </li>
+        <li>
+          <a href="../start" class="govuk-link govuk-link--no-visited-state">Sign out</a>
+        </li>
+      </ul>
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
+  </div>
+</div>
+{% endblock %}
