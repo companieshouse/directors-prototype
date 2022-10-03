@@ -1,0 +1,121 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{director.name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/change" method="post">
+        <h1 class="govuk-heading-l">Update the director's details</h1>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="name?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+
+            <dd class=“govuk-summary-list__value”>
+
+              <!-- If the variable gChangesMade = TRUE then show the following... -->
+              {% if data['gChangesMade'] == true %}
+                <strong class="govuk-tag govuk-tag--blue changes-made">
+                  Change made: pending
+                </strong>
+              <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+              {% else %}
+                <!-- No changes made -->
+              {% endif %}
+
+            </dd>
+
+          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupation
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Director</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="job-title?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> job title</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                12 Bressenden Place<br>
+                London<br>
+                England<br>
+                SW1E 5DH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="javascript: void(0);">
+                  Update<span class="govuk-visually-hidden"> correspondence address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="javascript: void(0);">
+                  Update<span class="govuk-visually-hidden"> home address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              British
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="nationality?officer={{details}}">
+                Update<span class="govuk-visually-hidden"> Nationality</span>
+              </a>
+            </dd>
+            </div>
+
+          </dl>
+
+          <div class="govuk-button-group">
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </form>
+            <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+            <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+         </div>
+      </div>
+    </div>
+  {% endblock %}
