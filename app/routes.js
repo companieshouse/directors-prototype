@@ -20,7 +20,7 @@ require('./routes/update-journey.js')(router)
 require('./routes/address.js')(router)
 
 // confirm update
-// require('./routes/confirm-update.js')(router)
+ require('./routes/confirm-update.js')(router)
 
 
 // Add your routes here - above the module.exports line
@@ -108,6 +108,9 @@ router.get('/confirmation-statement/task-list', function (req, res) {
   res.render('confirmation-statement/task-list', {
   })
 })
+
+
+
 
 
 
