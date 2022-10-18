@@ -1,0 +1,56 @@
+{% set title = "What percentage of shares does X have?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/percentage-of-shares" method="post">
+      {{ govukRadios({
+        name: "percentage-of-shares",
+        fieldset: {
+          legend: {
+            text: title,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "75-or-more",
+            text: "75% or more of shares"
+          },
+          {
+            value: "more-than-50",
+            text: "More than 50%, but not more than 75% of shares"
+          },
+          {
+            value: "more-than-25",
+            text: "More than 25%, but not more than 50% of shares"
+          },
+          {
+            value: "none",
+            text: "None of the above"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
