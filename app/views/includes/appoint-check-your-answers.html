@@ -261,9 +261,9 @@
 
         </dl>
 
-        {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
+      <!--  {{ govukCheckboxes({
+          idPrefix: "consent-director",
+          name: "consent-director",
           fieldset: {
             legend: {
               text: "Consent to act as a director",
@@ -276,4 +276,42 @@
               text: "By submitting this information, you are confirming that the person named has consented to act as a director."
             }
           ]
+        }) }} -->
+
+        {{ govukCheckboxes({
+          idPrefix: "confirm-where-they-live",
+          name: "confirm-where-they-live",
+          fieldset: {
+            legend: {
+              text: "Confirm where person in control lives",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "confirm-lives",
+              text: "I confirm that X lives at *address*"
+            }
+          ]
+        }) }}
+
+         {{ govukCheckboxes({
+          idPrefix: "confirm-control-of-company",
+          name: "confirm-control-of-company",
+          fieldset: {
+            legend: {
+              text: "Confirm control of company",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "confirm-control",
+              text: "I confirm that the persons named here are in control of Company X. They understand that their information will be listed in the public record."
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "What legal statement will appear on this company application?"
         }) }}
