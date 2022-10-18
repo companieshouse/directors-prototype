@@ -75,6 +75,53 @@ module.exports = function (router) {
   })
   
   router.post('/add/243', function (req, res) {
+    res.redirect('../add/percentage-of-shares')
+  })
+
+
+
+
+ // adding PSC - shares percentage 
+ router.get('/add/percentage-of-shares', function (req, res) {
+    // Render the confirm company page
+    res.render('add/percentage-of-shares', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+
+  router.post('/add/percentage-of-shares', function (req, res) {
+    res.redirect('../add/percentage-of-voting-rights')
+  })
+
+  // adding PSC - voting rights 
+  router.get('/add/percentage-of-voting-rights', function (req, res) {
+    // Render the confirm company page
+    res.render('add/percentage-of-voting-rights', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+
+  router.post('/add/percentage-of-voting-rights', function (req, res) {
+    res.redirect('../add/right-to-appoint')
+  })
+
+
+  // adding PSC - right to appoint
+    router.get('/add/right-to-appoint', function (req, res) {
+    // Render the confirm company page
+    res.render('add/right-to-appoint', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+
+  router.post('/add/right-to-appoint', function (req, res) {
     res.redirect('../check-your-answers')
-  }) 
+  })
+
+
+
+
 }
