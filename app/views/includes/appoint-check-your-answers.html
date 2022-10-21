@@ -220,7 +220,15 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-          
+            {% if (data['percentage-of-shares'] === "75-or-more") %}
+              75 or more
+            {% elif (data['percentage-of-shares'] === "more-than-50") %}
+              More than 50
+            {% elif (data['percentage-of-shares'] === "more-than-25") %}
+              More than 25
+            {% else %}
+            {% endif %}
+             
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -233,6 +241,15 @@
               As an individual, what percentage of voting rights does X own?
             </dt>
             <dd class="govuk-summary-list__value">
+
+              {% if (data['percentage-of-shares'] === "75-or-more") %}
+                75 or more
+              {% elif (data['percentage-of-shares'] === "more-than-50") %}
+                More than 50
+              {% elif (data['percentage-of-shares'] === "more-than-25") %}
+                More than 25
+              {% else %}
+              {% endif %}
 
 
             </dd>
@@ -248,7 +265,15 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-          
+              {% if (data['percentage-of-shares'] === "75-or-more") %}
+                75 or more
+              {% elif (data['percentage-of-shares'] === "more-than-50") %}
+                More than 50
+              {% elif (data['percentage-of-shares'] === "more-than-25") %}
+                More than 25
+              {% else %}
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
