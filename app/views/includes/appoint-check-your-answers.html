@@ -242,12 +242,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-              {% if (data['percentage-of-shares'] === "75-or-more") %}
-                75 or more
-              {% elif (data['percentage-of-shares'] === "more-than-50") %}
-                More than 50
-              {% elif (data['percentage-of-shares'] === "more-than-25") %}
-                More than 25
+              {% if (data['voting-rights'] === "75-or-more") %}
+                75 or more voting rights
+              {% elif (data['voting-rights'] === "more-than-50") %}
+                More than 50 voting rights
+              {% elif (data['voting-rights'] === "more-than-25") %}
+                More than 25 voting rights
               {% else %}
               {% endif %}
 
@@ -265,12 +265,11 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-              {% if (data['voting-rights'] === "75-or-more") %}
-                75 or more
-              {% elif (data['percentage-of-shares'] === "more-than-50") %}
-                More than 50
-              {% elif (data['percentage-of-shares'] === "more-than-25") %}
-                More than 25
+              {% if (data['right-to-appoint'] === "yes") %}
+                Yes ... 
+              {% elif (data['right-to-appoint'] === "no") %}
+                No ...
+    
               {% else %}
               {% endif %}
 
