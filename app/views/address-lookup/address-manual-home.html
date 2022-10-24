@@ -1,4 +1,4 @@
-{% set title = "Where does the director live?" %}
+{% set title = "Where does the PSC live?" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -20,7 +20,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-manual-home" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        <p class="govuk-body">Tell us where the director lives. Only give a business address if they also live there.</p>
+        <p class="govuk-body">Tell us where the PSC lives. Only give a business address if they also live there.</p>
 
         {{ govukInput({
           label: {
@@ -75,7 +75,7 @@
         name: "postcode"
       }) }}
       <h2 class="govuk-heading-m govuk-!-margin-top-9">What information is shown on the online register</h2>
-      <p class="govuk-body">This address will not be publicly available on the Companies House online register, unless it's also used for the company's registered office address or the director's correspondence address.</p>
+      <p class="govuk-body">This address will not be publicly available on the Companies House online register, unless it's also used for the company's registered office address or the PSC's correspondence address.</p>
       {{ govukButton({
         text: "Continue",
         href: "address-lookup-postal"

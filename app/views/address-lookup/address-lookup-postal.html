@@ -1,4 +1,4 @@
-{% set title = "What is the director's correspondence address?" %}
+{% set title = "What is the PSC's correspondence address?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-lookup-postal" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        <p class="govuk-body"> We'll use this address to send Companies House correspondence to the director.</p>
+        <p class="govuk-body"> We'll use this address to send Companies House correspondence to the PSC.</p>
         {{ govukInput({
           label: {
             text: "UK postcode"
