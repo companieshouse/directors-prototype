@@ -41,7 +41,7 @@
       <!--Appointment of the director-->
       {% elif type == 'add' %}
         {{ govukPanel({
-          titleText: "Appointment submitted",
+          titleText: "Notice of new PSC submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
         <table class="govuk-table">
@@ -55,11 +55,11 @@
               <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Name of director</th>
+              <th scope="row" class="govuk-table__header">Name of PSC</th>
               <td class="govuk-table__cell">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Date of appointment</th>
+              <th scope="row" class="govuk-table__header">Notice date</th>
               <td class="govuk-table__cell">              {{data['date-appointed-day']}}
               {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
                 January
@@ -157,10 +157,10 @@
       <h2 class="govuk-heading-m">What do you want to do next?</h2>
       <ul class="govuk-list govuk-list--spaced">
         <li>
-          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update director information for the same company</a>
+          <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update PSC information for the same company</a>
         </li>
         <li>
-          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update director information for a different company</a>
+          <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update PSC information for a different company</a>
         </li>
         <li>
           <a href="../start" class="govuk-link govuk-link--no-visited-state">Sign out</a>
@@ -168,10 +168,10 @@
       </ul>
       <h3 class="govuk-heading-m">Feedback</h3>
       <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
- 
- 
+
+
   <a href="/emails/update-submitted">Link to email</a<
- 
+
   </div>
 </div>
 {% endblock %}
