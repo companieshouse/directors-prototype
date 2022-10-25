@@ -157,7 +157,7 @@
           </div>
                     <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Has the director ever applied to protect their details at Companies House?
+              Has the PSC ever applied to protect their details at Companies House?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['243Appoint']}}
@@ -170,7 +170,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of appointment
+              Date the PSC became a registrable person
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['date-appointed-day']}}
@@ -205,7 +205,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/date-of-appointment?type=add">
-              Change<span class="govuk-visually-hidden"> appointed on date</span>
+              Change<span class="govuk-visually-hidden"> Notice date</span>
               </a>
             </dd>
           </div>
@@ -213,10 +213,10 @@
 
           <!-- Adding PSC -->
 
-            
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What percentage of shares does X have?
+              Percentage of shares
             </dt>
             <dd class="govuk-summary-list__value">
 
@@ -228,7 +228,7 @@
               More than 25
             {% else %}
             {% endif %}
-             
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -238,7 +238,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              As an individual, what percentage of voting rights does X own?
+              Percentage of voting rights
             </dt>
             <dd class="govuk-summary-list__value">
 
@@ -261,15 +261,15 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              As an individual, does X have the right to appoint or remove directors?
+              Does the PSC have the right to appoint or remove directors?
             </dt>
             <dd class="govuk-summary-list__value">
 
               {% if (data['right-to-appoint'] === "yes") %}
-                Yes ... 
+                Yes ...
               {% elif (data['right-to-appoint'] === "no") %}
                 No ...
-    
+
               {% else %}
               {% endif %}
 
@@ -307,7 +307,7 @@
           name: "confirm-where-they-live",
           fieldset: {
             legend: {
-              text: "Confirm where person in control lives",
+              text: "Confirm where X lives",
               classes: "govuk-fieldset__legend--m"
             }
           },
@@ -331,7 +331,7 @@
           items: [
             {
               value: "confirm-control",
-              text: "I confirm that the persons named here are in control of Company X. They understand that their information will be listed in the public record."
+              text: "I confirm that X is in control of TEST LIMITED. They understand that their information will be shown on the online public record."
             }
           ]
         }) }}
