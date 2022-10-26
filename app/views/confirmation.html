@@ -18,7 +18,7 @@
       <!--Change of the director-->
       {% if type == 'update' %}
         {{ govukPanel({
-          titleText: "Director update submitted",
+          titleText: "PSC update submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
        <!-- <table class="govuk-table">
@@ -95,7 +95,7 @@
       <!--Removal of the director-->
       {% else %}
         {{ govukPanel({
-          titleText: "Removal of director submitted",
+          titleText: "Removal of PSC submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
         <table class="govuk-table">
@@ -110,11 +110,11 @@
               <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Name of director</th>
+              <th scope="row" class="govuk-table__header">Name of PSC</th>
               <td class="govuk-table__cell"> {{nameRemove}}</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Date removed</th>
+              <th scope="row" class="govuk-table__header">Date they stopped being a PSC</th>
               <td class="govuk-table__cell">{{data['date-removed-day']}}
               {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
                 January
