@@ -1,4 +1,4 @@
-<h2 class="govuk-heading-m">Notice details</h2>
+<h2 class="govuk-heading-m">Personal details</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -120,7 +120,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
-                70, Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
+                70 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
 
               {% elif (data['home-address'] === "correspodence-address")%}
                 {% if (data['link-home-address'] === "yes") %}
@@ -170,7 +170,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date the PSC became a registrable person
+              Date they became a PSC
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['date-appointed-day']}}
@@ -209,11 +209,13 @@
               </a>
             </dd>
           </div>
-
+  </dl>
 
           <!-- Adding PSC -->
 
+          <h2 class="govuk-heading-m">Nature of control details</h2>
 
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Percentage of shares
@@ -221,11 +223,11 @@
             <dd class="govuk-summary-list__value">
 
             {% if (data['percentage-of-shares'] === "75-or-more") %}
-              75 or more
+              75% or more of shares
             {% elif (data['percentage-of-shares'] === "more-than-50") %}
-              More than 50
+              More than 50%, but not more than 75% of shares
             {% elif (data['percentage-of-shares'] === "more-than-25") %}
-              More than 25
+              More than 25%, but not more than 50% of shares
             {% else %}
             {% endif %}
 
@@ -243,11 +245,11 @@
             <dd class="govuk-summary-list__value">
 
               {% if (data['voting-rights'] === "75-or-more") %}
-                75 or more voting rights
+                75% or more voting rights
               {% elif (data['voting-rights'] === "more-than-50") %}
-                More than 50 voting rights
+                More than 50%, but not more than 75% of voting rights
               {% elif (data['voting-rights'] === "more-than-25") %}
-                More than 25 voting rights
+                More than 25%, but not more than 50% of voting rights
               {% else %}
               {% endif %}
 
@@ -266,9 +268,9 @@
             <dd class="govuk-summary-list__value">
 
               {% if (data['right-to-appoint'] === "yes") %}
-                Yes ...
+                Yes
               {% elif (data['right-to-appoint'] === "no") %}
-                No ...
+                No
 
               {% else %}
               {% endif %}
@@ -307,14 +309,14 @@
           name: "confirm-where-they-live",
           fieldset: {
             legend: {
-              text: "Confirm where X lives",
+              text: "Confirm where Laura Richards lives",
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
               value: "confirm-lives",
-              text: "I confirm that X lives at *address*"
+              text: "I confirm that Laura Richards lives at 70 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
             }
           ]
         }) }}
@@ -331,7 +333,7 @@
           items: [
             {
               value: "confirm-control",
-              text: "I confirm that X is in control of TEST LIMITED. They understand that their information will be shown on the online public record."
+              text: "I confirm that Laura Richards is in control of TEST LIMITED. They understand that their information will be shown on the online public record."
             }
           ]
         }) }}
