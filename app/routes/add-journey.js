@@ -36,21 +36,9 @@ module.exports = function (router) {
   })
   
   router.post('/add/nationality', function (req, res) {
-    res.redirect('/add/job-title')
-  })
-
-  // Job title
-  router.get('/add/job-title', function (req, res) {
-    // Render the confirm company page
-    res.render('add/job-title', {
-      // To use the company data on that page use the following
-      company: req.session.company
-    })
-  })
-  
-  router.post('/add/job-title', function (req, res) {
     res.redirect('../address-lookup/correspondence-address')
   })
+
 
   // Date of appointment
   router.get('/add/date-of-appointment', function (req, res) {
