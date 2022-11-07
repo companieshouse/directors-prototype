@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        If the registered office address changes in the future, do you want this to apply to your correspondence address too?
+        If the registered office address changes in the future, do you want this to apply to the PSC's correspondence address too?
       </h1>
       <form action="/address-lookup/link-correspondence-address" method="post" novalidate>
         {{ govukRadios({
@@ -27,14 +27,14 @@
               value: "yes",
               text: "Yes",
               hint: {
-                text: "Your correspondence address will be recorded as the 'same as the registered office address'. This means future changes will also apply to your correspondence address."
+                text: "The PSC's correspondence address will be recorded as the 'same as the registered office address'. This means future changes will also apply to the PSC's correspondence address."
               }
             },
             {
               value: "no",
               text: "No",
               hint: {
-                text: "You’ll have to update the correspondence address manually if the registered office address changes."
+                text: "The correspondence address will have to be updated manually if the registered office address changes."
               }
             }
           ]
