@@ -17,6 +17,8 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/right-to-appoint" method="post">
 
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
 
         {{ govukRadios({
           name: "right-to-appoint",

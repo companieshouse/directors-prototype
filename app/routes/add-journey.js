@@ -18,6 +18,7 @@ module.exports = function (router) {
     // Render the confirm company page
     res.render('add/date-of-birth', {
       // To use the company data on that page use the following
+      name: req.session.name,
       company: req.session.company
     })
   })
