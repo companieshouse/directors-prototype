@@ -17,9 +17,9 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!--Choose the page title depending on the journey-->
       {% if type == 'remove' %}
-        <h1 class="govuk-heading-l">Check your answers before submitting the removal of a PSC </h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting the PSC removal</h1>
       {% elif type == 'update' %}
-        <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting the PSC update</h1>
       {% else %}
         <h1 class="govuk-heading-l">Check your answers before submitting</h1>
       {% endif %}
@@ -59,7 +59,7 @@
         {% include "includes/appoint-check-your-answers.html" %}
       {% endif %}
       {{ govukButton({
-        text: "Confirm and submit",
+        text: "Submit",
         href: "confirmation"
       }) }}
     </form>

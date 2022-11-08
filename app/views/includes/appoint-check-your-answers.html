@@ -291,29 +291,12 @@
           ]
         }) }} -->
 
-        {{ govukCheckboxes({
-          idPrefix: "confirm-where-they-live",
-          name: "confirm-where-they-live",
-          fieldset: {
-            legend: {
-              text: "Confirm where Laura Richards lives",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "confirm-lives",
-              text: "I confirm that Laura Richards lives at 70 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
-            }
-          ]
-        }) }}
-
          {{ govukCheckboxes({
           idPrefix: "confirm-control-of-company",
           name: "confirm-control-of-company",
           fieldset: {
             legend: {
-              text: "Confirm control of company",
+              text: "Confirm control of the company",
               classes: "govuk-fieldset__legend--m"
             }
           },
@@ -325,6 +308,4 @@
           ]
         }) }}
 
-        {{ govukDetails({
-          summaryText: "What legal statement will appear on this company application?"
-        }) }}
+        
