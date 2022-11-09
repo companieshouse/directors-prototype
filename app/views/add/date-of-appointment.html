@@ -1,4 +1,4 @@
-{% set title = "What date did they become a PSC?" %}
+{% set title = "Date details" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -15,9 +15,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+      <h1 class="govuk-heading-l">Date details</h1>
       <form action="/add/date-of-appointment" method="post">
 
-        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
 
         
         {{ govukDateInput({
@@ -25,9 +27,8 @@
           namePrefix: "date-appointed",
           fieldset: {
             legend: {
-              text: title,
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              text: "What date did they become a PSC?",
+              classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
@@ -73,7 +74,7 @@
           fieldset: {
             legend: {
               text: "Did you enter this information into the company's PSC register on the same date?",
-              classes: "govuk-fieldset__legend--l govuk-!-padding-top-5"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
