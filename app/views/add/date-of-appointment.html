@@ -56,8 +56,8 @@
 
         {% set dateRegisterHtml %}
         {{ govukDateInput({
-          id: "date-on-register",
-          namePrefix: "date-on-register",
+          id: "date-registered",
+          namePrefix: "date-registered",
           fieldset: {
             legend: {
               text: "Date entered into the company's PSC register"
@@ -65,7 +65,24 @@
           },
           hint: {
             text: "For example, 27 3 2007"
-          }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-registered-year']
+            }
+          ]
         }) }}
         {% endset -%}
 

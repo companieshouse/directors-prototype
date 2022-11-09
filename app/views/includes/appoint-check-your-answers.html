@@ -196,6 +196,48 @@
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date entered into the company's PSC register
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['date-registered-day']}}
+              {% if (data['date-registered-month'] === "01") or (data['date-registered-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-registered-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-registered-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-registered-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-registered-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-registered-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-registered-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-registered-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-registered-month'] === "9") %}
+                September
+              {% elif (data['date-registered-month'] === "10")%}
+                October
+              {% elif (data['date-registered-month'] === "11")%}
+                November
+              {% elif (data['date-registered-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-registered-month']}}
+              {% endif %}
+              {{data['date-registered-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-appointment?type=add">
+              Change<span class="govuk-visually-hidden"> PSC register date</span>
+              </a>
+            </dd>
+          </div>
   </dl>
 
           <!-- Adding PSC -->
