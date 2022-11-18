@@ -32,20 +32,18 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes",
               checked: checked("243Appoint", "yes"),
-              conditional: {
-                html: emailHtml
+              hint: {
+                html: '<p class="govuk-hint">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
+                      <p class="govuk-hint">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>'
               }
             },
             {
-              value: "no",
+              value: "No",
               text: "No",
-              checked: checked("243Appoint", "no"),
-              conditional: {
-                html: phoneHtml
-              }
+              checked: checked("243Appoint", "no")
             }
           ]
         }) }}
