@@ -202,24 +202,31 @@
               Date entered into the company's PSC register
             </dt>
             <dd class="govuk-summary-list__value">
+
+            {% if (data['date-entered-own-register'] === "yes") %}
+
+            The date is the same as when they became a PSC
+
+            {% elif (data['date-entered-own-register'] === "no") %}
+              
               {{data['date-registered-day']}}
               {% if (data['date-registered-month'] === "01") or (data['date-registered-month'] === "1") %}
                 January
-              {% elif (data['date-appointed-month'] === "02") or (data['date-registered-month'] === "2") %}
+              {% elif (data['date-registered-month'] === "02") or (data['date-registered-month'] === "2") %}
                 February
-              {% elif (data['date-appointed-month'] === "03") or (data['date-registered-month'] === "3") %}
+              {% elif (data['date-registered-month'] === "03") or (data['date-registered-month'] === "3") %}
                 March
-              {% elif (data['date-appointed-month'] === "04") or (data['date-registered-month'] === "4") %}
+              {% elif (data['date-registered-month'] === "04") or (data['date-registered-month'] === "4") %}
                 April
-              {% elif (data['date-appointed-month'] === "05") or (data['date-registered-month'] === "5") %}
+              {% elif (data['date-registered-month'] === "05") or (data['date-registered-month'] === "5") %}
                 May
-              {% elif (data['date-appointed-month'] === "06") or (data['date-registered-month'] === "6") %}
+              {% elif (data['date-registered-month'] === "06") or (data['date-registered-month'] === "6") %}
                 June
-              {% elif (data['date-appointed-month'] === "07") or (data['date-registered-month'] === "7") %}
+              {% elif (data['date-registered-month'] === "07") or (data['date-registered-month'] === "7") %}
                 July
-              {% elif (data['date-appointed-month'] === "08") or (data['date-registered-month'] === "8") %}
+              {% elif (data['date-registered-month'] === "08") or (data['date-registered-month'] === "8") %}
                 August
-              {% elif (data['date-appointed-month'] === "09") or (data['date-registered-month'] === "9") %}
+              {% elif (data['date-registered-month'] === "09") or (data['date-registered-month'] === "9") %}
                 September
               {% elif (data['date-registered-month'] === "10")%}
                 October
@@ -231,6 +238,9 @@
                 {{data['date-registered-month']}}
               {% endif %}
               {{data['date-registered-year']}}
+
+              {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/date-of-appointment?type=add">
@@ -257,6 +267,8 @@
               More than 50%, but not more than 75% of shares
             {% elif (data['percentage-of-shares'] === "more-than-25") %}
               More than 25%, but not more than 50% of shares
+            {% elif (data['percentage-of-shares'] === "none") %}
+              None
             {% else %}
             {% endif %}
 
@@ -279,6 +291,8 @@
                 More than 50%, but not more than 75% of voting rights
               {% elif (data['voting-rights'] === "more-than-25") %}
                 More than 25%, but not more than 50% of voting rights
+              {% elif (data['voting-rights'] === "none") %}
+              None
               {% else %}
               {% endif %}
 
