@@ -1,4 +1,4 @@
-{% set title = "Has the PSC ever applied to protect their details at Companies House?" %}
+{% set title = "Does the PSC have their personal information protected at Companies House?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -24,11 +24,14 @@
           name: "243Appoint",
           fieldset: {
             legend: {
-              text: "Has the PSC ever applied to protect their details at Companies House?",
+              text: "Does the PSC have their personal information protected at Companies House?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
+           hint: {
+    text: "This includes if they are waiting for the results of an application to protect their personal information."
+  },
           items: [
             {
               value: "Yes",
@@ -52,11 +55,11 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              What applying to protect PSC details means
+              What having personal information protected means
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body">Some PSCs can apply to protect their personal details if they meet certain criteria.</p>
+            <p class="govuk-body">Some PSCs can apply to protect personal information from being shown on the Companies House public register if they meet certain criteria.</p>
             <p class="govuk-body">You should only select ‘yes’ if the PSC has:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>provided evidence that they are eligible to have their details protected </li>
