@@ -110,6 +110,8 @@
               More than 50%, but not more than 75% of shares
             {% elif (data['percentage-of-shares'] === "more-than-25") %}
               More than 25%, but not more than 50% of shares
+            {% elif (data['percentage-of-shares'] === "none") %}
+              None 
             {% else %}
             {% endif %}
 
@@ -132,6 +134,8 @@
                 More than 50%, but not more than 75% of voting rights
               {% elif (data['voting-rights'] === "more-than-25") %}
                 More than 25%, but not more than 50% of voting rights
+              {% elif (data['voting-rights'] === "none") %}
+                None 
               {% else %}
               {% endif %}
 
