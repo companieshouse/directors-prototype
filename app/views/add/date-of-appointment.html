@@ -20,11 +20,10 @@
       <form action="/add/date-of-appointment" method="post">
 
 
-
-        
         {{ govukDateInput({
           id: "date-appointed",
           namePrefix: "date-appointed",
+        <!-- autocomplete: "disable", -->
           fieldset: {
             legend: {
               text: "What date did they become a PSC?",

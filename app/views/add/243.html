@@ -33,6 +33,15 @@
     text: "This includes if they are waiting for the results of an application to protect their personal information."
   },
           items: [
+
+            {
+              value: "No",
+              text: "No",
+              checked: checked("243Appoint", "No"),
+              conditional: {
+                html: phoneHtml
+              }
+            },
             {
               value: "Yes",
               text: "Yes",
@@ -40,14 +49,6 @@
               hint: {
                 html:'<p class="govuk-hint">We’ll need to check that the PSC has applied to protect their details, so your submission will take longer to process.</p>
                 <p class="govuk-hint">It could be rejected if you select ‘yes’ and the PSC has not applied to protect their details.</p>'
-              }
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: checked("243Appoint", "No"),
-              conditional: {
-                html: phoneHtml
               }
             }
           ]
