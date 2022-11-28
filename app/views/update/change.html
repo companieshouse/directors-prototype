@@ -18,6 +18,9 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
         <h1 class="govuk-heading-l">Update the PSC's details</h1>
+        <p class="govuk-hint govuk-!-padding-bottom-2"> Updates are pending until you've submitted them and they've been accepted.</p>
+
+
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -37,15 +40,13 @@
               <!-- If the variable gChangesMade = TRUE then show the following... -->
               {% if data['gChangesMade'] == true %}
                 <strong class="govuk-tag govuk-tag--blue changes-made">
-                  Change made: pending
+                  Update made
                 </strong>
               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
               {% else %}
                 <!-- No changes made -->
               {% endif %}
-
             </dd>
-
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
