@@ -28,11 +28,11 @@ module.exports = function (router) {
   })
 
   router.post('/update/change', function (req, res) {
-    if(req.session.data['numOfChange'] == 0){
+    /*if(req.session.data['numOfChange'] == 0){
       res.redirect('IDONTEXISTYET')
       
-    }
-    else if(req.session.data['numOfChange'] > 1){
+    }*/
+    if(req.session.data['numOfChange'] > 1){
       res.redirect('/update/confirm-update')
     }
     else{
