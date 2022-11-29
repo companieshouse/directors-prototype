@@ -18,35 +18,37 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/confirm-update" method="post">
         {{ govukRadios({
-      classes: "govuk-radios",
-      name: "confirmUpdate",
-      fieldset: {
-        legend: {
-          text: "Are you trying to appoint a new director?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No, I'm updating the details of an existing director"
-        }
-      ]
-    }) }}
+          classes: "govuk-radios",
+          name: "confirmUpdate",
+          fieldset: {
+            legend: {
+              text: "Are you trying to appoint a new director?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No, I'm updating the details of an existing director"
+            }
+          ]
+        }) }}
 
-          <div class="govuk-button-group">
+        <div class="govuk-button-group">
 
-            {{ govukButton({
-              text: "Continue"
-            }) }}
-          </form>
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
-         </div>
+        </div>
+
+      </form>
+         
       </div>
     </div>
   {% endblock %}
