@@ -32,7 +32,7 @@ module.exports = function (router) {
       res.redirect('IDONTEXISTYET')
       
     }*/
-    if(req.session.data['numOfChange'] > 1){
+    if(req.session.data['numOfChange'] > 3){
       res.redirect('/update/confirm-update')
     }
     else{
