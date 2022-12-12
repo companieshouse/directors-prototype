@@ -37,11 +37,12 @@
 
             <dd class=“govuk-summary-list__value”>
 
-              <!-- If the variable gChangesMade = TRUE then show the following... -->
+              <!-- If the variable gChangesMade = TRUE then show the following tag and label. -->
               {% if data['nameChangesMade'] == true %}
                 <strong class="govuk-tag govuk-tag--blue changes-made">
                   Update made
                 </strong>
+                <p class="govuk-hint govuk-!-font-size-14">Pending until submitted and accepted</p>
               {% endif %}
             </dd>
           </div>
