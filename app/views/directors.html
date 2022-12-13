@@ -14,6 +14,28 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+     <!-- If a new person has been made and the application is rejected, inital update to the user would be a notification banner
+
+     {% if data['newPersonRejectedMade'] == true %}
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          PSC application receieved
+        </h3>
+        <p class="govuk-body">Check your emails for updates to PSC application. Successful </p>
+      </div>
+      </div>
+            
+      {% endif %} -->
+
+
       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
       <h1 class="govuk-heading-l">Active people with significant control (PSCs)</h1>
       {{ govukButton({
@@ -59,12 +81,15 @@
             </div>
             </div>
 
-
+             {% if data['newPersonAcceptedMade'] == true %}
 
 
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
                   <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
-                    <p class="govuk-!-font-weight-bold govuk-!-margin-0">MURRAY, Andy</p>
+                    <p class="govuk-!-font-weight-bold govuk-!-margin-0 govuk-!-padding-right-5">MURRAY, Andy
+                    <strong class="govuk-tag">
+                    new
+                  </strong></p>
                   </div>
                   <div class="govuk-!-padding-1">
                     <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
@@ -99,12 +124,13 @@
                       <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Cease PSC</a>
                     </p>
                   </div>
-                  </div>
+              </div>
+              {% endif %}
 
 
 
 
-                  <div class="govuk-summary-card govuk-!-margin-bottom-4">
+            <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
               <p class="govuk-!-font-weight-bold govuk-!-margin-0">ACME LTD (01234567)</p>
             </div>

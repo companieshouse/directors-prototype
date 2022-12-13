@@ -107,6 +107,7 @@ module.exports = function (router) {
   })
 
   router.post('/add/right-to-appoint', function (req, res) {
+
     res.redirect('../check-your-answers')
   })
 
