@@ -15,9 +15,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     <!-- If a new person has been made and the application is rejected, inital update to the user would be a notification banner
+     <!-- If a new person has been made and the application is rejected, inital update to the user would be a notification banner -->
 
-     {% if data['newPersonRejectedMade'] == true %}
+     {% if data['newPersonPendingMade'] == true %}
 
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -27,13 +27,13 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          PSC application receieved
+          A new PSC application has been received
         </h3>
-        <p class="govuk-body">Check your emails for updates to PSC application. Successful </p>
+        <p class="govuk-body">Check your emails for updates to PSC application. Successful applications will appear below.</p>
       </div>
       </div>
             
-      {% endif %} -->
+      {% endif %}
 
 
       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
@@ -44,7 +44,18 @@
       }) }}
       <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
-              <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca
+
+           <!-- If an update has been made to the PSC display updates pending tag -->
+             {% if data['nameChangesMade'] == true %}
+
+              <strong class="govuk-tag govuk-tag--purple">
+                Updates recieved 
+              </strong>
+
+              {% endif %} 
+              </p>
+
             </div>
             <div class="govuk-!-padding-1">
               <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
@@ -81,15 +92,13 @@
             </div>
             </div>
 
-             {% if data['newPersonAcceptedMade'] == true %}
+           
 
 
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
                   <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
                     <p class="govuk-!-font-weight-bold govuk-!-margin-0 govuk-!-padding-right-5">MURRAY, Andy
-                    <strong class="govuk-tag">
-                    new
-                  </strong></p>
+                    </p>
                   </div>
                   <div class="govuk-!-padding-1">
                     <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
@@ -102,7 +111,7 @@
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Date of birth</dt>
                         <dd class="govuk-summary-list__value">
-                          <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                      
                           {{ [1,2,3,4,5,6,7,8,9] | random }}
                           {{ ['August','January','December','November','October','March','May','June','July'] | random }}
                           {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
@@ -111,7 +120,6 @@
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Date added</dt>
                         <dd class="govuk-summary-list__value" >
-                        <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
                           <p>16 December 2015</p>
                         </dd>
                       </div>
@@ -119,20 +127,30 @@
                   </div>
                   <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
                     <p class="govuk-body">
-                      <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+                    
                       <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Check and update details</a>
                       <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Cease PSC</a>
                     </p>
                   </div>
               </div>
-              {% endif %}
+         
 
 
 
 
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
-              <p class="govuk-!-font-weight-bold govuk-!-margin-0">ACME LTD (01234567)</p>
+            <p class="govuk-!-font-weight-bold govuk-!-margin-0">ACME LTD (01234567)
+
+            {% if data['removePersonPendingMade'] == true %}
+
+            <strong class="govuk-tag govuk-tag--purple">
+              Removal request recieved 
+            </strong>
+
+            {% endif %} 
+
+            </p>
             </div>
             <div class="govuk-!-padding-1">
               <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">

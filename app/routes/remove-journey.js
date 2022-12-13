@@ -21,6 +21,12 @@ module.exports = function (router) {
     })
   })
   router.post('/update/remove', function (req, res) {
+
+    // If a new person has been added set newPersonMade to true, then display this on the Active directors page
+    if(req.session.data['removePersonPendingMade'] != true){
+      req.session.data['removePersonPendingMade'] = true;
+    }
+
     res.redirect('../check-your-answers?type=remove')
   })
 }

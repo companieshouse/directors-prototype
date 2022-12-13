@@ -108,6 +108,10 @@ module.exports = function (router) {
 
   router.post('/add/right-to-appoint', function (req, res) {
 
+    // If a new person has been added set newPersonPendingMade to true, then display this on the Active directors page
+    if(req.session.data['newPersonPendingMade'] != true){
+      req.session.data['newPersonPendingMade'] = true;
+    }
     res.redirect('../check-your-answers')
   })
 
