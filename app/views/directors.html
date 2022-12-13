@@ -19,19 +19,19 @@
 
      {% if data['newPersonPendingMade'] == true %}
 
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
+          Important
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          A new PSC application has been received
+          New PSC submission received
         </h3>
-        <p class="govuk-body">Check your emails for updates to PSC application. Successful applications will appear below.</p>
+          <p class="govuk-body">We’ll send an email to let you know if the submission was accepted or rejected. This page will update if it's accepted.</p>
       </div>
-      </div>
+    </div>
             
       {% endif %}
 
@@ -50,7 +50,7 @@
              {% if data['nameChangesMade'] == true %}
 
               <strong class="govuk-tag govuk-tag--purple">
-                Updates recieved 
+                Update received 
               </strong>
 
               {% endif %} 
@@ -98,6 +98,13 @@
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
                   <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
                     <p class="govuk-!-font-weight-bold govuk-!-margin-0 govuk-!-padding-right-5">MURRAY, Andy
+                      {% if data['removePersonPendingMade'] == true %}
+
+                        <strong class="govuk-tag govuk-tag--purple">
+                          CEASED PSC RECEIVED 
+                        </strong>
+
+                        {% endif %} 
                     </p>
                   </div>
                   <div class="govuk-!-padding-1">
@@ -141,15 +148,6 @@
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
             <p class="govuk-!-font-weight-bold govuk-!-margin-0">ACME LTD (01234567)
-
-            {% if data['removePersonPendingMade'] == true %}
-
-            <strong class="govuk-tag govuk-tag--purple">
-              Removal request recieved 
-            </strong>
-
-            {% endif %} 
-
             </p>
             </div>
             <div class="govuk-!-padding-1">
