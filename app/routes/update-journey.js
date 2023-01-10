@@ -102,11 +102,6 @@ module.exports = function (router) {
       req.session.data['nameChangesMade'] = true;
       req.session.data['numOfChange'] ++ ;
     }
-
-    // If a new person has been added set updatePersonMade to true, then display this on the Active directors page
-    if(req.session.data['updatePersonAcceptedMade'] != true){
-      req.session.data['updatePersonAcceptedMade'] = true;
-    }
     
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
