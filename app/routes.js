@@ -45,10 +45,7 @@ router.get('/check-your-answers', function (req, res) {
     nameRemove: req.session.removename,
     updateName: req.session.name
   })
-   // If a new person has been added set newPersonMade to true, then display this on the Active directors page
-    if(req.session.data['newPersonAcceptedMade'] != true){
-      req.session.data['newPersonAcceptedMade'] = true;
-    }
+
 })
 
 router.get('/confirmation', function (req, res) {
