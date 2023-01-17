@@ -1,0 +1,121 @@
+{% set title = "Date details" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Date details</h1>
+      <form action="/remove-statement" method="post">
+
+
+        {{ govukDateInput({
+          id: "date-statement-no-longer-applied",
+          namePrefix: "date-statement-no-longer-applied",
+          fieldset: {
+            legend: {
+              text: "When did the statement no longer apply?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2022"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-no-longer-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-no-longer-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-no-longer-year']
+            }
+         ]
+        }) }}
+
+
+        {% set dateRegisterHtml %}
+        {{ govukDateInput({
+          id: "date-registered",
+          namePrefix: "date-registered",
+          fieldset: {
+            legend: {
+              text: "Date the company's PSC register was updated"
+            }
+          },
+          hint: {
+            text: "For example, 28 3 2022"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-registered-year']
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "date-entered-own-register",
+          fieldset: {
+            legend: {
+              text: "Was the company's PSC register updated with this information on the same date?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Companies are required to keep a PSC register. It must include the details of all people or companies that have significant control over the company."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, the same date"
+            },
+            {
+              value: "no",
+              text: "No, a different date",
+              conditional: {
+                html: dateRegisterHtml
+              }
+            }
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-9">What information is shown on the online register</h2>
+        <p class="govuk-body">The date they became a PSC will be publicly available on the Companies House online register.</p>
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-5"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

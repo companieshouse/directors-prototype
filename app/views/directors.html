@@ -38,21 +38,52 @@
 
       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
       <h1 class="govuk-heading-l">Active people with significant control (PSCs)</h1>
+
       {{ govukButton({
         text: "Add new PSC",
         href: "add/name?type=add"
       }) }}
 
+      {{ govukButton({
+        text: "Add new statement",
+        href: "add/psc-options"
+      }) }}
+
+
 
      <!--  <div class="govuk-summary-card govuk-!-margin-bottom-4">
-    <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
-      <p class="govuk-!-font-weight-bold govuk-!-margin-0">IRVING, Kyrie</p>
-        {{govukTag({
-            text: "Active",
-            classes: "govuk-tag--green"
-          })}}
-    </div>
-  </div> -->
+      <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
+        <p class="govuk-!-font-weight-bold govuk-!-margin-0">IRVING, Kyrie</p>
+          {{govukTag({
+              text: "Active",
+              classes: "govuk-tag--green"
+            })}}
+      </div>
+    </div> -->
+
+
+    <div class="govuk-summary-card govuk-!-margin-bottom-4">
+      <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
+        <p class="govuk-!-font-weight-bold govuk-!-margin-0">PSC statement</p>
+
+      </div>
+      <div class="govuk-!-padding-1 govuk-!-margin-3 almost-full-width">
+        
+        <p class="govuk-body">The company knows or has reasonable cause to believe that there is no registrable person or registrable relevant legal entity in relation to the company.</p>
+
+        <span class="govuk-body govuk-!-font-weight-bold govuk-!-padding-top-4">Notified on        
+          <p class="govuk-body govuk-!-padding-top-1">12 December 2012</p> <span>
+
+      </div>
+      <div class="govuk-!-padding-left-3">
+        <p class="govuk-body">
+          <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+          <a href="update/remove-statement.html" class="govuk-link govuk-link--no-visited-state">Remove PSC statement</a>
+        </p>
+      </div>
+      </div>
+
+      
 
 
       <div class="govuk-summary-card govuk-!-margin-bottom-4">
@@ -152,10 +183,6 @@
                     </p>
                   </div>
               </div>
-         
-
-
-
 
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">

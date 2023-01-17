@@ -1,0 +1,68 @@
+{% set title = "What do you want to tell Companies House about the companies PSCs?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/psc-options" method="post">
+
+         {{ govukRadios({
+          name: "psc-options",
+          fieldset: {
+            legend: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              value: "no-psc",
+              text: "the company does not have a PSC"
+              },
+            {
+              value: "gathering-psc-details",
+              text: "the company believes it has a PSC but doesn't yet have the details"
+            },
+            {
+              value: "unsure-about-psc",
+              text: "the company does not yet know if it has a PSC"
+            },
+            {
+              value: "notice-issued",
+              text: "the company has issued a notice"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Continue",
+          href:"psc-check-statement"
+        }) }}
+
+        <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+        <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

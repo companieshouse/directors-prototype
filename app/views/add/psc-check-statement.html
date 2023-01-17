@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/psc-select-statement" method="post">
+
+        <h1 class="govuk-heading-l">Check the PSC statement to be added to the company</h1>
+
+        <!-- display the corresponding statement to the user -->
+
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
+            <p class="govuk-!-font-weight-bold govuk-!-margin-0">PSC statement</p>
+          </div>
+          <div class="govuk-!-padding-1 govuk-!-margin-3 almost-full-width">
+            <p class="govuk-body">The company knows or has reasonable cause to believe that there is no registrable person or registrable relevant legal entity in relation to the company.</p>
+          </div>
+          </div>
+
+        <div class="govuk-button-group govuk-!-padding-top-2">
+
+        {{ govukButton({
+          text: "Continue",
+          href:"../update/remove-statement"
+        }) }}
+
+        <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+        <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
