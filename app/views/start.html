@@ -7,47 +7,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">{{serviceName}}</h1>
-      <p class="govuk-body-l">Use this service to update director information for limited companies on the Companies House register.</p>
-      <p class="govuk-body">In this service, you can:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>appoint a new director</li>
-        <li>update an existing director's details</li>
-        <li>remove a director</li>
-      </ul>
+      <p class="govuk-body">Use this service to remove a director of a limited company on the Companies House register, including corporate directors.</p>
 
-      <h2 class="govuk-heading-m">Who this service is for</h2>
-     <p class="govuk-body">For now, you can only appoint, update or remove a director who is a person in this service.</p>
-      <p class="govuk-body">For corporate directors, you'll need to use our <a href="https://ewf.companieshouse.gov.uk//seclogin?tc=1" class="govuk-link">WebFiling service</a> or file a <a href="https://www.gov.uk/government/collections/companies-house-forms-for-limited-companies#directors-and-secretaries" class="govuk-link">Companies House form</a>.</p>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-          What is a corporate director?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          This is a company, firm, or any other kind of corporate body that is appointed as the director of another company. <br><br>For example, COMPANY 1 LIMITED could be the corporate director of COMPANY 2 LIMITED.
-        </div>
-      </details>
-
-      <h2 class="govuk-heading-m">Before you start</h2>
       <p class="govuk-body">You'll need:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>to sign in to or create a Companies House account</li>
         <li>the company number</li>
-        <li>the company authentication code</li>
+        <li>the <a href="https://www.gov.uk/guidance/company-authentication-codes-for-online-filing" class="govuk-link">company authentication code</a></li>
+        <li>the date the director was removed from the company</li>
       </ul>
       <br>
-      <p class="govuk-body">To appoint a director, you'll need their:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
-        <li>date of birth</li>
-        <li>nationality</li>
-        <li>occupation (this is optional)</li>
-        <li>correspondence address and home address</li>
-        <li>date of appointment</li>
-      </ul>
-      <p class="govuk-body">You'll also need to tell us whether the director has ever applied to <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">protect personal information at Companies House</a>.</p>
+      
      {{ govukButton({
         text: "Start now",
         href: "sign-in",
