@@ -1,4 +1,4 @@
-{% set title = "What do you want to tell Companies House about the companies PSCs?" %}
+{% set title = "Why does the company believe that it has a PSC but doesn't yet have the details?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -15,10 +15,10 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/add/psc-options" method="post">
+      <form action="/add/psc-options-2-3" method="post">
 
          {{ govukRadios({
-          name: "psc-options",
+          name: "psc-options-2-3",
           fieldset: {
             legend: {
               text: title,
@@ -27,24 +27,16 @@
             }
           },
           hint: {
-            text: ""
+            text: "You will need to submit a statement for each PSC"
           },
           items: [
             {
-              value: "no-psc",
-              text: "the company does not have a PSC"
+              value: "not-identified-yet",
+              text: "The company believes it has a PSC but has not yet identified them"
               },
             {
               value: "gathering-psc-details",
-              text: "the company believes it has a PSC but doesn't yet have the details"
-            },
-            {
-              value: "unsure-about-psc",
-              text: "the company does not yet know if it has a PSC"
-            },
-            {
-              value: "notice-issued",
-              text: "the company has issued a notice"
+              text: "The company has identified a PSC but the details have not yet been confirmed"
             }
           ]
         }) }}

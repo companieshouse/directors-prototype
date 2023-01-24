@@ -115,6 +115,29 @@ module.exports = function (router) {
     res.redirect('../check-your-answers')
   })
 
+// Statement journey
+
+// Identifying the correct PSC statement
+router.post('/add/psc-options', function (req, res) {
+
+  if (req.session.data['psc-options'] === 'gathering-psc-details') {
+    res.redirect('../add/psc-options-2-3')
+  }
+  if (req.session.data['psc-options'] === 'notice-issued') {
+    res.redirect('../add/psc-check-notice')
+  }
+  else{
+    res.redirect('../add/psc-check-statement')
+  }
+
+})
+
+// Identifying which statement is relevant - PSC statement 2 or 3 
+router.post('/add/psc-options-2-3', function (req, res) {
+  res.redirect('../add/psc-check-statement')
+})
+
+
 
 
 

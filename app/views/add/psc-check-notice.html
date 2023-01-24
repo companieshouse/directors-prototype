@@ -15,7 +15,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/add/psc-options" method="post">
+      <form action="/add/psc-check-notice" method="post">
 
          {{ govukRadios({
           name: "psc-options",
@@ -31,20 +31,16 @@
           },
           items: [
             {
-              value: "no-psc",
-              text: "the company does not have a PSC"
+              value: "statement-5",
+              text: "the company has given a notice to confirm PSC details"
               },
             {
-              value: "gathering-psc-details",
-              text: "the company believes it has a PSC but doesn't yet have the details"
+              value: "statement-6",
+              text: "the company has issued a restrictions notice"
             },
             {
-              value: "unsure-about-psc",
-              text: "the company does not yet know if it has a PSC"
-            },
-            {
-              value: "notice-issued",
-              text: "the company has issued a notice"
+              value: "statement-7",
+              text: "the PSC has failed to provide an update of their changed details"
             }
           ]
         }) }}
