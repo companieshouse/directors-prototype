@@ -123,7 +123,8 @@ module.exports = function (router) {
   })
 
   router.post('/update/remove-statement', function (req, res) {
-    res.redirect('/update/check-your-answers?type=removestatement&officer=' + req.session.redirect)
+    req.session.type = 'removestatement'
+    res.redirect('/check-your-answers?type=removestatement')
   })
 
 

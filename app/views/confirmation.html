@@ -148,9 +148,9 @@
           </tbody>
         </table>
         <!-- If the type is add statement show-->
-        {% else %}
+        {% elif type == 'addstatement' %}
         {{ govukPanel({
-          titleText: "New statement submitted",
+          titleText: "New PSC statement submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
         <table class="govuk-table">
@@ -203,7 +203,95 @@
             </tr>
           </tbody>
         </table>
-      {% endif %}
+        <!-- If the type is remove statement show-->
+         {% else %}
+          {{ govukPanel({
+            titleText: "Remove PSC statement submitted",
+            html: "Reference number<br><strong>" + reference + "</strong>"
+          }) }}
+             <table class="govuk-table">
+               <tbody class="govuk-table__body">
+     
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Company number</th>
+                   <td class="govuk-table__cell">02050399</td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Company name</th>
+                   <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">PSC statement</th>
+                   <td class="govuk-table__cell">  The company knows or has reasonable cause to believe that there is a registrable person in relation to the company, but it has not identified the registrable person.
+                   </td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header"> Date the statement no longer applied</th>
+                   <td class="govuk-table__cell">{{data['date-removed-day']}}
+                   {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+                     January
+                   {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+                     February
+                   {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+                     March
+                   {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+                     April
+                   {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+                     May
+                   {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+                     June
+                   {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+                     July
+                   {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+                     August
+                   {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+                     September8
+                   {% elif (data['date-removed-month'] === "10") %}
+                     October
+                   {% elif (data['date-removed-month'] === "11") %}
+                     November
+                   {% elif (data['date-removed-month'] === "12") %}
+                     December
+                   {% else %}
+                     {{data['date-removed-month']}}
+                   {% endif %}
+                   {{data['date-removed-year']}}</td>
+                 </tr>
+                 <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"> Date entered into the company's PSC register</th>
+                  <td class="govuk-table__cell">{{data['date-removed-day']}}
+                  {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+                    January
+                  {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+                    February
+                  {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+                    March
+                  {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+                    April
+                  {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+                    May
+                  {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+                    June
+                  {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+                    July
+                  {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+                    August
+                  {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+                    September8
+                  {% elif (data['date-removed-month'] === "10") %}
+                    October
+                  {% elif (data['date-removed-month'] === "11") %}
+                    November
+                  {% elif (data['date-removed-month'] === "12") %}
+                    December
+                  {% else %}
+                    {{data['date-removed-month']}}
+                  {% endif %}
+                  {{data['date-removed-year']}}</td>
+                </tr>
+               </tbody>
+             </table>
+           {% endif %}
       <h3 class="govuk-heading-m">What happens next</h3>
       <p class="govuk-body">We'll send a confirmation email to
         <strong>{{ data['email'] }}</strong>

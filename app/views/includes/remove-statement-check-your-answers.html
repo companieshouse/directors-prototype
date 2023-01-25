@@ -1,0 +1,99 @@
+
+
+<h2 class="govuk-heading-m">PSC details</h2>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      PSC statement
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <!-- display the corresponding statement here -->
+
+      The company knows or has reasonable cause to believe that there is a registrable person in relation to the company, but it has not identified the registrable person.
+  </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/add/name?type=add">
+      Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date the statement no longer applied
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{data['date-add-statement-day']}}
+        {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
+          January
+        {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
+          February
+        {% elif (data['date-add-statement-month'] === "03") or (data['date-add-statement-month'] === "3") %}
+          March
+        {% elif (data['date-add-statement-month'] === "04") or (data['date-add-statement-month'] === "4") %}
+          April
+        {% elif (data['date-add-statement-month'] === "05") or (data['date-add-statement-month'] === "5") %}
+          May
+        {% elif (data['date-add-statement-month'] === "06") or (data['date-add-statement-month'] === "6") %}
+          June
+        {% elif (data['date-add-statement-month'] === "07") or (data['date-add-statement-month'] === "7") %}
+          July
+        {% elif (data['date-add-statement-month'] === "08") or (data['date-add-statement-month'] === "8") %}
+          August
+        {% elif (data['date-add-statement-month'] === "09") or (data['date-add-statement-month'] === "9") %}
+          September
+        {% elif (data['date-add-statement-month'] === "10") %}
+          October
+        {% elif (data['date-add-statement-month'] === "11") %}
+          November
+        {% elif (data['date-add-statement-month'] === "12") %}
+          December
+        {% else %}
+          {{data['date-add-statement-month']}}
+        {% endif %}
+        {{data['date-add-statement-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/add/statement">Change<span class="govuk-visually-hidden"> removed on date</span></a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date entered into the company's PSC register
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{data['date-add-statement-day']}}
+        {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
+          January
+        {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
+          February
+        {% elif (data['date-add-statement-month'] === "03") or (data['date-add-statement-month'] === "3") %}
+          March
+        {% elif (data['date-add-statement-month'] === "04") or (data['date-add-statement-month'] === "4") %}
+          April
+        {% elif (data['date-add-statement-month'] === "05") or (data['date-add-statement-month'] === "5") %}
+          May
+        {% elif (data['date-add-statement-month'] === "06") or (data['date-add-statement-month'] === "6") %}
+          June
+        {% elif (data['date-add-statement-month'] === "07") or (data['date-add-statement-month'] === "7") %}
+          July
+        {% elif (data['date-add-statement-month'] === "08") or (data['date-add-statement-month'] === "8") %}
+          August
+        {% elif (data['date-add-statement-month'] === "09") or (data['date-add-statement-month'] === "9") %}
+          September
+        {% elif (data['date-add-statement-month'] === "10") %}
+          October
+        {% elif (data['date-add-statement-month'] === "11") %}
+          November
+        {% elif (data['date-add-statement-month'] === "12") %}
+          December
+        {% else %}
+          {{data['date-add-statement-month']}}
+        {% endif %}
+        {{data['date-add-statement-year']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/add/statement">Change<span class="govuk-visually-hidden"> removed on date</span></a>
+      </dd>
+    </div>
+  </dl>

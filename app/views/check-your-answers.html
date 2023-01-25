@@ -21,7 +21,9 @@
       {% elif type == 'update' %}
         <h1 class="govuk-heading-l">Check your answers before submitting the PSC update</h1>
       {% elif type == 'addstatement' %}
-        <h1 class="govuk-heading-l">Check your answers before submitting</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting </h1>
+      {% elif type == 'removestatement' %}
+      <h1 class="govuk-heading-l">Check your answers before submitting</h1>
       {% else %}
         <h1 class="govuk-heading-l">Check your answers before submitting</h1>
       {% endif %}
@@ -59,6 +61,8 @@
          {% include "includes/update-check-your-answers.html" %}
       {% elif type == 'addstatement' %}
          {% include "includes/add-statement-check-your-answers.html" %}
+      {% elif type == 'removestatement' %}
+         {% include "includes/remove-statement-check-your-answers.html" %}
       {% else %}
         {% include "includes/appoint-check-your-answers.html" %}
       {% endif %}
