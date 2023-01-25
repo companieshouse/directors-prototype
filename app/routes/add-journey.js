@@ -117,36 +117,48 @@ module.exports = function (router) {
 
 // Statement journey
 
+router.get('/add/psc-options'), function(req,res) {
+  res.render('add/psc-options')
+
+}
+
 // Identifying the correct PSC statement
 router.post('/add/psc-options', function (req, res) {
-
+   
   if (req.session.data['psc-options'] === 'gathering-psc-details') {
-    res.redirect('../add/psc-options-2-3')
+    res.redirect('../add/psc-options-2-3?type=addstatement')
   }
   if (req.session.data['psc-options'] === 'notice-issued') {
-    res.redirect('../add/psc-check-notice')
+    res.redirect('../add/psc-check-notice?type=addstatement')
   }
   else{
-    res.redirect('../add/psc-check-statement')
+    res.redirect('../add/psc-check-statement?type=addstatement')
   }
 
 })
 
 // Identifying which statement is relevant - PSC statement 2 or 3 
 router.post('/add/psc-options-2-3', function (req, res) {
-  res.redirect('../add/psc-check-statement')
+  res.redirect('../add/psc-check-statement?type=addstatement')
 })
 
 // Identifying which notice statement is relevant  
 router.post('/add/psc-check-notice', function (req, res) {
-  res.redirect('../add/psc-check-statement')
+  res.redirect('../add/psc-check-statement?type=addstatement')
 })
 
 
 // date statement added to register
 router.post('/add/psc-check-statement', function (req, res) {
-  res.redirect('../add/statement-date')
+  res.redirect('../add/statement-date?type=addstatement')
 })
+
+// date statement added to register
+router.post('/add/statement-date', function (req, res) {
+  req.session.type = req.query.type
+  res.redirect('/check-your-answers')
+})
+
 
 
 
