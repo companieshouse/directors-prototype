@@ -137,6 +137,17 @@ router.post('/add/psc-options-2-3', function (req, res) {
   res.redirect('../add/psc-check-statement')
 })
 
+// Identifying which notice statement is relevant  
+router.post('/add/psc-check-notice', function (req, res) {
+  res.redirect('../add/psc-check-statement')
+})
+
+
+// date statement added to register
+router.post('/add/psc-check-statement', function (req, res) {
+  res.redirect('../add/statement-date')
+})
+
 
 
 

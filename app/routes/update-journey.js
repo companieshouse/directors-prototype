@@ -122,4 +122,9 @@ module.exports = function (router) {
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
+  router.post('/update/remove-statement', function (req, res) {
+    res.redirect('/update/check-your-answers?type=removestatement&officer=' + req.session.redirect)
+  })
+
+
 }

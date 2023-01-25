@@ -14,7 +14,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/add/psc-select-statement" method="post">
+      <form action="/add/psc-check-statement" method="post">
 
         <h1 class="govuk-heading-l">Check the PSC statement to be added to the company</h1>
 
@@ -32,8 +32,7 @@
         <div class="govuk-button-group govuk-!-padding-top-2">
 
         {{ govukButton({
-          text: "Continue",
-          href:"../update/remove-statement"
+          text: "Continue"
         }) }}
 
         <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
