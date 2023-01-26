@@ -126,7 +126,7 @@ router.get('/add/psc-options'), function(req,res) {
 router.post('/add/psc-options', function (req, res) {
    
   if (req.session.data['psc-options'] === 'gathering-psc-details') {
-    res.redirect('../add/psc-options-2-3?type=addstatement')
+    res.redirect('../add/psc-check-statement?type=addstatement')
   }
   if (req.session.data['psc-options'] === 'notice-issued') {
     res.redirect('../add/psc-check-notice?type=addstatement')
