@@ -60,6 +60,19 @@ router.get('/confirmation', function (req, res) {
     name: req.session.name,
     nameRemove: req.session.removename
   })
+
+
+// if a user has added a PSC statement - identify the PSC statement number to add - type (add)
+// if a pscstatement(number)(add) it not true, set to true
+// display on the Active directors page
+
+    if(req.session.data['pscstatementtwoadd'] != true){
+      req.session.data['pscstatementtwoadd'] = true;
+    }
+
+
+
+
 })
 
 router.get('/auth-code', function (req, res) {
