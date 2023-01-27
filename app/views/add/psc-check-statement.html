@@ -21,23 +21,18 @@
 
         <!-- display the corresponding statement to the user -->
 
-        <div class="govuk-summary-card govuk-!-margin-bottom-4">
-          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
-            <p class="govuk-!-font-weight-bold govuk-!-margin-0">PSC statement</p>
-          </div>
-          <div class="govuk-!-padding-1 govuk-!-margin-3 almost-full-width">
-            <p class="govuk-body"> The company has identified a registrable person in relation to the company but all the required particulars of that person have not been confirmed.</p>
-          </div>
-          </div>
+        <div class="govuk-psc-statement govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-right-3 govuk-!-padding-left-3  govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+          <p class="govuk-body"> The company has identified a registrable person in relation to the company but all the required particulars of that person have not been confirmed.</p>
+        </div>
 
-        <div class="govuk-button-group govuk-!-padding-top-2">
+        <div class="govuk-button-group">
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
-        <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
-        <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+          <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+          <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
 
 
         </div>
