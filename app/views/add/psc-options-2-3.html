@@ -1,4 +1,4 @@
-{% set title = "Why does the company believe that it has a PSC but doesn't yet have the details?" %}
+{% set title = "Why does the company not yet have the details of the PSC?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -27,16 +27,16 @@
             }
           },
           hint: {
-            text: "You will need to submit a statement for each PSC"
+            text: "You'll need to submit a statement for each PSC of the company."
           },
           items: [
             {
               value: "not-identified-yet",
-              text: "the company believes it has a PSC but has not yet identified them"
+              text: "The company believes it has a PSC but has not yet identified them"
               },
             {
               value: "gathering-psc-details",
-              text: "the company has identified a PSC but the details have not yet been confirmed"
+              text: "The company has identified a PSC but the details have not yet been confirmed"
             }
           ]
         }) }}

@@ -1,4 +1,4 @@
-{% set title = "What do you want to tell Companies House about the companies PSCs?" %}
+{% set title = "Which statement applies to the company's PSCs?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -30,6 +30,7 @@
             text: ""
           },
           items: [
+<<<<<<< Updated upstream
 
           {
             value: "not-identified-yet",
@@ -44,6 +45,24 @@
             html: "the company has issued a notice"
           }
 
+=======
+            {
+              value: "no-psc",
+              html: "The company does not have a PSC"
+              },
+            {
+              value: "gathering-psc-details",
+              text: "The company believes it has a PSC but does not yet have the details"
+            },
+            {
+              value: "unsure-about-psc",
+              text: "The company does not yet know if it has a PSC"
+            },
+            {
+              value: "notice-issued",
+              text: "The company has issued a notice"
+            }
+>>>>>>> Stashed changes
           ]
         }) }}
 
