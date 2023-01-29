@@ -76,25 +76,28 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
 
   router.post('/address-lookup/correspondence-address', function (req, res) {
     // Create a variable called errors
-    const errors = []
+    // Emma commented due to erros
+    //const errors = []
 
     // Create an if condition
     // In this if condition it is checking if radio-input is blank
-    if (typeof req.session.data['correspondence-address'] === 'undefined') {
-      // If it is blank then update the errors variable with the error text
-      errors.push({
-        text: 'Select an option',
-        href: '#correspondence-address'
-      })
-      // Show the user the radio input page again
-      res.render('/correspondence-address', {
-        // Declare there are errors
-        errorRadio: true,
-        // List all of the errors on the page
-        errorList: errors
-      })
+    // Emma commented due to erros
+    // if (typeof req.session.data['correspondence-address'] === 'undefined') {
+    //   // If it is blank then update the errors variable with the error text
+    //   errors.push({
+    //     text: 'Select an option',
+    //     href: '#correspondence-address'
+    //   })
+    //   // Show the user the radio input page again
+    //   res.render('/correspondence-address', {
+    //     // Declare there are errors
+    //     errorRadio: true,
+    //     // List all of the errors on the page
+    //     errorList: errors
+    //   })
     // If everything is fine then do this
-    } if (req.session.data['correspondence-address'] === 'different-address') {
+    //} 
+    if (req.session.data['correspondence-address'] === 'different-address') {
       res.redirect('/address-lookup/address-lookup-postal')
     } else {
       // res.redirect goes to whichever page you want
@@ -103,24 +106,27 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
   router.post('/address-lookup/home-address', function (req, res) {
     // Create a variable called errors
-    const errors = []
+    // Emma commented due to erros
+    //const errors = []
     // Create an if condition
-    // In this if condition it is checking if radio-input is blank
-    if (typeof req.session.data['home-address'] === 'undefined') {
-      // If it is blank then update the errors variable with the error text
-      errors.push({
-        text: 'Select an option',
-        href: '#home-address'
-      })
-      // Show the user the radio input page again
-      res.render('/home-address', {
-        // Declare there are errors
-        errorRadio: true,
-        // List all of the errors on the page
-        errorList: errors
-      })
+    // In this if condition it is checking if radio-input is 
+    // Emma commented due to erros
+    // if (typeof req.session.data['home-address'] === 'undefined') {
+    //   // If it is blank then update the errors variable with the error text
+    //   errors.push({
+    //     text: 'Select an option',
+    //     href: '#home-address'
+    //   })
+    //   // Show the user the radio input page again
+    //   res.render('/home-address', {
+    //     // Declare there are errors
+    //     errorRadio: true,
+    //     // List all of the errors on the page
+    //     errorList: errors
+    //   })
     // If everything is fine then do this
-    } if (req.session.data['home-address'] === 'different-address') {
+    //} 
+    if (req.session.data['home-address'] === 'different-address') {
       res.redirect('/address-lookup/address-lookup-home')
     } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
       res.redirect('/add/date-of-appointment')
@@ -194,6 +200,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
 
   router.post('/address-lookup-update-journey/home-address', function (req, res) {
     // Create a variable called errors
+    // Emma commented due to erros
     const errors = []
     // Create an if condition
     // In this if condition it is checking if radio-input is blank

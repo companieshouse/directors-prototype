@@ -36,6 +36,12 @@ router.get('/directors', function (req, res) {
 })
 
 router.get('/check-your-answers', function (req, res) {
+
+  // If a new person has been added set newPersonMade to true, then display this on the Active directors page
+  if(req.session.data['newPersonAcceptedMade'] != true){
+    req.session.data['newPersonAcceptedMade'] = true;
+  }
+
   // Render the confirm company page
   res.render('check-your-answers', {
     // To use the company data on that page use the following
@@ -45,13 +51,20 @@ router.get('/check-your-answers', function (req, res) {
     nameRemove: req.session.removename,
     updateName: req.session.name
   })
-   // If a new person has been added set newPersonMade to true, then display this on the Active directors page
-    if(req.session.data['newPersonAcceptedMade'] != true){
-      req.session.data['newPersonAcceptedMade'] = true;
-    }
+   
 })
 
 router.get('/confirmation', function (req, res) {
+
+
+// if a user has added a PSC statement - identify the PSC statement number to add - type (add)
+// if a pscstatement(number)(add) it not true, set to true
+// display on the Active directors page
+
+  if(req.session.data['pscstatementtwoadd'] != true){
+     req.session.data['pscstatementtwoadd'] = true;
+  }
+
   // Render the confirm company page
   res.render('confirmation', {
     // To use the company data on that page use the following
@@ -62,13 +75,7 @@ router.get('/confirmation', function (req, res) {
   })
 
 
-// if a user has added a PSC statement - identify the PSC statement number to add - type (add)
-// if a pscstatement(number)(add) it not true, set to true
-// display on the Active directors page
 
-    if(req.session.data['pscstatementtwoadd'] != true){
-      req.session.data['pscstatementtwoadd'] = true;
-    }
 
 
 
