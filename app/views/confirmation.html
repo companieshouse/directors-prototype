@@ -171,35 +171,35 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"> Date entered into the company's PSC register</th>
-              <td class="govuk-table__cell">{{data['date-removed-day']}}
-              {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+              <td class="govuk-table__cell">{{data['date-add-statement-day']}}
+              {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
                 January
-              {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+              {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
                 February
-              {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+              {% elif (data['date-add-statement-month'] === "03") or (data['date-add-statement-month'] === "3") %}
                 March
-              {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+              {% elif (data['date-add-statement-month'] === "04") or (data['date-add-statement-month'] === "4") %}
                 April
-              {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+              {% elif (data['date-add-statement-month'] === "05") or (data['date-add-statement-month'] === "5") %}
                 May
-              {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+              {% elif (data['date-add-statement-month'] === "06") or (data['date-add-statement-month'] === "6") %}
                 June
-              {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+              {% elif (data['date-add-statement-month'] === "07") or (data['date-add-statement-month'] === "7") %}
                 July
-              {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+              {% elif (data['date-add-statement-month'] === "08") or (data['date-add-statement-month'] === "8") %}
                 August
-              {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+              {% elif (data['date-add-statement-month'] === "09") or (data['date-add-statement-month'] === "9") %}
                 September8
-              {% elif (data['date-removed-month'] === "10") %}
+              {% elif (data['date-add-statement-month'] === "10") %}
                 October
-              {% elif (data['date-removed-month'] === "11") %}
+              {% elif (data['date-add-statement-month'] === "11") %}
                 November
-              {% elif (data['date-removed-month'] === "12") %}
+              {% elif (data['date-add-statement-month'] === "12") %}
                 December
               {% else %}
-                {{data['date-removed-month']}}
+                {{data['date-add-statement-month']}}
               {% endif %}
-              {{data['date-removed-year']}}</td>
+              {{data['date-add-statement-year']}}</td>
             </tr>
           </tbody>
         </table>
