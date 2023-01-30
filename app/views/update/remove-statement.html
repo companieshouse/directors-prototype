@@ -20,8 +20,8 @@
 
 
         {{ govukDateInput({
-          id: "statementupdatedapplied",
-          namePrefix: "date-statement-no-longer-applied",
+          id: "date-statement-no-longer",
+          namePrefix: "date-statement-no-longer",
           fieldset: {
             legend: {
               text: "When did the statement no longer apply?",
@@ -35,17 +35,17 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data['date-no-longer-day']
+              value: data['date-statement-no-longer-day']
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data['date-no-longer-month']
+              value: data['date-statement-no-longer-month']
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data['date-no-longer-year']
+              value: data['date-statement-no-longer-year']
             }
          ]
         }) }}
@@ -53,8 +53,8 @@
 
         {% set dateRegisterHtml %}
         {{ govukDateInput({
-          id: "date-registered",
-          namePrefix: "date-registered",
+          id: "date-statement-register-updated",
+          namePrefix: "date-statement-register-updated",
           fieldset: {
             legend: {
               text: "Date the company's PSC register was updated"
@@ -67,24 +67,24 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data['date-registered-day']
+              value: data['date-statement-register-updated-day']
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data['date-registered-month']
+              value: data['date-statement-register-updated-month']
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data['date-registered-year']
+              value: data['date-statement-register-updated-year']
             }
           ]
         }) }}
         {% endset -%}
 
         {{ govukRadios({
-          name: "date-entered-own-register",
+          name: "date-statement-entered-own-register",
           fieldset: {
             legend: {
               text: "Was the company's PSC register updated with this information on the same date?",

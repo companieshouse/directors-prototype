@@ -227,67 +227,79 @@
                  </tr>
                  <tr class="govuk-table__row">
                    <th scope="row" class="govuk-table__header"> Date the statement no longer applied</th>
-                   <td class="govuk-table__cell">{{data['date-removed-day']}}
-                   {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
-                     January
-                   {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
-                     February
-                   {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
-                     March
-                   {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
-                     April
-                   {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
-                     May
-                   {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
-                     June
-                   {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
-                     July
-                   {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
-                     August
-                   {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
-                     September8
-                   {% elif (data['date-removed-month'] === "10") %}
-                     October
-                   {% elif (data['date-removed-month'] === "11") %}
-                     November
-                   {% elif (data['date-removed-month'] === "12") %}
-                     December
-                   {% else %}
-                     {{data['date-removed-month']}}
-                   {% endif %}
-                   {{data['date-removed-year']}}</td>
+                   <td class="govuk-table__cell">
+                    {{data['date-statement-no-longer-day']}}
+                    {% if (data['date-statement-no-longer-day'] === "01") or (data['date-statement-no-longer-month'] === "1") %}
+                      January
+                    {% elif (data['date-statement-no-longer-month'] === "02") or (data['date-statement-no-longer-month'] === "2") %}
+                      February
+                    {% elif (data['date-statement-no-longer-month'] === "03") or (data['date-statement-no-longer-month'] === "3") %}
+                      March
+                    {% elif (data['date-statement-no-longer-month'] === "04") or (data['date-statement-no-longer-month'] === "4") %}
+                      April
+                    {% elif (data['date-statement-no-longer-month'] === "05") or (data['date-statement-no-longer-month'] === "5") %}
+                      May
+                    {% elif (data['date-statement-no-longer-month'] === "06") or (data['date-statement-no-longer-month'] === "6") %}
+                      June
+                    {% elif (data['date-statement-no-longer-month'] === "07") or (data['date-statement-no-longer-month'] === "7") %}
+                      July
+                    {% elif (data[date-statement-no-longer-month'] === "08") or (data['date-statement-no-longer-month'] === "8") %}
+                      August
+                    {% elif (data['date-statement-no-longer-month'] === "09") or (data['date-statement-no-longer-month'] === "9") %}
+                      September
+                    {% elif (data['date-statement-no-longer-month'] === "10") %}
+                      October
+                    {% elif (data['date-statement-no-longer-month'] === "11") %}
+                      November
+                    {% elif (data['date-statement-no-longer-month'] === "12") %}
+                      December
+                    {% else %}
+                      {{data['date-statement-no-longer-month']}}
+                    {% endif %}
+                    {{data['date-statement-no-longer-year']}}
+                  </td>
                  </tr>
                  <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header"> Date entered into the company's PSC register</th>
-                  <td class="govuk-table__cell">{{data['date-removed-day']}}
-                  {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
-                    January
-                  {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
-                    February
-                  {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
-                    March
-                  {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
-                    April
-                  {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
-                    May
-                  {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
-                    June
-                  {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
-                    July
-                  {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
-                    August
-                  {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
-                    September8
-                  {% elif (data['date-removed-month'] === "10") %}
-                    October
-                  {% elif (data['date-removed-month'] === "11") %}
-                    November
-                  {% elif (data['date-removed-month'] === "12") %}
-                    December
-                  {% else %}
-                    {{data['date-removed-month']}}
-                  {% endif %}
-                  {{data['date-removed-year']}}</td>
+                  <td class="govuk-table__cell">
+                    
+                    {% if (data['date-statement-entered-own-register'] === "yes") %}
+
+                    *The date is the same as when they became a PSC*
+
+                    {% elif (data['date-statement-entered-own-register'] === "no") %}
+
+                        {{data['date-statement-register-updated-day']}}
+                        {% if (data['date-statement-register-updated-month'] === "01") or (data['date-statement-register-updated-month'] === "1") %}
+                          January
+                        {% elif (data['date-statement-register-updated-month'] === "02") or (data['date-statement-register-updated-month'] === "2") %}
+                          February
+                        {% elif (data['date-statement-register-updated-month'] === "03") or (data['date-statement-register-updated-month'] === "3") %}
+                          March
+                        {% elif (data['date-statement-register-updated-month'] === "04") or (data['date-statement-register-updated-month'] === "4") %}
+                          April
+                        {% elif (data['date-statement-register-updated-month'] === "05") or (data['date-statement-register-updated-month'] === "5") %}
+                          May
+                        {% elif (data['date-statement-register-updated-month'] === "06") or (data['date-statement-register-updated-month'] === "6") %}
+                          June
+                        {% elif (data['date-statement-register-updated-month'] === "07") or (data['date-statement-register-updated-month'] === "7") %}
+                          July
+                        {% elif (data['date-statement-register-updated-month'] === "08") or (data['date-statement-register-updated-month'] === "8") %}
+                          August
+                        {% elif (data['date-statement-register-updated-month'] === "09") or (data['date-statement-register-updated-month'] === "9") %}
+                          September
+                        {% elif (data['date-statement-register-updated-month'] === "10") %}
+                          October
+                        {% elif (data['date-statement-register-updated-month'] === "11") %}
+                          November
+                        {% elif (data['date-statement-register-updated-month'] === "12") %}
+                          December
+                        {% else %}
+                          {{data['date-add-statement-month']}}
+                        {% endif %}
+                        {{data['date-add-statement-year']}}
+                    {% endif %}
+              </td>
                 </tr>
                </tbody>
              </table>
