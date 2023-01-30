@@ -93,7 +93,39 @@
           <p class="govuk-body">The company knows or has reasonable cause to believe that there is a registrable person in relation to the company, but it has not identified the registrable person.</p>
   
           <span class="govuk-body govuk-!-font-weight-bold govuk-!-padding-top-4">Notified on        
-            <p class="govuk-body govuk-!-padding-top-1">12 January 2023</p> <span>
+            <p class="govuk-body govuk-!-padding-top-1">
+
+              {{data['date-add-statement-day']}}
+                {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
+                  January
+                {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
+                  February
+                {% elif (data['date-add-statement-month'] === "03") or (data['date-add-statement-month'] === "3") %}
+                  March
+                {% elif (data['date-add-statement-month'] === "04") or (data['date-add-statement-month'] === "4") %}
+                  April
+                {% elif (data['date-add-statement-month'] === "05") or (data['date-add-statement-month'] === "5") %}
+                  May
+                {% elif (data['date-add-statement-month'] === "06") or (data['date-add-statement-month'] === "6") %}
+                  June
+                {% elif (data['date-add-statement-month'] === "07") or (data['date-add-statement-month'] === "7") %}
+                  July
+                {% elif (data['date-add-statement-month'] === "08") or (data['date-add-statement-month'] === "8") %}
+                  August
+                {% elif (data['date-add-statement-month'] === "09") or (data['date-add-statement-month'] === "9") %}
+                  September
+                {% elif (data['date-add-statement-month'] === "10") %}
+                  October
+                {% elif (data['date-add-statement-month'] === "11") %}
+                  November
+                {% elif (data['date-add-statement-month'] === "12") %}
+                  December
+                {% else %}
+                  {{data['date-add-statement-month']}}
+                {% endif %}
+                {{data['date-add-statement-year']}}
+
+            </p> <span>
   
         </div>
         <div class="govuk-!-padding-left-3">
