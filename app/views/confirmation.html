@@ -115,7 +115,10 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Date they stopped being a PSC for the company</th>
-              <td class="govuk-table__cell">{{data['date-removed-day']}}
+              <td class="govuk-table__cell">
+                
+                
+                {{data['date-removed-day']}}
               {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
                 January
               {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
@@ -171,7 +174,9 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"> Date entered into the company's PSC register</th>
-              <td class="govuk-table__cell">{{data['date-add-statement-day']}}
+              <td class="govuk-table__cell">
+                
+                {{data['date-add-statement-day']}}
               {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
                 January
               {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
@@ -265,7 +270,7 @@
                     
                     {% if (data['date-statement-entered-own-register'] === "yes") %}
 
-                    *The date is the same as when they became a PSC*
+                    The date is the same as when the statement no longer applied
 
                     {% elif (data['date-statement-entered-own-register'] === "no") %}
 
