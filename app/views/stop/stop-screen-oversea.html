@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Active directors for ZENITH PRINT (UK) LIMITED
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "company-lookup"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">This company can't use the Remove a Director service</h1>
+      <p class="govuk-body">BALI HOLIDAYS is registered as an Oversea Comapany.</p>
+      
+      
+      <p class="govuk-body">You need to use <a href="company-lookup" class="govuk-link govuk-link--no-visited-state">forms for Overseas Companies</a> to remove a director.</p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/contact-companies-house" class="govuk-link govuk-link--no-visited-state"> Contact us</a> if you think this information is wrong.</p>
+      
+
+
+    </div>
+    
+  </div>
+{% endblock %}
