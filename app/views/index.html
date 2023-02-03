@@ -314,6 +314,113 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
+              <!-- Version 4 summary -->
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a href="https://psc-v4.herokuapp.com/">Version 4</a>
+                </th>
+                <td class="govuk-table__cell">29 February 2023</td>
+                <td class="govuk-table__cell">
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Changes included in version 4
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+
+
+                      <p class="govuk-body"> New journeys created: </p>
+
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Add new statement</li>
+                        <li>Remove statement</li>
+                      </ul>
+
+                      <p> Scenario: If the company already has active PSCs, guide the user through the relevant statements.</p>
+
+
+
+
+
+                      </ul>
+                         <ul class="govuk-list">
+                          Updates to pages:<br><br>
+
+                          <li>
+                            <a href="start">GOV.UK start page</a>
+                          </li>
+
+                          <p> Content added - "add or remove a PSC statement".</p>
+           
+                      
+     
+                          <p class="govuk-body govuk-!-padding-top-5 "> New journey - Add a PSC journey: </p>
+
+
+
+                          <li>
+                             <a href="add/psc-options?type=addstatement">Which statement applies to the company's PSCs?</a>,
+                          </li>
+                          <p> Scenario: If the company already has active PSCs display the relevent statements. </p>
+
+                          <li>
+                            <a href="add/psc-check-statement?type=addstatement">Add a PSC statement</a>,
+                         </li>
+                         <p> Designed the page to display the PSC statement. </p>
+
+                         <li>
+                          <a href="add/statement-date?type=addstatement">When was the company's PSC register updated with this information?
+                          </a>
+                       </li>
+
+                       <li>
+                        <a href="add/check-your-answers">Check your answers - Check your answers before submitting</a>
+                      </li>
+                      <li>
+                        <a href="add/confirmation">Confirmation page - New PSC statement submitted</a>
+                      </li>
+
+                      <p class="govuk-!-padding-top-5"> Users return to PSCs page and the new statement has been added.</p>
+                      </ul>
+
+                      <p class="govuk-!-padding-top-5">New journey - Remove a statement </p>
+
+                      <ul class="govuk-list">
+                        <li>
+                          <a href="update/remove-statement?officer=&type=removestatement&directorname=">Date details</a>
+                        </li>
+
+                        <li>
+                          <a href="check-your-answers?type=removestatement">Check your answers before submitting</a>
+                        </li>
+                        <li>
+                          <a href="confirmation">Confirmation page - Remove PSC statement submitted</a>
+                        </li>
+                      </ul>
+
+                      
+
+
+                          
+                    
+                    </div>
+                  </details>
+                </td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Ready for testing
+                  </strong>
+                </td>
+              </tr>
+
+
+
+
+
+              <!-- Version 3 summary -->
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">
                   <a href="https://psc-v3.herokuapp.com/">Version 3</a>
@@ -369,7 +476,7 @@
                            <li>
                             <a href="update/remove">Date stopped being a PSC</a>,
                           </li>
-                        <p> Heading changed from When did this person stop being a PSC for the company? to When did this person cease to be a PSC for the company?
+                        <p> Heading changed from - When did this person stop being a PSC for the company? to When did this person cease to be a PSC for the company?
                         </p>
                       </ul>
                     </div>
