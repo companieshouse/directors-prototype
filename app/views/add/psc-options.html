@@ -1,4 +1,4 @@
-{% set title = "Which statement applies to the company's PSCs?" %}
+{% set title = "What PSC information do you have?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -30,7 +30,10 @@
             text: ""
           },
           items: [
-
+          {
+            value: "add-psc",
+            html: "The company has a PSC and all the required information"
+          },
           {
             value: "not-identified-yet",
             html: "The company believes it has a PSC but has not yet identified them"
