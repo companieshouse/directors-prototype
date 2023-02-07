@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Active directors for ZENITH PRINT (UK) LIMITED
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "company-lookup"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">You cannot use this service</h1>
+      <p class="govuk-body">DEUTSCHE BANK cannot use this service because it is an overseas company.</p>
+
+<p class="govuk-body">Return to the service to <a href="company-lookup" class="govuk-link govuk-link--no-visited-state">enter a different company number</a>.</p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/contact-companies-house" class="govuk-link govuk-link--no-visited-state"> Contact us</a> if you think this information is wrong.</p>
+      
+
+
+    </div>
+    
+  </div>
+{% endblock %}
