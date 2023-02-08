@@ -118,7 +118,7 @@
               <td class="govuk-table__cell">
                 
                 
-                {{data['date-removed-day']}}
+              {{data['date-removed-day']}}
               {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
                 January
               {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
@@ -169,7 +169,17 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">PSC statement</th>
-              <td class="govuk-table__cell">  The company has identified a registrable person in relation to the company but all the required particulars of that person have not been confirmed.
+              <td class="govuk-table__cell">  
+                {% if (data['psc-options'] === "not-identified-yet") %}
+                <p class="govuk-body"> 
+                  The company knows or has reasonable cause to believe that there is a registrable person in relation to the company, but it has not identified the registrable person. 
+                </p>
+                {% elif (data['psc-options'] === "gathering-psc-details") %}
+                <p class="govuk-body">
+                  The company has identified a registrable person in relation to the company but all the required particulars of that person have not been confirmed.
+                </p>
+        
+                {% endif %}
               </td>
             </tr>
             <tr class="govuk-table__row">
