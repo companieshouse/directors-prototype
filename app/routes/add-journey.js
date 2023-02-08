@@ -124,7 +124,10 @@ router.get('/add/psc-options'), function(req,res) {
 
 // Identifying the correct PSC statement
 router.post('/add/psc-options', function (req, res) {
-   
+
+  if (req.session.data['psc-options'] === 'add-psc') {
+    res.redirect('../add/name?type=add')
+  }
   if (req.session.data['psc-options'] === 'gathering-psc-details') {
     res.redirect('../add/psc-check-statement?type=addstatement')
   }
@@ -150,7 +153,9 @@ router.post('/add/psc-check-notice', function (req, res) {
 
 // date statement added to register
 router.post('/add/psc-check-statement', function (req, res) {
+
   res.redirect('../add/statement-date?type=addstatement')
+
 })
 
 // date statement added to register
