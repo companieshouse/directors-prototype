@@ -154,7 +154,12 @@ router.post('/add/psc-check-notice', function (req, res) {
 // date statement added to register
 router.post('/add/psc-check-statement', function (req, res) {
 
-  res.redirect('../add/statement-date?type=addstatement')
+  if (req.session.data['psc-options'] === 'statement-7') {
+    res.redirect('../add/choose-psc')
+  } 
+  else{  
+    res.redirect('../add/statement-date?type=addstatement')
+  }
 
 })
 
@@ -163,6 +168,15 @@ router.post('/add/statement-date', function (req, res) {
   req.session.type = req.query.type
   res.redirect('/check-your-answers')
 })
+
+// date statement added to register
+router.post('/add/choose-psc', function (req, res) {
+  req.session.type = req.query.type
+
+
+  ///
+})
+
 
 
 
