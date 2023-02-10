@@ -1,4 +1,4 @@
-{% set title = "What PSC information do you have?" %}
+{% set title = "What do you want to do?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -32,19 +32,22 @@
           items: [
           {
             value: "add-psc",
-            html: "The company has a PSC and all the required information"
+            html: "Add a PSC",
+              hint: {
+        text: "You’ll need all the required details about the PSC."
+      }
           },
           {
             value: "not-identified-yet",
-            html: "The company believes it has a PSC but has not yet identified them"
+            html: "Add a statement to tell Companies House the company believes it has a PSC but has not yet identified them"
           },
           {
             value: "gathering-psc-details",
-            html: " The company believes it has a PSC but does not yet have the details"
+            html: "Add a statement to tell Companies House the company believes it has a PSC but does not yet have the details"
           },
           {
             value: "notice-issued",
-            html: "The company has issued a notice"
+            html: "Tell Companies House the company has issued a notice"
           }
           ]
         }) }}
