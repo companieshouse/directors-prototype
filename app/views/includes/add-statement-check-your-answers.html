@@ -27,6 +27,30 @@
       </a>
     </dd>
   </div>
+
+
+  <!--  Statement 6 - Display the name of the PSC the notice applies too -->
+
+  {% if (data['psc-options'] === "statement-7") %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      PSC the statment applies too
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+
+
+     Kathryn Rebecca Davies
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/add/statement">Change<span class="govuk-visually-hidden"> removed on date</span></a>
+    </dd>
+  </div>
+  {% endif %}
+
+
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Date entered into the company's PSC register
