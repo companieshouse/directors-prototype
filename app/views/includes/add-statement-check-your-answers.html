@@ -17,8 +17,24 @@
       <p class="govuk-body">
         The company has identified a registrable person in relation to the company but all the required particulars of that person have not been confirmed.
       </p>
-
+      
+      {% elif (data['psc-options'] === "statement-5") %}
+      <p class="govuk-body">
+        The company has given a notice under section 790D of the Act which has not been complied with.
+      </p>
+      {% elif (data['psc-options'] === "statement-6") %}
+      <p class="govuk-body">
+        The registrable person or registrable relevant legal entity shown below has failed
+        to comply with a notice given by the company under section 790E of the
+        Companies Act 2006.
+      </p>
+      {% elif (data['psc-options'] === "statement-7") %}
+        <p class="govuk-body">
+        The company has issued a restrictions notice under paragraph 1 of Schedule 1B
+        to the Companies Act 2006.
+        </p>
       {% endif %}
+
 
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -29,7 +45,7 @@
   </div>
 
 
-  <!--  Statement 6 - Display the name of the PSC the notice applies too -->
+  <!--  Statement 7 - Display the name of the PSC the notice applies too -->
 
   {% if (data['psc-options'] === "statement-7") %}
 
