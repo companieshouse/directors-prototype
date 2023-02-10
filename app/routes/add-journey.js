@@ -170,8 +170,8 @@ router.post('/add/statement-date', function (req, res) {
 router.post('/add/choose-psc', function (req, res) {
   req.session.type = req.query.type
 
+  res.redirect('../add/statement-date?type=addstatement')
 
-  ///
 })
 
 
