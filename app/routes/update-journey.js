@@ -127,5 +127,12 @@ module.exports = function (router) {
     res.redirect('/check-your-answers?type=removestatement')
   })
 
+  // if the users wants to remove a statement before adding a PSC 
+  router.post('/update/interrupt-remove-statement', function (req, res) {
+    res.redirect('/update/remove-statement')
+  })
+
+
+
 
 }

@@ -125,8 +125,19 @@ router.get('/add/psc-options'), function(req,res) {
 // Identifying the correct PSC statement
 router.post('/add/psc-options', function (req, res) {
 
+  //if the company has a statment - ask if they need to remove the statment 
   if (req.session.data['psc-options'] === 'add-psc') {
-    res.redirect('../add/name?type=add')
+
+    if(req.session.data['pscstatementtwoadd'] == true){ 
+
+      res.redirect('../update/review-statement')
+ 
+    }else{
+
+      res.redirect('../add/name?type=add')
+
+    }
+   
   }
   if (req.session.data['psc-options'] === 'notice-issued') {
     res.redirect('../add/psc-check-notice?type=addstatement')
@@ -136,6 +147,25 @@ router.post('/add/psc-options', function (req, res) {
   }
 
 })
+
+//If the add psc action doesn't correspond to a statement continue on add psc journey. 
+//If the statement corresponds to a PSC go down the remove journey
+
+router.post('/update/review-statement', function (req, res) {
+
+  // yes - remove statement journey
+  if (req.session.data['statement-remove-to-add-psc'] === 'yes') {
+    res.redirect('../update/interrupt-remove-statement')
+  }
+  // no - continue on PSC journey
+  else{
+    res.redirect('../add/name?type=add')
+  }
+
+})
+
+
+
 
 // Identifying which statement is relevant - PSC statement 2 or 3 
 router.post('/add/psc-options-2-3', function (req, res) {

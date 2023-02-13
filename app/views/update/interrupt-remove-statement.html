@@ -1,0 +1,35 @@
+ {% set title = "Does the PSC you are adding correspond to a PSC statement currently on the company?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/interrupt-remove-statement" method="post">
+
+        <h1 class="govuk-heading-l">You will need to remove the statement before adding PSC details</h1>
+
+        <p class="govuk-body">Remove the statement. Once you have recieved confirmation it has been removed. You can add PSC details. </p>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/nationality.js"></script>
+{% endblock %}
