@@ -199,15 +199,22 @@
               </td>
             </tr>
 
+            {% if (data['psc-options'] === "statement-7") %}
 
-            <!--  Statement 7 - Display the name of the PSC the notice applies too -->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"> PSC the statement applies to</th>
+              <td class="govuk-table__cell">
+                Kathryn Rebecca Davies
+              </td>
+            </tr>
+            {% endif %}
 
           
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"> Date entered into the company's PSC register</th>
               <td class="govuk-table__cell">
                 
-                {{data['date-add-statement-day']}}
+              {{data['date-add-statement-day']}}
               {% if (data['date-add-statement-month'] === "01") or (data['date-add-statement-month'] === "1") %}
                 January
               {% elif (data['date-add-statement-month'] === "02") or (data['date-add-statement-month'] === "2") %}
