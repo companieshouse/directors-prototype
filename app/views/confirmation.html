@@ -15,13 +15,13 @@
 {% endset -%}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <!--Change of the director-->
+      <!--Update PSC -->
       {% if type == 'update' %}
         {{ govukPanel({
           titleText: "PSC update submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
-      <!--Appointment of the director-->
+      <!--Add a PSC -->
       {% elif type == 'add' %}
         {{ govukPanel({
           titleText: "New PSC submitted",
@@ -75,7 +75,25 @@
             </tr>
           </tbody>
         </table>
-      <!--Removal of the director-->
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">We'll send a confirmation email to
+          <strong>{{ data['email'] }}</strong>
+          which contains your reference number.</p>
+        <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
+        <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>. If it's rejected, we'll email you to let you know what to do next.</p>
+
+        <h2 class="govuk-heading-m">What do you want to do next?</h2>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update PSC information for the same company</a>
+          </li>
+          <li>
+            <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update PSC information for a different company</a>
+          </li>
+        </ul>
+      
+      <!--Removal of the PSC-->
       {% elif type == 'remove' %}
         {{ govukPanel({
           titleText: "Ceased PSC submitted",
@@ -99,7 +117,6 @@
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Date they stopped being a PSC for the company</th>
               <td class="govuk-table__cell">
-                
                 
               {{data['date-removed-day']}}
               {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
@@ -134,6 +151,23 @@
           </tbody>
         </table>
 
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">We'll send a confirmation email to
+          <strong>{{ data['email'] }}</strong>
+          which contains your reference number.</p>
+        <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
+        <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>. If it's rejected, we'll email you to let you know what to do next.</p>
+
+       <h2 class="govuk-heading-m">What do you want to do next?</h2>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update PSC information for the same company</a>
+          </li>
+          <li>
+            <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update PSC information for a different company</a>
+          </li>
+        </ul>
+
 
         <!-- Add statement journey -->
         {% elif type == 'addstatement' %}
@@ -141,6 +175,7 @@
           titleText: "New PSC statement submitted",
           html: "Reference number<br><strong>" + reference + "</strong>"
         }) }}
+
         <h2 class="govuk-heading-m">What happens next</h2>
         <p class="govuk-body">We'll send a confirmation email to
           <strong>{{ data['email'] }}</strong>
@@ -163,7 +198,8 @@
       
         <table class="govuk-table">
           <tbody class="govuk-table__body">
-            <caption class="govuk-table__caption govuk-table__caption--m govuk-!-oa-top-3">Dates and amounts</caption>
+
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-!-padding-top-3">Submission details</caption>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Company number</th>
               <td class="govuk-table__cell">02050399</td>
@@ -212,6 +248,10 @@
                 Kathryn Rebecca Davies
               </td>
             </tr>
+
+            {% else %}
+
+
             {% endif %}
 
           
@@ -253,14 +293,35 @@
         </table>
 
         <!-- If the type is remove statement show-->
-         {% else %}
+         {% elif type == 'removestatement' %}
           {{ govukPanel({
             titleText: "Remove PSC statement submitted",
             html: "Reference number<br><strong>" + reference + "</strong>"
           }) }}
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">We'll send a confirmation email to
+            <strong>{{ data['email'] }}</strong>
+            which contains your reference number.</p>
+          <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
+          <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>. If it's rejected, we'll email you to let you know what to do next.</p>
+  
+          <h2 class="govuk-heading-m">What to do when this statement no longer applies</h2>
+          <p class="govuk-body">When the statement you've added no longer applies, you must remove it. Then you must add the PSC the company has identified (if relevant).</p>
+  
+          <h2 class="govuk-heading-m">What do you want to do next?</h2>
+          <ul class="govuk-list govuk-list--spaced">
+            <li>
+              <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update PSC information for the same company</a>
+            </li>
+            <li>
+              <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update PSC information for a different company</a>
+            </li>
+          </ul>
+
              <table class="govuk-table">
                <tbody class="govuk-table__body">
-     
+                <caption class="govuk-table__caption govuk-table__caption--m govuk-!-padding-top-3">Submission details</caption>
                  <tr class="govuk-table__row">
                    <th scope="row" class="govuk-table__header">Company number</th>
                    <td class="govuk-table__cell">02050399</td>
@@ -348,50 +409,15 @@
                         {% endif %}
                         {{data['date-add-statement-year']}}
                     {% endif %}
-              </td>
+                  </td>
                 </tr>
                </tbody>
              </table>
-           {% endif %}
 
+          {% endif %}
 
-
-           <!-- Only show if the user is NOT on the Add statment journey. -->
-
-           {% if type != 'addstatement' %}
-
-            <h3 class="govuk-heading-m">What happens next</h3>
-            <p class="govuk-body">We'll send a confirmation email to
-              <strong>{{ data['email'] }}</strong>
-              which contains your reference number.</p>
-            <p class="govuk-body">We'll usually email you within 2 working days to let you know if your submission has been accepted or rejected.</p>
-            <p class="govuk-body">If it's accepted, we'll add it to the company's filing history on the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House register</a>. If it's rejected, we'll email you to let you know what to do next.</p>
-
-            <h3 class="govuk-heading-m">What to do when this statement no longer applies</h3>
-            <p class="govuk-body">When the statement you've added no longer applies, you must remove it. Then you must add the PSC the company has identified (if relevant).</p>
-
-            <h2 class="govuk-heading-m">What do you want to do next?</h2>
-            <ul class="govuk-list govuk-list--spaced">
-              <li>
-                <a href="../directors" class="govuk-link govuk-link--no-visited-state">Update PSC information for the same company</a>
-              </li>
-              <li>
-                <a href="../company-lookup" class="govuk-link govuk-link--no-visited-state">Update PSC information for a different company</a>
-              </li>
-            </ul>
-            <h3 class="govuk-heading-m">Feedback</h3>
-            <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
-
-            {% elif type == 'addstatement' %}
-
-            <h3 class="govuk-heading-m">Feedback</h3>
-            <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
-
-
-            {% endif %}
-
-
-
+        <h3 class="govuk-heading-m">Feedback</h3>
+        <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="https://www.smartsurvey.co.uk/s/directors-conf/" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p>
 
   </div>
 </div>
