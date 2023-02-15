@@ -37,7 +37,7 @@ module.exports = function (router) {
       
       if((req.session.data['dob-day'] == "" ) || (req.session.data['dob-month'] == "" )||(req.session.data['dob-year'] == "" ) ){
         dobHasError = true;
-        errors.push({text: "Enter a date of birth", href: "#date-of-birth-error"});
+        errors.push({text: "Enter the PSC's date of birth", href: "#date-of-birth-error"});
       }
       
       if(dobHasError){
