@@ -56,6 +56,11 @@
 
       <p class="govuk-body">You'll also need to tell us whether the PSC has ever applied to <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">protect personal information at Companies House</a>.</p>
 
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{{ govukInsetText({
+  text: "If you do not have all the required details about a new PSC, you’ll need to add a PSC statement instead."
+}) }}
+
        {{ govukButton({
           text: "Start now",
           href: "sign-in",
