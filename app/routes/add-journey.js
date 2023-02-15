@@ -22,10 +22,38 @@ module.exports = function (router) {
       company: req.session.company
     })
   })
+
+
+
+
+
   
   router.post('/add/date-of-birth', function (req, res) {
-    res.redirect('/add/nationality')
-  })
+    
+  
+
+      var errors = [];
+      var dobHasError = false;
+      
+      if((req.session.data['dob-day'] == "" ) || (req.session.data['dob-month'] == "" )||(req.session.data['dob-year'] == "" ) ){
+        dobHasError = true;
+        errors.push({text: "Enter a date of birth", href: "#date-of-birth-error"});
+      }
+      
+      if(dobHasError){
+        res.render('./add/date-of-birth', {
+          errorDOB: dobHasError,
+              errorList: errors
+            })
+      }
+      else
+      {
+
+        res.redirect('/add/nationality')
+      
+      }
+    })
+    
 
   // Nationality
   router.get('/add/nationality', function (req, res) {

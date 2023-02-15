@@ -74,12 +74,6 @@ router.get('/confirmation', function (req, res) {
     nameRemove: req.session.removename
   })
 
-
-
-
-
-
-
 })
 
 router.get('/auth-code', function (req, res) {

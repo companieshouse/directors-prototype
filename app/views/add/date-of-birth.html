@@ -15,10 +15,52 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      {% if errorDOB == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+      
       <form action="/add/date-of-birth" method="post">
 
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         
+        {% if errorDOB == true %}
+         
+         {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 1995"
+          },
+          errorMessage: {
+              text: "Enter a date of birth"
+          },
+         items: [
+            {
+              classes: "govuk-input--width-2 govuk-input--error",
+              name: "day"
+            },
+            {
+              classes: "govuk-input--width-2 govuk-input--error",
+              name: "month"
+            },
+            {
+              classes: "govuk-input--width-4 govuk-input--error",
+              name: "year"
+            }
+          ]
+        }) }}
+        {% else %}
         {{ govukDateInput({
           id: "dob",
           namePrefix: "dob",
@@ -32,8 +74,9 @@
           hint: {
             text: "For example, 27 3 1995"
           }
-
         }) }}
+        {% endif %}
+
         
         <h2 class="govuk-heading-m govuk-!-margin-top-9">What information we'll show on the public register</h2>
         <p class="govuk-body">We will only show the PSC's month and year of birth on the public Companies House register.</p>
