@@ -18,6 +18,26 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "accessible-autocomplete";
 
+//Styles for user bar
+
+ul#navigation {
+  font-size: 0.9em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+  display: inline-block;
+  float: right;
+  
+  li {
+    display: inline;
+    font-family: 'nta', Arial;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    a {margin-left: 0.9em;}
+  }
+}
+
+
 .autocomplete__menu {
     font-family: 'GDS Transport', arial, sans-serif;
   }

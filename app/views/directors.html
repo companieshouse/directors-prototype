@@ -6,10 +6,8 @@
   - GOV.UK
 {% endblock %}
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "company-lookup"
-}) }}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
