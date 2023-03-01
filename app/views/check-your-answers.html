@@ -56,15 +56,25 @@
       {% else %}
         {% include "includes/appoint-check-your-answers.html" %}
       {% endif %}
-      <div class="govuk-button-group">
+      <!-- <div class="govuk-button-group">
         {{ govukButton({
           text: "Confirm and submit",
           href: "confirmation"
         }) }}
       
         <a class="govuk-link" href="directors">Cancel</a>
-      </div>
+      </div> -->
+
+      {{ govukButton({
+        text: "Confirm and submit",
+        href: "confirmation"
+      }) }}
+
     </form>
+
+    <p class="govuk-body">
+      <a href="director">Choose a different director</a>
+    </p>
     </div>
   </div>
 {% endblock %}
