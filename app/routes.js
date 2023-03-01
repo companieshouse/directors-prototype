@@ -109,6 +109,25 @@ router.get('/confirmation-statement/task-list', function (req, res) {
   })
 })
 
+router.post('/sign-out', function (req, res) {
+
+  if (req.session.data['signOut'] === 'yes') {
+
+    res.redirect('https://find-and-update.company-information.service.gov.uk/')
+    
+  }
+  if (req.session.data['signOut'] === 'no') {
+
+    javascript:history.back()
+   
+  }
+  else{
+     
+  }
+
+
+})
+
 
 
 
