@@ -1,7 +1,13 @@
 {% set title = "Enter the company authentication code" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{director.name}}
+{% if type == 'update' %}
+  Removal of director submitted
+{% elif type == 'add' %}
+  Appointment submitted
+{% else %}
+  Removal of director submitted
+{% endif %}
   -
   {{serviceName}}
   - GOV.UK
