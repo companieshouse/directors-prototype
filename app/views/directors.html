@@ -6,7 +6,8 @@
   - GOV.UK
 {% endblock %}
 {% block beforeContent %}
-  {% include "includes/back-link.html" %}
+  <!-- Take the user to the confirm company (confirm-company) page instead of back to the previous page -->
+  <a class="govuk-back-link" href="confirm-company">Back</a>
   {% include "includes/user-bar.html" %}
 {% endblock %}
 {% block content %}
