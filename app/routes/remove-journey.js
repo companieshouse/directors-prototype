@@ -21,6 +21,22 @@ module.exports = function (router) {
     })
   })
   router.post('/update/remove', function (req, res) {
+
+
     res.redirect('../check-your-answers?type=remove')
   })
+
+
+// if the user selects 'Remove corporate director' set the corporate director variable to true and redirect them to the date page
+router.post('/update/remove-corporate', function (req, res) {
+
+  if (req.session.data['corporateDirector'] != true){
+
+    req.session.data['corporateDirector'] = true;
+
+  }
+  res.redirect('/update/remove') 
+
+  })
+
 }
