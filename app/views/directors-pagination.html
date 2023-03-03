@@ -1,0 +1,251 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Current directors for ZENITH PRINT (UK) LIMITED
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  <!-- Take the user to the confirm company (confirm-company) page instead of back to the previous page -->
+  <a class="govuk-back-link" href="confirm-company">Back</a>
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
+      <h1 class="govuk-heading-l">Current directors</h1>
+     <!-- {{ govukButton({
+        text: "Appoint new director",
+        href: "add/name?type=add"
+      }) }} -->
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-4">
+        <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+          <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+        </div>
+        <div class="govuk-!-padding-1">
+          <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Role</dt>
+              <dd class="govuk-summary-list__value">
+                <p>Director</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date of birth</dt>
+              <dd class="govuk-summary-list__value">
+                <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                {{ [1,2,3,4,5,6,7,8,9] | random }}
+                {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Appointed on</dt>
+              <dd class="govuk-summary-list__value" >
+              <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                <p>16 December 2015</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+          <p class="govuk-body">
+            <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+            <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> -->
+            <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+          </p>
+        </div>
+    </div>
+
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-4">
+            <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+            </div>
+            <div class="govuk-!-padding-1">
+              <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">
+                    <p>Director</p>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Date of birth</dt>
+                  <dd class="govuk-summary-list__value">
+                    <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                    {{ [1,2,3,4,5,6,7,8,9] | random }}
+                    {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                    {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Appointed on</dt>
+                  <dd class="govuk-summary-list__value" >
+                  <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                  	<p>16 December 2015</p>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+              <p class="govuk-body">
+                <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+                <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> -->
+                <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+              </p>
+            </div>
+        </div>
+
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+            <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+          </div>
+          <div class="govuk-!-padding-1">
+            <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Role</dt>
+                <dd class="govuk-summary-list__value">
+                  <p>Director</p>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Date of birth</dt>
+                <dd class="govuk-summary-list__value">
+                  <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                  {{ [1,2,3,4,5,6,7,8,9] | random }}
+                  {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                  {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Appointed on</dt>
+                <dd class="govuk-summary-list__value" >
+                <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                  <p>16 December 2015</p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+            <p class="govuk-body">
+              <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+              <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> -->
+              <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+            </p>
+          </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-4">
+        <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+          <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+        </div>
+        <div class="govuk-!-padding-1">
+          <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Role</dt>
+              <dd class="govuk-summary-list__value">
+                <p>Director</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date of birth</dt>
+              <dd class="govuk-summary-list__value">
+                <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                {{ [1,2,3,4,5,6,7,8,9] | random }}
+                {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Appointed on</dt>
+              <dd class="govuk-summary-list__value" >
+              <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                <p>16 December 2015</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+          <p class="govuk-body">
+            <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+            <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> -->
+            <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+          </p>
+        </div>
+    </div>
+
+    <div class="govuk-summary-card govuk-!-margin-bottom-4">
+      <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+        <p class="govuk-!-font-weight-bold govuk-!-margin-0">DAVIS, Kathryn Rebecca</p>
+      </div>
+      <div class="govuk-!-padding-1">
+        <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Role</dt>
+            <dd class="govuk-summary-list__value">
+              <p>Director</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+              {{ [1,2,3,4,5,6,7,8,9] | random }}
+              {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+              {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Appointed on</dt>
+            <dd class="govuk-summary-list__value" >
+            <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+              <p>16 December 2015</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
+        <p class="govuk-body">
+          <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
+          <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> -->
+          <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Remove director</a>
+        </p>
+      </div>
+  </div>
+</div>
+</div>
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+  </div>
+</nav>
+{% endblock %}
