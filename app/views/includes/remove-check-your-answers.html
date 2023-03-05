@@ -24,6 +24,7 @@
       Kathryn Rebecca Davis
     </dd>
     </div>
+    {% if (data['corporateDirector'] != true) %}
     <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
       <dt class="govuk-summary-list__key">
         Date of birth
@@ -34,6 +35,7 @@
         {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
       </dd>
     </div>
+    {% endif %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Date the director was removed from the company
