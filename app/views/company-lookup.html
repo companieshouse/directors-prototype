@@ -12,7 +12,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/company-lookup" method="post">
+      <form action="/confirm-company" method="get">
         {% if errorNum == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",
@@ -58,8 +58,7 @@
           </div>
         </details>
         {{ govukButton({
-          text: "Continue",
-          href: "confirm-company"
+          text: "Continue"
         }) }}
       </form>
     </div>
