@@ -17,8 +17,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
-          <h1 class="govuk-heading-l">Update the PSC's details</h1>
-            <p class="govuk-hint govuk-!-padding-bottom-2"> Updates are pending until you've submitted them and they've been accepted.</p>
+        <h1 class="govuk-heading-l">Update the PSC's details</h1>
+        <p class="govuk-hint govuk-!-padding-bottom-2"> Updates are pending until you've submitted them and they've been accepted.</p>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -95,7 +95,6 @@
               </a>
             </dd>
             <dd class=“govuk-summary-list__value”>
-
               <!-- If the variable gChangesMade = TRUE then show the following... -->
               {% if data['nationalityChangesMade'] == true %}
                 <strong class="govuk-tag govuk-tag--blue changes-made">
@@ -127,6 +126,7 @@
             {% elif (data['percentage-of-shares'] === "none") %}
               None 
             {% else %}
+            More than 25%, but not more than 50% of shares
             {% endif %}
 
             </dd>
@@ -154,6 +154,7 @@
               {% elif (data['voting-rights'] === "none") %}
                 None 
               {% else %}
+              More than 25%, but not more than 50% of voting rights
               {% endif %}
 
 
@@ -179,6 +180,7 @@
                 No
 
               {% else %}
+              Yes
               {% endif %}
 
             </dd>
