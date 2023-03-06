@@ -77,6 +77,31 @@ module.exports = function (router) {
   })
 
   router.post('/confirm-company', function (req, res) {
-    res.redirect('/auth-code')
+
+    //if the company number is XX display the stop screen for No directors 
+    if (req.session.data['companynumber'] === '12345678') {
+
+      res.redirect('./stop/stop-screen-no-current-directors')
+
+    }
+    //if the company number is XX display the stop screen for limited partners
+    else if(req.session.data['companynumber'] === '11223344') {
+
+      res.redirect('./stop/stop-screen-no-directors')
+
+    }
+    //if the company number is XX display the stop screen for oversea companies
+    else if(req.session.data['companynumber'] === '88776644') {
+
+      res.redirect('./stop/stop-screen-oversea')
+
+    }
+    //if the company number is hhhhhh display the stop screen for limited liability partnerships 
+    else{
+
+      res.redirect('/auth-code')
+
+    }
+    
   })
 }
