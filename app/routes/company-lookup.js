@@ -81,19 +81,19 @@ module.exports = function (router) {
     //if the company number is XX display the stop screen for No directors 
     if (req.session.data['companynumber'] === '12345678') {
 
-      res.redirect('./stop/stop-screen-no-current-directors')
+      res.redirect('./testing-stop-screens/stop-screen-no-current-directors')
 
     }
     //if the company number is XX display the stop screen for limited partners
     else if(req.session.data['companynumber'] === '11223344') {
 
-      res.redirect('./stop/stop-screen-no-directors')
+      res.redirect('./testing-stop-screens/stop-screen-officers')
 
     }
     //if the company number is XX display the stop screen for oversea companies
     else if(req.session.data['companynumber'] === '88776644') {
 
-      res.redirect('./stop/stop-screen-oversea')
+      res.redirect('./testing-stop-screens/stop-screen-oversea')
 
     }
     //if the company number is hhhhhh display the stop screen for limited liability partnerships 
