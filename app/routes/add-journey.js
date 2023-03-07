@@ -233,6 +233,18 @@ router.post('/add/choose-psc', function (req, res) {
 })
 
 
+//set the 'pscstatementtwoadd' to false after the user has gone to the confirmation page
+router.get('/directors-remove-statement-add-psc', function (req, res) {
+
+  req.session.data['pscstatementtwoadd'] = false;
+ 
+  res.redirect('/directors')
+})
+
+
+
+
+
 
 
 
