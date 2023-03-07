@@ -41,8 +41,12 @@
             <div id="nationalityThree" class="autocomplete-wrapper"></div>
           </div>
         </div>
-        <h2 class="govuk-heading-m govuk-!-margin-top-9">What information we'll show on the public register</h2>
-        <p class="govuk-body">We will show the PSC's nationality on the public Companies House register.</p>
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+        <p class='govuk-body'>We will show the PSC's nationality on the public Companies House register.</p>"
+        }) }}
+        
         {{ govukButton({
           text: "Continue"
         }) }}

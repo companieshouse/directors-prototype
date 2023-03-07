@@ -64,12 +64,18 @@
               text: "Previous names"
             }
           }) }}
-        {% endset -%}
-        <h2 class="govuk-heading-m govuk-!-margin-top-9">What information we'll show on the public register</h2>
-        <p class="govuk-body">We will show the PSC's full name and title (if relevant) on the public Companies House register.</p>
+        {% endset %}
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the PSC's full name and title (if relevant) on the public Companies House register.</p>"
+        }) }}
+
+
         {{ govukButton({
           text: "Continue"
         }) }}
+
       </form>
     </div>
   </div>
