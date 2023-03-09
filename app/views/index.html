@@ -362,7 +362,14 @@
             <tbody class="govuk-table__body">
 
 
-               <!-- Version 4 summary -->
+               <!-- Version 5 summary -->
+
+              
+Directors - one button - to guide the users in one journey to add PSCs or statement.
+
+
+Confirmation screens are dynamic 
+
 
                <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">
@@ -378,66 +385,56 @@
                     </summary>
                     <div class="govuk-details__text">
 
-                      <p class="govuk-body"> New journeys created: </p>
+                    </ul>
+                    <ul class="govuk-list">
+                        Updates to pages:<br><br>
+                      <li>
+                        <a href="start">GOV.UK start page</a>
+                      </li>
+                    </ul>
+
+                    <p> Content added in inset - If you do not have all the required details about a new PSC, you’ll need to add a PSC statement instead. </p>
+
+
+                      <p class="govuk-body"> Key update: </p>
 
                       <ul class="govuk-list govuk-list--bullet">
-                        <li>Add new statement</li>
-                        <li>Remove statement</li>
+                        <li>Add new PSC or statement in one journey</li>
+                        <li>Check that the user isn't adding a PSC which related to an exisiting  statement</li>
                       </ul>
-
-                      <p> Scenario: If the company already has active PSCs, guide the user through the relevant statements.</p>
-
-                      </ul>
-                         <ul class="govuk-list">
-                          Updates to pages:<br><br>
-
-                          <li>
-                            <a href="start">GOV.UK start page</a>
-                          </li>
-
-                          <p> Content added - If you do not have all the required details about a new PSC, you’ll need to add a PSC statement instead. </p>
-     
-                          *Emma add notes *
-                         <!--  <p class="govuk-body govuk-!-padding-top-5 "> New journey - Add a PSC journey: </p>
-                          <li>
-                             <a href="add/psc-options?type=addstatement">Which statement applies to the company's PSCs?</a>,
-                          </li>
-                          <p> Scenario: If the company already has active PSCs display the relevent statements. </p>
-
-                          <li>
-                            <a href="add/psc-check-statement?type=addstatement">Add a PSC statement</a>,
-                         </li>
-                         <p> Designed the page to display the PSC statement. </p>
-
-                         <li>
-                          <a href="add/statement-date?type=addstatement">When was the company's PSC register updated with this information?
-                          </a>
-                       </li>
-
-                       <li>
-                        <a href="add/check-your-answers">Check your answers - Check your answers before submitting</a>
-                      </li>
-                      <li>
-                        <a href="add/confirmation">Confirmation page - New PSC statement submitted</a>
-                      </li>
-
-                      <p class="govuk-!-padding-top-5"> Users return to PSCs page and the new statement has been added.</p>
-                      </ul>
-
-                      <p class="govuk-!-padding-top-5">New journey - Remove a statement </p>
 
                       <ul class="govuk-list">
-                        <li>
-                          <a href="update/remove-statement?officer=&type=removestatement&directorname=">Date details</a>
-                        </li>
+                        Updates to page:<br><br>
+   
+                         <li>
+                           <a href="add/psc-options?type=addstatement">What do you want to do?</a>
+                         </li>
+                        </ul>
 
-                        <li>
-                          <a href="check-your-answers?type=removestatement">Check your answers before submitting</a>
-                        </li>
-                        <li>
-                          <a href="confirmation">Confirmation page - Remove PSC statement submitted</a>
-                        </li>  -->
-                      </ul> 
+                      <p class="govuk-body"> Instead of having the 'Which statement applies to the company's PSCs?' page to add a statement, the Add a PSC has been added to the list of radio buttons. The page is now, What do you want to do?</p>
+
+                      <ul class="govuk-list">
+                        Updates to page:<br><br>
+   
+                         <li>
+                           <a href="add/confirmation">Confirmation</a>
+                         </li>
+                        </ul>
+
+                        <p class="govuk-body"> Reordered the page. Moved the submission details to the bottom. Brought to the top - "What to do when this statement no longer applies".</p>
+
+                        <ul class="govuk-list">
+                          Updates to page:<br><br>
+     
+                           <li>
+                             <a href="update/review-statement">Review some information before you add a new PSC</a>
+                           </li>
+                           <li>
+                            <a href="update/interrupt-remove-statement">You must remove the statement before adding the PSC</a>
+                          </li>
+                          </ul>
+
+                          <p class="govuk-body">If a user tries to add a PSC but has a statement already, we prompt the user to remove the statement before adding the new PSC.</p>
                    
                     </div>
                   </details>
