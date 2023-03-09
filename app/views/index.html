@@ -345,9 +345,6 @@
                           </ul>
         </div>
 
-
-
-
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
           <table class="govuk-table version-history">
             <caption class="govuk-table__caption govuk-heading-l">Previous versions</caption>
@@ -359,18 +356,89 @@
                 <th scope="col" class="govuk-table__header govuk-!-width-one-third">Status</th>
               </tr>
             </thead>
+            
             <tbody class="govuk-table__body">
 
+              <!-- Version 6 summary -->
 
-               <!-- Version 5 summary -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <a href="https://psc-v6.herokuapp.com/">Version 6</a>
+                </th>
+                <td class="govuk-table__cell">8 March 2023</td>
+                <td class="govuk-table__cell">
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Changes included in version 6
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+
+                      <p>Scenario: Review adding a PSC and statement when all the PSC details is not known. </p>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Add a Statement</li>
+                        <li>Remove a statement</li>
+                        <li>Add a PSC</li>
+                      </ul>
+
+                    <ul class="govuk-list">
+                        Updates to page:<br><br>
+                      <li>
+                        <a href="add/psc-options?type=addstatement">What do you want to do?</a>
+                      </li>
+                    </ul>
+
+                    <p> Content added as hint text to 'Add a PSC' radio button - You'll need all the required details about the PSC. If you do not have all their details, add a statement instead. </p>
+
+                    <p> Explaining to the user about PSC statement. Users are unfamiliar with this option and their need to add a statement before updating the statement with PSC information.</p>
+
+                    <p class="add/name?type=add"> Public register pattern change to inset text -  What information we'll show on the public register.</p>
+
+
+                    <ul class="govuk-list">
+                      Updates to page:<br><br>
+ 
+                       <li>
+                         <a href="add/percentage-of-shares"> What percentage of shares does the PSC have?</a>
+                       </li>
+                      </ul>
+
+                    <p class="govuk-body"> Hint text added - This includes shares held directly or indirectly.</p>
+
+                    <ul class="govuk-list">
+                      Updates to page:<br><br>
+ 
+                       <li>
+                         <a href="add/percentage-of-voting-rights"> What percentage of voting rights does the PSC own?</a>
+                       </li>
+                      </ul>
+
+                    <p class="govuk-body"> Hint text added - This includes voting rights held directly or indirectly.</p>
+
+                    <ul class="govuk-list">
+                      Updates to page:<br><br>
+ 
+                       <li>
+                         <a href=" add/right-to-appoint"> Does the PSC have the right to be involved in appointing or removing the majority of directors?</a>
+                       </li>
+                      </ul>
+
+                    <p class="govuk-body"> Hint text added - directly or indirectly.</p>
+
+                    </div>
+                  </details>
+                </td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Ready for testing
+                  </strong>
+                </td>
+              </tr>
 
               
-Directors - one button - to guide the users in one journey to add PSCs or statement.
-
-
-Confirmation screens are dynamic 
-
-
+               <!-- Version 5 summary -->
                <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">
                   <a href="https://psc-v5.herokuapp.com/">Version 5</a>
@@ -528,12 +596,6 @@ Confirmation screens are dynamic
                           <a href="confirmation">Confirmation page - Remove PSC statement submitted</a>
                         </li>
                       </ul>
-
-                      
-
-
-                          
-                    
                     </div>
                   </details>
                 </td>
