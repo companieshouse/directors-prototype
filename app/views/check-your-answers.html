@@ -14,7 +14,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <!--Choose the page title depending on the journey-->
-      {% if type == 'remove' %}
+      {% if (data['corporateDirector'] == true) %}
+        <h1 class="govuk-heading-l">Check your answers before submitting the removal of a corporate director</h1>
+      {% elif type == 'remove' %}
         <h1 class="govuk-heading-l">Check your answers before submitting the removal of a director</h1>
       {% elif type == 'update' %}
         <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>

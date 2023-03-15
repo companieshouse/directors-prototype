@@ -17,8 +17,13 @@
       </dd>
     </div>
 </dl>
-  
+
+{% if (data['corporateDirector'] == true) %}
+<h2 class="govuk-heading-m">Corporate director details</h2>
+{% else %}
 <h2 class="govuk-heading-m">Director details</h2>
+{% endif %}
+
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
     <dt class="govuk-summary-list__key">
@@ -40,8 +45,26 @@
       </dd>
     </div>
     {% endif %}
+    {% if (data['corporateDirector'] == true) %}
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+      <dt class="govuk-summary-list__key">
+        Appointed on
+      </dt>
+      <dd class="govuk-summary-list__value">
+        26 January 2016
+      </dd>
+    </div>
+
+    {% endif %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
+
+        {% if (data['corporateDirector'] == true) %}
+ 
+        {% else %}
+
+        {% endif %}
+
         Date the director was removed from the company
       </dt>
       <dd class="govuk-summary-list__value">
