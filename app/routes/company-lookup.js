@@ -96,7 +96,7 @@ module.exports = function (router) {
       res.redirect('./testing-stop-screens/stop-screen-oversea')
 
     }
-    //if the company number is hhhhhh display the stop screen for limited liability partnerships 
+    //if the company number is anything display the stop screen for limited liability partnerships 
     else{
 
       res.redirect('/auth-code')
