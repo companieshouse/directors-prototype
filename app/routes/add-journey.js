@@ -211,15 +211,37 @@ router.post('/add/rle/name', function (req, res) {
 
 //registed in the UK (corporate body)
 router.post('/add/rle/registered-in-uk', function (req, res) {
-  res.redirect('../rle/uk-company-type')
+  
+  //if yes, UK 
+  if (req.session.data['registered-in-uk'] === 'yes') {
+
+    res.redirect('../rle/uk-company-type')
+   
+  }
+  else if (req.session.data['registered-in-uk'] === 'no') {
+
+    res.redirect('../add/rle/shares-eu')
+  
+  }
+
+  //if no, not in the UK, ask the stock market questions and trusts 
+  
+  
 })
 
 /*
 ***** address-for-rle *****
 */
 
-//registed in the UK (corporate body)
+//UK company type
 router.post('/add/rle/uk-company-type', function (req, res) {
+  res.redirect('../rle/details')
+})
+
+//Common page to RLE journey - legal form, governing law etc
+// reuse this page for UK and overseas companies. 
+// pre-populate the details for UK companies 
+router.post('/add/rle/details', function (req, res) {
   res.redirect('../rle/details')
 })
 

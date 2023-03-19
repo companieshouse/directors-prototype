@@ -1,4 +1,4 @@
-{% set title = "Is RLE example registered in the UK?" %}
+{% set title = "Is {{data['corporatename']}} registered in the UK?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -21,13 +21,10 @@
           name: "registered-in-uk",
           fieldset: {
             legend: {
-              text: title,
+              html: "Is {{data['corporatename']}} registered in the UK?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-          hint: {
-            text: ""
           },
           items: [
           {
