@@ -164,7 +164,7 @@ if (req.session.data['psc-options'] == 'add-psc') {
  
   }else{
 
-      res.redirect('../add/type-of-psc')
+      res.redirect('../add/type-of-psc?type=corporateuk')
 
     }
    
@@ -190,7 +190,7 @@ if (req.session.data['psc-options'] == 'add-psc') {
   }
   else if (req.session.data['type-of-psc'] === 'corporate-body') {
 
-    res.redirect('../add/rle/name?type=add')
+    res.redirect('../add/rle/name?type=corporateuk')
   
   }
   else if(req.session.data['type-of-psc'] === 'orp'){
@@ -206,7 +206,7 @@ if (req.session.data['psc-options'] == 'add-psc') {
 
 //name of RLE (corporate body)
 router.post('/add/rle/name', function (req, res) {
-  res.redirect('../rle/registered-in-uk?type=add')
+  res.redirect('../rle/registered-in-uk?type=corporateuk')
 })
 
 //registed in the UK (corporate body)
@@ -215,19 +215,17 @@ router.post('/add/rle/registered-in-uk', function (req, res) {
   //if yes, UK 
   if (req.session.data['registered-in-uk'] === 'yes') {
 
-    res.redirect('../rle/uk-company-type')
+    res.redirect('../rle/uk-company-type?type=corporateuk')
    
   }
+  //if no, not in the UK, ask the stock market questions and trusts 
   else if (req.session.data['registered-in-uk'] === 'no') {
 
     res.redirect('../add/rle/shares-eu')
   
   }
-
-  //if no, not in the UK, ask the stock market questions and trusts 
-  
-  
 })
+
 
 /*
 ***** address-for-rle *****
@@ -235,22 +233,14 @@ router.post('/add/rle/registered-in-uk', function (req, res) {
 
 //UK company type
 router.post('/add/rle/uk-company-type', function (req, res) {
-  res.redirect('../rle/details')
+  res.redirect('../rle/details?type=corporateuk')
 })
 
-//Common page to RLE journey - legal form, governing law etc
-// reuse this page for UK and overseas companies. 
+//Common page for UK and overseas RLE journey - legal form, governing law etc
 // pre-populate the details for UK companies 
 router.post('/add/rle/details', function (req, res) {
-  res.redirect('../rle/details')
+  res.redirect('../percentage-of-shares')
 })
-
-
-
-
-
-
-
 
 
 
@@ -323,14 +313,5 @@ router.get('/directors-remove-statement-add-psc', function (req, res) {
  
   res.redirect('/directors')
 })
-
-
-
-
-
-
-
-
-
 
 }

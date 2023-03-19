@@ -1,109 +1,21 @@
-<h2 class="govuk-heading-m">Personal details</h2>
+<h2 class="govuk-heading-m">{{data['corporate-name']}}details </h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Name
+              What is the corporate body name?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+              {{data['corporateName']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
-              Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          {% if data['previous-names'] %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Previous names
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['previous-names']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/name?type=add&#firstname">
-              Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['dob-day']}}
-              {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
-                January
-              {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2") %}
-                February
-              {% elif (data['dob-month'] === "03") or (data['dob-month'] === "3") %}
-                March
-              {% elif (data['dob-month'] === "04") or (data['dob-month'] === "4") %}
-                April
-              {% elif (data['dob-month'] === "05") or (data['dob-month'] === "5") %}
-                May
-              {% elif (data['dob-month'] === "06") or (data['dob-month'] === "6") %}
-                June
-              {% elif (data['dob-month'] === "07") or (data['dob-month'] === "7") %}
-                July
-              {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
-                August
-              {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
-                September
-              {% elif (data['dob-month'] === "10") %}
-                October
-              {% elif (data['dob-month'] === "11") %}
-                November
-              {% elif (data['dob-month'] === "12") %}
-                December
-              {% else %}
-                {{data['dob-month']}}
-              {% endif %}
-              {{data['dob-year']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/date-of-birth?type=add&#dob">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
+              Change<span class="govuk-visually-hidden"> corporate name</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Nationality
-            </dt>
-            <dd class="govuk-summary-list__value">
-            {% if data['nationalityAppoint'] %}
-              {{data['nationalityAppoint'] | first}}
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/add?type=add&#nationality">
-              Change<span class="govuk-visually-hidden"> nationality</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Correspondence address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if (data['correspondence-address'] === "different-address") %}
-                {{data['postcode'] | reverse}}
-              {% else %}
-                The correspondence address is the same as the registered office address
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/address-lookup/correspondence-address">
-              Change<span class="govuk-visually-hidden"> correspondence address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Home address
+              What is the address of {{data['corporateName']}}?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
@@ -138,26 +50,13 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-                    <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Has the PSC ever applied to protect their details at Companies House?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['243Appoint']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
+              Change<span class="govuk-visually-hidden"> corporate address</span>
               </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date they became a PSC
+              ** Date they became a PSC ** 
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['date-appointed-day']}}
@@ -248,6 +147,79 @@
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Corporate body type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Private Company Limited by Shares
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> corporate body type</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Governing law
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Companies Act 2006
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> governing law</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Register that [[company name]] is entered in
+            </dt>
+            <dd class="govuk-summary-list__value">
+              UK Register of Companies
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> register the company is in</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Country of registration
+            </dt>
+            <dd class="govuk-summary-list__value">
+              United Kingdom
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> corporate name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Registration number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['registration-number']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> corporate name</span>
+              </a>
+            </dd>
+          </div>
+
+
+
           </dl>
 
           <!-- Adding PSC -->
@@ -257,45 +229,20 @@
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Percentage of shares
+              As an individual, what percentage of voting rights does  {{data['corporate-name']}} own?
             </dt>
             <dd class="govuk-summary-list__value">
 
             {% if (data['percentage-of-shares'] === "75-or-more") %}
-              75% or more of shares
+              75% or more of voting rights 
             {% elif (data['percentage-of-shares'] === "more-than-50") %}
-              More than 50%, but less than 75% of shares
+              More than 50%, but less than 75% of voting rights 
             {% elif (data['percentage-of-shares'] === "more-than-25") %}
-              More than 25%, but not more than 50% of shares
+              More than 25%, but not more than 50% of voting rights 
             {% elif (data['percentage-of-shares'] === "none") %}
               None of these
             {% else %}
             {% endif %}
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> percentage of shares</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Percentage of voting rights
-            </dt>
-            <dd class="govuk-summary-list__value">
-
-              {% if (data['voting-rights'] === "75-or-more") %}
-                75% or more voting rights
-              {% elif (data['voting-rights'] === "more-than-50") %}
-                More than 50%, but less than 75% of voting rights
-              {% elif (data['voting-rights'] === "more-than-25") %}
-                More than 25%, but not more than 50% of voting rights
-              {% elif (data['voting-rights'] === "none") %}
-                None of these
-              {% else %}
-              {% endif %}
-
 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -306,12 +253,37 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Does the PSC have the right to appoint or remove directors?
+              As an individual, what percentage of shares does {{data['corporate-name']}} own?
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {% if (data['voting-rights'] === "75-or-more") %}
+                75% or more of shares
+              {% elif (data['voting-rights'] === "more-than-50") %}
+                More than 50%, but less than 75% of shares
+              {% elif (data['voting-rights'] === "more-than-25") %}
+                More than 25%, but not more than 50% of shares
+              {% elif (data['voting-rights'] === "none") %}
+                None of these
+              {% else %}
+              {% endif %}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> percentage of shares</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              As an individual, does RLE limited have the right to appoint or remove directors?
             </dt>
             <dd class="govuk-summary-list__value">
 
               {% if (data['right-to-appoint'] === "yes") %}
-                Yes
+              The entity holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
               {% elif (data['right-to-appoint'] === "no") %}
                 No
 
