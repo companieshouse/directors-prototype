@@ -1,0 +1,49 @@
+{% set title = "What is the corporate body name?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/rle/name" method="post">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        
+        {{ govukInput({
+          label: {
+            text: "Corporate body name"
+          },
+          hint: {
+            text: "For example ... "
+          },
+          classes: "govuk-input--width-20",
+          id: "corporate-body-name",
+          value: data['corporatename'],
+          name: "corporatename"
+        }) }}
+        
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the PSC's full name and title (if relevant) on the public Companies House register.</p>"
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/titles-appoint.js"></script>
+{% endblock %}

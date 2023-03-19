@@ -1,0 +1,82 @@
+{% set title = "What would you like to add?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/type-of-psc" method="post">
+
+         {{ govukRadios({
+          name: "type-of-psc",
+          fieldset: {
+            legend: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+            value: "person",
+            html: "A person in control of the company",
+            hint: {
+              text: "Person - an individual"
+            }
+          },
+          {
+            value: "corporate-body",
+            html: "A corporate body in control of the company",
+            hint: {
+              text: "Corporate body - for example, a company or partnership registered in the UK or elsewhere"
+            }
+          },
+          {
+            value: "orp",
+            html: "An other registrable person (ORP) in control of the company - this is typically an organisation, office or official position",
+            hint: {
+              text: "Other registrable person (ORP) - an organisation or office such as:
+
+             - a government or government department of a country or territory
+            -  a local authority or local government body in the UK or elsewhere
+            -  a corporation sole (typically an official position)"
+            }
+          }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+        <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+{# Might need later:
+ hint: {
+        text: "You’ll need all the required details about the PSC."
+      } #}

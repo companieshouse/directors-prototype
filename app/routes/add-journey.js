@@ -1,4 +1,6 @@
 module.exports = function (router) {
+
+
   // Name
   router.get('/add/name', function (req, res) {
     req.session.type = req.query.type
@@ -153,16 +155,16 @@ router.get('/add/psc-options'), function(req,res) {
 // Identifying the correct PSC statement
 router.post('/add/psc-options', function (req, res) {
 
-  //if the company has a statment - ask if they need to remove the statment 
-  if (req.session.data['psc-options'] === 'add-psc') {
+//if the company has a statment - ask if they need to remove the statment 
+if (req.session.data['psc-options'] == 'add-psc') {
 
-    if(req.session.data['pscstatementtwoadd'] == true){ 
+  if(req.session.data['pscstatementtwoadd'] == true){ 
 
-      res.redirect('../update/review-statement')
+    res.redirect('../update/review-statement')
  
-    }else{
+  }else{
 
-      res.redirect('../add/name?type=add')
+      res.redirect('../add/type-of-psc')
 
     }
    
@@ -175,6 +177,65 @@ router.post('/add/psc-options', function (req, res) {
   }
 
 })
+
+
+ //What would you like to add?
+ router.post('/add/type-of-psc', function (req, res) {
+
+
+  if (req.session.data['type-of-psc'] === 'person') {
+  
+    res.redirect('../add/name?type=add')
+   
+  }
+  else if (req.session.data['type-of-psc'] === 'corporate-body') {
+
+    res.redirect('../add/rle/name?type=add')
+  
+  }
+  else if(req.session.data['type-of-psc'] === 'orp'){
+    
+  }
+
+  })
+
+
+/*
+  RLEs - Corporate bodies 
+*/ 
+
+//name of RLE (corporate body)
+router.post('/add/rle/name', function (req, res) {
+  res.redirect('../rle/registered-in-uk?type=add')
+})
+
+//registed in the UK (corporate body)
+router.post('/add/rle/registered-in-uk', function (req, res) {
+  res.redirect('../rle/uk-company-type')
+})
+
+/*
+***** address-for-rle *****
+*/
+
+//registed in the UK (corporate body)
+router.post('/add/rle/uk-company-type', function (req, res) {
+  res.redirect('../rle/details')
+})
+
+
+
+
+
+
+
+
+
+
+/*
+  PSC statements
+*/   
+
 
 //If the add psc action doesn't correspond to a statement continue on add psc journey. 
 //If the statement corresponds to a PSC go down the remove journey

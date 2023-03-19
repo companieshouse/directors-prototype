@@ -1,0 +1,98 @@
+{% set title = "[company name] details" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/rle/name" method="post">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        
+        {{ govukInput({
+          label: {
+            text: "Legal form or corporate identity"
+          },
+          hint: {
+            text: "This is the corporate body type. For example, Private Limited Company"
+          },
+          classes: "govuk-input--width-20",
+          id: "legal-form",
+          value: "Private Company Limited by Shares",
+          name: "legalform"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Governing law"
+          },
+          hint: {
+            text: "For example, Companies Act 2006"
+          },
+          classes: "govuk-input--width-20",
+          id: "governing-law",
+          value: "Companies Act 2006",
+          name: "governinglaw"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Register that [company name] is entered in"
+          },
+          hint: {
+            text: "For example, Register of Companies UK"
+          },
+          classes: "govuk-input--width-20",
+          id: "register",
+          value: "UK Register of Companies",
+          name: "register"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country of registration (if applicable)"
+          },
+          classes: "govuk-input--width-20",
+          id: "country-registered",
+          value: "United Kingdom",
+          name: "countrregistered"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Registration number"
+          },
+          hint: {
+            text: "For example, the company number"
+          },
+          classes: "govuk-input--width-20",
+          id: "registration-number",
+          value: data['regnumber'],
+          name: "regnumber"
+        }) }}
+        
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the PSC's full name and title (if relevant) on the public Companies House register.</p>"
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/titles-appoint.js"></script>
+{% endblock %}
