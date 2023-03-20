@@ -16,9 +16,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+      <span class="govuk-caption-l">{{data['corporatename']}}</span>
       <h1 class="govuk-heading-l">Date details</h1>
       <form action="/add/date-of-appointment" method="post">
-
 
         {{ govukDateInput({
           id: "date-appointed",

@@ -1,7 +1,7 @@
 {% set title = "What is the corporate body's registered office address?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{title}}
+  What is the corporate body's registered office address?
   -
   {{serviceName}}
   - GOV.UK
@@ -16,13 +16,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/rle-address" method="post">
+
+
+
+
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
         {# Get the registered office address #}
 
         {# Radio options to select the rle address #}
+
+
         {% if (data['correspondence-address'] === "registered-office-address")%}
 
-        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
-
+        
+      
           {{ govukRadios({
             idPrefix: "rle-address",
             name: "rle-address",
@@ -66,10 +74,6 @@
               {
                 value: "registered-office-address",
                 text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
-              },
-              {
-                value: "correspodence-address",
-                html: "Stornoway House, 13 Cleveland Row, London, SW1A 1GG"
               },
               {
                 value: "different-address",

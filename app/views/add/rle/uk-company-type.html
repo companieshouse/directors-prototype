@@ -1,7 +1,7 @@
-{% set title = "" %}
+{% set title = "What type of corporate body is it?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-Is {{data['corporatename']}} registered in the UK
+What type of corporate body is it?
   -
   {{serviceName}}
   - GOV.UK
@@ -16,9 +16,7 @@ Is {{data['corporatename']}} registered in the UK
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/uk-company-type" method="post">
-
-        <h1 class="govuk-heading-l">What type of corporate body is it?</h1>
-
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
 
         {% set privateLimitedHtml %}
         {{ govukRadios({
