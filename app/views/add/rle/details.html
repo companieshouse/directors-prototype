@@ -1,4 +1,4 @@
-{% set title = "[company name] details" %}
+{% set title = "[company name] " %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/details" method="post">
-        <h1 class="govuk-heading-l">{{title}}</h1>
+        <h1 class="govuk-heading-l">{{data['corporatename']}}details</h1>
         
         {{ govukInput({
           label: {

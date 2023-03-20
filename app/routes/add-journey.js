@@ -127,14 +127,6 @@ module.exports = function (router) {
   })
 
 
-  // adding PSC - right to appoint
-    router.get('/add/right-to-appoint', function (req, res) {
-    // Render the confirm company page
-    res.render('add/right-to-appoint', {
-      // To use the company data on that page use the following
-      company: req.session.company
-    })
-  })
 
   router.post('/add/right-to-appoint', function (req, res) {
 
@@ -142,8 +134,15 @@ module.exports = function (router) {
     if(req.session.data['newPersonPendingMade'] != true){
       req.session.data['newPersonPendingMade'] = true;
     }
-    res.redirect('../check-your-answers')
+
+    if (req.session.data['corporateuk'] == true){
+      req.session.type = 'corporateuk'
+    }
+      res.redirect('../check-your-answers')
   })
+
+
+
 
 // Statement journey
 
@@ -162,11 +161,12 @@ if (req.session.data['psc-options'] == 'add-psc') {
 
     res.redirect('../update/review-statement')
  
-  }else{
+  }
+  else{
+   
+    res.redirect('../add/type-of-psc')
 
-      res.redirect('../add/type-of-psc?type=corporateuk')
-
-    }
+  }
    
   }
   if (req.session.data['psc-options'] === 'notice-issued') {
@@ -184,13 +184,13 @@ if (req.session.data['psc-options'] == 'add-psc') {
 
 
   if (req.session.data['type-of-psc'] === 'person') {
-  
+    
     res.redirect('../add/name?type=add')
    
   }
   else if (req.session.data['type-of-psc'] === 'corporate-body') {
-
-    res.redirect('../add/rle/name?type=corporateuk')
+    req.session.data['corporateuk'] = true;
+    res.redirect('../add/rle/name')
   
   }
   else if(req.session.data['type-of-psc'] === 'orp'){
@@ -206,7 +206,7 @@ if (req.session.data['psc-options'] == 'add-psc') {
 
 //name of RLE (corporate body)
 router.post('/add/rle/name', function (req, res) {
-  res.redirect('../rle/registered-in-uk?type=corporateuk')
+  res.redirect('../rle/registered-in-uk')
 })
 
 //registed in the UK (corporate body)
@@ -215,7 +215,7 @@ router.post('/add/rle/registered-in-uk', function (req, res) {
   //if yes, UK 
   if (req.session.data['registered-in-uk'] === 'yes') {
 
-    res.redirect('../rle/uk-company-type?type=corporateuk')
+    res.redirect('../rle/uk-company-type')
    
   }
   //if no, not in the UK, ask the stock market questions and trusts 
@@ -233,7 +233,7 @@ router.post('/add/rle/registered-in-uk', function (req, res) {
 
 //UK company type
 router.post('/add/rle/uk-company-type', function (req, res) {
-  res.redirect('../rle/details?type=corporateuk')
+  res.redirect('../rle/details')
 })
 
 //Common page for UK and overseas RLE journey - legal form, governing law etc

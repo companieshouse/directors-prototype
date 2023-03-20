@@ -57,16 +57,16 @@
       <!--To make things easier to read the remove, update, appoint have been seperated and can be found in the includes folder-->
       {% if type == 'remove' %}
         {% include "includes/remove-check-your-answers.html" %}
+      {% elif type == 'corporateuk' %}
+        {% include "includes/appoint-rle-check-your-answers.html" %}
       {% elif type == 'update' %}
          {% include "includes/update-check-your-answers.html" %}
       {% elif type == 'addstatement' %}
          {% include "includes/add-statement-check-your-answers.html" %}
       {% elif type == 'removestatement' %}
          {% include "includes/remove-statement-check-your-answers.html" %}
-      {% elif type == 'uk-rle-entity' %}
-         {% include "includes/appoint-rle-check-your-answers.html" %}
       {% else %}
-        {% include "includes/appoint-check-your-answers.html" %}
+        {% include "includes/appoint-check-your-answer2.html" %}
       {% endif %}
       {{ govukButton({
         text: "Submit",

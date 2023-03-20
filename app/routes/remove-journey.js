@@ -27,6 +27,6 @@ module.exports = function (router) {
       req.session.data['removePersonPendingMade'] = true;
     }
 
-    res.redirect('../check-your-answers?type=remove')
+    res.redirect('../check-your-answers')
   })
 }

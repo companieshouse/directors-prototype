@@ -1,4 +1,4 @@
-{% set title = "Is {{data['corporatename']}} registered in the UK?" %}
+{% set title = "" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -17,12 +17,14 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/registered-in-uk" method="post">
 
+        <h1 class="govuk-heading-l">Is {{data['corporatename']}} registered in the UK?</h1>
+
          {{ govukRadios({
           name: "registered-in-uk",
           fieldset: {
             legend: {
-              html: "Is {{data['corporatename']}} registered in the UK?",
-              isPageHeading: true,
+              text: "",
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
           },

@@ -1,11 +1,11 @@
-<h2 class="govuk-heading-m">{{data['corporate-name']}}details </h2>
+<h2 class="govuk-heading-m">{{data['corporatename']}} details </h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the corporate body name?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['corporateName']}}
+              {{data['corporatename']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
@@ -15,7 +15,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What is the address of {{data['corporateName']}}?
+              ** What is the address of {{data['corporatename']}}  **?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
@@ -26,25 +26,25 @@
                   The home address is the same as the correspondence address
               {% else %}
                  {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
-          {% endif %}
+              {% endif %}
 
-              {% else %}
+                  {% else %}
 
-          {% if company.registered_office_address.address_line_1 %}
-            {{company.registered_office_address.address_line_1}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.address_line_2 %}
-            {{company.registered_office_address.address_line_2}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.region %}
-            {{company.registered_office_address.region}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.locality %}
-            {{company.registered_office_address.locality}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.postal_code %}
-            {{company.registered_office_address.postal_code}}
-          {% endif %}
+              {% if company.registered_office_address.address_line_1 %}
+                {{company.registered_office_address.address_line_1}}<br/>
+              {% endif %}
+              {% if company.registered_office_address.address_line_2 %}
+                {{company.registered_office_address.address_line_2}}<br/>
+              {% endif %}
+              {% if company.registered_office_address.region %}
+                {{company.registered_office_address.region}}<br/>
+              {% endif %}
+              {% if company.registered_office_address.locality %}
+                {{company.registered_office_address.locality}}<br/>
+              {% endif %}
+              {% if company.registered_office_address.postal_code %}
+                {{company.registered_office_address.postal_code}}
+              {% endif %}
 
               {% endif %}
             </dd>
@@ -283,7 +283,7 @@
             <dd class="govuk-summary-list__value">
 
               {% if (data['right-to-appoint'] === "yes") %}
-              The entity holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
+                The entity holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
               {% elif (data['right-to-appoint'] === "no") %}
                 No
 
