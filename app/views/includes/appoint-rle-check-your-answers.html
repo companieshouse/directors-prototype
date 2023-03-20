@@ -15,13 +15,13 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              ** What is the address of {{data['corporatename']}}  **?
+               What is the address of {{data['corporatename']}} ?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
                 70 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
 
-              {% elif (data['home-address'] === "correspodence-address")%}
+              {% elif (data['rle-address'] === "correspodence-address")%}
                 {% if (data['link-home-address'] === "yes") %}
                   The home address is the same as the correspondence address
               {% else %}
@@ -56,7 +56,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              ** Date they became a PSC ** 
+              Date they became a PSC 
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['date-appointed-day']}}
@@ -98,7 +98,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             ** Date entered into the company's PSC register **
+             Date entered into the company's PSC register
             </dt>
             <dd class="govuk-summary-list__value">
 
@@ -209,7 +209,7 @@
               Registration number
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['registration-number']}}
+              {{data['regnumber']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">

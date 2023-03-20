@@ -81,7 +81,18 @@ module.exports = function (router) {
   })
 
   router.post('/add/date-of-appointment', function (req, res) {
-    res.redirect('/add/243')
+    
+    if(req.session.data['corporateuk'] == true){
+
+      res.redirect('../add/rle/registered-in-uk')
+
+    }
+    else{
+
+      res.redirect('/add/243')
+
+    }
+
   }) 
 
   // 243
@@ -206,8 +217,19 @@ if (req.session.data['psc-options'] == 'add-psc') {
 
 //name of RLE (corporate body)
 router.post('/add/rle/name', function (req, res) {
-  res.redirect('../rle/registered-in-uk')
+
+  //go to the address page 
+  res.redirect('/address-lookup/rle-address')
+
 })
+
+router.post('/address-lookup/rle-address', function (req, res) {
+
+  //go to the address page 
+  res.redirect('/add/date-of-appointment')
+
+})
+
 
 //registed in the UK (corporate body)
 router.post('/add/rle/registered-in-uk', function (req, res) {

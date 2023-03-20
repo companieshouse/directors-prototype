@@ -1,0 +1,94 @@
+{% set title = "Where does the PSC live?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/rle-address" method="post">
+        {# Get the registered office address #}
+
+        {# Radio options to select the rle address #}
+        {% if (data['correspondence-address'] === "registered-office-address")%}
+
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+          {{ govukRadios({
+            idPrefix: "rle-address",
+            name: "rle-address",
+            hint: {
+              text: "Tell us the PSC's home address. Only give a business address if they also live there."
+            },
+            fieldset: {
+              legend: {
+                text: title,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "registered-office-address",
+                text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
+              },
+              {
+                value: "different-address",
+                text: "A different address"
+              }
+            ]
+          }) }}
+        {# If not then show the RO, correspondence and a different address options #}
+        {% else %}
+          {{ govukRadios({
+            idPrefix: "rle-address",
+            name: "rle-address",
+            hint: {
+              text: "Tell us the PSC's home address. Only give a business address if they also live there."
+            },
+            fieldset: {
+              legend: {
+                text: title,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "registered-office-address",
+                text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
+              },
+              {
+                value: "correspodence-address",
+                html: "Stornoway House, 13 Cleveland Row, London, SW1A 1GG"
+              },
+              {
+                value: "different-address",
+                text: "A different address"
+              }
+            ]
+          }) }}
+
+        {% endif %}
+        {# What information will be on the register #}
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+        <p class='govuk-body'>We will not show this address on the public Companies House register, unless it's also used for the company's registered office address or the PSC's correspondence address.</p>"
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
