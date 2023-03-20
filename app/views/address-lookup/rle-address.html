@@ -1,4 +1,4 @@
-{% set title = "Where does the PSC live?" %}
+{% set title = "What is the corporate body's registered office address?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -27,7 +27,7 @@
             idPrefix: "rle-address",
             name: "rle-address",
             hint: {
-              text: "Tell us the PSC's home address. Only give a business address if they also live there."
+              text: ""
             },
             fieldset: {
               legend: {
@@ -53,7 +53,7 @@
             idPrefix: "rle-address",
             name: "rle-address",
             hint: {
-              text: "Tell us the PSC's home address. Only give a business address if they also live there."
+              text: ""
             },
             fieldset: {
               legend: {
@@ -82,7 +82,7 @@
         {# What information will be on the register #}
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
-        <p class='govuk-body'>We will not show this address on the public Companies House register, unless it's also used for the company's registered office address or the PSC's correspondence address.</p>"
+        <p class='govuk-body'>We will show this address on the public Companies House register.</p>"
         }) }}
         
         {{ govukButton({

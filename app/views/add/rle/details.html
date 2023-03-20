@@ -16,14 +16,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/details" method="post">
-        <h1 class="govuk-heading-l">{{data['corporatename']}}details</h1>
+        <h1 class="govuk-heading-l">Corporate body details</h1>
         
         {{ govukInput({
           label: {
             text: "Legal form or corporate identity"
           },
           hint: {
-            text: "This is the corporate body type. For example, Private Limited Company"
+            text: "This is the corporate body type. For example, private limited company"
           },
           classes: "govuk-input--width-20",
           id: "legal-form",
@@ -46,10 +46,10 @@
 
         {{ govukInput({
           label: {
-            text: "Register that [company name] is entered in"
+            text: "Register that the corporate body is entered in"
           },
           hint: {
-            text: "For example, Register of Companies UK"
+            text: "For example, UK Register of Companies"
           },
           classes: "govuk-input--width-20",
           id: "register",
@@ -82,7 +82,7 @@
         
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
-                <p>We will show the PSC's full name and title (if relevant) on the public Companies House register.</p>"
+                <p>We will show all the information you provide in this section on the public Companies House register.</p>"
         }) }}
 
 

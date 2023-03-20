@@ -1,4 +1,4 @@
-{% set title = "What would you like to add?" %}
+{% set title = "Which type of PSC would you like to add?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -34,29 +34,41 @@
             value: "person",
             html: "A person in control of the company",
             hint: {
-              text: "Person - an individual"
+              text: ""
             }
           },
           {
             value: "corporate-body",
             html: "A corporate body in control of the company",
             hint: {
-              text: "Corporate body - for example, a company or partnership registered in the UK or elsewhere"
+              text: "For example, a company or partnership registered in the UK or elsewhere"
             }
           },
           {
             value: "orp",
-            html: "An other registrable person (ORP) in control of the company - this is typically an organisation, office or official position",
+            html: "An other registrable person (ORP) in control of the company",
             hint: {
-              text: "Other registrable person (ORP) - an organisation or office such as:
-
-             - a government or government department of a country or territory
-            -  a local authority or local government body in the UK or elsewhere
-            -  a corporation sole (typically an official position)"
+              text: "This is typically an organisation, office or official position"
             }
           }
           ]
         }) }}
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Examples of different types of ORPs
+    </span>
+  </summary>
+  <div class="govuk-details__text"><p class="govuk-body">An ORP could be a:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>government or government department of a country or territory</li>
+  <li>local authority or local government body in the UK or elsewhere</li>
+  <li>corporation sole (typically an official position)</li>
+</ul>
+    
+  </div>
+</details>
 
         <div class="govuk-button-group">
 
