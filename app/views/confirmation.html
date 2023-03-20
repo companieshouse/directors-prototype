@@ -442,7 +442,7 @@
                </tbody>
              </table>
 
-              <!-- If the type is add corporate show-->
+              <!-- If the type is add corporate (RLE) show-->
               {% elif type == 'corporateuk' %}
 
               {{ govukPanel({
@@ -455,8 +455,48 @@
                     <th scope="row" class="govuk-table__header">Company number</th>
                     <td class="govuk-table__cell">02050399</td>
                   </tr>
-              
-                  
+
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Company name</th>
+                    <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Name of PSC</th>
+                    <td class="govuk-table__cell">{{data['corporatename']}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date added</th>
+                    <td class="govuk-table__cell">              {{data['date-appointed-day']}}
+                    {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                      January
+                    {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                      February
+                    {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                      March
+                    {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                      April
+                    {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                      May
+                    {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                      June
+                    {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                      July
+                    {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                      August
+                    {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                      September
+                    {% elif (data['date-appointed-month'] === "10")%}
+                      October
+                    {% elif (data['date-appointed-month'] === "11")%}
+                      November
+                    {% elif (data['date-appointed-month'] === "12")%}
+                      December
+                    {% else %}
+                      {{data['date-appointed-month']}}
+                    {% endif %}
+                    {{data['date-appointed-year']}}</td>
+                  </tr>
                 </tbody>
               </table>
       
