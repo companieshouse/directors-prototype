@@ -149,7 +149,7 @@
           </div>
         </dl>
 
-        <h2 class="govuk-heading-m">{{data['corporatename']}} details </h2>
+        <h2 class="govuk-heading-m">Corporate body details </h2>
         <dl class="govuk-summary-list">
 
           <div class="govuk-summary-list__row">
@@ -287,7 +287,8 @@
             <dd class="govuk-summary-list__value">
 
               {% if (data['right-to-appoint'] === "yes") %}
-                The entity holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
+              Yes
+                <!-- The entity holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company. -->
               {% elif (data['right-to-appoint'] === "no") %}
                 No
 
