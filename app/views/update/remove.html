@@ -1,7 +1,7 @@
-{% set title = "When was the corporate director removed from the company?" %}
+<!-- {% set title = "When was the corporate director removed from the company?" %} -->
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{title}}
+  
   -
   {{serviceName}}
   - GOV.UK
@@ -18,7 +18,15 @@
           <fieldset class="govuk-fieldset" role="group" aria-describedby="date-removed-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              <span class="govuk-caption-l">Kathryn Rebecca Davis</span> {{title}} 
+              <span class="govuk-caption-l">ACME LTD</span> 
+
+              {% if (data['corporateDirector'] == true) %}
+                 When was the corporate director removed from the company?
+              {% else %}
+                When was the director removed from the company?
+              {% endif %}
+
+
             </h1>
           </legend>
           <div id="date-removed-hint" class="govuk-hint">

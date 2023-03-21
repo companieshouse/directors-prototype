@@ -120,10 +120,15 @@
               <th scope="row" class="govuk-table__header">Company name</th>
               <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
             </tr>
+
+            {% if (data['corporateDirector'] == true) %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name of corporate director</th>
-              <td class="govuk-table__cell"> Kathryn Rebecca Davis</td>
+              <td class="govuk-table__cell"> ACME LTD</td>
             </tr>
+            {% endif %}
+
+            
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Date removed</th>
               <td class="govuk-table__cell">{{data['date-removed-day']}}

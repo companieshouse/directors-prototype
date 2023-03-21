@@ -30,7 +30,7 @@
       Name
     </dt>
     <dd class="govuk-summary-list__value">
-      Kathryn Rebecca Davis
+      ACME LTD
     </dd>
     </div>
     {% if (data['corporateDirector'] != true) %}
@@ -56,16 +56,11 @@
     </div>
 
     {% endif %}
+
+    {% if (data['corporateDirector'] == true) %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-
-        {% if (data['corporateDirector'] == true) %}
- 
-        {% else %}
-
-        {% endif %}
-
-        Date the corporate director was removed from the company
+         Date the corporate director was removed from the company
       </dt>
       <dd class="govuk-summary-list__value">
         {{data['date-removed-day']}}
@@ -102,4 +97,7 @@
         <a class="govuk-link" href="/update/remove">Change<span class="govuk-visually-hidden"> removed on date</span></a>
       </dd>
     </div>
+    {% else %}
+
+    {% endif %}
   </dl>
