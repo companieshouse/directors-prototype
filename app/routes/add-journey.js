@@ -76,7 +76,8 @@ module.exports = function (router) {
     // Render the confirm company page
     res.render('add/date-of-appointment', {
       // To use the company data on that page use the following
-      company: req.session.company
+      company: req.session.company,
+      type: req.session.type
     })
   })
 
