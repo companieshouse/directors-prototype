@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Active directors for ZENITH PRINT (UK) LIMITED
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Sorry, you will need to file a paper form </h1>
+     <!-- {{ govukButton({
+        text: "Appoint new director",
+        href: "add/name?type=add"
+      }) }} -->
+       <p class="govuk-body">The date the director was removed is before 1 October 2009. </p>
+
+       <p class="govuk-body">For directors that were removed before 1 October 2009 you will need to <a href=""> file the 288b paper form</a>.
+
+        <p class="govuk-body">If the date entered is not correct, return to the <a href=""> Remove a director service</a>.</p>
+
+  <p class="govuk-body"><a href="https://www.gov.uk/contact-companies-house" class="govuk-link govuk-link--no-visited-state"> Contact us</a> if you have any questions.</p>
+       
+      <!-- could we link to webfiling for companies to add a director? Could also link to start to do another company -->
+
+    </div>
+  </div>
+{% endblock %}
