@@ -19,7 +19,7 @@
 </dl>
 
 {% if (data['corporateDirector'] == true) %}
-<h2 class="govuk-heading-m">Corporate director details</h2>
+<h2 class="govuk-heading-m">Director details</h2>
 {% else %}
 <h2 class="govuk-heading-m">Director details</h2>
 {% endif %}
@@ -60,7 +60,7 @@
     {% if (data['corporateDirector'] == true) %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-         Date the corporate director was removed from the company
+         Date the director was removed from the company
       </dt>
       <dd class="govuk-summary-list__value">
         {{data['date-removed-day']}}
