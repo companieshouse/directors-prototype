@@ -66,7 +66,40 @@
               <a href="confirmation">Confirmation</a>
             </li>
         </ul>
-        <h3 class="govuk-heading-m">Add PSC</h3>
+
+         <!-- Add a PSC -->
+        <h3 class="govuk-heading-m">Add a new PSC</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="add/psc-options">What do you want to do?</a>
+          </li>
+          <li>
+            <a href="add/type-of-psc">Which type of PSC would you like to add?</a>
+          </li>
+          
+          <li>
+            <a href="add/date-of-appointment">Date details</a>
+          </li>
+          <li>
+            <a href="add/243">PSC protected details</a>
+          </li>
+         <!-- <li>
+            <a href="add/job-title">Job title</a>
+          </li> -->
+          <li>
+            <a href="add/percentage-of-shares">Percentage of shares</a>
+          </li>
+          <li>
+            <a href="add/percentage-of-voting-rights">Percentage of voting rights</a>
+          </li>
+          <li>
+            <a href="add/right-to-appoint">Right to appoint</a>
+            </li>
+          </ul>
+
+        <h4 class="govuk-heading-s">+ Add a person in control of the company</h4>
+
         <ul class="govuk-list govuk-list--bullet">
           <li>
             <a href="add/name">Name</a>
@@ -91,26 +124,39 @@
           address-lookup/address-lookup-home
 
           address-lookup/confirm-lookup-home -->
+        </ul>
+
+        <h4 class="govuk-heading-s">+ Add a corporate body in control of the company</h4>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="add/rle/name">What is the name of the corporate body?</a>
+          </li>
+          <li>
+            <a href="address-lookup/rle-address">What is the corporate body's registered office address?</a>
+          </li>
+          <li>
+            <a href="add/rle/registered-in-uk">Is the corporate body registered in the UK?</a>
+          </li>
+          <li>
+            <a href="add/rle/uk-company-type">UK - What type of corporate body is it?</a>
+          </li>
+          <li>
+            <a href="">Non UK -  </a>
+          </li>
+
+
+
+
 
           <li>
-            <a href="add/date-of-appointment">Date details</a>
+            <a href="add/rle/details">Corporate body details</a>
           </li>
-          <li>
-            <a href="add/243">PSC protected details</a>
-          </li>
-         <!-- <li>
-            <a href="add/job-title">Job title</a>
-          </li> -->
-          <li>
-            <a href="add/percentage-of-shares">Percentage of shares</a>
-          </li>
-          <li>
-            <a href="add/percentage-of-voting-rights">Percentage of voting rights</a>
-          </li>
-          <li>
-            <a href="add/right-to-appoint">Right to appoint</a>
-            </li>
-          </ul>
+        </ul>
+
+
+        <h4 class="govuk-heading-s">+ Add an other registrable person (ORP) in control of the company</h4>
+
 
           <h3 class="govuk-heading-m">Address lookup</h3>
           <ul class="govuk-list govuk-list--bullet">
@@ -358,6 +404,86 @@
             </thead>
             
             <tbody class="govuk-table__body">
+
+                            <!-- Version 7 summary -->
+
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">
+                                <a href="https://psc-v6.herokuapp.com/">Version 7</a>
+                              </th>
+                              <td class="govuk-table__cell">8 March 2023</td>
+                              <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                  <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">
+                                      Changes included in version 7
+                                    </span>
+                                  </summary>
+                                  <div class="govuk-details__text">
+              
+                                    <p>Scenario:  </p>
+              
+                                    <ul class="govuk-list govuk-list--bullet">
+                                      <li>Add a corporate (RLE) director which is based in the UK </li>
+                                      <li>Remove corporate (RLE) director</li>
+                                    </ul>
+              
+                                  <ul class="govuk-list">
+                                      Updates to page:<br><br>
+                                    <li>
+                                      <a href="add/psc-options?type=addstatement">What do you want to do?</a>
+                                    </li>
+                                  </ul>
+              
+                                  <p> Content added as hint text to 'Add a PSC' radio button - You'll need all the required details about the PSC. If you do not have all their details, add a statement instead. </p>
+              
+                                  <p> Explaining to the user about PSC statement. Users are unfamiliar with this option and their need to add a statement before updating the statement with PSC information.</p>
+              
+                                  <p class="add/name?type=add"> Public register pattern change to inset text -  What information we'll show on the public register.</p>
+              
+              
+                                  <ul class="govuk-list">
+                                    Updates to page:<br><br>
+               
+                                     <li>
+                                       <a href="add/percentage-of-shares"> What percentage of shares does the PSC have?</a>
+                                     </li>
+                                    </ul>
+              
+                                  <p class="govuk-body"> Hint text added - This includes shares held directly or indirectly.</p>
+              
+                                  <ul class="govuk-list">
+                                    Updates to page:<br><br>
+               
+                                     <li>
+                                       <a href="add/percentage-of-voting-rights"> What percentage of voting rights does the PSC own?</a>
+                                     </li>
+                                    </ul>
+              
+                                  <p class="govuk-body"> Hint text added - This includes voting rights held directly or indirectly.</p>
+              
+                                  <ul class="govuk-list">
+                                    Updates to page:<br><br>
+               
+                                     <li>
+                                       <a href=" add/right-to-appoint"> Does the PSC have the right to be involved in appointing or removing the majority of directors?</a>
+                                     </li>
+                                    </ul>
+              
+                                  <p class="govuk-body"> Hint text added - directly or indirectly.</p>
+              
+                                  </div>
+                                </details>
+                              </td>
+                              <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--green">
+                                  Ready for testing
+                                </strong>
+                              </td>
+                            </tr>
+
+                            
+
 
               <!-- Version 6 summary -->
 
