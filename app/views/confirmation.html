@@ -121,12 +121,12 @@
               <td class="govuk-table__cell">ZENITH PRINT (UK) LIMITED</td>
             </tr>
 
-            {% if (data['corporateDirector'] == true) %}
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name of director</th>
               <td class="govuk-table__cell"> ACME LTD</td>
             </tr>
-            {% endif %}
+
 
             
             <tr class="govuk-table__row">
@@ -164,6 +164,8 @@
           </tbody>
         </table>
       {% endif %}
+
+      
       <h3 class="govuk-heading-m">What happens next</h3>
       <p class="govuk-body">We'll send a confirmation email to
         <strong>{{ data['email'] }}</strong>
