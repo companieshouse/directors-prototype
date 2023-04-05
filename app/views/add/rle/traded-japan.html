@@ -1,0 +1,116 @@
+{% set title = "Has RLE example had its shares traded in specific markets in Japan, USA, Israel or Switzerland?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/rle/traded-japan" method="post">
+
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Has RLE example had its shares traded in specific markets in Japan, USA, Israel or Switzerland?
+              </h1>
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              Shares trading is the buying and selling of company shares.
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  List of specific markets in Japan, USA, Israel or Switzerland
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body govuk-!-font-weight-bold">Japan</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Fukuoka Stock Exchange</li>
+                    <li>Nagoya Stock Exchange</li>
+                    <li>Osaka Securities Exchange</li>
+                    <li>Sapporo Securities Exchange</li>
+                    <li>Tokyo Stock Exchange</li>
+                  </ul>
+
+                  <p class="govuk-body govuk-!-font-weight-bold">United States of America</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>BATS Exchange, Inc.</li>
+                    <li>BATS Y-Exchange, Inc.</li>
+                    <li>BOX Options Exchange LLC</li>
+                    <li>C2 Options Exchange, Incorporated</li>
+                    <li>Chicago Board Options Exchange, Incorporated</li>
+                    <li>Chicago Stock Exchange, Inc.</li>
+                    <li>EDGA Exchange, Inc.</li>
+                    <li>EDGX Exchange, Inc.</li>
+                    <li>International Securities Exchange, Inc.</li>
+                    <li>ISE Gemini LLC</li>
+                    <li>Miami International Securities Exchange LLC</li>
+                    <li>NASDAQ OMX BX, Inc.</li>
+                    <li>NASDAQ OMX PHLX LLC</li>
+                    <li>The NASDAQ Stock Market LLC</li>
+                    <li>National Stock Exchange, Inc.</li>
+                    <li>New York Stock Exchange, Inc.</li>
+                    <li>NYSE Arca, Inc.</li>
+                    <li>NYSE MKT LLC</li>
+                  </ul>
+
+
+                  <p class="govuk-body govuk-!-font-weight-bold">Israel</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Tel Aviv Stock Exchange</li>
+                  </ul>
+
+                  <p class="govuk-body govuk-!-font-weight-bold">Switzerland</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>BX Berne Exchange</li>
+                    <li>SIX Swiss Exchange</li>
+                  </ul>
+
+
+              </div>
+            </details>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="traded-japan" name="traded-japan" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+{# Might need later:
+ hint: {
+        text: "You’ll need all the required details about the PSC."
+      } #}

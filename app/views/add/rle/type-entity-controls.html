@@ -1,7 +1,7 @@
-{% set title = "Is the corporate body registered in the UK?" %}
+{% set title = "What type of entity has more than 50% control of [company name] ?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{title}}
+What type of corporate body is it?
   -
   {{serviceName}}
   - GOV.UK
@@ -12,17 +12,15 @@
   href: "javascript:history.back()"
 }) }}
 {% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/add/rle/registered-in-uk" method="post">
-
+      <form action="/add/rle/uk-company-type" method="post">
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
 
-
-         {{ govukRadios({
-          name: "registered-in-uk",
-          classes: "govuk-radios--inline",
+        {{ govukRadios({
+          name: "type-control",
           fieldset: {
             legend: {
               text: title,
@@ -31,30 +29,29 @@
             }
           },
           items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
+            {
+              value: "person",
+              text: "A person"
+            },
+            {
+              value: "corporate",
+              text: "A corporate body"
+            },
+            {
+              value: "orp",
+              text: "Other registrable person"
+            }
           ]
         }) }}
+
+
 
         {{ govukButton({
           text: "Continue"
         }) }}
-
-
 
       </form>
     </div>
   </div>
 {% endblock %}
 
-
-{# Might need later:
- hint: {
-        text: "You’ll need all the required details about the PSC."
-      } #}

@@ -1,0 +1,51 @@
+{% set title = "This corporate body doesn't need to be declared as a Person with Significant Control" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/rle/not-a-psc" method="post">
+
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
+        <h1 class="govuk-heading-l">This corporate body doesn't need to be declared as a Person with Significant Control</h1>
+
+        <p class="govuk-body">You've told us that this corporate body:</p>
+
+        <p class="govuk-body">You can buy:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>is not on the list of valid UK company types</li>
+            <li>does not have its shares traded on a regulated market in the EU</li>
+            <li>does not have its shares traded on a specified market in Switzerland, Israel, USA and Japan</li>
+            <li>does not have a single person or corporate body which has more than 50% control over it</li>
+          </ul>
+
+          <p class="govuk-body">Based on this information this corporate body doesn't need to be declared as a Person with Significant Control according to UK company law.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+{# Might need later:
+ hint: {
+        text: "You’ll need all the required details about the PSC."
+      } #}

@@ -1,0 +1,79 @@
+{% set title = "Is [company name] a trust?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/rle/trust" method="post">
+
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Is [company name] a trust?
+              </h1>
+            </legend>
+           <!--  <div id="changed-name-hint" class="govuk-hint">
+              Shares trading is the buying and selling of company shares.
+            </div> -->
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is a trust?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">A trust is a way of managing assets (money, investments, land or buildings) for people. There are different types of trusts.</p> 
+                <p class="govuk-body">Trusts involve:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>the ‘settlor’ - the person who puts assets into a trust</li>
+                    <li>the ‘trustee’ - the person who manages the trust</li>
+                    <li>the ‘beneficiary’ - the person who benefits from the trust</li>
+                  </ul>
+              </div>
+            </details>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trust" name="trust" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+{# Might need later:
+ hint: {
+        text: "You’ll need all the required details about the PSC."
+      } #}
