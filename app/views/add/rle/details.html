@@ -18,8 +18,7 @@
       <form action="/add/rle/details" method="post">
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
         <h1 class="govuk-heading-l">Corporate body details</h1>
-
-       <!--  {% if (data['type-control'] === "orp") %} -->
+       
         {{ govukInput({
           label: {
             text: "Legal form or corporate identity"
@@ -46,40 +45,6 @@
           name: "governing-law"
         }) }}
 
-
-
-        <!-- UK pre-populate details -->
-
-        {% else if (data['registered-in-uk'] === "yes") %}
-        <!-- UK -->
-        {{ govukInput({
-          label: {
-            text: "Legal form or corporate identity"
-          },
-          hint: {
-            text: "This is the corporate body type. For example, private limited company"
-          },
-          classes: "govuk-input--width-20",
-          id: "legal-form",
-          value: "Private Company Limited by Shares",
-          name: "legal-form"
-        }) }}
-
-        <!-- UK -->
-        {{ govukInput({
-          label: {
-            text: "Governing law"
-          },
-          hint: {
-            text: "For example, Companies Act 2006"
-          },
-          classes: "govuk-input--width-20",
-          id: "governing-law",
-          value: "Companies Act 2006",
-          name: "governing-law"
-        }) }}
-
-        <!-- UK -->
         {{ govukInput({
           label: {
             text: "Register that the corporate body is entered in"
@@ -93,63 +58,13 @@
           name: "register"
         }) }}
 
-        <!-- UK -->
-        {{ govukInput({
-          label: {
-            text: "Country of registration (if applicable)"
-          },
-          classes: "govuk-input--width-20",
-          id: "country-registered",
-          value: "United Kingdom",
-          name: "country-registered"
-        }) }}
 
 
-        <!-- Non UK Do not pre-populate details -->
-        {% else %}
-        <!-- non UK -->
-        {{ govukInput({
-          label: {
-            text: "Legal form or corporate identity"
-          },
-          hint: {
-            text: "This is the corporate body type. For example, private limited company"
-          },
-          classes: "govuk-input--width-20",
-          id: "legal-form",
-          value: "",
-          name: "legal-form"
-        }) }}
 
-        <!-- non UK -->
-        {{ govukInput({
-          label: {
-            text: "Governing law"
-          },
-          hint: {
-            text: "For example, Companies Act 2006"
-          },
-          classes: "govuk-input--width-20",
-          id: "governing-law",
-          value: "",
-          name: "governing-law"
-        }) }}
+  
 
-        <!-- non UK -->
-        {{ govukInput({
-          label: {
-            text: "Register that the corporate body is entered in"
-          },
-          hint: {
-            text: "For example, UK Register of Companies"
-          },
-          classes: "govuk-input--width-20",
-          id: "register",
-          value: "",
-          name: "register"
-        }) }}
 
-        <!-- not UK -->
+     
         {{ govukInput({
           label: {
             text: "Country of registration (if applicable)"
@@ -160,7 +75,7 @@
           name: "country-registered"
         }) }}
 
-        {% endif %}
+    
 
 
 
@@ -177,6 +92,8 @@
           value: data['regnumber'],
           name: "regnumber"
         }) }}
+
+       
         
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>

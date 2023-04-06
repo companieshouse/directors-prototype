@@ -359,7 +359,7 @@ router.post('/add/rle/single-person', function (req, res) {
 //legal personality
 router.post('/add/rle/legal-personality', function (req, res) {
   
-  res.redirect('/add/rle/type-entity-controls')
+  res.redirect('/add/rle/single-person')
   
 })
 
@@ -399,7 +399,7 @@ router.post('/add/orp/name', function (req, res) {
 //orp address
 router.post('/address-lookup/orp-address', function (req, res) {
   
-  res.redirect('/address-lookup/orp-address')
+  res.redirect('/add/rle/details')
    
 })
 
