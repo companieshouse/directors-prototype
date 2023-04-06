@@ -204,6 +204,8 @@ if (req.session.data['psc-options'] == 'add-psc') {
   
   }
   else if(req.session.data['type-of-psc'] === 'orp'){
+
+    res.redirect('../add/orp/name')
     
   }
 
@@ -317,14 +319,17 @@ router.post('/add/rle/traded-japan', function (req, res) {
   }
 })
 
+/*
+ * Trusts
+*/
 
-//legal personality (corporate body)
+//*** set the flag for trusts here ***
 router.post('/add/rle/trust', function (req, res) {
   
   //if yes, eu 
   if (req.session.data['trust'] === 'yes') {
 
-    res.redirect('')
+    res.redirect('/add/rle/single-person')
    
   }
   //if no, japan markets?
@@ -334,6 +339,52 @@ router.post('/add/rle/trust', function (req, res) {
   
   }
 })
+
+//Who is the person behind the rle/trust
+router.post('/add/rle/single-person', function (req, res) {
+  
+  if (req.session.data['single-person'] === 'yes') {
+
+    res.redirect('/add/rle/type-entity-controls')
+   
+  }
+  else if (req.session.data['single-person'] === 'no') {
+
+    res.redirect('../rle/not-a-psc')
+  
+  }
+})
+
+
+//legal personality
+router.post('/add/rle/legal-personality', function (req, res) {
+  
+  res.redirect('/add/rle/type-entity-controls')
+  
+})
+
+//EMMMA 
+
+//Looping part to get the information for person, corporate or orp
+router.post('/add/rle/type-entity-controls', function (req, res) {
+  
+  if (req.session.data['type-control'] === 'person') {
+
+    res.redirect('/../add/name')
+   
+  }
+  else if (req.session.data['type-control'] === 'corporate') {
+
+    res.redirect('name')
+   
+  }
+  else if (req.session.data['type-control'] === 'orp') {
+
+    res.redirect('')
+   
+  }
+})
+
 
 
 
