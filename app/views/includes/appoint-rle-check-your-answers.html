@@ -157,7 +157,7 @@
               Corporate body type
             </dt>
             <dd class="govuk-summary-list__value">
-              Private Company Limited by Shares
+              {{data['legal-form']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
@@ -171,7 +171,7 @@
               Governing law
             </dt>
             <dd class="govuk-summary-list__value">
-              Companies Act 2006
+              {{data['governing-law']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
@@ -185,7 +185,7 @@
               Register 
             </dt>
             <dd class="govuk-summary-list__value">
-              UK Register of Companies
+             {{data['register']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
@@ -199,7 +199,7 @@
               Country of registration
             </dt>
             <dd class="govuk-summary-list__value">
-              United Kingdom
+              {{data['country-registered']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">

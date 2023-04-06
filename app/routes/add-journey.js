@@ -306,7 +306,7 @@ router.post('/add/rle/traded-japan', function (req, res) {
   //if yes, eu 
   if (req.session.data['traded-japan'] === 'yes') {
 
-    res.redirect('')
+    res.redirect('/address-lookup/rle-address')
    
   }
   //if no, japan markets?
