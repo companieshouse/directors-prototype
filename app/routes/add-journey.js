@@ -32,8 +32,6 @@ module.exports = function (router) {
   
   router.post('/add/date-of-birth', function (req, res) {
     
-  
-
       var errors = [];
       var dobHasError = false;
       
@@ -85,7 +83,7 @@ module.exports = function (router) {
     
     if(req.session.data['corporateuk'] == true){
 
-      res.redirect('../add/rle/registered-in-uk')
+      res.redirect('../add/percentage-of-shares')
 
     }
     else{
@@ -219,18 +217,10 @@ if (req.session.data['psc-options'] == 'add-psc') {
 //name of RLE (corporate body)
 router.post('/add/rle/name', function (req, res) {
 
-  //go to the address page 
-  res.redirect('/address-lookup/rle-address')
+  //are they registered in the uk?
+  res.redirect('/add/rle/registered-in-uk')
 
 })
-
-router.post('/address-lookup/rle-address', function (req, res) {
-
-  //go to the address page 
-  res.redirect('/add/date-of-appointment')
-
-})
-
 
 //registed in the UK (corporate body)
 router.post('/add/rle/registered-in-uk', function (req, res) {
@@ -238,32 +228,113 @@ router.post('/add/rle/registered-in-uk', function (req, res) {
   //if yes, UK 
   if (req.session.data['registered-in-uk'] === 'yes') {
 
-    res.redirect('../rle/uk-company-type')
+    res.redirect('/address-lookup/rle-address')
    
   }
   //if no, not in the UK, ask the stock market questions and trusts 
   else if (req.session.data['registered-in-uk'] === 'no') {
 
-    res.redirect('../add/rle/shares-eu')
+    res.redirect('/add/rle/traded-eu')
   
   }
 })
 
+// RLE address 
+router.post('/address-lookup/rle-address', function (req, res) {
 
-/*
-***** address-for-rle *****
-*/
+  if (req.session.data['registered-in-uk'] === 'yes') {
+
+      //uk go to company type
+      res.redirect('/add/rle/uk-company-type')
+   
+  }
+  //non uk go to govering law details page
+  else if (req.session.data['registered-in-uk'] === 'no') {
+
+    res.redirect('/add/rle/details')
+  
+  }
+
+})
 
 //UK company type
 router.post('/add/rle/uk-company-type', function (req, res) {
   res.redirect('../rle/details')
 })
 
-//Common page for UK and overseas RLE journey - legal form, governing law etc
+
+// - Common page for UK and overseas RLE journey - legal form, governing law etc -
 // pre-populate the details for UK companies 
+// then ask date details (common page see top of file for routing) -> nature of controls 
 router.post('/add/rle/details', function (req, res) {
-  res.redirect('../percentage-of-shares')
+  res.redirect('/add/date-of-appointment')
 })
+
+
+
+
+
+//pages
+//../percentage-of-shares
+///address-lookup/rle-address
+//../rle/uk-company-type
+
+///add/date-of-appointment
+
+
+//traded in eu markets (corporate body)
+router.post('/add/rle/traded-eu', function (req, res) {
+  
+  //if yes, eu 
+  if (req.session.data['traded-eu'] === 'yes') {
+
+    res.redirect('/address-lookup/rle-address')
+   
+  }
+  //if no, japan markets?
+  else if (req.session.data['traded-eu'] === 'no') {
+
+    res.redirect('../rle/traded-japan')
+  
+  }
+})
+
+
+//traded in japan etc markets (corporate body)
+router.post('/add/rle/traded-japan', function (req, res) {
+  
+  //if yes, eu 
+  if (req.session.data['traded-japan'] === 'yes') {
+
+    res.redirect('')
+   
+  }
+  //if no, japan markets?
+  else if (req.session.data['traded-japan'] === 'no') {
+
+    res.redirect('../rle/trust')
+  
+  }
+})
+
+
+//legal personality (corporate body)
+router.post('/add/rle/trust', function (req, res) {
+  
+  //if yes, eu 
+  if (req.session.data['trust'] === 'yes') {
+
+    res.redirect('')
+   
+  }
+  //if no, japan markets?
+  else if (req.session.data['trust'] === 'no') {
+
+    res.redirect('../rle/legal-personality')
+  
+  }
+})
+
 
 
 

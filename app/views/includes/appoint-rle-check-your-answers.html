@@ -24,11 +24,11 @@
               {% elif (data['rle-address'] === "correspodence-address")%}
                 {% if (data['link-home-address'] === "yes") %}
                   The home address is the same as the correspondence address
-              {% else %}
+                {% else %}
                  {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
               {% endif %}
 
-                  {% else %}
+              {% else %}
 
               {% if company.registered_office_address.address_line_1 %}
                 {{company.registered_office_address.address_line_1}}<br/>
