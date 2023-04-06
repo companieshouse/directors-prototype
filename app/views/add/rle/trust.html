@@ -17,13 +17,13 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/trust" method="post">
 
-        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+       <!--  <span class="govuk-caption-l">{{data['corporatename']}}</span>-->
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Is [company name] a trust?
+                Is {{data['corporatename']}} a trust?
               </h1>
             </legend>
            <!--  <div id="changed-name-hint" class="govuk-hint">
