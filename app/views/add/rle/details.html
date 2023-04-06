@@ -19,9 +19,38 @@
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
         <h1 class="govuk-heading-l">Corporate body details</h1>
 
+       <!--  {% if (data['type-control'] === "orp") %} -->
+        {{ govukInput({
+          label: {
+            text: "Legal form or corporate identity"
+          },
+          hint: {
+            text: "This is the corporate body type. For example, private limited company"
+          },
+          classes: "govuk-input--width-20",
+          id: "legal-form",
+          value: "Private Company Limited by Shares",
+          name: "legal-form"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Governing law"
+          },
+          hint: {
+            text: "For example, Companies Act 2006"
+          },
+          classes: "govuk-input--width-20",
+          id: "governing-law",
+          value: "Companies Act 2006",
+          name: "governing-law"
+        }) }}
+
+
+
         <!-- UK pre-populate details -->
 
-        {% if (data['registered-in-uk'] === "yes") %}
+        {% else if (data['registered-in-uk'] === "yes") %}
         <!-- UK -->
         {{ govukInput({
           label: {

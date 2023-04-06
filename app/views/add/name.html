@@ -16,7 +16,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/name" method="post">
-        <h1 class="govuk-heading-l">{{title}}</h1>
+
+        <!-- Corporate behind an RLE -->
+
+        {% if (data['type-control'] === "person") %}
+
+        <h1 class="govuk-heading-l">What is the name of the PSC in control of the company?</h1>
+        {% else %}
+
+        <!-- corporate body -->
+        <h1 class="govuk-heading-l">What is the PSC's name?</h1>
+
+        {% endif %}
+
+        
         <div class="govuk-form-group govuk-input--width-30">
           <label for="autocomplete-default" class="govuk-label">Professional or honorary title (if relevant)</label>
           <p class="govuk-hint">Start typing a title, such as Dr or Professor, then choose from the list</p>

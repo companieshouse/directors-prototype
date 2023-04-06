@@ -17,13 +17,11 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/single-person" method="post">
 
-        <span class="govuk-caption-l">{{data['corporatename']}}</span>
-
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Does a single person or corporate body control more than 50% of [company name]?
+                Does a single person or corporate body control more than 50% of {{data['corporatename']}}?
               </h1>
             </legend>
            <!--  <div id="changed-name-hint" class="govuk-hint">

@@ -363,7 +363,7 @@ router.post('/add/rle/legal-personality', function (req, res) {
   
 })
 
-//EMMMA 
+
 
 //Looping part to get the information for person, corporate or orp
 router.post('/add/rle/type-entity-controls', function (req, res) {
@@ -380,11 +380,28 @@ router.post('/add/rle/type-entity-controls', function (req, res) {
   }
   else if (req.session.data['type-control'] === 'orp') {
 
-    res.redirect('')
+    res.redirect('/add/orp/name')
    
   }
 })
 
+/*
+  ORP
+*/ 
+
+//orp name
+router.post('/add/orp/name', function (req, res) {
+  
+  res.redirect('/address-lookup/orp-address')
+   
+})
+
+//orp address
+router.post('/address-lookup/orp-address', function (req, res) {
+  
+  res.redirect('/address-lookup/orp-address')
+   
+})
 
 
 
