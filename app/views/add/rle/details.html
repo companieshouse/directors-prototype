@@ -17,7 +17,13 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/rle/details" method="post">
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
+        <h1 class="govuk-heading-l"> Other registrable person details </h1>
+
+
         <h1 class="govuk-heading-l">Corporate body details</h1>
+
+     
        
         {{ govukInput({
           label: {
@@ -45,6 +51,8 @@
           name: "governing-law"
         }) }}
 
+        {% if (data['type-control'] != "orp") %}
+
         {{ govukInput({
           label: {
             text: "Register that the corporate body is entered in"
@@ -58,12 +66,6 @@
           name: "register"
         }) }}
 
-
-
-
-  
-
-
      
         {{ govukInput({
           label: {
@@ -74,10 +76,6 @@
           value: "",
           name: "country-registered"
         }) }}
-
-    
-
-
 
         <!-- all -->
         {{ govukInput({
@@ -92,6 +90,11 @@
           value: data['regnumber'],
           name: "regnumber"
         }) }}
+
+        {% else %}
+
+        {% endif %}
+
 
        
         

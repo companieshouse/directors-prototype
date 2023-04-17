@@ -17,21 +17,18 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/orp/name" method="post">
 
-          <!-- Corporate behind an RLE -->
+          <!-- Corporate behind an RLE 
 
-          {% if (data['type-control'] === "orp") %}
+          {% if (data['type-control'] === "orp") %} -->
 
           <h1 class="govuk-heading-l">What is the name of the other registrable person in control of the company?</h1>
-          {% else %}
+          
   
           <!-- corporate body -->
           <h1 class="govuk-heading-l">What is the name of the other registrable person?</h1>
         
-          {% endif %}
+     
   
-
-
-        
         {{ govukInput({
           label: {
             text: "Other registrable person name"

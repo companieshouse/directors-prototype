@@ -11,6 +11,7 @@ module.exports = function (router) {
     })
   })
     
+
   router.post('/add/name', function (req, res) {
     res.redirect('/add/date-of-birth')
   })
@@ -165,26 +166,23 @@ router.get('/add/psc-options'), function(req,res) {
 router.post('/add/psc-options', function (req, res) {
 
 //if the company has a statment - ask if they need to remove the statment 
-if (req.session.data['psc-options'] == 'add-psc') {
+if ((req.session.data['psc-options'] === 'add-psc') & (req.session.data['pscstatementtwoadd'] == true)) {
 
-  if(req.session.data['pscstatementtwoadd'] == true){ 
-
-    res.redirect('../update/review-statement')
+  res.redirect('../update/review-statement')
  
-  }
-  else{
+}
+//if there is no statement on the company go to the type of PSCs 
+else if(req.session.data['psc-options'] === 'add-psc'){
    
-    res.redirect('../add/type-of-psc')
+  res.redirect('../add/type-of-psc')
 
-  }
-   
-  }
-  if (req.session.data['psc-options'] === 'notice-issued') {
+}
+else if (req.session.data['psc-options'] === 'notice-issued') {
     res.redirect('../add/psc-check-notice?type=addstatement')
-  }
-  else{
+}
+else{
     res.redirect('../add/psc-check-statement?type=addstatement')
-  }
+}
 
 })
 
@@ -406,6 +404,7 @@ router.post('/address-lookup/orp-address', function (req, res) {
 
 
 
+
 /*
   PSC statements
 */   
@@ -475,5 +474,4 @@ router.get('/directors-remove-statement-add-psc', function (req, res) {
  
   res.redirect('/directors')
 })
-
 }
