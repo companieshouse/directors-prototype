@@ -18,13 +18,11 @@
       <form action="/add/rle/details" method="post">
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
 
+        <!-- If it's the ORP behind the RLE -->
+        {% if ((data['type-control'] === "orp") or (data['type-of-psc'] === "orp")) %}
+
         <h1 class="govuk-heading-l"> Other registrable person details </h1>
 
-
-        <h1 class="govuk-heading-l">Corporate body details</h1>
-
-     
-       
         {{ govukInput({
           label: {
             text: "Legal form or corporate identity"
@@ -51,7 +49,37 @@
           name: "governing-law"
         }) }}
 
-        {% if (data['type-control'] != "orp") %}
+        {% else %}
+        <!-- Corporate body -->
+        <h1 class="govuk-heading-l">Corporate body details</h1>
+
+
+        {{ govukInput({
+          label: {
+            text: "Legal form or corporate identity"
+          },
+          hint: {
+            text: "This is the corporate body type. For example, private limited company"
+          },
+          classes: "govuk-input--width-20",
+          id: "legal-form",
+          value: "Private Company Limited by Shares",
+          name: "legal-form"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Governing law"
+          },
+          hint: {
+            text: "For example, Companies Act 2006"
+          },
+          classes: "govuk-input--width-20",
+          id: "governing-law",
+          value: "Companies Act 2006",
+          name: "governing-law"
+        }) }}
+
 
         {{ govukInput({
           label: {
@@ -77,7 +105,7 @@
           name: "country-registered"
         }) }}
 
-        <!-- all -->
+        
         {{ govukInput({
           label: {
             text: "Registration number"
@@ -91,12 +119,8 @@
           name: "regnumber"
         }) }}
 
-        {% else %}
-
         {% endif %}
 
-
-       
         
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>

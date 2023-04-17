@@ -82,7 +82,7 @@ module.exports = function (router) {
 
   router.post('/add/date-of-appointment', function (req, res) {
     
-    if(req.session.data['corporateuk'] == true){
+    if((req.session.data['corporateuk'] == true) | (req.session.data['orp'])){
 
       res.redirect('../add/percentage-of-shares')
 
@@ -198,10 +198,13 @@ else{
   }
   else if (req.session.data['type-of-psc'] === 'corporate-body') {
     req.session.data['corporateuk'] = true;
+    req.session.data['orp'] = false;
     res.redirect('../add/rle/name')
   
   }
   else if(req.session.data['type-of-psc'] === 'orp'){
+    req.session.data['corporateuk'] = false;
+    req.session.data['orp'] = true;
 
     res.redirect('../add/orp/name')
     
