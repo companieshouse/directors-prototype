@@ -1,4 +1,4 @@
-{% set title = "What percentage of shares does the PSC have?" %}
+<!-- {% set title = "What percentage of shares does the PSC have?" %} -->
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -17,15 +17,23 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/percentage-of-shares" method="post">
 
+      <!-- Heading for Corporate bodies and ORPs -->
+      {% if ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
+
+      <h1 class="govuk-heading-l">What percentage of shares of ZENITH PRINT (UK) LIMITED does  {{data['corporatename']}} own?</h1>
+
+      {% elseif ((data['type-of-psc'] === "person")) %}
+
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
-      <span class="govuk-caption-l">{{data['corporatename']}}</span>
+      <h1 class="govuk-heading-l">What percentage of shares does the PSC have?</h1>
+
+      {% endif %}
 
       {{ govukRadios({
         name: "percentage-of-shares",
         fieldset: {
           legend: {
-            text: title,
-            isPageHeading: true,
+            isPageHeading: false,
             classes: "govuk-fieldset__legend--l"
           }
         },

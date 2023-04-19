@@ -1,4 +1,3 @@
-{% set title = "What percentage of voting rights does the PSC own?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -16,8 +15,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/percentage-of-voting-rights" method="post">
-        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+        
+        <!-- Heading for Corporate bodies and ORPs -->
+        {% if ((data['type-control'] === "corporate") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
+
+        <h1 class="govuk-heading-l">What percentage of voting rights of ZENITH PRINT (UK) LIMITED does {{data['corporatename']}} own?</h1>
+
+        {% elseif ((data['type-of-psc'] === "person")) %}
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">What percentage of voting rights does the PSC own?
+        </h1>
+
+        {% elseif ((data['type-of-psc'] === "corporate-body")) %}
+        <!-- Heading for adding a person -->
+        <h1 class="govuk-heading-l">What percentage of voting rights of ZENITH PRINT (UK) LIMITED does {{data['corporatename']}} own?
+        </h1>
+
+        {% endif %}
 
         
          {{ govukRadios({

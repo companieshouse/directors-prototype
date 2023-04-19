@@ -1,4 +1,3 @@
-{% set title = "Does the PSC have the right to be involved in appointing or removing the majority of directors?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -16,16 +15,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/right-to-appoint" method="post">
-        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+
+        <!-- Heading for Corporate bodies and ORPs -->
+        {% if ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
+
+        <h1 class="govuk-heading-l">Does {{data['corporatename']}} have the right to be involved in appointing or removing the majority of directors?</h1>
+        
+        {% elseif ((data['type-of-psc'] === "person")) %}
+
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
 
+        <h1 class="govuk-heading-l"> Does the PSC have the right to be involved in appointing or removing the majority of directors?</h1>
+       
+        {% endif %}
+        
 
         {{ govukRadios({
           name: "right-to-appoint",
           fieldset: {
             legend: {
-              text: title,
-              isPageHeading: true,
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
           },

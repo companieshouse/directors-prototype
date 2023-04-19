@@ -82,8 +82,7 @@ module.exports = function (router) {
 
   router.post('/add/date-of-appointment', function (req, res) {
     
-    if((req.session.data['corporateuk'] == true) | (req.session.data['orp'])){
-
+    if((req.session.data['corporateuk'] == true) | (req.session.data['orp'] == true)){
       res.redirect('../add/percentage-of-shares')
 
     }
@@ -380,8 +379,9 @@ router.post('/add/rle/type-entity-controls', function (req, res) {
    
   }
   else if (req.session.data['type-control'] === 'orp') {
-
+    req.session.data['orp'] = true;
     res.redirect('/add/orp/name')
+   
    
   }
 })
