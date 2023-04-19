@@ -22,17 +22,19 @@
         <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
 
         <h1 class="govuk-heading-l">What percentage of voting rights does {{data['corporatename']}} own for this company?
+          <p class="govuk-hint">This includes voting rights held directly or indirectly.</p>
         {% elseif ((data['type-of-psc'] === "person")) %}
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         <h1 class="govuk-heading-l">What percentage of voting rights does the PSC own?
         </h1>
+        <p class="govuk-hint">This includes voting rights held directly or indirectly.</p>
 
         {% elseif ((data['type-of-psc'] === "corporate-body")) %}
         <!-- Heading for adding a person -->
         <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
 
         <h1 class="govuk-heading-l">What percentage of voting rights does {{data['corporatename']}} own for this company? </h1>
-
+        <p class="govuk-hint">This includes voting rights held directly or indirectly.</p>
         {% endif %}
 
         
@@ -40,13 +42,9 @@
           name: "voting-rights",
           fieldset: {
             legend: {
-              text: title,
-              isPageHeading: true,
+              isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-           hint: {
-            text: "This includes voting rights held directly or indirectly."
           },
           items: [
             {

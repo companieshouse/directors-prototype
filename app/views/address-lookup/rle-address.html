@@ -56,31 +56,116 @@
             ]
           }) }}
         {# If not then show the RO, correspondence and a different address options #}
-        {% else %}
-          {{ govukRadios({
-            idPrefix: "rle-address",
-            name: "rle-address",
-            hint: {
-              text: ""
-            },
-            fieldset: {
-              legend: {
-                text: title,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "registered-office-address",
-                text: "15 Lon Uchaf Lon Uchaf, Caerphilly, Mid Glamorgan, CF83 1BR"
-              },
-              {
-                value: "different-address",
-                text: "A different address"
-              }
-            ]
-          }) }}
+        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "no")) %}
+
+        <h1 class="govuk-heading-l"> What is the corporate body's registered office address? </h1>
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "addressOne",
+          name: "addressOne"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "addressTwo",
+          name: "addressTwo"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          id: "town",
+          name: "town"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          id: "county",
+          name: "county"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          id: "country",
+          name: "country"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          id: "postcode",
+          name: "postcode"
+        }) }}
+
+        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "yes")) %}
+        <h1 class="govuk-heading-l"> What is the corporate body's registered office address? </h1>
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "addressOne",
+          name: "addressOne"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "addressTwo",
+          name: "addressTwo"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          id: "town",
+          name: "town"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          id: "county",
+          name: "county"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          id: "country",
+          name: "country"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          id: "postcode",
+          name: "postcode"
+        }) }}
 
         {% endif %}
         {# What information will be on the register #}

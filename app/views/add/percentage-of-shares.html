@@ -21,13 +21,16 @@
       {% if ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
       <h1 class="govuk-heading-l">What percentage of shares does {{data['corporatename']}} own for this company?</h1>
-
+      <p class="govuk-hint">This includes shares held directly or indirectly.</p>
       {% elseif ((data['type-of-psc'] === "person")) %}
 
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
       <h1 class="govuk-heading-l">What percentage of shares does the PSC have?</h1>
+      <p class="govuk-hint">This includes shares held directly or indirectly.</p>
 
       {% endif %}
+
+      
 
       {{ govukRadios({
         name: "percentage-of-shares",
@@ -37,9 +40,6 @@
             classes: "govuk-fieldset__legend--l"
           }
         },
-        hint: {
-            text: "This includes shares held directly or indirectly."
-          },
         items: [
           {
             value: "75-or-more",
