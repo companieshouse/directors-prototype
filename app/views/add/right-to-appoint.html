@@ -18,8 +18,8 @@
 
         <!-- Heading for Corporate bodies and ORPs -->
         {% if ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
-
-        <h1 class="govuk-heading-l">Does {{data['corporatename']}} have the right to be involved in appointing or removing the majority of directors?</h1>
+        <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED </span>
+        <h1 class="govuk-heading-l">Does {{data['corporatename']}} have the right to be involved in appointing or removing the majority of directors for this company?</h1>
         
         {% elseif ((data['type-of-psc'] === "person")) %}
 

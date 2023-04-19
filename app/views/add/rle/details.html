@@ -49,8 +49,76 @@
           name: "governing-law"
         }) }}
 
-        {% else %}
-        <!-- Corporate body -->
+        <!-- corpoate and not in the UK --> 
+        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "no")) %}
+
+        <h1 class="govuk-heading-l">Corporate body details</h1>
+
+
+        {{ govukInput({
+          label: {
+            text: "Legal form or corporate identity"
+          },
+          hint: {
+            text: "This is the corporate body type. For example, private limited company"
+          },
+          classes: "govuk-input--width-20",
+          id: "legal-form",
+          name: "legal-form"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Governing law"
+          },
+          hint: {
+            text: "For example, Companies Act 2006"
+          },
+          classes: "govuk-input--width-20",
+          id: "governing-law",
+          name: "governing-law"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Register that the corporate body is entered in"
+          },
+          hint: {
+            text: "For example, UK Register of Companies"
+          },
+          classes: "govuk-input--width-20",
+          id: "register",
+          name: "register"
+        }) }}
+
+     
+        {{ govukInput({
+          label: {
+            text: "Country of registration (if applicable)"
+          },
+          classes: "govuk-input--width-20",
+          id: "country-registered",
+          value: "",
+          name: "country-registered"
+        }) }}
+
+        
+        {{ govukInput({
+          label: {
+            text: "Registration number"
+          },
+          hint: {
+            text: "For example, the company number"
+          },
+          classes: "govuk-input--width-20",
+          id: "registration-number",
+          name: "regnumber"
+        }) }}
+      
+        <!-- corpoate and in the UK --> 
+        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "yes")) %}
+
         <h1 class="govuk-heading-l">Corporate body details</h1>
 
 
@@ -120,6 +188,8 @@
         }) }}
 
         {% endif %}
+
+       
 
         
         {{ govukInsetText({

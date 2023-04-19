@@ -127,6 +127,43 @@
             }
          ]
         }) }}
+        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "no")) %}
+
+        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+        <h1 class="govuk-heading-l">Date details</h1>
+        
+        
+        {{ govukDateInput({
+          id: "date-appointed",
+          namePrefix: "date-appointed",
+          fieldset: {
+            legend: {
+              text: "When did it become a PSC?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2022"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-appointed-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-appointed-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-appointed-year']
+            }
+         ]
+        }) }}
+        
         {% else %}
         <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         <h1 class="govuk-heading-l">Date details</h1>

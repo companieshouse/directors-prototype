@@ -19,8 +19,8 @@
 
       <!-- Heading for Corporate bodies and ORPs -->
       {% if ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") or (data['type-control'] === "orp") or (data['type-of-psc'] === "orp" )) %}
-
-      <h1 class="govuk-heading-l">What percentage of shares of ZENITH PRINT (UK) LIMITED does  {{data['corporatename']}} own?</h1>
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
+      <h1 class="govuk-heading-l">What percentage of shares does {{data['corporatename']}} own for this company?</h1>
 
       {% elseif ((data['type-of-psc'] === "person")) %}
 
