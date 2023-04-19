@@ -50,7 +50,7 @@
         }) }}
 
         <!-- corpoate and not in the UK --> 
-        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "no")) %}
+        {% elseif (((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") )and (data['registered-in-uk'] === "no")) %}
 
         <h1 class="govuk-heading-l">Corporate body details</h1>
 
@@ -117,7 +117,7 @@
         }) }}
       
         <!-- corpoate and in the UK --> 
-        {% elseif ((data['type-control'] === "corporate") or (data['type-of-psc'] === "corporate-body") and (data['registered-in-uk'] === "yes")) %}
+        {% elseif ((data['registered-in-uk'] === "yes")) %}
 
         <h1 class="govuk-heading-l">Corporate body details</h1>
 
