@@ -44,10 +44,10 @@
         href: "add/name?type=add"
       }) }} -->
 
-       {{ govukButton({
+      <!-- {{ govukButton({
         text: "Add new PSC or statement",
         href: "/add/psc-options?type=addstatement"
-      }) }}  
+      }) }}  -->
 
      <!--  <div class="govuk-summary-card govuk-!-margin-bottom-4">
       <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" style="display: flex; justify-content: space-between; align-items: center">
@@ -319,8 +319,9 @@
             <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
               <p class="govuk-body">
                 <!--For the update and remove journey we put 3 parameters at the end, the officer the person is selecting, the type of change the user is making for example updating the officer and finally the name of the director-->
-                <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Check and update details</a>
-                <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Cease PSC</a>
+              <!--  <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Check and update details</a> -->
+                <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state ">Cease PSC</a>
+              <!-- removed 'govuk-!-margin-left-4' from 'cease PSC' code for spacing in the cease only prototype -->
               </p>
             </div>
             </div>
@@ -368,8 +369,9 @@
                   <div class="govuk-!-padding-top-1 govuk-!-padding-left-3 govuk-!-padding-right-8">
                     <p class="govuk-body">
                     
-                      <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Check and update details</a>
-                      <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Cease PSC</a>
+                     <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Check and update details</a> -->
+                      <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state ">Cease PSC</a>
+                    <!-- removed 'govuk-!-margin-left-4' from cease PSC link for spacing in the cease only prototype -->
                     </p>
                   </div>
               </div>
