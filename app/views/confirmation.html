@@ -115,7 +115,7 @@
               <td class="govuk-table__cell"> Andy Murray</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Date they stopped being a PSC for the company</th>
+              <th scope="row" class="govuk-table__header">Date they ceased to be a PSC for the company</th>
               <td class="govuk-table__cell">
                 
               {{data['date-removed-day']}}
@@ -147,6 +147,48 @@
                 {{data['date-removed-month']}}
               {% endif %}
               {{data['date-removed-year']}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date entered into the company's PSC register</th>
+              <td class="govuk-table__cell">
+
+              
+              {% if (data['date-entered-own-register'] === "yes") %}
+
+              The date is the same as when they became a PSC
+
+              {% elif (data['date-entered-own-register'] === "no") %}
+                      
+              {{data['date-registered-day']}}
+              {% if (data['date-registered-month'] === "01") or (data['date-registered-month'] === "1") %}
+                January
+              {% elif (data['date-registered-month'] === "02") or (data['date-removed-month'] === "2") %}
+                February
+              {% elif (data['date-registered-month'] === "03") or (data['date-registered-month'] === "3") %}
+                March
+              {% elif (data['date-registered-month'] === "04") or (data['date-registered-month'] === "4") %}
+                April
+              {% elif (data['date-registered-month'] === "05") or (data['date-registered-month'] === "5") %}
+                May
+              {% elif (data['date-registered-month'] === "06") or (data['date-registered-month'] === "6") %}
+                June
+              {% elif (data['date-registered-month'] === "07") or (data['date-registered-month'] === "7") %}
+                July
+              {% elif (data['date-registered-month'] === "08") or (data['date-registered-month'] === "8") %}
+                August
+              {% elif (data['date-registered-month'] === "09") or (data['date-registered-month'] === "9") %}
+                September8
+              {% elif (data['date-registered-month'] === "10") %}
+                October
+              {% elif (data['date-registered-month'] === "11") %}
+                November
+              {% elif (data['date-registered-month'] === "12") %}
+                December
+              {% else %}
+                {{data['date-registered-month']}}
+              {% endif %}
+              {{data['date-registered-year']}}</td>
+              {% endif %}
             </tr>
           </tbody>
         </table>

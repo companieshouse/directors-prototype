@@ -1,4 +1,4 @@
-{% set title = "When did this person cease to be a PSC for the company?" %}
+
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -21,36 +21,114 @@
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">Andy Murray</span>
             <h1 class="govuk-fieldset__heading">
-              {{title}}
+              Date details
             </h1>
           </legend>
-          <div id="date-removed-hint" class="govuk-hint">
-            For example, 27 3 2021
-          </div>
-          <div class="govuk-date-input" id="date-removed">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="date-removed-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-removed-day" name="date-removed-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="date-removed-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-removed-month" name="date-removed-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="date-removed-year">Year</label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-removed-year" name="date-removed-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+
+          <!-- date-removed-day date-removed-month  date-removed-year  -->
+
+        {{ govukDateInput({
+          id: "date-appointed",
+          namePrefix: "date-appointed",
+          fieldset: {
+            legend: {
+              text: "When did this person cease to be a PSC for the company?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2022"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-removed-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-removed-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-removed-year']
+            }
+         ]
+        }) }}
+
+        {% set dateRegisterHtml %}
+        {{ govukDateInput({
+          id: "date-registered",
+          namePrefix: "date-registered",
+          fieldset: {
+            legend: {
+              text: "Date the company's PSC register was updated"
+            }
+          },
+          hint: {
+            text: "For example, 28 3 2022"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-registered-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-registered-year']
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+       
+        {{ govukRadios({
+          name: "date-entered-own-register",
+          fieldset: {
+            legend: {
+              text: "Was the company's PSC register updated with this information on the same date?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Companies are required to keep a PSC register. It must include the details of all people or companies that have significant control over the company."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, the same date"
+            },
+            {
+              value: "no",
+              text: "No, a different date",
+              conditional: {
+                html: dateRegisterHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'> What information we'll show on the public register</h2>
+        <p class='govuk-body'>We will show the date they became a PSC on the public Companies House register.</p>"
+        }) }}
+
+
+
+
+
+
+
+
           {{ govukButton({
             text: "Continue"
           }) }}

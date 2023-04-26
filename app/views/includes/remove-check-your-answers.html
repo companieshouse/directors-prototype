@@ -57,4 +57,51 @@
         <a class="govuk-link" href="/update/remove">Change<span class="govuk-visually-hidden"> removed on date</span></a>
       </dd>
     </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date entered into the company's PSC register
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if (data['date-entered-own-register'] === "yes") %}
+
+        The date is the same as when they became a PSC
+
+        {% elif (data['date-entered-own-register'] === "no") %}
+
+        {{data['date-removed-day']}}
+        {% if (data['date-removed-month'] === "01") or (data['date-removed-month'] === "1") %}
+          January
+        {% elif (data['date-removed-month'] === "02") or (data['date-removed-month'] === "2") %}
+          February
+        {% elif (data['date-removed-month'] === "03") or (data['date-removed-month'] === "3") %}
+          March
+        {% elif (data['date-removed-month'] === "04") or (data['date-removed-month'] === "4") %}
+          April
+        {% elif (data['date-removed-month'] === "05") or (data['date-removed-month'] === "5") %}
+          May
+        {% elif (data['date-removed-month'] === "06") or (data['date-removed-month'] === "6") %}
+          June
+        {% elif (data['date-removed-month'] === "07") or (data['date-removed-month'] === "7") %}
+          July
+        {% elif (data['date-removed-month'] === "08") or (data['date-removed-month'] === "8") %}
+          August
+        {% elif (data['date-removed-month'] === "09") or (data['date-removed-month'] === "9") %}
+          September
+        {% elif (data['date-removed-month'] === "10") %}
+          October
+        {% elif (data['date-removed-month'] === "11") %}
+          November
+        {% elif (data['date-removed-month'] === "12") %}
+          December
+        {% else %}
+          {{data['date-removed-month']}}
+        {% endif %}
+        {{data['date-removed-year']}}
+        {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/update/remove">Change<span class="govuk-visually-hidden"> removed on date</span></a>
+      </dd>
+    </div>
   </dl>
