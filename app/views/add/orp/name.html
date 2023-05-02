@@ -25,8 +25,11 @@
         {% else %}
         <h1 class="govuk-heading-l">What is the name of the other registrable person's (ORP's) office or official position?</h1>
         {% endif %}
-     
   
+<div id="dob-hint" class="govuk-hint">
+                Enter the name of the office or official position, rather than the name of the person who holds the position. For example, the name of the council rather than the name of a councillor.
+              </div>
+
         {{ govukInput({
           label: {
             text: "Name of ORP"
@@ -35,7 +38,8 @@
           id: "corporate-body-name",
           name: "corporatename"
         }) }}
-        
+
+
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
                 <p>We will show this name on the public Companies House register.</p>"
