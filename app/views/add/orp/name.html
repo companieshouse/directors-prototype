@@ -23,13 +23,13 @@
         <h1 class="govuk-heading-l">What is the name of the other registrable person in control of the company?</h1>
         <!-- ORP -->
         {% else %}
-        <h1 class="govuk-heading-l">What is the name of the other registrable person?</h1>
+        <h1 class="govuk-heading-l">What is the name of the ORP's office or official position?</h1>
         {% endif %}
      
   
         {{ govukInput({
           label: {
-            text: "Other registrable person name"
+            text: "ORP's name"
           },
           classes: "govuk-input--width-20",
           id: "corporate-body-name",
