@@ -48,7 +48,7 @@
         <li>nationality</li>
         <li>correspondence address and home address</li>
         <li><a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
-        <li>notification date and the date the company's PSC register was updated with this information</li>
+        <li>date they became a PSC, and the date the company's PSC register was updated with this information</li>
       </ul>
 
       {{ govukDetails({
@@ -61,12 +61,11 @@
 
 <h3 class="govuk-heading-s">What you'll need to add a corporate body as a PSC</h3>
 
-       <p class="govuk-body">You'll need to tell us its:</p>
+       <p class="govuk-body">For corporate bodies registered in the UK, you'll need to tell us its:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>name</li>
         <li>registered office address</li>
-        <li>notification date and the date the company's PSC register was updated with this information</li>
-        <li>place of registration (UK or non-UK)</li>
+        <li>date it became a PSC, and the date the company's PSC register was updated with this information</li>
         <li>corporate body type</li>
         <li>legal form and governing law</li>
         <li>register the corporate body is entered in, if applicable</li>
@@ -75,18 +74,35 @@
       </ul>
       <p class="govuk-body">A corporate body can also be known as a relevant legal entity (RLE).</p>
 
-      <h3 class="govuk-heading-s">What you'll need to add an other registrable person (ORP) </h3>
+      <h3 class="govuk-heading-s">What you'll need to add an other registrable person (ORP) as a PSC</h3>
 
        <p class="govuk-body">You'll need to tell us its:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>name</li>
         <li>registered office address</li>
-        <li>notification date and the date the company's PSC register was updated with this information</li>
-        <li>place of registration (UK or non-UK)</li>
-        <li>legal form and governing law</li>
+        <li>legal form or corporate identity</li>
+        <li>governing law</li>
+        <li>date it became a PSC, and the date the company's PSC register was updated with this information</li>
         <li><a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
       </ul>
      
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What an ORP is
+    </span>
+  </summary>
+  <div class="govuk-details__text"><p class="govuk-body">An ORP is typically an organisation, office or official position. For example, it could be a:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>government or government department of a country or territory</li>
+  <li>local authority or local government body in the UK or elsewhere</li>
+  <li>corporation sole (typically an official position)</li>
+</ul>
+    
+  </div>
+</details>
+
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {{ govukInsetText({
   text: "If you do not have all the required details about a new PSC, you’ll need to add a PSC statement instead."
