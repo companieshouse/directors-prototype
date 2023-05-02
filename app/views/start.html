@@ -36,54 +36,69 @@
         <li>to sign in to or create a Companies House account</li>
         <li>the company number</li>
         <li>the <a href="https://www.gov.uk/guidance/company-authentication-codes-for-online-filing" class="govuk-link">company authentication code</a></li>
+        <li>the PSC's name</li>
+        <li>the PSC's <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
+        <li>the date they became a PSC, and the date the company's PSC register was updated with this information</li>
       </ul>
-      <br>
+
+     {{ govukDetails({
+        summaryText: "What a PSC register is",
+        text: "Companies are required to keep a PSC register. It must include the details of all individuals or companies that have significant control over the company."
+      }) }}
 
 <h3 class="govuk-heading-s">What you'll need to add a person as a PSC</h3>
 
       <p class="govuk-body">You'll need to tell us their:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
         <li>date of birth</li>
         <li>nationality</li>
         <li>correspondence address and home address</li>
-        <li><a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
-        <li>date they became a PSC, and the date the company's PSC register was updated with this information</li>
       </ul>
 
-      {{ govukDetails({
-        summaryText: "What a PSC register is",
-        text: "Companies are required to keep a PSC register. It must include the details of all individuals or companies that have significant control over the company."
-      }) }}
+ 
 
 
       <p class="govuk-body">You'll also need to tell us whether the PSC has ever applied to <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">protect personal information at Companies House</a>.</p>
 
 <h3 class="govuk-heading-s">What you'll need to add a corporate body as a PSC</h3>
 
-       <p class="govuk-body">For corporate bodies registered in the UK, you'll need to tell us its:</p>
+       <p class="govuk-body">For a corporate body registered in the UK, you'll need to tell us its:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
         <li>registered office address</li>
-        <li>date it became a PSC, and the date the company's PSC register was updated with this information</li>
         <li>corporate body type</li>
         <li>legal form and governing law</li>
         <li>register the corporate body is entered in, if applicable</li>
         <li>country of registration and registration number</li>
-        <li><a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
+ </ul>
+        
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      How do I know if a corporate body needs to be declared as a PSC?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">A corporate body needs to be declared as a PSC if any of these statements apply:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>it is on the list of valid UK company types</li>
+        <li>its shares are traded on a regulated market in the EU</li>
+        <li>its shares are traded on a specified market in Switzerland, Israel, USA and Japan</li>
+        <li>has a single person or corporate body which has more than 50% control over it
+</li>
       </ul>
+  </div>
+</details>
+
+
       <p class="govuk-body">A corporate body can also be known as a relevant legal entity (RLE).</p>
 
       <h3 class="govuk-heading-s">What you'll need to add an other registrable person (ORP) as a PSC</h3>
 
        <p class="govuk-body">You'll need to tell us its:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
         <li>registered office address</li>
         <li>legal form or corporate identity</li>
         <li>governing law</li>
-        <li>date it became a PSC, and the date the company's PSC register was updated with this information</li>
-        <li><a href="https://www.gov.uk/guidance/people-with-significant-control-pscs#identifying-your-psc" class="govuk-link">natures of control</a></li>
       </ul>
      
 
