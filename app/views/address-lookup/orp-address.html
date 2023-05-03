@@ -17,8 +17,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/orp-address" method="post">
 
-
-
+        <span class="govuk-caption-l">{{data['orpName']}}</span>
 
         <span class="govuk-caption-l">{{data['corporatename']}}</span>
 
@@ -32,7 +31,7 @@
       
           {{ govukRadios({
             idPrefix: "rle-address",
-            name: "rle-address",
+            name: "orp-address",
             hint: {
               text: ""
             },

@@ -713,7 +713,7 @@
               Name of ORP
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['corporatename']}}
+              {{data['orpName']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
@@ -726,35 +726,8 @@
                Registered office address
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if (data['home-address'] === "different-address") %}
+             
                 70 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
-
-              {% elif (data['rle-address'] === "correspodence-address")%}
-                {% if (data['link-home-address'] === "yes") %}
-                  The home address is the same as the correspondence address
-                {% else %}
-                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London, {{data['home-postcode']}}
-              {% endif %}
-
-              {% else %}
-
-              {% if company.registered_office_address.address_line_1 %}
-                {{company.registered_office_address.address_line_1}}<br/>
-              {% endif %}
-              {% if company.registered_office_address.address_line_2 %}
-                {{company.registered_office_address.address_line_2}}<br/>
-              {% endif %}
-              {% if company.registered_office_address.region %}
-                {{company.registered_office_address.region}}<br/>
-              {% endif %}
-              {% if company.registered_office_address.locality %}
-                {{company.registered_office_address.locality}}<br/>
-              {% endif %}
-              {% if company.registered_office_address.postal_code %}
-                {{company.registered_office_address.postal_code}}
-              {% endif %}
-
-              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -865,11 +838,11 @@
               Type of ORP
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['legal-form']}}
+              {{data['legal-form']}}sssssss
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/add/name?type=add">
-              Change<span class="govuk-visually-hidden"> Other registrable person type</span>
+              Change<span class="govuk-visually-hidden"> other registrable person type</span>
               </a>
             </dd>
           </div>
@@ -888,51 +861,12 @@
             </dd>
           </div>
 
-        <!--   <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Register 
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data['register']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/name?type=add">
-              Change<span class="govuk-visually-hidden"> register the company is in</span>
-              </a>
-            </dd>
-          </div>
+        </dl>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Country of registration
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['country-registered']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/name?type=add">
-              Change<span class="govuk-visually-hidden"> Country of registration</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Registration number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['regnumber']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/name?type=add">
-              Change<span class="govuk-visually-hidden"> registration number</span>
-              </a>
-            </dd>
-          </div> -->
+      
 
 
-
-          </dl>
+      
 
           <!-- Adding PSC -->
 

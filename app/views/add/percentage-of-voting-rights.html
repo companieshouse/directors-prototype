@@ -16,16 +16,20 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/percentage-of-voting-rights" method="post">
         
-        <!-- Heading for Corporate bodies and ORPs -->
-             <!-- All cases of Corporate bodies and ORPs -->
-      {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) or (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp")%}
+        <!-- Headings for Corporate bodies and ORPs -->
+      <!-- Corporate bodies  -->
+      {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) %}
 
         <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
-
         <h1 class="govuk-heading-l">What percentage of voting rights does {{data['corporatename']}} own for this company?
           <p class="govuk-hint">This includes voting rights held directly or indirectly.</p>
         
-        
+       <!-- ORPs  -->
+       {% elseif (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp") %}
+       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
+       <h1 class="govuk-heading-l">What percentage of voting rights does {{data['orpName']}} own for this company?
+      <p class="govuk-hint">This includes voting rights held directly or indirectly.</p>
+       
         <!-- Adding a person, or scenario where Zenith is controlled by a Corporate body, which is controlled by a person -->
      
       {% elseif (data['type-of-psc'] === "person") or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "person")) %}

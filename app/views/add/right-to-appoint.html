@@ -16,12 +16,18 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/right-to-appoint" method="post">
 
-        <!-- All cases of Corporate bodies and ORPs -->
-        {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) or (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp")%}
+        <!-- Corporate bodies  -->
+        {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) %}
 
         <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED </span>
         <h1 class="govuk-heading-l">Does {{data['corporatename']}} have the right to be involved in appointing or removing the majority of directors for this company?</h1>
         
+        <!-- ORPs  -->
+      {% elseif (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp") %}
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED </span>
+      <h1 class="govuk-heading-l">Does {{data['orpName']}} have the right to be involved in appointing or removing the majority of directors for this company?</h1>
+        
+     
         <!-- Adding a person, or scenario where Zenith is controlled by a Corporate body, which is controlled by a person -->
      
         {% elseif (data['type-of-psc'] === "person") or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "person")) %}

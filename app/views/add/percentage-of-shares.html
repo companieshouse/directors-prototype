@@ -17,11 +17,17 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/percentage-of-shares" method="post">
 
-      <!-- All cases of Corporate bodies and ORPs -->
-      {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) or (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp")%}
+      <!-- Corporate bodies  -->
+      {% if ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "")) or ((data['type-of-psc'] === "corporate-body") and (data['type-control'] === "corporate")) %}
 
       <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
       <h1 class="govuk-heading-l">What percentage of shares does {{data['corporatename']}} own for this company?</h1>
+      <p class="govuk-hint">This includes shares held directly or indirectly.</p>
+
+     <!-- ORPs  -->
+      {% elseif (data['type-of-psc'] === "orp" ) or (data['type-control'] === "orp") %}
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
+      <h1 class="govuk-heading-l">What percentage of shares does {{data['orpName']}} own for this company?</h1>
       <p class="govuk-hint">This includes shares held directly or indirectly.</p>
 
       <!-- Adding a person, or scenario where Zenith is controlled by a Corporate body, which is controlled by a person -->

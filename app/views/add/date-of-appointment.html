@@ -92,7 +92,7 @@
         }) }}
         <!-- corporate orp 1 levels -->    
         {% elseif ((data['type-of-psc'] === "orp") or (data['type-control'] === "orp")) %}
-        <span class="govuk-caption-l">{{data['corporatename']}}</span>
+        <span class="govuk-caption-l">{{data['orpName']}}</span>
         <h1 class="govuk-heading-l">Date details</h1>
         
         
@@ -301,10 +301,23 @@
           ]
         }) }}
 
+        <!-- People -->
+       
+        {% if ((data['type-of-psc'] === "person") or (data['type-control'] === "person"))  %}
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'> What information we'll show on the public register</h2>
         <p class='govuk-body'>We will show the date they became a PSC on the public Companies House register.</p>"
         }) }}
+        
+         <!-- Corporates and ORPs -->
+        {% else %} 
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'> What information we'll show on the public register</h2>
+        <p class='govuk-body'>We will show the date it became a PSC on the public Companies House register.</p>"
+        }) }}
+        {% endif %} 
+
+
         
         {{ govukButton({
           text: "Continue",
