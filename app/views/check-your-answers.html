@@ -57,20 +57,22 @@
       <!--To make things easier to read the remove, update, appoint have been seperated and can be found in the includes folder-->
       {% if type == 'remove' %}
         {% include "includes/remove-check-your-answers.html" %}
+      
       {% elif (data['type-of-psc'] === "orp") or (data['type-control'] === "orp") %}
-        {% include "includes/appoint-orp-check-your-answers.html" %}
-      {% elif type == 'corporateuk' %}
-        {% include "includes/appoint-rle-check-your-answers.html" %}
-       {% elif (data['type-of-psc'] === "corporate-body") %}
-        {% include "includes/appoint-rle-check-your-answers.html" %}
+      {% include "includes/appoint-orp-check-your-answers.html" %}
+      
       {% elif type == 'update' %}
          {% include "includes/update-check-your-answers.html" %}
+      
       {% elif type == 'addstatement' %}
          {% include "includes/add-statement-check-your-answers.html" %}
+      
       {% elif type == 'removestatement' %}
-         {% include "includes/remove-statement-check-your-answers.html" %}
-      {% else %}
+        {% include "includes/remove-statement-check-your-answers.html" %}
+      
+      {% elif (data['type-of-psc'] === "person") or (data['type-control'] === "person") %}
         {% include "includes/appoint-check-your-answers.html" %}
+
       {% endif %}
       {{ govukButton({
         text: "Submit",
