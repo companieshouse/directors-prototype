@@ -28,23 +28,24 @@
               text: "Has the director ever applied to protect their details at Companies House?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
-            }
+            }hint
           },
           items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: checked("243Appoint", "yes"),
-              hint: {
-                html: '<p class="govuk-hint">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
-                      <p class="govuk-hint">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>'
-              }
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: checked("243Appoint", "no")
+          {
+            value: "No",
+            text: "No",
+            checked: checked("243Appoint", "no")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("243Appoint", "yes"),
+            hint: {
+              html: '<p class="govuk-hint">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
+                    <p class="govuk-hint">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>'
             }
+            }
+           
           ]
         }) }}
         <details class="govuk-details" data-module="govuk-details">
