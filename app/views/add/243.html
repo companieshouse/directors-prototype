@@ -1,4 +1,4 @@
-{% set title = "Has the director ever applied to protect their details at Companies House?" %}
+{% set title = "Does the PSC have their personal information protected at Companies House?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -16,21 +16,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="/add/243" method="post">
-        {% set emailHtml %}
-          <p class="govuk-body">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
-          <p class="govuk-body">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>
-        {% endset -%}
+
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        
         {{ govukRadios({
           idPrefix: "243Appoint",
           name: "243Appoint",
           fieldset: {
             legend: {
-              text: "Has the director ever applied to protect their details at Companies House?",
+              text: "Does the PSC have their personal information protected at Companies House?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }hint
           },
+           hint: {
+    text: "This includes if they are waiting for the results of an application to protect their personal information."
+  },
           items: [
+<<<<<<< Updated upstream
           {
             value: "No",
             text: "No",
@@ -43,6 +46,25 @@
             hint: {
               html: '<p class="govuk-hint">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
                     <p class="govuk-hint">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>'
+=======
+
+            {
+              value: "No",
+              text: "No",
+              checked: checked("243Appoint", "No"),
+              conditional: {
+                html: phoneHtml
+              }
+            },
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("243Appoint", "Yes"),
+              hint: {
+                html:'<p class="govuk-hint">We’ll need to check that the PSC has applied to protect their details, so your submission will take longer to process.</p>
+                <p class="govuk-hint">It could be rejected if you select ‘yes’ and the PSC has not applied to protect their details.</p>'
+              }
+>>>>>>> Stashed changes
             }
             }
            
@@ -51,12 +73,12 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              What applying to protect director details means
+              What having personal information protected means
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body">Some directors can apply to protect their personal details if they meet certain criteria.</p>
-            <p class="govuk-body">You should only select ‘yes’ if the director has:</p>
+            <p class="govuk-body">Some PSCs can apply to protect personal information from being shown on the Companies House public register if they meet certain criteria.</p>
+            <p class="govuk-body">You should only select ‘yes’ if the PSC has:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>provided evidence that they are eligible to have their details protected </li>
               <li>paid the £100 fee</li>
