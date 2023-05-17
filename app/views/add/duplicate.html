@@ -21,6 +21,31 @@
 
           <h1 class="govuk-heading-l">Review some information before you add a new director</h1>
 
+<p class="govuk-body">Some of the new director details match a director currently on the company's record. </p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Cameron Norrie"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "9 August 2001"
+      }
+    }
+  ]
+}) }}
+
+
+
              <p class="govuk-body">The company currently has the following director on its record with duplicate information:</p>
 
           <div class="govuk-summary-card govuk-!-margin-bottom-4">
@@ -28,9 +53,9 @@
               <p class="govuk-!-font-weight-bold govuk-!-margin-0">Cameron Norrie</p>
       
             </div>
-            <div class="govuk-!-padding-1 govuk-!-margin-3 almost-full-width">
+            <div class="govuk-!-padding-1 ">
               
-               <div class="govuk-!-padding-1">
+               
               <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Role</dt>
@@ -60,7 +85,7 @@
             </div>
       
               
-            </div>
+            
             </div>
 
          
