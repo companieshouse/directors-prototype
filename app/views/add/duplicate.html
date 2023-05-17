@@ -1,4 +1,4 @@
-{% set title = "What is the director's nationality?" %}
+{% set title = "" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -15,43 +15,86 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/add/nationality" method="post">
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
-          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
-        </div>
-        <p class="govuk-body">
-          <a href="#" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a second nationality</a>
-        </p>
-        <div id="second-nationality" class="second-nationality" style="display: none">
-          <div class="govuk-form-group">
-            <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
-            <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means you can be a citizen of your own country and another country.</p>
-            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
-          </div>
-          <p class="govuk-body">
-            <a href="#" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
-          </p>
-        </div>
-        <div id="third-nationality" class="third-nationality" style="display: none">
-          <div class="govuk-form-group">
-            <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
-            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of your own country and two other countries.</p>
-            <div id="nationalityThree" class="autocomplete-wrapper"></div>
-          </div>
-        </div>
-        {{ govukInsetText({
-          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
-                <p>We will show the director's nationality on the public Companies House register.</p>"
-        }) }}
-        
+      <form action="/update/review-statement" method="post">
+        <div class="govuk-form-group ">
+
+
+          <h1 class="govuk-heading-l">Review some information before you add a new director</h1>
+
+             <p class="govuk-body">The company currently has the following director on its record with duplicate information:</p>
+
+          <div class="govuk-summary-card govuk-!-margin-bottom-4">
+            <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">Cameron Norrie</p>
+      
+            </div>
+            <div class="govuk-!-padding-1 govuk-!-margin-3 almost-full-width">
+              
+               <div class="govuk-!-padding-1">
+              <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dd class="govuk-summary-list__value">
+                    <p>Director</p>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Date of birth</dt>
+                  <dd class="govuk-summary-list__value">
+                    <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                    {{ [1,2,3,4,5,6,7,8,9] | random }}
+                    {{ ['August','January','December','November','October','March','May','June','July'] | random }}
+                    {{ [1982,1964,1990,1986,1974,1962,1994,2001,1980] | random }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Appointed on</dt>
+                  <dd class="govuk-summary-list__value" >
+                  <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                  	<p>16 December 2015</p>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            
+            </div>
+      
+              
+            </div>
+            </div>
+
+         
+
+          {{ govukRadios({
+            idPrefix: "duplicate-director-details",
+            name: "duplicate-director-details",
+            fieldset: {
+              legend: {
+                text: "Are you adding a new director?",  
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m govuk-!-padding-top-3"
+              }
+            },
+            items: [
+             {
+               value: "yes",
+               text: "Yes"
+             },
+             {
+               value: "no",
+               text: "No"
+             }
+           ]
+         }) }}
+         
+      
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          classes: "govuk-!-margin-top-6"
         }) }}
       </form>
     </div>
   </div>
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
-  <script src="/public/javascripts/nationality-appoint.js"></script>
+  <script src="/public/javascripts/nationality.js"></script>
 {% endblock %}
