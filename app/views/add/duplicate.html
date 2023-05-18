@@ -19,9 +19,11 @@
         <div class="govuk-form-group ">
 
 
-          <h1 class="govuk-heading-l">Review some information before you add a new director</h1>
+          <h1 class="govuk-heading-l">Check if this director is already appointed for this company</h1>
 
-<p class="govuk-body">Some of the new director details match a director currently on the company's record. </p>
+<p class="govuk-body">The name and date of birth you've entered are the same as another existing director for this company. </p>
+
+<p class="govuk-body govuk-!-font-weight-bold">Information you've entered:</p>
 
 {{ govukSummaryList({
   rows: [
@@ -30,7 +32,7 @@
         text: "Name"
       },
       value: {
-        text: "Cameron Norrie"
+        text: "Cameron Norris"
       }
     },
     {
@@ -45,12 +47,9 @@
 }) }}
 
 
-
-             <p class="govuk-body">The company currently has the following director on its record with duplicate information:</p>
-
           <div class="govuk-summary-card govuk-!-margin-bottom-4">
             <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
-              <p class="govuk-!-font-weight-bold govuk-!-margin-0">Cameron Norrie</p>
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">Existing director information</p>
       
             </div>
             <div class="govuk-!-padding-1 ">
@@ -58,9 +57,9 @@
                
               <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">Role</dt>
+                  <dt class="govuk-summary-list__key">Name</dt>
                   <dd class="govuk-summary-list__value">
-                    <p>Director</p>
+                    <p>Cameron Norris</p>
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -107,7 +106,7 @@
              },
              {
                value: "no",
-               text: "No"
+               text: "No, go back"
              }
            ]
          }) }}
