@@ -22,6 +22,8 @@
         {# If condition to see if the correspondence address is the same as the RO #}
         {% if (data['correspondence-address'] === "registered-office-address")%}
 
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
           {{ govukRadios({
             idPrefix: "home-address",
             name: "home-address",
@@ -48,6 +50,7 @@
           }) }}
         {# If not then show the RO, correspondence and a different address options #}
         {% else %}
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
           {{ govukRadios({
             idPrefix: "home-address",
             name: "home-address",
