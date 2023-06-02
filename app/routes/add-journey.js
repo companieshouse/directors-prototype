@@ -63,11 +63,15 @@ module.exports = function (router) {
 
   router.post('/add/date-of-appointment', function (req, res) {
 
-    //if the director details match an existing director, display the duplicate soft screen
+    //if the director details match an existing director, display the duplicate director soft screen
 
-
-    
-    res.redirect('/add/243')
+    if (((req.session.data['firstname'] == 'Andrew')|| (req.session.data['firstname'] == 'andrew')) && ((req.session.data['last-name'] == 'Murray')||(req.session.data['last-name'] == 'murray')) ) {
+      res.redirect('/add/duplicate')
+    }
+    else {
+      res.redirect('/add/243')
+    }
+  
   }) 
 
   // 243
