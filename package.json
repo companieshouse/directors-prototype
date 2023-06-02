@@ -39,6 +39,7 @@
     "notifications-node-client": "^5.1.0",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
+    "request": "^2.88.2",
     "require-dir": "^1.0.0",
     "sass": "^1.49.10",
     "sync-request": "^6.0.0",
