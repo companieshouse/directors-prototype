@@ -62,6 +62,11 @@ module.exports = function (router) {
   })
 
   router.post('/add/date-of-appointment', function (req, res) {
+
+    //if the director details match an existing director, display the duplicate soft screen
+
+
+    
     res.redirect('/add/243')
   }) 
 
