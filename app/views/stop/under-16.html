@@ -1,0 +1,130 @@
+{% set title = "Duplicate director details" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/duplicate" method="post">
+        <div class="govuk-form-group ">
+
+
+          <h1 class="govuk-heading-l">Check if this director is already appointed for this company</h1>
+
+          <p class="govuk-body">The name and date of birth you've entered are the same as another existing director for this company. </p>
+
+          <p class="govuk-body govuk-!-font-weight-bold">Information you've entered:</p>
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  text: "Andrew Murray"
+                }
+              },
+              {
+                key: {
+                  text: "Date of birth"
+                },
+                value: {
+                  text: "9 August 2001"
+                }
+              },
+              {
+                key: {
+                  text: "Appointed on"
+                },
+                value: {
+                  text: "10 June 2023"
+                }
+              }
+            ]
+          }) }}
+
+
+          <div class="govuk-summary-card govuk-!-margin-bottom-4">
+            <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3" >
+              <p class="govuk-!-font-weight-bold govuk-!-margin-0">Existing director information</p>
+      
+            </div>
+            <div class="govuk-!-padding-1 ">
+              
+               
+              <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Name</dt>
+                  <dd class="govuk-summary-list__value">
+                    <p>Andrew Murray</p>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Date of birth</dt>
+                  <dd class="govuk-summary-list__value">
+                    <!-- As this API only takes data from the register we need to make up the date of birth. We generate the day by choosing a random number between 1 to 9. For the month we choose a random month and the same for year. Every time you access this page it'll show a new DoB-->
+                    9 August 2001
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Appointed on</dt>
+                  <dd class="govuk-summary-list__value" >
+                  <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
+                  	<p>16 December 2015</p>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            
+            </div>
+      
+              
+            
+            </div>
+
+         
+
+          {{ govukRadios({
+            idPrefix: "duplicate-director-details",
+            name: "duplicate-director-details",
+            fieldset: {
+              legend: {
+                text: "Are you adding a new director?",  
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m govuk-!-padding-top-3"
+              }
+            },
+            items: [
+             {
+               value: "yes",
+               text: "Yes"
+             },
+             {
+               value: "no",
+               text: "No, go back"
+             }
+           ]
+         }) }}
+         
+      
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-6"
+        }) }}
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/nationality.js"></script>
+{% endblock %}
