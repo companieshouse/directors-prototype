@@ -74,6 +74,18 @@ module.exports = function (router) {
   
   }) 
 
+  router.post('/add/duplicate', function (req, res) {
+
+    
+    if (req.session.data['duplicate-director-details'] === 'yes')  {
+      res.redirect('/add/243')
+    }
+    else {
+      res.redirect('/Directors')
+    }
+  
+  })
+
   // 243
   router.get('/add/243', function (req, res) {
     // Render the confirm company page
