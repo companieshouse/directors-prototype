@@ -55,7 +55,56 @@
           value: data['last-name'],
           name: "last-name"
         }) }}
-        {% set previousHtml %}
+        
+        <h2 class="govuk-heading-m">Previous names</h2>
+
+        <p class="govuk-hint">Has the director used a different name for business purposes in the last 20 years?
+          For example, changed their name by deed poll or by marriage.</p>
+      
+      
+
+        {{ govukInput({
+          label: {
+            text: "First name (optional)"
+          },
+          hint: {
+            text: "Enter the director's full first name"
+          },
+          classes: "govuk-input--width-20",
+          id: "firstname",
+          value: data['firstname'],
+          name: "firstname"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Middle name or names (optional)"
+          },
+          hint: {
+            text: "Enter the director's full middle name or names"
+          },
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          value: data['middle-name'],
+          name: "middle-name"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Last name (optional)"
+          },
+          classes: "govuk-input--width-20",
+          id: "last-name",
+          value: data['last-name'],
+          name: "last-name"
+        }) }} 
+        <p>  <a href="#" class="govuk-link govuk-link--no-visited-state">Add another previous name </a></p>
+
+
+        
+
+
+
+        
+        <!-- {% set previousHtml %}
           {{ govukInput({
             id: "previous-names",
             name: "previous-names",
@@ -65,7 +114,12 @@
             }
           }) }}
         {% endset -%}
-        {{ govukRadios({
+
+
+
+
+
+       {{ govukRadios({
           idPrefix: "different-name",
           name: "different-name",
           fieldset: {
@@ -89,7 +143,7 @@
               text: "No"
             }
           ]
-        }) }}
+        }) }} -->
 
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
