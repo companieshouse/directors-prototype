@@ -19,3 +19,24 @@ $(document).ready(function () {
     return false;
   });       
 })
+
+
+$(document).ready(function () {
+  window.GOVUKFrontend.initAll()
+  // Code snippet for the nationality page
+  $('#one-previous-name-link').click(function() {
+    $('#one-previous-name').show();
+    $('#one-previous-name-link').hide();
+    return false;
+  });
+  $('#second-previous-name-link').click(function() {
+    $('#second-previous-name').show();
+    $('#second-previous-name-link').hide();
+    return false;
+  });
+  $('#third-previous-name-link').click(function() {
+    $('#third-previous-name').show();
+    $('#third-previous-name-link').hide();
+    return false;
+  });       
+})
