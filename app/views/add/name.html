@@ -69,7 +69,7 @@
 
         <!-- * remove the link after the second one is shown * -->
 
-        <!-- display first pervious name inputs -->
+        <!-- display first pervious name inputs
         <div id="one-previous-name" class="one-previous-name" style="display: none">
           <div class="govuk-form-group">
 
@@ -113,7 +113,7 @@
           <p class="govuk-body">
             <a href="#" id="second-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add a second previous name</a>
           </p>
-        </div>
+        </div> eee-->
 
          <!-- display first pervious name inputs -->
          <div id="second-previous-name" class="second-previous-name" style="display: none">
@@ -130,7 +130,7 @@
             classes: "govuk-input--width-20",
             id: "previousfirstname",
             value: data['previous-firstname'],
-            name: "firstname"
+            name: "previousfirstname"
           }) }}
           {{ govukInput({
             label: {
@@ -142,7 +142,7 @@
             classes: "govuk-input--width-20",
             id: "previousmiddle-name",
             value: data['previous-middle-name'],
-            name: "middle-name"
+            name: "previousmiddle-name"
           }) }}
           {{ govukInput({
             label: {
@@ -151,7 +151,7 @@
             classes: "govuk-input--width-20",
             id: "previouslast-name",
             value: data['previous-last-name'],
-            name: "last-name"
+            name: "previouslast-name"
           }) }} 
 
         </div>
