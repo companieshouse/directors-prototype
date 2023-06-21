@@ -5,6 +5,7 @@ if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
 }
 
+//show and hide nationality 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
   // Code snippet for the nationality page
@@ -20,7 +21,7 @@ $(document).ready(function () {
   });       
 })
 
-
+//show and hide previous names 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
   // Code snippet for the nationality page
