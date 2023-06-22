@@ -48,11 +48,18 @@
               checked: checked("243Appoint", "Yes"),
               hint: {
                 html:'<p class="govuk-hint">We’ll need to check that the director has applied to protect their details, so your submission will take longer to process.</p>
-                <p class="govuk-hint">It could be rejected if you select ‘yes’ and the director has not applied to protect their details.</p>'
+               '
+               
               }
             }
           ]
+          
         }) }}
+
+        {{ govukInsetText({
+          text: "Your filing could be rejected if you select ‘yes’ and the director has not applied to protect their details."
+        }) }}
+
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
