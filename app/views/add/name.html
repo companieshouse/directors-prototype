@@ -55,11 +55,11 @@
           value: data['last-name'],
           name: "last-name"
         }) }}
-        
+        <!-- 
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Previous names</h2>
 
         <p class="govuk-hint">Has the director used a different name for business purposes in the last 20 years?
-          For example, changed their name by deed poll or by marriage.</p>
+          For example, changed their name by deed poll or by marriage.</p> -->
       
       
         <!-- Add a previous name link -->
@@ -73,13 +73,16 @@
         <div id="one-previous-name" class="one-previous-name" style="display: none">
           <div class="govuk-form-group">
 
-            <h3 class="govuk-heading-s">First previous name (optional)</h3>
+            <h3 class="govuk-heading-s">Previous names</h3>
+            <div id="national-insurance-number-hint" class="govuk-hint">
+              Add a previous name if the director used a different name for business purposes in the last 20 years. For example, changed their name by deed poll or by marriage.
+            </div>
             {{ govukInput({
             label: {
-              text: "First name (optional)"
+              text: "Previous first name (optional)"
             },
             hint: {
-              text: "Enter the director's full first name"
+              text: "Enter the director's full previous first name"
             },
             classes: "govuk-input--width-20",
             id: "previousfirstname",
@@ -88,10 +91,10 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Middle name or names (optional)"
+              text: "Previous middle name or names (optional)"
             },
             hint: {
-              text: "Enter the director's full middle name or names"
+              text: "Enter the director's full previous middle name or names"
             },
             classes: "govuk-input--width-20",
             id: "previousmiddle-name",
@@ -100,7 +103,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Last name (optional)"
+              text: "Previous last name (optional)"
             },
             classes: "govuk-input--width-20",
             id: "previouslast-name",
@@ -111,21 +114,21 @@
         </div>
 
           <p class="govuk-body">
-            <a href="#" id="second-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add a second previous name</a>
+            <a href="#" id="second-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add another previous name</a>
           </p>
         </div> 
 
          <!-- display second pervious name inputs -->
          <div id="second-previous-name" class="second-previous-name" style="display: none">
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-s">Second previous name (optional)</h3>
+            <h3 class="govuk-heading-s">Other previous name</h3>
 
             {{ govukInput({
             label: {
-              text: "First name (optional)"
+              text: "Previous first name (optional)"
             },
             hint: {
-              text: "Enter the director's full first name"
+              text: "Enter the director's full previous first name"
             },
             classes: "govuk-input--width-20",
             id: "secondpreviousfirstname",
@@ -134,10 +137,10 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Middle name or names (optional)"
+              text: "Previous middle name or names (optional)"
             },
             hint: {
-              text: "Enter the director's full middle name or names"
+              text: "Enter the director's full previous middle name or names"
             },
             classes: "govuk-input--width-20",
             id: "secondpreviousmiddle-name",
@@ -146,7 +149,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Last name (optional)"
+              text: "Previous last name (optional)"
             },
             classes: "govuk-input--width-20",
             id: "secondpreviouslast-name",
@@ -157,7 +160,7 @@
         </div>
 
           <p class="govuk-body">
-            <a href="#" id="third-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add a third previous name</a>
+            <a href="#" id="third-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add another previous name</a>
           </p>
         </div>
 
@@ -165,14 +168,14 @@
          <!-- display third pervious name inputs -->
          <div id="third-previous-name" class="third-previous-name" style="display: none">
           <div class="govuk-form-group">
-            <h3 class="govuk-heading-s">Third previous name (optional)</h3>
+            <h3 class="govuk-heading-s">Other previous name</h3>
 
             {{ govukInput({
             label: {
-              text: "First name (optional)"
+              text: "Previous first name (optional)"
             },
             hint: {
-              text: "Enter the director's full first name"
+              text: "Enter the director's full previous first name"
             },
             classes: "govuk-input--width-20",
             id: "thirdpreviousfirstname",
@@ -181,7 +184,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Middle name or names (optional)"
+              text: "Previous middle name or names (optional)"
             },
             hint: {
               text: "Enter the director's full middle name or names"
@@ -193,7 +196,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "Last name (optional)"
+              text: "Previous last name (optional)"
             },
             classes: "govuk-input--width-20",
             id: "thirdpreviouslast-name",
