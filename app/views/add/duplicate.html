@@ -19,11 +19,11 @@
         <div class="govuk-form-group ">
 
 
-          <h1 class="govuk-heading-l">Check if this director is already appointed for this company</h1>
+          <h1 class="govuk-heading-l">The name and date of birth you've entered are the same as another existing director for this company </h1>
 
-          <p class="govuk-body">The name and date of birth you've entered are the same as another existing director for this company. </p>
+          <p class="govuk-body">Check if this director is already appointed for this company:</p>
 
-          <p class="govuk-body govuk-!-font-weight-bold">Information you've entered:</p>
+          <p class="govuk-body govuk-!-font-weight-bold">Information you've entered</p>
 
           {{ govukSummaryList({
             rows: [
@@ -45,7 +45,7 @@
               },
               {
                 key: {
-                  text: "Appointed on"
+                  text: "Date appointed"
                 },
                 value: {
                   text: "5 June 2023"
@@ -78,10 +78,10 @@
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">Appointed on</dt>
+                  <dt class="govuk-summary-list__key">Date appointed</dt>
                   <dd class="govuk-summary-list__value" >
                   <!-- The date filter is a custom filter for this project that can be found in the filters.js folder-->
-                  	<p>16 December 2015</p>
+                  	<p>4 June 2023</p>
                   </dd>
                 </div>
               </dl>
@@ -100,7 +100,7 @@
             name: "duplicate-director-details",
             fieldset: {
               legend: {
-                text: "Are you adding a new director?",  
+                text: "Are you adding a new director for this company?",  
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m govuk-!-padding-top-3"
               }
