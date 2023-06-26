@@ -55,21 +55,59 @@
           value: data['last-name'],
           name: "last-name"
         }) }}
-        <!-- 
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Previous names</h2>
 
-        <p class="govuk-hint">Has the director used a different name for business purposes in the last 20 years?
-          For example, changed their name by deed poll or by marriage.</p> -->
-      
-      
-        <!-- Add a previous name link -->
+
+        {% set previousHtml %}
+        {{ govukInput({
+          id: "previous-names",
+          name: "previous-names",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Previous names"
+          }
+        }) }}
+      {% endset -%}
+
+
+
+
+
+     {{ govukRadios({
+        idPrefix: "different-name",
+        name: "different-name",
+        fieldset: {
+          legend: {
+            text: "Has the director used a different name for business purposes in the last 20 years?"
+          }
+        },
+        hint: {
+          text: "For example, changed their name by deed poll or by marriage."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: previousHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }} 
+
+
+
+
+        <!-- 
+        
         <p class="govuk-body">
           <a href="#" id="one-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add a previous name</a>
         </p>
 
-        <!-- * remove the link after the second one is shown * -->
-
-        <!-- display first pervious name inputs -->
+       
         <div id="one-previous-name" class="one-previous-name" style="display: none">
           <div class="govuk-form-group">
 
@@ -118,7 +156,7 @@
           </p>
         </div> 
 
-         <!-- display second pervious name inputs -->
+        
          <div id="second-previous-name" class="second-previous-name" style="display: none">
           <div class="govuk-form-group">
             <h3 class="govuk-heading-s">Other previous name</h3>
@@ -165,7 +203,7 @@
         </div>
 
 
-         <!-- display third pervious name inputs -->
+         
          <div id="third-previous-name" class="third-previous-name" style="display: none">
           <div class="govuk-form-group">
             <h3 class="govuk-heading-s">Other previous name</h3>
@@ -207,113 +245,11 @@
         </div>
 
        
-        </div>
-
-
-
-
-
-
-
-
-           <!-- display second pervious name inputs 
-
-          <p class="govuk-body">
-            <a href="#" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
-          </p>
-        </div>
-        <div id="third-nationality" class="third-nationality" style="display: none">
-          <div class="govuk-form-group">
-            <label for="autocomplete-default" class="govuk-label">Third nationality (optional)</label>
-            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of your own country and two other countries.</p>
-            <div id="nationalityThree" class="autocomplete-wrapper"></div>
-          </div>
         </div> -->
 
 
-
-        <!-- {{ govukInput({
-          label: {
-            text: "First name (optional)"
-          },
-          hint: {
-            text: "Enter the director's full first name"
-          },
-          classes: "govuk-input--width-20",
-          id: "previousfirstname",
-          value: data['previous-firstname'],
-          name: "firstname"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Middle name or names (optional)"
-          },
-          hint: {
-            text: "Enter the director's full middle name or names"
-          },
-          classes: "govuk-input--width-20",
-          id: "previousmiddle-name",
-          value: data['previous-middle-name'],
-          name: "middle-name"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Last name (optional)"
-          },
-          classes: "govuk-input--width-20",
-          id: "previouslast-name",
-          value: data['previous-last-name'],
-          name: "last-name"
-        }) }} 
-        <p>  <a href="#" class="govuk-link govuk-link--no-visited-state">Add another previous name </a></p>
-      -->
-
         
-
-
-
-        
-        <!-- {% set previousHtml %}
-          {{ govukInput({
-            id: "previous-names",
-            name: "previous-names",
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: "Previous names"
-            }
-          }) }}
-        {% endset -%}
-
-
-
-
-
-       {{ govukRadios({
-          idPrefix: "different-name",
-          name: "different-name",
-          fieldset: {
-            legend: {
-              text: "Has the director used a different name for business purposes in the last 20 years?"
-            }
-          },
-          hint: {
-    text: "For example, changed their name by deed poll or by marriage."
-  },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: previousHtml
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }} -->
-
+       
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
                 <p>We will show the director's full name and title (if relevant) on the public Companies House register.</p>"
