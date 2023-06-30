@@ -1,4 +1,25 @@
-<h2 class="govuk-heading-m">Appointment details</h2>
+<h2 class="govuk-heading-m">Company details</h2>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Company number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      02050399
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+      <dt class="govuk-summary-list__key">
+        Company name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        ZENITH PRINT (UK) LIMITED
+      </dd>
+    </div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Director details</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -51,7 +72,7 @@
               {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
                 August
               {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
-                September8
+                September
               {% elif (data['dob-month'] === "10") %}
                 October
               {% elif (data['dob-month'] === "11") %}
@@ -69,6 +90,49 @@
               </a>
             </dd>
           </div>
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date appointed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['date-appointed-day']}}
+              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                September
+              {% elif (data['date-appointed-month'] === "10")%}
+                October
+              {% elif (data['date-appointed-month'] === "11")%}
+                November
+              {% elif (data['date-appointed-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-appointed-month']}}
+              {% endif %}
+              {{data['date-appointed-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-appointment?type=add">
+              Change<span class="govuk-visually-hidden"> appointed on date</span>
+              </a>
+            </dd>
+          </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Nationality
@@ -120,7 +184,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['home-address'] === "different-address") %}
-                70, Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA
+                70 Wentloog Road, <br> Rumney, <br> Cardiff, <br> Wales, <br>CF3 3EA
 
               {% elif (data['home-address'] === "correspodence-address")%}
                 {% if (data['link-home-address'] === "yes") %}
@@ -168,52 +232,12 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of appointment
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['date-appointed-day']}}
-              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
-                January
-              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
-                February
-              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
-                March
-              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
-                April
-              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
-                May
-              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
-                June
-              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
-                July
-              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
-                August
-              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
-                September
-              {% elif (data['date-appointed-month'] === "10")%}
-                October
-              {% elif (data['date-appointed-month'] === "11")%}
-                November
-              {% elif (data['date-appointed-month'] === "12")%}
-                December
-              {% else %}
-                {{data['date-appointed-month']}}
-              {% endif %}
-              {{data['date-appointed-year']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/add/date-of-appointment?type=add">
-              Change<span class="govuk-visually-hidden"> appointed on date</span>
-              </a>
-            </dd>
-          </div>
+          
         </dl>
 
         {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
+          idPrefix: "director-consent",
+          name: "director-consent",
           fieldset: {
             legend: {
               text: "Consent to act as a director",
@@ -222,7 +246,7 @@
           },
           items: [
             {
-              value: "carcasses",
+              value: "yes",
               text: "By submitting this information, you are confirming that the person named has consented to act as a director."
             }
           ]
