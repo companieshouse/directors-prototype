@@ -58,12 +58,6 @@ module.exports = function (router) {
     }) 
 
 
-//////////////********     res.redirect('/add/243') */
-
-
-
-
-
   router.post('/add/duplicate', function (req, res) {
 
     
