@@ -123,10 +123,10 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     } if (req.session.data['home-address'] === 'different-address') {
       res.redirect('/address-lookup/address-lookup-home')
     } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/add/243')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/add/243')
     }
   })
 
@@ -153,7 +153,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
 
   router.post('/address-lookup/link-home-address', function (req, res) {
-    res.redirect('/add/date-of-appointment')
+    res.redirect('/add/243')
   })
 
   //Confirm the postal/correspondence address
@@ -179,7 +179,7 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
 
   router.post('/address-lookup/confirm-lookup-home', function (req, res) {
-    res.redirect('/add/date-of-appointment')
+    res.redirect('/add/243')
   })
 
   router.get('/address-lookup-update-journey/home-address', function (req, res) {
@@ -214,10 +214,10 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     } if (req.session.data['home-address'] === 'different-address') {
       res.redirect('/address-lookup-update-journey/address-lookup-home')
     } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/add/243')
     } else {
       // res.redirect goes to whichever page you want
-      res.redirect('/add/date-of-appointment')
+      res.redirect('/add/243')
     }
   })
 
