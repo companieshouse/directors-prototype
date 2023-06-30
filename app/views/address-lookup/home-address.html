@@ -16,6 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/home-address" method="post">
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
         {# Get the registered office address #}
 
         {# Radio options to select the home address #}

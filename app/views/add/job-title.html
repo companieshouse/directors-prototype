@@ -16,6 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/job-title" method="post">
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
         <div class="govuk-!-padding-bottom-6">
           <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
           <p class="govuk-hint">For example, carpenter. <br>Start typing an occupation, then choose from the list. If your occupation is not shown, you can enter it directly into the box.</p>
