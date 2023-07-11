@@ -10,6 +10,9 @@ require('./routes/company-lookup.js')(router)
 // Adding a director
 require('./routes/add-journey.js')(router)
 
+//Adding a director - name
+require('./routes/add-name.js')(router)
+
 // Removing a director
 require('./routes/remove-journey.js')(router)
 
