@@ -11,12 +11,13 @@ module.exports = function (router) {
   
   //name page goes to date of appointment 
   router.post('/add/name', function (req, res) {
-    var firstName = req.session.data['first-name']
+    var firstname = req.session.data['firstname']
     var lastName = req.session.data['last-name']
     var errors = []
     var firstNameHasError = false
     var lastNameHasError = false
-    if (req.session.data['first-name'] === '') {
+    
+    if (req.session.data['firstname'] === '') {
         firstNameHasError = true
         errors.push({
             text: 'Enter a first name',
@@ -32,7 +33,7 @@ module.exports = function (router) {
     }
     if (firstNameHasError || lastNameHasError) {
         res.render('add/name', {
-        firstName: firstName,
+        firstname: firstname,
         lastName: lastName,
             errorFirstName: firstNameHasError,
             errorLastName: lastNameHasError,

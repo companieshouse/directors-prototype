@@ -51,7 +51,7 @@
           }
         }) }} -->
 
-{% if errorFirstName == true %}
+        {% if errorFirstName == true %}
           {{ govukInput({
             label: {
               text: "First name"
@@ -65,7 +65,7 @@
             spellcheck: false,
             errorMessage: {
                     text: "Enter a first name"
-                  }
+            }
           }) }}
         {% else %}
           {{ govukInput({
@@ -81,8 +81,6 @@
             spellcheck: false
           }) }}
         {% endif %}
-
-
 
 
 
@@ -138,7 +136,7 @@
             id: "last-name",
             name: "last-name",
             type: "last-name",
-              value: last-name,
+            value: last-name,
             autocomplete: "last-name",
             spellcheck: false
           }) }}
