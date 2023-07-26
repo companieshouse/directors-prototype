@@ -28,9 +28,7 @@
 
       <form action="" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        {{ govukInsetText({
-            text: "The details you enter will be shown publicly on the Companies House online register."
-         }) }}
+ 
       <div class="govuk-form-group govuk-input--width-30">
         <label for="autocomplete-default" class="govuk-label">Professional or honarary title (if relevant)</label>
         <p class="govuk-hint">Start typing a title, such as Dr or Professor, then choose from the list.<br></p>
@@ -91,6 +89,9 @@
           {{ govukInput({
             label: {
               text: "First name"
+            },
+            hint: {
+              text: "Enter the director's full first name."
             },
             classes: "govuk-input--width-20",
             id: "firstname",
@@ -204,7 +205,7 @@
           <!-- <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span> 
           <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1> -->
           <label for="autocomplete-default" class="govuk-label">Nationality</label>
-          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list.</p>
           <div id="nationality" class="autocomplete-wrapper"></div>
         </div>
         <p class="govuk-body">
@@ -239,13 +240,15 @@
     }
   },
     hint: {
-    text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the online register." | striptags(true) | escape | nl2br
+    text: "For example, 27 3 1995"
   }
   }) }}
 
 <div class="govuk-!-padding-bottom-6">
   <label for="autocomplete-default" class="govuk-label">Occupation</label>
-  <p class="govuk-hint">Start typing an occupation (for example, carpenter), then choose from the list. If your occupation is not shown, you can enter it directly into the box.<br>This is optional. If you do not enter anything, we'll show the director's occupation as 'none' on the public Companies House register. </p>
+  <p class="govuk-hint">
+    This is optional. If you do not enter anything, we'll show the director's occupation as 'none' on the public Companies House register.
+    <br><br>Start typing an occupation (for example, carpenter), then choose from the list. If your occupation is not shown, you can enter it directly into the box.<br> </p>
 <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
   </div>
 
@@ -284,6 +287,12 @@
 </fieldset>
 </div>
 <p class="govuk-body">
+ 
+  {{ govukInsetText({
+    html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+          <p>We will only show the director's month and year of birth. We will show all other details you’ve entered on the public Companies House register.</p>"
+  }) }}
+ 
   {{ govukButton({
       text: "Continue",
       href: "../address-lookup/correspondence-address"
