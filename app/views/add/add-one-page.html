@@ -1,0 +1,300 @@
+{% set title = "What are the director's details?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+-
+  {{serviceName}}
+- GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+{% if errorFirstName == true or errorLastName == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+
+
+      <form action="" method="post">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        {{ govukInsetText({
+            text: "The details you enter will be shown publicly on the Companies House online register."
+         }) }}
+      <div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label">Professional or honarary title (if relevant)</label>
+        <p class="govuk-hint">Start typing a title, such as Dr or Professor, then choose from the list.<br></p>
+      <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
+      </div>
+
+<!-- old code for names 
+  {{ govukInput({
+    label: {
+      text: "First name"
+   },
+    hint: {
+      text: "Enter the director's full first name"
+  },
+    classes: "govuk-input--width-20",
+    id: "firstname",
+    name: "firstname"
+  }) }}
+  
+  {{ govukInput({
+      label: {
+        text: "Middle name or names (optional)"
+      },
+      hint: {
+        text: "Enter the director's full middle name or names"
+      },
+      classes: "govuk-input--width-20",
+      id: "middle-name",
+      name: "middle-name"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Last name"
+      },
+      classes: "govuk-input--width-20",
+      id: "last-name",
+      name: "last-name"
+    }) }} -->
+
+     {% if errorFirstName == true %}
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            classes: "govuk-input--width-20",
+            id: "firstname",
+            name: "firstname",
+            type: "firstname",
+            value: firstname,
+            autocomplete: "firstname",
+            spellcheck: false,
+            errorMessage: {
+                    text: "Enter a first name"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            classes: "govuk-input--width-20",
+            id: "firstname",
+            name: "firstname",
+            type: "firstname",
+            value: firstname,
+            autocomplete: "firstname",
+            spellcheck: false
+          }) }}
+        {% endif %}
+
+
+
+        {{ govukInput({
+          label: {
+            text: "Middle names"
+          },
+          hint: {
+            text: "Enter the director's full middle name or names."
+          },
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          value: middle-name,
+          name: "middle-name"
+        }) }}
+
+        {% if errorLastName == true %}
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "last-name",
+            name: "last-name",
+            type: "last-name",
+            value: last-name,
+            autocomplete: "last-name",
+            spellcheck: false,
+            errorMessage: {
+                    text: "Enter a last name"
+                  }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "last-name",
+            name: "last-name",
+            type: "last-name",
+            value: last-name,
+            autocomplete: "last-name",
+            spellcheck: false
+          }) }}
+        {% endif %}
+
+
+
+
+
+        {% set previousHtml %}
+        {{ govukInput({
+          id: "previous-names",
+          name: "previous-names",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Previous names"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "different-name",
+        name: "different-name",
+        fieldset: {
+          legend: {
+            text: "Has the director used a different name for business purposes in the last 20 years?"
+          }
+        },
+        hint: {
+          text: "For example, changed their name by deed poll or by marriage."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: previousHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }} 
+
+<!-- old code for nationality
+    <div class="govuk-form-group govuk-input--width-20">
+      <label for="autocomplete-default" class="govuk-label">Nationality</label>
+      <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+    
+    <div id="nationality" class="autocomplete-wrapper"></div>
+    </div>
+      <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another nationality</a>
+      </p> -->
+
+     <div class="govuk-form-group ">
+          <!-- <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span> 
+          <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1> -->
+          <label for="autocomplete-default" class="govuk-label">Nationality</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div>
+        <p class="govuk-body">
+          <a href="#" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a second nationality</a>
+        </p>
+        <div id="second-nationality" class="second-nationality" style="display: none">
+          <div class="govuk-form-group ">
+            <label for="autocomplete-default" class="govuk-label">Second nationality (if relevant)</label>
+            <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means you can be a citizen of your own country and another country.</p>
+            <div id="nationalityTwo" class="autocomplete-wrapper"></div>
+          </div>
+          <p class="govuk-body">
+            <a href="#" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
+          </p>
+        </div>
+        <div id="third-nationality" class="third-nationality" style="display: none">
+          <div class="govuk-form-group ">
+            <label for="autocomplete-default" class="govuk-label">Third nationality (if relevant)</label>
+            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of your own country and two other countries.</p>
+            <div id="nationalityThree" class="autocomplete-wrapper"></div>
+          </div>
+        </div> 
+  
+  
+
+  {{ govukDateInput({
+    id: "dob",
+    namePrefix: "dob",
+    fieldset: {
+    legend: {
+    text: "Date of birth"
+    }
+  },
+    hint: {
+    text: "For example, 27 3 1995.\nOnly the director's month and year of birth will be shown on the online register." | striptags(true) | escape | nl2br
+  }
+  }) }}
+
+<div class="govuk-!-padding-bottom-6">
+  <label for="autocomplete-default" class="govuk-label">Occupation</label>
+  <p class="govuk-hint">Start typing an occupation (for example, carpenter), then choose from the list. If your occupation is not shown, you can enter it directly into the box.<br>This is optional. If you do not enter anything, we'll show the director's occupation as 'none' on the public Companies House register. </p>
+<div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
+  </div>
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="director-appointed-hint">
+    <legend class="govuk-fieldset__legend">
+    When was the director appointed?
+    </legend>
+<div id="director-appointed-hint" class="govuk-hint">
+    For example, 27 1 2022
+</div>
+<div class="govuk-date-input" id="director-appointed">
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="director-appointed-day">
+    Day
+    </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-day" name="director-appointed-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+</div>
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="director-appointed-month">
+    Month
+    </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-month" name="director-appointed-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+</div>
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="director-appointed-year">
+    Year
+    </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="director-appointed-year" name="director-appointed-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+</div>
+</div>
+</fieldset>
+</div>
+<p class="govuk-body">
+  {{ govukButton({
+      text: "Continue",
+      href: "../address-lookup/correspondence-address"
+  }) }}
+</p>
+</form>
+</div>
+</div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/occupation.js"></script>
+<script src="/public/javascripts/nationality-appoint.js"></script>
+<script src="/public/javascripts/titles.js"></script>
+
+{% endblock %}
