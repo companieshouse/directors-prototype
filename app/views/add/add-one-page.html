@@ -252,41 +252,38 @@
 <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
   </div>
 
+{{ govukDateInput({
+          id: "date-appointed",
+          namePrefix: "date-appointed",
+          fieldset: {
+          legend: {
+          text: "When was the director appointed?"
+          }
+        },
+      
+          hint: {
+            text: "For example, 27 4 2021"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-appointed-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-appointed-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-appointed-year']
+            }
+         ]
+        }) }}
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="director-appointed-hint">
-    <legend class="govuk-fieldset__legend">
-    When was the director appointed?
-    </legend>
-<div id="director-appointed-hint" class="govuk-hint">
-    For example, 27 1 2022
-</div>
-<div class="govuk-date-input" id="director-appointed">
-<div class="govuk-date-input__item">
-<div class="govuk-form-group">
-    <label class="govuk-label govuk-date-input__label" for="director-appointed-day">
-    Day
-    </label>
-<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-day" name="director-appointed-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-</div>
-<div class="govuk-date-input__item">
-<div class="govuk-form-group">
-    <label class="govuk-label govuk-date-input__label" for="director-appointed-month">
-    Month
-    </label>
-<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="director-appointed-month" name="director-appointed-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-</div>
-<div class="govuk-date-input__item">
-<div class="govuk-form-group">
-    <label class="govuk-label govuk-date-input__label" for="director-appointed-year">
-    Year
-    </label>
-<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="director-appointed-year" name="director-appointed-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-</div>
-</div>
-</fieldset>
-</div>
-<p class="govuk-body">
+
  
   {{ govukInsetText({
     html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
@@ -294,15 +291,15 @@
   }) }}
  
   {{ govukButton({
-      text: "Continue",
-      href: "../address-lookup/correspondence-address"
+      text: "Continue"
+      
   }) }}
 </p>
 </form>
 </div>
 </div>
 <script src="/public/javascripts/accessible-autocomplete.js"></script>
-<script src="/public/javascripts/occupation.js"></script>
+<script src="/public/javascripts/occupation-appoint.js"></script>
 <script src="/public/javascripts/nationality-appoint.js"></script>
 <script src="/public/javascripts/titles.js"></script>
 

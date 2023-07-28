@@ -1,6 +1,6 @@
 module.exports = function (router) {
-  // Name
-  router.get('/add/name', function (req, res) {
+ // Name
+ /* router.get('/add/name', function (req, res) {
     req.session.type = req.query.type
     // Render the confirm company page
     res.render('add/name', {
@@ -43,6 +43,54 @@ module.exports = function (router) {
         res.redirect( '/add/date-of-birth' )
     }
    
+
+  }) */
+
+
+
+
+  router.get('/add/add-one-page', function (req, res) {
+    req.session.type = req.query.type
+    // Render the confirm company page
+    res.render('add/add-one-page', {
+      // To use the company data on that page use the following
+      company: req.session.company
+    })
+  })
+  
+  //name page goes to date of appointment 
+  router.post('/add/add-one-page', function (req, res) {
+    var firstname = req.session.data['firstname']
+    var lastName = req.session.data['last-name']
+    var errors = []
+    var firstNameHasError = false
+    var lastNameHasError = false
+    
+    if (req.session.data['firstname'] === '') {
+        firstNameHasError = true
+        errors.push({
+            text: 'Enter a first name',
+            href: '#first-name'
+        })
+    }
+    if (req.session.data['last-name'] === '') {
+        lastNameHasError = true
+        errors.push({
+            text: 'Enter a last name',
+            href: '#last-name'
+        })
+    }
+    if (firstNameHasError || lastNameHasError) {
+        res.render('add/add-one-page', {
+        firstname: firstname,
+        lastName: lastName,
+            errorFirstName: firstNameHasError,
+            errorLastName: lastNameHasError,
+            errorList: errors
+        })
+    } else {
+        res.redirect( '../address-lookup/correspondence-address' )
+    }
 
   })
 
