@@ -17,7 +17,9 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-lookup-postal" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        <p class="govuk-body"> We'll use this address to send Companies House correspondence to the director.</p>
+         <div id="event-name-hint" class="govuk-hint">
+    We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.
+          </div>
         {{ govukInput({
           label: {
             text: "UK postcode"

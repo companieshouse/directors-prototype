@@ -17,7 +17,9 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-manual-postal" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        <p class="govuk-body">We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.</p>
+        <div id="event-name-hint" class="govuk-hint">
+    We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.
+          </div>
         {{ govukInput({
           label: {
             text: "Property name or number"
@@ -70,8 +72,10 @@
           id: "postcode",
           name: "postcode"
         }) }}
-        <h2 class="govuk-heading-m govuk-!-margin-top-9">What information we'll show on the public register</h2>
-        <p class="govuk-body">We will show this address on the public Companies House register.</p>
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show this address on the public Companies House register.</p>"
+        }) }}
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">

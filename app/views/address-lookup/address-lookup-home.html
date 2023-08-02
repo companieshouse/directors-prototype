@@ -17,7 +17,10 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-lookup-home" method="post">
         <h1 class="govuk-heading-l">{{title}}</h1>
-        <p class="govuk-body">Tell us where the director lives. Only give a business address if they also live there.</p>
+         <div id="event-name-hint" class="govuk-hint">
+            Tell us the director's home address. Only give a business address if they also live there.
+        </div>
+        
         {{ govukInput({
           label: {
             text: "UK postcode"
