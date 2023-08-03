@@ -28,8 +28,16 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   })
 
   router.post('/address-lookup/address-lookup-postal', function (req, res) {
-    res.redirect('/address-lookup/confirm-lookup-postal')
+    if (req.session.data['house-name'] === '') {
+      res.redirect('/address-lookup/static-list-of-postal-addresses')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/address-lookup/confirm-lookup-postal')
+    }
+    
   })
+
+
 
   //Manual address page for the home address
   router.get('/address-lookup/address-manual-home', function (req, res) {
