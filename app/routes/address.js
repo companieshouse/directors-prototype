@@ -39,6 +39,15 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
 
 
 
+  router.post('/address-lookup/static-list-of-postal-addresses', function (req, res) {
+    
+      // res.redirect goes to whichever page you want
+      res.redirect('/address-lookup/confirm-lookup-postal')
+    
+  })
+
+
+
   //Manual address page for the home address
   router.get('/address-lookup/address-manual-home', function (req, res) {
     // Render the confirm company page
@@ -58,13 +67,13 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     })
   })
 
-  router.get('/address-lookup/address-lookup-manual', function (req, res) {
+  /* router.get('/address-lookup/address-lookup-manual', function (req, res) {
     // Render the confirm company page
     res.render('address-lookup/address-lookup-manual', {
       // To use the company data on that page use the following
       company: req.session.company
     })
-  })
+  }) */
 
   router.get('/address-lookup/correspondence-address', function (req, res) {
     // Render the confirm company page
