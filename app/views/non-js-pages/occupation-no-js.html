@@ -1,0 +1,70 @@
+{% set title = "What is the director's occupation?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/job-title" method="post">
+
+
+        <div class="govuk-!-padding-bottom-6">
+          <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+          <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--l">{{title}}</label></h1>
+          <p class="govuk-body">This is optional. If you do not enter anything, we'll show the director's occupation as 'none' on the public Companies House register. 
+
+            
+<!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Occupation</h2>
+
+            <p class="govuk-hint">Start typing an occupation (for example, carpenter) then choose from the list. <br> If your occupation is not shown, you can enter it directly into the box.</p>
+          <div id="occupation" name="occupation" class="autocomplete-wrapper govuk-input--width-20"></div>
+        </div>
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %} -->
+
+        <div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="occupation">
+    Occupation
+  </label>
+  <div id="occupation-hint" class="govuk-hint">
+    Select an occupation
+  </div>
+  <select class="govuk-select" id="occupation" name="subject" aria-describedby="occupation-hint">
+    <option value="choose" selected>Choose occupation</option>
+    <option value="accountant">Accountant</option>
+    <option value="carpenter">Carpenter</option>
+    <option value="doctor">Doctor</option>
+    <option value="firefighter">Firefighter</option>
+    <option value="mechanic">Mechanic</option>
+    <option value="orthodontist">Orthodontist</option>
+    <option value="physiotherapist">Physiotherapist</option>
+    <option value="teacher">Teacher</option>
+    
+  </select>
+</div>
+
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the director's occupation on the public Companies House register.</p>"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/occupation-appoint.js"></script>
+{% endblock %}
