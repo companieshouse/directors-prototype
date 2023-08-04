@@ -1,0 +1,430 @@
+{% set title = "What is the director's name?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+{% if errorFirstName == true or errorLastName == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+
+
+      <form action="" method="post">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+
+       <!-- <div class="govuk-form-group govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label">Professional or honorary title (if relevant)</label>
+          <p class="govuk-hint">Start typing a title, such as Dr or Professor, then choose from the list.</p>
+          <div id="title" name="title" class="autocomplete-wrapper govuk-input--width-20"></div>
+        </div> -->
+
+
+       <!--  <div class="govuk-form-group">
+          <label class="govuk-label" for="title">Professional or honorary title (if relevant)</label>
+          <div id="title-hint" class="govuk-hint">
+              Select a title
+          </div>
+           <select class="govuk-select" id="title" name="title" aria-describedby="title-hint">
+            <option value="published">Recently published</option>
+        </div> -->
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "title",
+  name: "title",
+  label: {
+    text: "Professional or honorary title (if relevant)"
+  },
+    hint: {
+    text: "Select a title"
+  },
+  items: [
+    {
+      value: "",
+      text: "",
+      selected: true
+    },
+    {
+      value: "lady",
+      text: "Lady"
+    },
+    {
+      value: "lord",
+      text: "Lord"
+    },
+    {
+      value: "admiral",
+      text: "Admiral"
+    },
+    {
+      value: "commander",
+      text: "Commander"
+    },
+    {
+      value: "professor",
+      text: "Professor"
+    },
+    {
+      value: "doctor",
+      text: "Doctor"
+    },
+    {
+      value: "major",
+      text: "Major"
+    },
+    {
+      value: "duke",
+      text: "Duke"
+    },
+    {
+      value: "duchess",
+      text: "Duchess"
+    }
+  ]
+}) }}
+
+
+      <!--  {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          hint: {
+            text: "Enter the director's full first name."
+          },
+          classes: "govuk-input--width-20",
+          id: "firstname",
+          value: data['firstname'],
+          name: "firstname",
+          errorMessage: {
+          text: "Enter a first name"
+          }
+        }) }} -->
+
+        {% if errorFirstName == true %}
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            classes: "govuk-input--width-20",
+            id: "firstname",
+            name: "firstname",
+            type: "firstname",
+            value: firstname,
+            autocomplete: "firstname",
+            spellcheck: false,
+            errorMessage: {
+                    text: "Enter a first name"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            hint: {
+            text: "Enter the director's full first name."
+          },
+            classes: "govuk-input--width-20",
+            id: "firstname",
+            name: "firstname",
+            type: "firstname",
+            value: firstname,
+            autocomplete: "firstname",
+            spellcheck: false
+          }) }}
+        {% endif %}
+
+
+
+        {{ govukInput({
+          label: {
+            text: "Middle names"
+          },
+          hint: {
+            text: "Enter the director's full middle name or names."
+          },
+          classes: "govuk-input--width-20",
+          id: "middle-name",
+          value: middle-name,
+          name: "middle-name"
+        }) }}
+       
+       
+       <!-- {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "last-name",
+          value: data['last-name'],
+          name: "last-name",
+          errorMessage: {
+          text: "Enter a last name"
+          }
+        }) }} -->
+
+{% if errorLastName == true %}
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "last-name",
+            name: "last-name",
+            type: "last-name",
+            value: last-name,
+            autocomplete: "last-name",
+            spellcheck: false,
+            errorMessage: {
+                    text: "Enter a last name"
+                  }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "last-name",
+            name: "last-name",
+            type: "last-name",
+            value: last-name,
+            autocomplete: "last-name",
+            spellcheck: false
+          }) }}
+        {% endif %}
+
+
+
+
+
+        {% set previousHtml %}
+        {{ govukInput({
+          id: "previous-names",
+          name: "previous-names",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Previous names"
+          },
+          hint: {
+            text: "If the director has more than one previous name, separate each name with a comma."
+          }
+        }) }}
+      {% endset -%}
+
+
+
+      
+
+     {{ govukRadios({
+        idPrefix: "different-name",
+        name: "different-name",
+        fieldset: {
+          legend: {
+            text: "Has the director used a different name for business purposes in the last 20 years?"
+          }
+        },
+        hint: {
+          text: "For example, changed their name by deed poll or by marriage."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: previousHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }} 
+
+
+
+
+        <!-- 
+        
+        <p class="govuk-body">
+          <a href="#" id="one-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add a previous name</a>
+        </p>
+
+       
+        <div id="one-previous-name" class="one-previous-name" style="display: none">
+          <div class="govuk-form-group">
+
+            <h3 class="govuk-heading-s">Previous names</h3>
+            <div id="national-insurance-number-hint" class="govuk-hint">
+              Add a previous name if the director used a different name for business purposes in the last 20 years. For example, changed their name by deed poll or by marriage.
+            </div>
+            {{ govukInput({
+            label: {
+              text: "Previous first name (optional)"
+            },
+            hint: {
+              text: "Enter the director's full previous first name"
+            },
+            classes: "govuk-input--width-20",
+            id: "previousfirstname",
+            value: data['previous-firstname'],
+            name: "previousfirstname"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous middle name or names (optional)"
+            },
+            hint: {
+              text: "Enter the director's full previous middle name or names"
+            },
+            classes: "govuk-input--width-20",
+            id: "previousmiddle-name",
+            value: data['previous-middle-name'],
+            name: "previousmiddle-name"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous last name (optional)"
+            },
+            classes: "govuk-input--width-20",
+            id: "previouslast-name",
+            value: data['previous-last-name'],
+            name: "previouslast-name"
+          }) }} 
+
+        </div>
+
+          <p class="govuk-body">
+            <a href="#" id="second-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add another previous name</a>
+          </p>
+        </div> 
+
+        
+         <div id="second-previous-name" class="second-previous-name" style="display: none">
+          <div class="govuk-form-group">
+            <h3 class="govuk-heading-s">Other previous name</h3>
+
+            {{ govukInput({
+            label: {
+              text: "Previous first name (optional)"
+            },
+            hint: {
+              text: "Enter the director's full previous first name"
+            },
+            classes: "govuk-input--width-20",
+            id: "secondpreviousfirstname",
+            value: data['secondprevious-firstname'],
+            name: "secondpreviousfirstname"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous middle name or names (optional)"
+            },
+            hint: {
+              text: "Enter the director's full previous middle name or names"
+            },
+            classes: "govuk-input--width-20",
+            id: "secondpreviousmiddle-name",
+            value: data['secondprevious-middle-name'],
+            name: "secondpreviousmiddle-name"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous last name (optional)"
+            },
+            classes: "govuk-input--width-20",
+            id: "secondpreviouslast-name",
+            value: data['secondprevious-last-name'],
+            name: "secondpreviouslast-name"
+          }) }} 
+
+        </div>
+
+          <p class="govuk-body">
+            <a href="#" id="third-previous-name-link" class="govuk-link govuk-link--no-visited-state">Add another previous name</a>
+          </p>
+        </div>
+
+
+         
+         <div id="third-previous-name" class="third-previous-name" style="display: none">
+          <div class="govuk-form-group">
+            <h3 class="govuk-heading-s">Other previous name</h3>
+
+            {{ govukInput({
+            label: {
+              text: "Previous first name (optional)"
+            },
+            hint: {
+              text: "Enter the director's full previous first name"
+            },
+            classes: "govuk-input--width-20",
+            id: "thirdpreviousfirstname",
+            value: data['thirdprevious-firstname'],
+            name: "thirdpreviousfirstname"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous middle name or names (optional)"
+            },
+            hint: {
+              text: "Enter the director's full middle name or names"
+            },
+            classes: "govuk-input--width-20",
+            id: "thirdpreviousmiddle-name",
+            value: data['thirdprevious-middle-name'],
+            name: "thirdpreviousmiddle-name"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Previous last name (optional)"
+            },
+            classes: "govuk-input--width-20",
+            id: "thirdpreviouslast-name",
+            value: data['thirdprevious-last-name'],
+            name: "thirdpreviouslast-name"
+          }) }} 
+
+        </div>
+
+       
+        </div> -->
+
+
+        
+       
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the director's full name on the public Companies House register. We will also show the director's title and previous names, if relevant.</p>"
+        }) }}
+
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/titles-appoint.js"></script>
+{% endblock %}
