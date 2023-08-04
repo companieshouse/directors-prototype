@@ -1,0 +1,195 @@
+{% set title = "What is the director's nationality?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/nationality" method="post">
+
+
+      <!--  <div class="govuk-form-group">
+          <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+          <h1 class="govuk-label-wrapper"> <label for="nationality" class="govuk-label govuk-label--l">{{title}}</label></h1>
+          <p class="govuk-hint">Select a nationality</p> -->
+
+
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+  <label for="nationality" class="govuk-label govuk-label--l">{{title}}</label>
+  <div id="nationality-hint" class="govuk-hint">
+    Select a nationality
+  </div>
+  <select class="govuk-select" id="nationality" name="nationality" aria-describedby="nationality-hint">
+                <option value="choose" selected>Choose nationality</option>
+                <option value="albanian">Albanian</option>
+                <option value="british">British</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="irish">Irish</option>
+                <option value="japanese">Japanese</option>
+                <option value="welsh">Welsh</option>
+                <option value="scottish">Scottish</option>
+                <option value="slovenian">Slovenian</option>
+              </select> 
+</div>
+
+           <!-- <div id="nationality" class="nationality"> -->
+          
+
+        
+       
+
+     <!--  {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "nationality",
+            name: "nationality",
+            label: {
+              text: ""
+            },
+              hint: {
+              text: ""
+            },
+            items: [
+              {
+                value: "",
+                text: ""
+                
+              },
+              {
+                value: "albanian",
+                text: "Albanian"
+              },
+              {
+                value: "british",
+                text: "British"
+              },
+              {
+                value: "french",
+                text: "France"
+              },
+              {
+                value: "german",
+                text: "German"
+              },
+              {
+                value: "irish",
+                text: "Irish"
+              },
+              {
+                value: "japanese",
+                text: "Japanese"
+              },
+              {
+                value: "welsh",
+                text: "Welsh"
+              },
+              {
+                value: "scottish",
+                text: "Scottish"
+              },
+              {
+                value: "slovenian",
+                text: "Slovenian"
+              }
+            ]
+          }) }} -->
+         <!--  <div id="nationality" class="autocomplete-wrapper"></div> -->
+        
+
+
+       
+
+
+        <p class="govuk-body">
+          <a href="#" id="second-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a second nationality</a>
+        </p>
+
+
+       <div id="second-nationality" class="second-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="second-nationality" class="govuk-label">Second nationality (if relevant)</label>
+            <div id="second-nationality" class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means you can be a citizen of your own country and another country.</div>
+           <select class="govuk-select" id="second-nationality" name="second-nationality" aria-describedby="second-nationality-hint">
+                <option value="choose" selected>Choose nationality</option>
+                <option value="albanian">Albanian</option>
+                <option value="british">British</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="irish">Irish</option>
+                <option value="japanese">Japanese</option>
+                <option value="welsh">Welsh</option>
+                <option value="scottish">Scottish</option>
+                <option value="slovenian">Slovenian</option>
+              </select> 
+          </div>
+          
+        
+
+
+          <p class="govuk-body">
+            <a href="#" id="third-nationality-link" class="govuk-link govuk-link--no-visited-state">Add a third nationality</a>
+          </p>
+        </div>
+        
+
+
+        <!-- <div id="third-nationality" class="third-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="autocomplete-default" class="govuk-label">Third nationality (if relevant)</label>
+            <p class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of your own country and two other countries.</p>
+            <div id="nationalityThree" class="autocomplete-wrapper"></div>
+          </div>
+        </div> -->
+
+
+        <div id="third-nationality" class="third-nationality" style="display: none">
+          <div class="govuk-form-group">
+            <label for="third-nationality" class="govuk-label">Third nationality (if relevant)</label>
+            <div id="third-nationality" class="govuk-hint">Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of your own country and two other countries.</div>
+           <select class="govuk-select" id="third-nationality" name="third-nationality" aria-describedby="third-nationality-hint">
+                <option value="choose" selected>Choose nationality</option>
+                <option value="albanian">Albanian</option>
+                <option value="british">British</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="irish">Irish</option>
+                <option value="japanese">Japanese</option>
+                <option value="welsh">Welsh</option>
+                <option value="scottish">Scottish</option>
+                <option value="slovenian">Slovenian</option>
+              </select> 
+          </div>
+          </div>
+
+
+
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show the director's nationality on the public Companies House register.</p>"
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/nationality-appoint.js"></script>
+{% endblock %}
