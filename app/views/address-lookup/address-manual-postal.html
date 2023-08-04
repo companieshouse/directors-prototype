@@ -1,4 +1,3 @@
-
 {% set title = "What is the director's correspondence address?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
@@ -22,12 +21,7 @@
         <div id="event-name-hint" class="govuk-hint">
     We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.
           </div>
-       
-
-
-{% if data[postal-postcode] === "" %}
-
- {{ govukInput({
+        {{ govukInput({
           label: {
             text: "Property name or number"
           },
@@ -36,7 +30,6 @@
           },
           id: "propertyName",
           name: "propertyName"
-      
         }) }}
         {{ govukInput({
           label: {
@@ -80,68 +73,6 @@
           id: "postcode",
           name: "postcode"
         }) }}
-{% else %}  
-
- {{ govukInput({
-          label: {
-            text: "Property name or number"
-          },
-          hint: {
-            text: "For example, 'The Mill', '116' or 'Flat 37a'"
-          },
-          id: "propertyName",
-          name: "propertyName",
-          value: "Stornoway House"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Address line 1"
-          },
-          id: "addressOne",
-          name: "addressOne",
-          value: "13 Cleveland Row"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Address line 2 (optional)"
-          },
-          id: "addressTwo",
-          name: "addressTwo"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "City or town"
-          },
-          id: "town",
-          name: "town",
-          value: "London"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "County, state, province or region (optional)"
-          },
-          id: "county",
-          name: "county"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          id: "country",
-          name: "country"
-        }) }}
-        {{ govukInput({
-          label: {
-            text: "Postcode or ZIP"
-          },
-          id: "postcode",
-          name: "postcode",
-          value: "SW1A 1GG"
-        }) }}
-
-
-{% endif %} 
-
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
                 <p>We will show this address on the public Companies House register.</p>"
