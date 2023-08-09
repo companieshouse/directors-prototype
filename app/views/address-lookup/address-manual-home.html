@@ -19,13 +19,93 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/address-manual-home" method="post">
+
+
+
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         <h1 class="govuk-heading-l">{{title}}</h1>
         <div id="event-name-hint" class="govuk-hint">
             Tell us the director's home address. Only give a business address if they also live there.
         </div>
 
-        {{ govukInput({
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="propertyName">
+    Property name or number
+  </label>
+
+  
+  
+  <div id="propertyName-hint" class="govuk-hint">
+    For example, &#39;The Mill&#39;, &#39;116&#39; or &#39;Flat 37a&#39;
+  </div>
+
+<input class="govuk-input" id="propertyName" name="propertyName" type="text" aria-describedby="propertyName-hint">
+
+</div>
+
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressOne">
+    Address line 1
+  </label>
+
+<input class="govuk-input" id="addressOne" name="addressOne" type="text">
+
+</div>
+
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressTwo">
+    Address line 2 (optional)
+  </label>
+
+<input class="govuk-input" id="addressTwo" name="addressTwo" type="text">
+
+</div>
+
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="town">
+    City or town
+  </label>
+
+<input class="govuk-input" id="town" name="town" type="text">
+
+</div>
+
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="county">
+    County, state, province or region (optional)
+  </label>
+
+<input class="govuk-input" id="county" name="county" type="text">
+
+</div>
+
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label" for="autocomplete-default" >Country</label></h1>
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div class="autocomplete-wrapper" id="country"></div>
+
+        </div>
+
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="postcode">
+    Postcode or ZIP
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+
+</div>
+
+   <!--      {{ govukInput({
           label: {
             text: "Property name or number"
           },
@@ -77,7 +157,7 @@
         classes: "govuk-input--width-10",
         id: "postcode",
         name: "postcode"
-      }) }}
+      }) }} -->
 
 {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
@@ -92,4 +172,8 @@
       </form>
     </div>
   </div>
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/country.js"></script>
+
+
 {% endblock %}
