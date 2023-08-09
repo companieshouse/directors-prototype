@@ -1,0 +1,172 @@
+{% set title = "Where does the director live?" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/address-manual-home" method="post">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        <div id="event-name-hint" class="govuk-hint">
+            Tell us the director's home address. Only give a business address if they also live there.
+        </div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="propertyName">
+    Property name or number
+  </label>
+
+  <div id="propertyName-hint" class="govuk-hint">
+    For example, &#39;The Mill&#39;, &#39;116&#39; or &#39;Flat 37a&#39;
+  </div>
+
+<input class="govuk-input" id="propertyName" name="propertyName" type="text" aria-describedby="propertyName-hint">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressOne">
+    Address line 1
+  </label>
+
+<input class="govuk-input" id="addressOne" name="addressOne" type="text">
+
+</div>
+        
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressTwo">
+    Address line 2 (optional)
+  </label>
+
+<input class="govuk-input" id="addressTwo" name="addressTwo" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="town">
+    City or town
+  </label>
+
+<input class="govuk-input" id="town" name="town" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="county">
+    County, state, province or region (optional)
+  </label>
+
+<input class="govuk-input" id="county" name="county" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+          <label class="govuk-label" for="country" >Country</label>
+
+          <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="sort">
+              <option value="algeria">Algeria</option>
+              <option value="choose" selected>Select country</option>
+              <option value="cambodia">Cambodia</option>
+              <option value="denmark">Denmark</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="jamaica">Jamaica</option>
+          </select>
+
+        </div>
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="postcode">
+    Postcode or ZIP
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+
+</div>
+
+
+       <!--  {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
+      {{ govukInput({
+        label: {
+          text: "Address line 1"
+        },
+        id: "addressOne",
+        name: "addressOne"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Address line 2 (optional)"
+        },
+        id: "addressTwo",
+        name: "addressTwo"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "City or town"
+        },
+        id: "town",
+        name: "town"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "County, state, province or region (optional)"
+        },
+        id: "county",
+        name: "county"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Country"
+        },
+        id: "country",
+        name: "country"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Postcode or ZIP"
+        },
+        id: "postcode",
+        name: "postcode"
+      }) }} -->
+
+{{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will not show this address on the public Companies House register, unless it's also used for the company's registered office address or the director's correspondence address.</p>"
+        }) }}
+        
+      {{ govukButton({
+        text: "Continue",
+        href: "confirm-lookup-home"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/country.js"></script>
+
+{% endblock %}
