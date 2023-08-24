@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/interrupt-card" method="post">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">Before you update the director's correspondence address</h3> 
+
+        <p class="govuk-body">The director's current correspondence address is the same as the company's registered office address. </p>
+
+        <p class="govuk-body">Any changes to the registered office address currently apply to the director's correspondence address.</p>
+
+        
+        <p class="govuk-body">If you change the correspondence address you will break this link.</p>  
+
+       <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
+
+
+         
+
+<!-- added in HTML because thought that was how to make styling work, still haven't sussed it -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to update the director's correspondence address?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="update-correspondece-address" name="update-correspondence-address" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="update-correspondence-address">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="update-correspondence-address-2">
+          No, keep correspondence address the same as registered office address
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+<!-- {{ govukRadios({
+  name: "do-you-want-digital",
+  fieldset: {
+    legend: {
+      text: "Do you want to order a digital document?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }} -->
+<!-- need to add routing - take customer to basket with digital option if they say yes, take them to paper options if no -->
+
+
+
+
+
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
