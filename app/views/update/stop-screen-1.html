@@ -17,16 +17,16 @@
       <form action="/interrupt-card" method="post">
       <div class="interrupt-card">
           <h1 class="govuk-heading-l">
-            What happens if you update the director's correspondence address
+           Director's correspondence address recorded as 'same as registered office address'
           </h1>
 
-        <p class="govuk-body">The director's correspondence address is currently recorded as the 'same as the registered office address' for this company. This means that any changes made to the registered office address also apply to this address.
+        <p class="govuk-body"> This means that any updates made to the registered office address currently also apply to the correspondence address.
        </p>
 
-        <p class="govuk-body">If you update the correspondence address, it will no longer be recorded as the 'same as the registered office address'. This means that if you make changes to the registered office address in the future, they will not apply to this address. </p>  
+        <p class="govuk-body">If you update the correspondence address, it will no longer be recorded as the 'same as the registered office address'. This means that if you make updates to the registered office address in the future, they will no longer apply to the correspondence address. </p>  
 
         <div class="govuk-inset-text">
-          <p class="govuk-body">If you want to keep these addresses recorded as the 'same',
+          <p class="govuk-body">If you want to update the correspondence address, and keep these addresses recorded as the 'same',
             <a href="https://www.gov.uk/government/publications/change-a-registered-office-address-ad01" class="govuk-link" rel="noreferrer noopener" target="_blank">change the registered office address instead (opens in new tab)</a>.</p>  
         </div> 
 
@@ -40,7 +40,7 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        Do you still want to update the director's correspondence address?
+        Do you want to update the director's correspondence address?
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
@@ -48,6 +48,9 @@
         <label class="govuk-label govuk-radios__label" for="update-correspondence-address">
           Yes
         </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          This address will no longer be recorded as the 'same as the registered office address'.
+        </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
