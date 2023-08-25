@@ -17,15 +17,19 @@
       <form action="/interrupt-card" method="post">
       <div class="interrupt-card">
           <h1 class="govuk-heading-l">
-            Interview needs
+            What happens if you update the director's correspondence address
           </h1>
 
-        <p class="govuk-body">The director's current correspondence address is the same as the company's registered office address. </p>
+        <p class="govuk-body">The director's correspondence address is currently recorded as the 'same as the registered office address' for this company. This means that any changes made to the registered office address also apply to this address.
+       </p>
 
-        <p class="govuk-body">Any changes to the registered office address currently apply to the director's correspondence address.</p>
+        <p class="govuk-body">If you update the correspondence address, it will no longer be recorded as the 'same as the registered office address'. This means that if you make changes to the registered office address in the future, they will not apply to this address. </p>  
 
-        
-        <p class="govuk-body">If you change the correspondence address you will break this link.</p>  
+        <div class="govuk-inset-text">
+          <p class="govuk-body">If you want to keep these addresses recorded as the 'same',
+            <a href="https://www.gov.uk/government/publications/change-a-registered-office-address-ad01" class="govuk-link" rel="noreferrer noopener" target="_blank">change the registered office address instead (opens in new tab)</a>.</p>  
+        </div> 
+
 
        <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
 
@@ -48,7 +52,7 @@
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="update-correspondence-address-2">
-          No, keep the correspondence address the 'same as' the registered office address
+          No
         </label>
       </div>
     </div>
@@ -80,9 +84,6 @@
   ]
 }) }} -->
 <!-- need to add routing - take customer to basket with digital option if they say yes, take them to paper options if no -->
-
-
-
 
 
        {{ govukButton({
