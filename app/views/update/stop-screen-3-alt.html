@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/interrupt-card" method="post">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">What happens if you update this director's home address 
+        </h3> 
+
+        <p class="govuk-body">This address is currently recorded as the 'same as the correspondence address'. This means that any updates you make to the director's correspondence address also apply to the director's home address. </p>
+
+        <p class="govuk-body">However, if you update the home address, it will no longer be recorded as the 'same'. This means that if you make updates to the correspondence address in the future, they will no longer apply to the home address as well.</p>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">If you need to update the home address, but want to keep the addresses recorded as the 'same',
+           select 'no' and update the correspondence address instead.</p>  
+        </div> 
+        
+
+       <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
+
+
+         
+
+<!-- added in HTML because thought that was how to make styling work, still haven't sussed it -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to update this director's home address?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="update-correspondece-address" name="update-correspondence-address" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="update-correspondence-address">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="update-correspondence-address-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+<!-- {{ govukRadios({
+  name: "do-you-want-digital",
+  fieldset: {
+    legend: {
+      text: "Do you want to order a digital document?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }} -->
+<!-- need to add routing - take customer to basket with digital option if they say yes, take them to paper options if no -->
+
+
+
+
+
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
