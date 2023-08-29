@@ -17,18 +17,18 @@
       <form action="/interrupt-card" method="post">
       <div class="interrupt-card">
           <h1 class="govuk-heading-l">
-           Correspondence address recorded as 'same as registered office address'
+           What happens if you update the correspondence address for this company
           </h1>
 
-        <p class="govuk-body">Any updates made to the company's registered office address currently also apply to the director's correspondence address.
-       </p>
+          <p class="govuk-body">This address is currently recorded as the 'same as the registered office address'. This means that any updates you make to the company's registered office address also apply to the director's correspondence address.
+          </p>
 
-        <p class="govuk-body">If you update this address, it will no longer be recorded as the 'same as the registered office address'. </p>  
-        <p class="govuk-body">This means that if you make updates to the registered office address in the future, they will no longer apply to the correspondence address. </p>  
+        <p class="govuk-body">However, if you update the correspondence address, it will no longer be recorded as the 'same'. This means that if you make updates to the registered office address in the future, you'll have to update the correspondence address manually instead. </p>  
+       
 
         <div class="govuk-inset-text">
-          <p class="govuk-body">If you want to update the correspondence address, and keep these addresses recorded as the 'same',
-            <a href="https://www.gov.uk/government/publications/change-a-registered-office-address-ad01" class="govuk-link" rel="noreferrer noopener" target="_blank">change the registered office address instead (opens in new tab)</a>.</p>  
+          <p class="govuk-body">If you need to update the correspondence address, but want to keep the addresses recorded as the 'same',
+            <a href="https://www.gov.uk/government/publications/change-a-registered-office-address-ad01" class="govuk-link" rel="noreferrer noopener" target="_blank">update the registered office address instead (opens in new tab)</a>.</p>  
         </div> 
 
 
@@ -49,9 +49,10 @@
         <label class="govuk-label govuk-radios__label" for="update-correspondence-address">
           Yes
         </label>
+        <!--
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          This means this address will no longer be recorded as the 'same as the registered office address'.
-        </div>
+         Hidden - will see if this hint text is needed following user testing. This means this address will no longer be recorded as the 'same as the registered office address'.
+        </div>-->
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
