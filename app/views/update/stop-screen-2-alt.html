@@ -16,25 +16,9 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/interrupt-card" method="post">
       <div class="interrupt-card">
-        <h1 class="govuk-heading-l">What happens if you update this director's correspondence address</h3> 
+        <h1 class="govuk-heading-l">How this address is currently recorded</h3> 
 
         <p class="govuk-body">This address is currently recorded as the 'same as the home address'. This means that any updates you make to the director's correspondence address also apply to the director's home address. </p>
-
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I no longer want the correspondence address recorded as the 'same as the home address'
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            You need to update the director's home address first. After we've accepted the filing, come back and update their correspondence address.
-          </div>
-
-          <div class="govuk-details__text">
-            If the director's home address has not changed, enter their existing home address in the update. 
-          </div>
-        </details>
-
 
 
        <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
@@ -47,7 +31,7 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h1 class="govuk-fieldset__heading">
-        Do you want to update the director's correspondence address?
+        Do you want the correspondence address to remain recorded as the 'same as the home address'?
       </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
@@ -57,15 +41,18 @@
           Yes
         </label>
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          The update will also apply to the director's home address.
+          Updates to the director's correspondence address will also apply to their home address.
          </div>
       </div>
       
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="update-correspondence-address-2" name="update-correspondence-address" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="update-correspondence-address-2">
-          No, go back
+          No
         </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Updates to the director's correspondence address will no longer apply to their home address as well.
+         </div>
       </div>
     </div>
 
@@ -100,10 +87,13 @@
 
 
 
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 
-       {{ govukButton({
-          text: "Continue"
-        }) }}
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
 
       </div>
 
