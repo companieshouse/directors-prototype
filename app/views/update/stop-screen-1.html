@@ -14,8 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/interrupt-card" method="post">
-      <div class="interrupt-card">
+      <form action="/address-lookup-update-journey/address-lookup-postal" method="post">
           <h1 class="govuk-heading-l">
             How the director's correspondence address is currently recorded
           </h1>
@@ -44,9 +43,9 @@
         Do you want to update the director's correspondence address?
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="update-correspondece-address" name="update-correspondence-address" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="update-correspondence-address">
+      <div class="govuk-radios__item" >
+        <input class="govuk-radios__input" id="update-correspondece-address" name="update-correspondence-address" type="radio" value="yes" >
+        <label class="govuk-label govuk-radios__label" for="update-correspondence-address" >
           Yes
         </label>
         <!--
@@ -72,23 +71,25 @@
   name: "do-you-want-digital",
   fieldset: {
     legend: {
-      text: "Do you want to order a digital document?",
+      text: "Do you want to update the director's correspondence address?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      href: "address-lookup-update-journey/address-lookup-postal"
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      href: "change"
     }
   ]
-}) }} -->
-<!-- need to add routing - take customer to basket with digital option if they say yes, take them to paper options if no -->
+}) }}  -->
+
 
 
        {{ govukButton({
