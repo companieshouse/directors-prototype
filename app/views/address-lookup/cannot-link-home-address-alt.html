@@ -17,10 +17,10 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/address-lookup/link-home-address" method="post">
        
-         <!--  <h1 class="govuk-heading-l">We cannot link the director's home address to the correspondence address</h1>
-          <p class="govuk-body">The director's correspondence address is already linked to the registered office address. For security reasons, this means that we cannot link the correspondence address to the director's home address.</p> -->
+         <h1 class="govuk-heading-l">We cannot link the director's home address to the correspondence address</h1>
+          <p class="govuk-body">The director's correspondence address is already linked to the registered office address. For security reasons, this means that we cannot link the correspondence address to the director's home address.</p> 
         
-          {{ govukRadios({
+         <!-- {{ govukRadios({
             classes: "govuk-radios--inline",
             idPrefix: "link-home-address",
             name: "link-home-address",
@@ -44,7 +44,7 @@
                 text: "No"
               }
             ]
-          }) }}
+          }) }} -->
        
         {{ govukButton({
           text: "Continue"
