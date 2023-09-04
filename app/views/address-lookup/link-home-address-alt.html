@@ -1,4 +1,4 @@
-{% set title = "Do you want us to link the director's home address to the correspondence address?" %}
+{% set title = "If the director's correspondence address changes in the future, do you want this to apply to their home address too?" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -26,25 +26,28 @@
             name: "link-home-address",
             fieldset: {
               legend: {
-                text: "Do you want us to link the director's home address to the correspondence address?",
+                text: "If the director's correspondence address changes in the future, do you want this to apply to their home address too?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            hint: {
-              text: "This means that future changes to the correspondence address will also apply to the director's home address"
-            },
             items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
-          }) }}
+    {
+      value: "government-gateway",
+      text: "Yes",
+      hint: {
+        text: "The director's home address will be recorded as the 'same as the correspondence address'. This means future changes will also apply to the director's home address."
+      }
+    },
+    {
+      value: "govuk-one-login",
+      text: "No",
+      hint: {
+        text: "You’ll have to update the director's home address manually if their correspondence address changes."
+      }
+    }
+  ]
+}) }}
        
         {{ govukButton({
           text: "Continue"
