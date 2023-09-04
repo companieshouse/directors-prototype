@@ -287,59 +287,15 @@
         <h2 class="govuk-heading-m">Director's addresses</h2>
         <dl class="govuk-summary-list">
 
-
-
-          <div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Correspondence address
+             Change address details
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if (data['correspondence-address'] === "different-address") %}
-                {{data['postcode'] | reverse}}
-              {% else %}
-                The correspondence address is the same as the registered office address
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/address-lookup/correspondence-address">
-              Change<span class="govuk-visually-hidden"> correspondence address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Home address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if (data['home-address'] === "different-address") %}
-                70 Wentloog Road, <br> Rumney, <br> Cardiff, <br> Wales <br>CF3 3EA
+            
+                
 
-              {% elif (data['home-address'] === "correspodence-address")%}
-                {% if (data['link-home-address'] === "yes") %}
-                  The home address is the same as the correspondence address
-              {% else %}
-                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London {{data['home-postcode']}}
-          {% endif %}
-
-              {% else %}
-
-          {% if company.registered_office_address.address_line_1 %}
-            {{company.registered_office_address.address_line_1}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.address_line_2 %}
-            {{company.registered_office_address.address_line_2}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.region %}
-            {{company.registered_office_address.region}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.locality %}
-            {{company.registered_office_address.locality}}<br/>
-          {% endif %}
-          {% if company.registered_office_address.postal_code %}
-            {{company.registered_office_address.postal_code}}
-          {% endif %}
-
-              {% endif %}
+            
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -347,6 +303,57 @@
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-left-">
+              {% if (data['correspondence-address'] === "different-address") %}
+                {{data['postcode'] | reverse}}
+              {% else %}
+                The correspondence address is the same as the registered office address
+              {% endif %}
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/address-lookup/correspondence-address">
+              Change<span class="govuk-visually-hidden"> correspondence address</span>
+              </a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+            
+                70 Wentloog Road, <br> Rumney, <br> Cardiff, <br> Wales <br>CF3 3EA
+
+            
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd> -->
+          </div>
+
+        <!--   <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Change address details
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Make a change to the director's addresses
+                
+
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div> -->
           </dl>
 
         {{ govukCheckboxes({
