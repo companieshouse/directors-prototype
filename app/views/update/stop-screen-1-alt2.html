@@ -14,8 +14,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/interrupt-card" method="post">
-      <div class="interrupt-card">
+      <form action="/address-lookup-update-journey/address-lookup-postad" method="post">
+      
           <h1 class="govuk-heading-l">
             Correspondence address details
           </h1>
@@ -77,7 +77,8 @@
 
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Continue"
+    text: "Continue",
+    href: "address-lookup-update-journey/address-lookup-postal"
   }) }}
 
   <a class="govuk-link" href="#">Cancel</a>
