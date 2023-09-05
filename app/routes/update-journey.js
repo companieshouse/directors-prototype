@@ -94,6 +94,9 @@ module.exports = function (router) {
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
+
+
+
   //Updating the nationality of the director page
   router.get('/update/nationality', function (req, res) {
     req.session.redirect = req.query.officer
