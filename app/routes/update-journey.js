@@ -138,5 +138,9 @@ module.exports = function (router) {
     res.redirect('/address-lookup-update-journey/confirm-lookup-postal')
   })
   
+  //trying to route to a correct confirmation page but can't make it work! 
+  router.post('/check-your-answers-alt', function (req, res) {
 
+    res.redirect('/confirmation-update')
+  })
 }

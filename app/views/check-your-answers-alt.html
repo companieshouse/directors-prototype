@@ -16,6 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+ <form action="/check-your-answers-alt" method="post">
 <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
 
 
@@ -44,11 +45,11 @@
 
         <tr class="govuk-table__row">
 
-          <th scope="row" class="govuk-table__header">Name</th>
+          <th scope="row" class="govuk-table__header">Address</th>
 
-          <td class="govuk-table__cell">Kathryn Rebecca Davis</td>
+          <td class="govuk-table__cell">Same as registered office address</td>
 
-          <td class="govuk-table__cell">{{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}</td>
+          <td class="govuk-table__cell">Stornoway House <br> 13 Cleveland Row <br> London <br> SW1A 1GG</td>
 
           <td class="govuk-table__cell"><a class="govuk-link" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
 
@@ -88,8 +89,7 @@
 
 
       {{ govukButton({
-        text: "Confirm and submit",
-        href: "confirmation"
+        text: "Confirm and submit"
       }) }}
     </form>
     </div>
