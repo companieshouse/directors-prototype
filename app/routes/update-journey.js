@@ -115,4 +115,28 @@ module.exports = function (router) {
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
+
+  // address routing
+
+  router.post('/update/stop-screen-1-alt2', function (req, res) {
+
+    res.redirect('/address-lookup-update-journey/address-lookup-postal')
+  })
+
+  router.post('/address-lookup-update-journey/address-lookup-postal', function (req, res) {
+    if (req.session.data['house-name'] === '') {
+      res.redirect('/address-lookup-update-journey/static-list-of-addresses')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/address-lookup-update-journey/confirm-lookup-postal')
+    }
+    
+  })
+
+  router.post('/address-lookup-update-journey/static-list-of-addresses', function (req, res) {
+
+    res.redirect('/address-lookup-update-journey/confirm-lookup-postal')
+  })
+  
+
 }
