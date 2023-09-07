@@ -1,0 +1,41 @@
+{% set title = "Confirm where the director lives" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/confirm-lookup-home" method="post">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        <ul class="govuk-list">
+          <li>70 Wentloog Road</li>
+          <li>Rumney</li>
+          <li>Cardiff</li>
+          <li>Wales</li>
+          <li>CF3 3EA</li>
+        </ul>
+        <p> <a href="address-manual-home">Edit address</a> </p>
+
+{{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will not show this address on the public Companies House register, unless it's also used for the company's registered office address or the director's correspondence address.</p>"
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm and continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
