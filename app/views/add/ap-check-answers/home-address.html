@@ -16,72 +16,41 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/add/ap-check-answers/home-address" method="post">
-        {# Get the registered office address #}
+       
 
-        {# Radio options to select the home address #}
-        {# If condition to see if the correspondence address is the same as the RO #}
-        {% if (data['correspondence-address'] === "registered-office-address")%}
 
-        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+{{ govukRadios({
+  idPrefix: "home-address",
+  name: "home-address",
+  hint: {
+  text: "Tell us the director's home address. Only give a business address if they also live there."
+        },
 
-          {{ govukRadios({
-            idPrefix: "home-address",
-            name: "home-address",
-            hint: {
-              text: "Tell us the director's home address. Only give a business address if they also live there."
-            },
-            fieldset: {
-              legend: {
-                text: title,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "registered-office-address",
-                text: "15 New Road, Cardiff, Wales CF5 1BR"
-              },
-              {
-                value: "different-address",
-                text: "A different address"
-              }
-            ]
-          }) }}
-        {# If not then show the RO, correspondence and a different address options #}
-        {% else %}
-        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
-          {{ govukRadios({
-            idPrefix: "home-address",
-            name: "home-address",
-            hint: {
-              text: "Tell us the director's home address. Only give a business address if they also live there."
-            },
-            fieldset: {
-              legend: {
-                text: title,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "registered-office-address",
-                text: "15 New Road, Cardiff, Wales CF5 1BR"
-              },
-              {
-                value: "correspodence-address",
-                html: "70 Wentloog Road, Rumney, Cardiff, Wales, CF3 3EA"
-              },
-              {
-                value: "different-address",
-                text: "A different address"
-              }
-            ]
-          }) }}
-
-        {% endif %}
-        {# What information will be on the register #}
+  fieldset: {
+    legend: {
+      text: title,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "registered-office",
+      text: "15 New Road, Cardiff, Wales CF5 1BR"
+    },
+    {
+      value: "correspondence-address",
+      text: "70 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+    },
+    {
+      value: "different-address",
+      text: "A different address"
+    }
+  ]
+}) }}
+      
+   
+        
 
         {{ govukInsetText({
           html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
