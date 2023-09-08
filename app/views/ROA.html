@@ -1,0 +1,77 @@
+{% set title = "Change of registered office address" %}
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Find and update company information
+  Find and update company information
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/ROA" method="post">
+    
+<h1 class="govuk-heading-xl">Change of registered office address</h1>
+
+<p class="govuk-hint">Current address<br> 27 Orchard Lane, London, England, SW1P 8PL</p>
+
+{% call govukFieldset({
+  legend: {
+    text: "What is the new address of the company?",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: "Building name or number"
+    },
+    id: "address-line-1",
+    name: "addressLine1",
+    autocomplete: "address-line1"
+  }) }}
+
+  
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "addressPostcode",
+    autocomplete: "postal-code"
+  }) }}
+
+  <p class="govuk-body">
+  <a href="#" class="govuk-link">Find address</a>
+</p>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">Enter address manually</a>
+</p>
+
+{% endcall %}
+
+
+        {{ govukButton({
+          text: "Submit changes"
+        }) }}
+
+        <p class="govuk-body">
+  <a href="#" class="govuk-link">Cancel</a>
+</p>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
