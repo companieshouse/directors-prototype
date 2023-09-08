@@ -15,7 +15,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-    <!-- when this is in, it takes you to the date of change page <form action="../update/change" method="post"> -->
+      <form action="/address-lookup-update-journey/confirm-lookup-postal" method="post">
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         <h1 class="govuk-heading-l">{{title}}</h1>
        
@@ -50,8 +50,7 @@
           </div>
         </details>
         {{ govukButton({
-          text: "Confirm and continue",
-          href: "../update/change"
+          text: "Confirm and continue"
         }) }}
 
       </form>

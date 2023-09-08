@@ -137,6 +137,22 @@ module.exports = function (router) {
 
     res.redirect('/address-lookup-update-journey/confirm-lookup-postal')
   })
+
+
+  //setting the flag for address changes made 
+  router.post('/address-lookup-update-journey/confirm-lookup-postal', function (req, res) {
+
+    // set the addressChangesMade flag to TRUE
+    req.session.data['addressChangesMade'] = true;
+
+    //go to the update page
+    res.redirect('/update/change')
+  })
+
+
+ 
+
+
   
   //trying to route to a correct confirmation page but can't make it work! 
   router.post('/check-your-answers-alt', function (req, res) {
