@@ -342,7 +342,7 @@ router.post('/add/ap-check-answers/home-address', function (req, res) {
     res.redirect('/new-check-your-answers')
   } else {
     // res.redirect goes to whichever page you want
-    res.redirect('/new-check-your-answers')
+    res.redirect('/add/ap-check-answers/link-home-address')
   }
 })
 
@@ -369,6 +369,10 @@ router.post('/add/ap-check-answers/confirm-lookup-home', function (req, res) {
 
 router.post('/add/ap-check-answers/static-list-of-addresses', function (req, res) {
   res.redirect('/add/ap-check-answers/confirm-lookup-home')
+})
+
+router.post('/add/ap-check-answers/link-home-address', function (req, res) {
+  res.redirect('/new-check-your-answers')
 })
 
 }
