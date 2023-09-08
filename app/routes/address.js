@@ -303,17 +303,7 @@ router.post('/add/ap-check-answers/address-lookup-postal', function (req, res) {
   
 })
 
-//look up home address routing - why isn't this working
 
-router.post('/add/ap-check-answers/address-lookup-home', function (req, res) {
-  if (req.session.data['house-name'] === '') {
-    res.redirect('/add/ap-check-answers/static-list-of-addresses')
-  } else {
-    // res.redirect goes to whichever page you want
-    res.redirect('/add/ap-check-answers/confirm-lookup-home')
-  }
-  
-})
 
 
 // from static list postal to confirm
@@ -357,11 +347,11 @@ router.post('/add/ap-check-answers/home-address', function (req, res) {
 })
 
 router.post('/add/ap-check-answers/address-lookup-home', function (req, res) {
-  if (req.session.data['house-name'] === '') {
-    res.redirect('/add/ap-check-answers/static-list-of-postal-addresses')
+  if (req.session.data['home-propertyname'] === '') {
+    res.redirect('/add/ap-check-answers/static-list-of-addresses')
   } else {
     // res.redirect goes to whichever page you want
-    res.redirect('/add/ap-check-answers/confirm-lookup-postal')
+    res.redirect('/add/ap-check-answers/confirm-lookup-home')
   }
   
 })
@@ -374,5 +364,11 @@ router.post('/add/ap-check-answers/confirm-lookup-home', function (req, res) {
   res.redirect('/new-check-your-answers')
 })
 
+
+
+
+router.post('/add/ap-check-answers/static-list-of-addresses', function (req, res) {
+  res.redirect('/add/ap-check-answers/confirm-lookup-home')
+})
 
 }
