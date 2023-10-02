@@ -1,0 +1,410 @@
+{% set title = "Check your answers before submitting the update" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Add the director's addresses",
+      href: "#"
+    }
+  ]
+}) }}
+ 
+    <h1 class="govuk-heading-l">Check your answers before submitting the appointment</h1>
+      
+      <h2 class="govuk-heading-m">Company details</h2>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Company number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      02050399
+    </dd>
+    </div>
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+      <dt class="govuk-summary-list__key">
+        Company name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        ZENITH PRINT (UK) LIMITED
+      </dd>
+    </div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Director details</h2>
+        <dl class="govuk-summary-list">
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add">
+              Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+       
+
+
+          {% if data['previous-names'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['previous-names']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add&#firstname">
+              Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          {% else %}
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/name?type=add&#firstname">
+              Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+         {% endif %}
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['dob-day']}}
+              {% if (data['dob-month'] === "01") or (data['dob-month'] === "1") %}
+                January
+              {% elif (data['dob-month'] === "02") or (data['dob-month'] === "2") %}
+                February
+              {% elif (data['dob-month'] === "03") or (data['dob-month'] === "3") %}
+                March
+              {% elif (data['dob-month'] === "04") or (data['dob-month'] === "4") %}
+                April
+              {% elif (data['dob-month'] === "05") or (data['dob-month'] === "5") %}
+                May
+              {% elif (data['dob-month'] === "06") or (data['dob-month'] === "6") %}
+                June
+              {% elif (data['dob-month'] === "07") or (data['dob-month'] === "7") %}
+                July
+              {% elif (data['dob-month'] === "08") or (data['dob-month'] === "8") %}
+                August
+              {% elif (data['dob-month'] === "09") or (data['dob-month'] === "9") %}
+                September
+              {% elif (data['dob-month'] === "10") %}
+                October
+              {% elif (data['dob-month'] === "11") %}
+                November
+              {% elif (data['dob-month'] === "12") %}
+                December
+              {% else %}
+                {{data['dob-month']}}
+              {% endif %}
+              {{data['dob-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-birth?type=add&#dob">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date appointed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['date-appointed-day']}}
+              {% if (data['date-appointed-month'] === "01") or (data['date-appointed-month'] === "1") %}
+                January
+              {% elif (data['date-appointed-month'] === "02") or (data['date-appointed-month'] === "2") %}
+                February
+              {% elif (data['date-appointed-month'] === "03") or (data['date-appointed-month'] === "3") %}
+                March
+              {% elif (data['date-appointed-month'] === "04") or (data['date-appointed-month'] === "4") %}
+                April
+              {% elif (data['date-appointed-month'] === "05") or (data['date-appointed-month'] === "5") %}
+                May
+              {% elif (data['date-appointed-month'] === "06") or (data['date-appointed-month'] === "6") %}
+                June
+              {% elif (data['date-appointed-month'] === "07") or (data['date-appointed-month'] === "7") %}
+                July
+              {% elif (data['date-appointed-month'] === "08") or (data['date-appointed-month'] === "8") %}
+                August
+              {% elif (data['date-appointed-month'] === "09") or (data['date-appointed-month'] === "9") %}
+                September
+              {% elif (data['date-appointed-month'] === "10")%}
+                October
+              {% elif (data['date-appointed-month'] === "11")%}
+                November
+              {% elif (data['date-appointed-month'] === "12")%}
+                December
+              {% else %}
+                {{data['date-appointed-month']}}
+              {% endif %}
+              {{data['date-appointed-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/date-of-appointment?type=add">
+              Change<span class="govuk-visually-hidden"> appointed on date</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {% if data['nationalityAppoint'] %}
+              {{data['nationalityAppoint'] | first}}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/add?type=add&#nationality">
+              Change<span class="govuk-visually-hidden"> nationality</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Occupation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['occupationAppoint']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/add/job-title?type=add&#occupation">
+              Change<span class="govuk-visually-hidden"> occupation title</span>
+              </a>
+            </dd>
+          </div>
+
+         <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['correspondence-address'] === "different-address") %}
+                {{data['postcode'] | reverse}}
+              {% else %}
+                The correspondence address is the same as the registered office address
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/address-lookup/correspondence-address">
+              Change<span class="govuk-visually-hidden"> correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if (data['home-address'] === "different-address") %}
+                70 Wentloog Road, <br> Rumney, <br> Cardiff, <br> Wales <br>CF3 3EA
+
+              {% elif (data['home-address'] === "correspodence-address")%}
+                {% if (data['link-home-address'] === "yes") %}
+                  The home address is the same as the correspondence address
+              {% else %}
+                 {{data['home-propertyname']}} Stornoway House, Cleveland Row, London {{data['home-postcode']}}
+          {% endif %}
+
+              {% else %}
+
+          {% if company.registered_office_address.address_line_1 %}
+            {{company.registered_office_address.address_line_1}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.address_line_2 %}
+            {{company.registered_office_address.address_line_2}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.region %}
+            {{company.registered_office_address.region}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.locality %}
+            {{company.registered_office_address.locality}}<br/>
+          {% endif %}
+          {% if company.registered_office_address.postal_code %}
+            {{company.registered_office_address.postal_code}}
+          {% endif %}
+
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div> -->
+
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has the director applied to protect their details at Companies House?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['243Appoint']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          
+        </dl>
+
+
+       <!-- <h2 class="govuk-heading-m">Director's addresses</h2> -->
+        
+        <dl class="govuk-summary-list">
+<div class="govuk-form-group govuk-form-group--error">   
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-heading-m">
+             Address details
+            </dt>
+         
+            <dd class="govuk-summary-list__value govuk-visually-hidden">
+            Change the director's address details
+                
+
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add/ap-check-answers/correspondence-address">
+              Change<span class="govuk-visually-hidden"> the director's address details. </span>
+              </a>
+            </dd>
+
+            
+
+            
+          </div>
+          
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-left-">
+              <p id="national-insurance-number-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter an address
+              </p>
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/address-lookup/correspondence-address">
+              Change<span class="govuk-visually-hidden"> correspondence address</span>
+              </a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+            <p id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter an address
+  </p>
+                
+
+            
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd> -->
+          </div>
+          </div>
+
+        <!--   <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Change address details
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Make a change to the director's addresses
+                
+
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div> -->
+          </dl>
+
+        {{ govukCheckboxes({
+          idPrefix: "director-consent",
+          name: "director-consent",
+          fieldset: {
+            legend: {
+              text: "Consent to act as a director",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "By submitting this information, you are confirming that the person named has consented to act as a director."
+            }
+          ]
+        }) }}
+      
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm and submit",
+          href: "confirmation"
+        }) }}
+      
+        <a class="govuk-link" href="directors">Cancel</a>
+      </div> 
+
+     
+
+    </form>
+
+
+    </div>
+  </div>
+{% endblock %}
