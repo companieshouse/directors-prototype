@@ -28,6 +28,8 @@
           text: "Any updates made to a director's details are pending until submitted and accepted."
         }) }}
 
+<h2 class="govuk-heading-m">Director details</h2>
+
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -88,8 +90,45 @@
                 </a>
               </dd>
             </div>
+            </dl>
 
 
+<dl class="govuk-summary-list">
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-heading-m">
+             Address details
+            </dt>
+            
+            <dd class="govuk-summary-list__value govuk-visually-hidden">
+            Change the director's address details
+                
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add/ap-check-answers/correspondence-address">
+              Update<span class="govuk-visually-hidden"> the director's address details. </span>
+              </a>
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+                
+                
+
+               <!-- If the variable gChangesMade = TRUE then show the following... -->
+               {% if data['addressChangesMade'] == true %}
+                  
+               <div class="changes-made">
+                 <strong class="govuk-tag govuk-tag--blue">
+                   Details updated
+                 </strong>
+                 
+                 <p class="govuk-body-s">Pending until submitted and accepted</p>
+               </div>
+               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+               {% endif %}
+              </dd>
+          </div>
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -132,25 +171,7 @@
               
              
                
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="stop-screen-1-alt2">
-                  Update<span class="govuk-visually-hidden"> correspondence address</span>
-                </a>
-                <dd class="govuk-summary-list__value">
-
-               <!-- If the variable gChangesMade = TRUE then show the following... -->
-               {% if data['addressChangesMade'] == true %}
-                  
-               <div class="changes-made">
-                 <strong class="govuk-tag govuk-tag--blue">
-                   Details updated
-                 </strong>
-                 
-                 <p class="govuk-body-s">Pending until submitted and accepted</p>
-               </div>
-               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
-               {% endif %}
-              </dd>
+              
 
             </div>
             <div class="govuk-summary-list__row">
@@ -161,10 +182,10 @@
                 72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="javascript: void(0);">
-                  Update<span class="govuk-visually-hidden"> home address</span>
-                </a>
+                
               </dd>
+
+              
             </div>
 
             
