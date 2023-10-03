@@ -191,4 +191,15 @@ module.exports = function (router) {
       res.redirect('/update/update-address/link-correspondence-address-alt2')
     }
   })
+
+
+//from link ROA/CA page to home address page
+ router.post('/update/update-address/link-correspondence-address-alt2', function (req, res) {
+  res.redirect('/update/update-address/home-address1')
+ })
+
+
+ 
+  
+
 }
