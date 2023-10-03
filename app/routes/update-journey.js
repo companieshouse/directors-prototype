@@ -161,6 +161,9 @@ module.exports = function (router) {
   })
 
 
+
+
+
   // update address journey
 
   // linking from correspondence picker page to either link ROA/CA page or to correspondence look up page
@@ -199,6 +202,36 @@ module.exports = function (router) {
  })
 
 
+
+
+// linking from home picker page 1 to home look up
+  router.post('/update/update-address/home-address1', function (req, res) {
+    // Create a variable called errors
+    const errors = []
+  
+    // Create an if condition
+    // In this if condition it is checking if radio-input is blank
+    if (typeof req.session.data['home-address1'] === 'undefined') {
+      // If it is blank then update the errors variable with the error text
+      errors.push({
+        text: 'Select an option',
+        href: '#home-address1'
+      })
+      // Show the user the radio input page again
+      res.render('/home-address1', {
+        // Declare there are errors
+        errorRadio: true,
+        // List all of the errors on the page
+        errorList: errors
+      })
+    // If everything is fine then do this
+    } if (req.session.data['home-address1'] === 'registered-office-address') {
+      res.redirect('/update/change')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/update/update-address/address-lookup-home')
+    }
+  })
  
   
 
