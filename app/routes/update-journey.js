@@ -232,7 +232,116 @@ module.exports = function (router) {
       res.redirect('/update/update-address/address-lookup-home')
     }
   })
- 
+
+
+  //linking from correspondence look up page
+  router.post('/update/update-address/address-lookup-postal', function (req, res) {
+    if (req.session.data['house-name'] === '') {
+      res.redirect('/update/update-address/static-list-of-postal-addresses')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/update/update-address/confirm-lookup-postal')
+    }
+    
+  })
+
+
+
+  //from static list of postal addresses to confirm
+ router.post('/update/update-address/static-list-of-postal-addresses', function (req, res) {
+  // Create a variable called errors
+  const errors = []
+
+  // Create an if condition
+  // In this if condition it is checking if radio-input is blank
+  if (typeof req.session.data['where-do-you-live'] === 'undefined') {
+    // If it is blank then update the errors variable with the error text
+    errors.push({
+      text: 'Select an option',
+      href: '#where-do-you-live'
+    })
+    // Show the user the radio input page again
+    res.render('/where-do-you-live', {
+      // Declare there are errors
+      errorRadio: true,
+      // List all of the errors on the page
+      errorList: errors
+    })
+  // If everything is fine then do this
+  } if (req.session.data['where-do-you-live'] === 'wentloog1') {
+    res.redirect('/update/update-address/confirm-lookup-postal')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/update/update-address/confirm-lookup-postal')
+  }
+})
+
+
+// from confirm correspondence to where does director live 2
+router.post('/update/update-address/confirm-lookup-postal', function (req, res) {
+  res.redirect('/update/update-address/home-address2')
+ })
   
+
+
+  //from where does director live 2 to link page or end
+  router.post('/update/update-address/home-address2', function (req, res) {
+    // Create a variable called errors
+    const errors = []
+  
+    // Create an if condition
+    // In this if condition it is checking if radio-input is blank
+    if (typeof req.session.data['home-address'] === 'undefined') {
+      // If it is blank then update the errors variable with the error text
+      errors.push({
+        text: 'Select an option',
+        href: '#home-address'
+      })
+      // Show the user the radio input page again
+      res.render('/home-address', {
+        // Declare there are errors
+        errorRadio: true,
+        // List all of the errors on the page
+        errorList: errors
+      })
+    // If everything is fine then do this
+    } if (req.session.data['home-address'] === 'correspodence-address') {
+      res.redirect('/update/update-address/link-home-address-alt')
+    } if (req.session.data['home-address'] === 'different-address') {
+      res.redirect('/update/update-address/address-lookup-home')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/update/change')
+    }
+  })
+
+
+  // from link home address to change
+router.post('/update/update-address/link-home-address-alt', function (req, res) {
+  res.redirect('/update/change')
+ })
+
+
+ // from home address look up to static list or confirm
+ //linking from correspondence look up page
+ router.post('/update/update-address/address-lookup-home', function (req, res) {
+  if (req.session.data['home-propertyname'] === '') {
+    res.redirect('/update/update-address/static-list-of-addresses')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/update/update-address/confirm-lookup-home')
+  }
+  
+})
+
+// from static list of addresses to confirm hom
+router.post('/update/update-address/static-list-of-addresses', function (req, res) {
+  res.redirect('/update/update-address/confirm-lookup-home')
+ })
+
+ // from confirm home to update page
+router.post('/update/update-address/confirm-lookup-home', function (req, res) {
+  res.redirect('/update/change')
+ })
 
 }
