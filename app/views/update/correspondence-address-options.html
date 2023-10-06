@@ -1,0 +1,89 @@
+{% set title = "What is the director's correspondence address?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/correspondence-address-options" method="post">
+
+        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {# Radio options to select the correspondence address #}
+        {{ govukRadios({
+          idPrefix: "correspondence-address",
+          name: "correspondence-address",
+          fieldset: {
+            legend: {
+              text: title,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK."
+          },
+          items: [
+            
+            {
+              value: "current-correspondence-address",
+              text: "64 Zoo Lane, London, England, W1 5OO",
+              hint: {
+                text: "This is the director's current correspondence address"
+              }
+            },
+            {
+              value: "registered-office-address",
+              text: "15 New Road, Cardiff, Wales CF5 1BR",
+              hint: {
+                text: "This is the company's registered office address"
+              }
+            },
+            {
+              value: "home-address",
+              text: "13 Lucky Lane, London, England, SE13 1UC",
+              hint: {
+                text: "This is the director's current home address"
+              }
+            },
+            {
+              value: "different-address",
+              text: "A different address"
+            }
+          ]
+        }) }}
+        {# What information will be on the register #}
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public register</h2>
+                <p>We will show this address on the public Companies House register.</p>"
+        }) }}
+
+        
+          <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              My correspondence address is my home address
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We will not show your home address on the public register. However, if you use your home address as your correspondence address, we will show this on the public register.<br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>. <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
+          </div>
+        </details>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% set title = "Do you want us to link the director's home address to the correspondence address?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/link-home-address" method="post">
+       
+         <h1 class="govuk-heading-l">We cannot record the director's home address as the 'same as the correspondence address'</h1>
+          <p class="govuk-body">You've told us to record the director's correspondence address as the 'same as the registered office address'. For security reasons, this means we cannot record the director's home address as the 'same as the correspondence address'.</p> 
+        
+         <!-- {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "link-home-address",
+            name: "link-home-address",
+            fieldset: {
+              legend: {
+                text: "Do you want us to link the director's home address to the correspondence address?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "This means that future changes to the correspondence address will also apply to the director's home address"
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }} -->
+       
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

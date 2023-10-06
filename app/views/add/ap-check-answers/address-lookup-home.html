@@ -1,0 +1,53 @@
+{% set title = "Where does the director live?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/ap-check-answers/address-lookup-home" method="post">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+         <div id="event-name-hint" class="govuk-hint">
+            Tell us the director's home address. Only give a business address if they also live there.
+        </div>
+        
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+          id: "home-postcode",
+          classes: "govuk-input--width-10",
+          name: "home-postcode"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "home-propertyname",
+          classes: "govuk-input--width-10",
+          name: "home-propertyname"
+        }) }}
+        {{ govukButton({
+          text: "Find address"
+        }) }}
+        <p class="govuk-body">
+        <a href="address-manual-home" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+        </p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

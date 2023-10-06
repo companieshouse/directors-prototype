@@ -1,0 +1,58 @@
+{% set title = "If the director's correspondence address changes in the future, do you want this to apply to their home address too?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/link-home-address" method="post">
+       
+         <!--  <h1 class="govuk-heading-l">We cannot link the director's home address to the correspondence address</h1>
+          <p class="govuk-body">The director's correspondence address is already linked to the registered office address. For security reasons, this means that we cannot link the correspondence address to the director's home address.</p> -->
+        
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "link-home-address",
+            name: "link-home-address",
+            fieldset: {
+              legend: {
+                text: "If the director's correspondence address changes in the future, do you want this to apply to their home address too?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+    {
+      value: "government-gateway",
+      text: "Yes",
+      hint: {
+        text: "The director's home address will be recorded as the 'same as the correspondence address'. This means future changes will also apply to the director's home address."
+      }
+    },
+    {
+      value: "govuk-one-login",
+      text: "No",
+      hint: {
+        text: "You’ll have to update the director's home address manually if it changes."
+      }
+    }
+  ]
+}) }}
+       
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

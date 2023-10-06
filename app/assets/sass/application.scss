@@ -104,9 +104,22 @@ ul#navigation {
   color: #d4351c;
 }
 
-/* Changes made tag */
+/* Changes made tag  */
 .changes-made {
-  float:right;
   position: relative;
-  top:1.5em;
+  top: 1em;
+  margin: 0 0 0 1em;
+
+  p {
+    margin: 0.5em 0 1em 0;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .changes-made {
+    margin:-1em 0 0 0;
+    padding-bottom: 0.25em;
+  }
+}
+

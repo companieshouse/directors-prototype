@@ -253,4 +253,126 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
   router.post('/address-lookup-update-journey/address-manual-home', function (req, res) {
     res.redirect('/address-lookup-update-journey/confirm-lookup-postcode')
   })
+
+
+
+//check your answers address routing
+
+
+
+
+
+router.post('/add/ap-check-answers/correspondence-address', function (req, res) {
+  // Create a variable called errors
+  const errors = []
+
+  // Create an if condition
+  // In this if condition it is checking if radio-input is blank
+  if (typeof req.session.data['correspondence-address2'] === 'undefined') {
+    // If it is blank then update the errors variable with the error text
+    errors.push({
+      text: 'Select an option',
+      href: '#correspondence-address2'
+    })
+    // Show the user the radio input page again
+    res.render('/correspondence-address2', {
+      // Declare there are errors
+      errorRadio: true,
+      // List all of the errors on the page
+      errorList: errors
+    })
+  // If everything is fine then do this
+  } if (req.session.data['correspondence-address2'] === 'different-address2') {
+    res.redirect('/add/ap-check-answers/address-lookup-postal')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/add/ap-check-answers/link-correspondence-address-alt2')
+  }
+})
+
+
+//look up postal routing
+
+router.post('/add/ap-check-answers/address-lookup-postal', function (req, res) {
+  if (req.session.data['house-name'] === '') {
+    res.redirect('/add/ap-check-answers/static-list-of-postal-addresses')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/add/ap-check-answers/confirm-lookup-postal')
+  }
+  
+})
+
+
+
+
+// from static list postal to confirm
+router.post('/add/ap-check-answers/static-list-of-postal-addresses', function (req, res) {
+  res.redirect('/add/ap-check-answers/confirm-lookup-postal')
+})
+
+
+router.post('/add/ap-check-answers/link-correspondence-address-alt2', function (req, res) {
+  res.redirect('/add/ap-check-answers/home-address')
+})
+
+
+router.post('/add/ap-check-answers/home-address', function (req, res) {
+  // Create a variable called errors
+  const errors = []
+  // Create an if condition
+  // In this if condition it is checking if radio-input is blank
+  if (typeof req.session.data['home-address'] === 'undefined') {
+    // If it is blank then update the errors variable with the error text
+    errors.push({
+      text: 'Select an option',
+      href: '#home-address'
+    })
+    // Show the user the radio input page again
+    res.render('/home-address', {
+      // Declare there are errors
+      errorRadio: true,
+      // List all of the errors on the page
+      errorList: errors
+    })
+  // If everything is fine then do this
+  } if (req.session.data['home-address'] === 'different-address') {
+    res.redirect('/add/ap-check-answers/address-lookup-home')
+  } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
+    res.redirect('/new-check-your-answers')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/add/ap-check-answers/link-home-address')
+  }
+})
+
+router.post('/add/ap-check-answers/address-lookup-home', function (req, res) {
+  if (req.session.data['home-propertyname'] === '') {
+    res.redirect('/add/ap-check-answers/static-list-of-addresses')
+  } else {
+    // res.redirect goes to whichever page you want
+    res.redirect('/add/ap-check-answers/confirm-lookup-home')
+  }
+  
+})
+
+router.post('/add/ap-check-answers/confirm-lookup-postal', function (req, res) {
+  res.redirect('/add/ap-check-answers/home-address')
+})
+
+router.post('/add/ap-check-answers/confirm-lookup-home', function (req, res) {
+  res.redirect('/new-check-your-answers')
+})
+
+
+
+
+router.post('/add/ap-check-answers/static-list-of-addresses', function (req, res) {
+  res.redirect('/add/ap-check-answers/confirm-lookup-home')
+})
+
+router.post('/add/ap-check-answers/link-home-address', function (req, res) {
+  res.redirect('/new-check-your-answers')
+})
+
 }

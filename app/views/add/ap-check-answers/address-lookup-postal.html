@@ -1,0 +1,52 @@
+{% set title = "What is the director's correspondence address?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/add/ap-check-answers/address-lookup-postal" method="post">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+         <div id="event-name-hint" class="govuk-hint">
+    We'll use this address to send Companies House correspondence to the director. You can use a business or home address and it does not have to be in the UK.
+          </div>
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+          id: "postcode",
+          classes: "govuk-input--width-10",
+          name: "postcode"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "house-name",
+          classes: "govuk-input--width-10",
+          name: "house-name"
+        }) }}
+        {{ govukButton({
+          text: "Find address"
+        }) }}
+        <p class="govuk-body">
+          <a href="address-manual-postal" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+        </p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

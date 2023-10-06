@@ -1,0 +1,84 @@
+{% set title = "Choose an address" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/update-address/static-list-of-postal-addresses" method="post">
+  <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Choose an address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "wentloog1",
+              text: "1 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog2",
+              text: "2 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog3",
+              text: "3 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog4",
+              text: "4 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog5",
+              text: "5 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog6",
+              text: "6 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog7",
+              text: "7 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog8",
+              text: "8 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog9",
+              text: "9 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            },
+            {
+              value: "wentloog10",
+              text: "10 Wentloog Road, Rumney, Cardiff, Wales CF3 3EA"
+            }
+          ]
+        }) }}
+
+        <p> <a href="/address-lookup/address-manual-home">Enter address manually </a> </p>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

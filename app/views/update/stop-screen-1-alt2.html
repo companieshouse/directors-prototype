@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/update/stop-screen-1-alt2" method="post">
+      
+          <h1 class="govuk-heading-l">
+            Correspondence address details
+          </h1>
+
+          <p class="govuk-body">The director’s correspondence address is currently recorded as:
+          </p>
+
+          <p class="govuk-body"><strong>same as the registered office address</strong>
+          </p>
+
+          <p class="govuk-body">This means that updates you make to the company's registered office address also apply to the director's correspondence address.
+          </p>
+
+        <p class="govuk-body">However, if you update the correspondence address, it will no longer be recorded as the 'same'. This means that if you make updates to the registered office address in the future, they will no longer apply to the correspondence address as well. </p>  
+       
+
+       <p class="govuk-body">
+            <a href="/ROA" class="govuk-link" rel="noreferrer noopener" target="_blank">Update the registered office address instead (opens in a new tab)</a>.</p> 
+
+      <!--   <div class="govuk-inset-text">
+          <p class="govuk-body">If you need to update the correspondence address, but want to keep the addresses recorded as the 'same',
+            <a href="https://www.gov.uk/government/publications/change-a-registered-office-address-ad01" class="govuk-link" rel="noreferrer noopener" target="_blank">update the registered office address instead (opens in a new tab)</a>.</p>  
+        </div>  -->
+
+
+       <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
+
+
+         
+
+<!-- added in HTML because thought that was how to make styling work, still haven't sussed it -->
+
+
+
+
+
+<!-- {{ govukRadios({
+  name: "do-you-want-digital",
+  fieldset: {
+    legend: {
+      text: "Do you want to order a digital document?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }} -->
+<!-- need to add routing - take customer to basket with digital option if they say yes, take them to paper options if no -->
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+</div>
+
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -16,6 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+ <form action="/check-your-answers-alt" method="post">
+ <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED (02050399) </span>
 <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
 
 
@@ -31,11 +33,11 @@
 
       <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Type</span></th>
 
-      <th scope="col" class="govuk-table__header">Current</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
 
-      <th scope="col" class="govuk-table__header">Update to</th>
+      <th scope="col" class="govuk-table__header ">Update to</th>
 
-      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Update the details</span></th>
+      <th scope="col" class="govuk-table__header "><span class="govuk-visually-hidden">Update the details</span></th>
 
     </tr>
   </thead>
@@ -44,13 +46,13 @@
 
         <tr class="govuk-table__row">
 
-          <th scope="row" class="govuk-table__header">Name</th>
+          <th scope="row" class="govuk-table__header">Address</th>
 
-          <td class="govuk-table__cell">Kathryn Rebecca Davis</td>
+          <td class="govuk-table__cell">Correspondence address is the same as the registered office address</td>
 
-          <td class="govuk-table__cell">{{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}</td>
+          <td class="govuk-table__cell">Stornoway House, <br> 13 Cleveland Row, <br> London, <br> SW1A 1GG</td>
 
-          <td class="govuk-table__cell"><a class="govuk-link" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-!-padding-left-9" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
 
         </tr>
 
@@ -66,10 +68,10 @@
         rows: [
         {
             key: {
-              text: "Date of change"
+              text: "Date the details changed"
             },
             value: {
-              text: "23 September 2022"
+              text: "17 August 2023"
             },
             actions: {
               items: [
@@ -86,11 +88,13 @@
 
 
 
-
+<div class="govuk-button-group">
       {{ govukButton({
-        text: "Confirm and submit",
-        href: "confirmation"
+        text: "Confirm and submit"
       }) }}
+
+      <a class="govuk-link" href="directors">Cancel</a>
+</div>
     </form>
     </div>
   </div>

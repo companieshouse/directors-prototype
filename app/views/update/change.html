@@ -17,7 +17,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change" method="post">
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED (02050399) </span>
         <h1 class="govuk-heading-l">Update the director's details</h1>
+        <div id="" class="govuk-hint">
+             If you need to tell us about more than one update, and they happened on different dates, you must submit them separately.
+        </div>
+
+
+        {{ govukInsetText({
+          text: "Any updates made to a director's details are pending until submitted and accepted."
+        }) }}
+
+<h2 class="govuk-heading-m">Director details</h2>
+
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -32,21 +44,38 @@
               </a>
             </dd>
 
-            <dd class=“govuk-summary-list__value”>
-
-              <!-- If the variable gChangesMade = TRUE then show the following... -->
-              {% if data['gChangesMade'] == true %}
-                <strong class="govuk-tag govuk-tag--blue changes-made">
-                  Change made: pending
-                </strong>
-              <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
-              {% else %}
-                <!-- No changes made -->
-              {% endif %}
+            <dd class="govuk-summary-list__value">
+      
+                  <!-- If the variable gChangesMade = TRUE then show the following... -->
+                  {% if data['gChangesMade'] == true %}
+                  
+                  <div class="changes-made">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      Details updated
+                    </strong>
+                    
+                    <p class="govuk-body-s">Pending until submitted and accepted</p>
+                  </div>
+                  <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+                  {% endif %}
 
             </dd>
 
           </div>
+
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              British
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="nationality?officer={{details}}">
+                Update<span class="govuk-visually-hidden"> Nationality</span>
+              </a>
+            </dd>
+            </div>
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -61,21 +90,89 @@
                 </a>
               </dd>
             </div>
+            </dl>
+
+
+<dl class="govuk-summary-list">
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-heading-m">
+             Address details
+            </dt>
+            
+            <dd class="govuk-summary-list__value govuk-visually-hidden">
+            Change the director's address details
+                
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-address/correspondence-address">
+              Update<span class="govuk-visually-hidden"> the director's address details. </span>
+              </a>
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+                
+                
+
+               <!-- If the variable gChangesMade = TRUE then show the following... -->
+               {% if data['addressChangesMade'] == true %}
+                  
+               <div class="changes-made">
+                 <strong class="govuk-tag govuk-tag--blue">
+                   Details updated
+                 </strong>
+                 
+                 <p class="govuk-body-s">Pending until submitted and accepted</p>
+               </div>
+               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+               {% endif %}
+              </dd>
+          </div>
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Correspondence address
               </dt>
+
+              <!-- If address is changed display the updated address -->
+              {% if data['addressChangesMade'] == true %}
+
+
               <dd class="govuk-summary-list__value">
-                12 Bressenden Place<br>
+                Stornoway House, <br>
+                13 Cleveland Row,<br>
+                London<br>
+                SW1A 1GG <br>
+
+                <!-- <strong class="govuk-tag govuk-tag--turquoise">
+                  Linked to registered office address
+                </strong> -->
+          
+            </dd>
+
+
+              {% else %}
+
+              <dd class="govuk-summary-list__value">
+               <!-- 12 Bressenden Place<br>
                 London<br>
                 England<br>
-                SW1E 5DH
+                SW1E 5DH <br> -->
+
+                <!-- <strong class="govuk-tag govuk-tag--turquoise">
+                  Linked to registered office address
+                </strong> -->
+                <p class="govuk-body"> Correspondence address is the same as the registered office address </p> 
               </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="javascript: void(0);">
-                  Update<span class="govuk-visually-hidden"> correspondence address</span>
-                </a>
-              </dd>
+
+              <!-- If no changes have been made, display the default address -->
+              {% endif %}
+              
+             
+               
+              
+
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -85,25 +182,13 @@
                 72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="javascript: void(0);">
-                  Update<span class="govuk-visually-hidden"> home address</span>
-                </a>
+                
               </dd>
+
+              
             </div>
 
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              Nationality
-            </dt>
-            <dd class="govuk-summary-list__value">
-              British
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="nationality?officer={{details}}">
-                Update<span class="govuk-visually-hidden"> Nationality</span>
-              </a>
-            </dd>
-            </div>
+            
 
           </dl>
 
@@ -118,7 +203,7 @@
 
          </div>
 
-                     <p><a href="/update/confirm-update" class="govuk-link govuk-!-font-size-14 govuk-!-margin-top-9">Shortcut</a></p>
+                    <!--  <p><a href="/update/confirm-update" class="govuk-link govuk-!-font-size-14 govuk-!-margin-top-9">Shortcut</a></p> -->
 
       </div>
     </div>
