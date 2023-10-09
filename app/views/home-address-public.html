@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/home-address-public" method="post">
+          <h1 class="govuk-heading-l">
+            Home address on the public register
+          </h1>
+
+          <p class="govuk-body">You’ve used the director’s home address as their correspondence address:
+          </p>
+
+        <p class="govuk-body">4 Main Road <br> Heath <br>Cardiff<br>CF1 2AB </p>  
+       
+       <p class="govuk-body">This means that we will show this address on the Companies House public register.
+          </p>
+
+          <p class="govuk-body">A correspondence address is shown on the register for appointed and previous directors of live and dissolved companies.
+          </p>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">The director can apply to remove this address in the future if needed. There is a fee for each document on the register the address needs to be removed from.</p>  
+        </div> 
+
+
+       <!-- <p class="govuk-body">If you choose to continue, you can update the correspondence address with a new address or re use the current address, but the link will be broken.</p>   -->
+
+
+         
+
+<!-- added in HTML because thought that was how to make styling work, still haven't sussed it -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Do you still want to use this address as the director's correspondence address?
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item" >
+        <input class="govuk-radios__input" id="home-address-public" name="home-address-public" type="radio" value="yes" >
+        <label class="govuk-label govuk-radios__label" for="home-address-public" >
+          Yes
+        </label>
+        
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+         We’ll show this address on the public online register.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="home-address-public-2" name="home-address-public" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="home-address-public-2">
+          No, go back and provide a different address
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+<!-- {{ govukRadios({
+  name: "do-you-want-digital",
+  fieldset: {
+    legend: {
+      text: "Do you want to update the director's correspondence address?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      href: "address-lookup-update-journey/address-lookup-postal"
+    },
+    {
+      value: "no",
+      text: "No",
+      href: "change"
+    }
+  ]
+}) }}  -->
+
+
+
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
