@@ -17,6 +17,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/confirm-update" method="post">
+
+<h1 class="govuk-heading-l">
+            Director name updates
+          </h1>
+
+          <p class="govuk-body">You are updating the director's first name and last name:
+          </p>
+
+          <p class="govuk-body">Current: Kathryn Davis 
+          </p>
+          <p class="govuk-body">
+          Updating to: Sarah Hall
+          </p>
+
+          <p class="govuk-body">
+          We need to check if you're updating the details of an existing director, or trying to appoint a new one. This is because you're updating both names.
+          </p>
+
+
+
         {{ govukRadios({
       classes: "govuk-radios",
       name: "confirmUpdate",
@@ -24,7 +44,7 @@
         legend: {
           text: "Are you trying to appoint a new director?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
