@@ -17,75 +17,155 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
  <form action="/check-your-answers-alt" method="post">
- <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED (02050399) </span>
+ <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
 <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
 
+<h2 class="govuk-heading-m">Director details</h2>
 
-     <!-- <h2 class="govuk-heading-m">Update details</h2>-->
-
-<table class="govuk-table">
-
-  <caption class="govuk-table__caption govuk-visually-hidden">Updates</caption>
-
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Type</span></th>
-
-      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
-
-      <th scope="col" class="govuk-table__header ">Update to</th>
-
-      <th scope="col" class="govuk-table__header "><span class="govuk-visually-hidden">Update the details</span></th>
-
-    </tr>
-  </thead>
-
-  <tbody class="govuk-table__body">
-
-        <tr class="govuk-table__row">
-
-          <th scope="row" class="govuk-table__header">Address</th>
-
-          <td class="govuk-table__cell">Correspondence address is the same as the registered office address</td>
-
-          <td class="govuk-table__cell">Stornoway House, <br> 13 Cleveland Row, <br> London, <br> SW1A 1GG</td>
-
-          <td class="govuk-table__cell"><a class="govuk-link govuk-!-padding-left-9" href="name?officer={{details}}">Change<span class="govuk-visually-hidden"> name</span></a></td>
-
-        </tr>
-
-
-  </tbody>
-</table>
-
-
-
-
-  {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9 govuk-!-margin-top-9',
+{{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
         rows: [
-        {
+          {
             key: {
-              text: "Date the details changed"
+              text: "Name"
             },
             value: {
-              text: "17 August 2023"
+              text: "Kathryn Rebecca Baker"
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "Date of change"
-         }
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Nationality"
+            },
+            value: {
+              text: "British"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "nationality"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Occupation"
+            },
+            value: {
+              html: "Director"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "occupation"
+                }
               ]
             }
           }
         ]
-      }) }}
+      }) }}     
 
+
+<dl class="govuk-summary-list">
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-heading-m">
+             Address details
+            </dt>
+            
+            <dd class="govuk-summary-list__value govuk-visually-hidden">
+            Change the director's address details
+                
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-address/correspondence-address">
+              Change<span class="govuk-visually-hidden"> the director's address details. </span>
+              </a>
+            </dd>
+
+            
+          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+
+              <!-- If address is changed display the updated address -->
+              {% if data['addressChangesMade'] == true %}
+
+
+              <dd class="govuk-summary-list__value">
+                Stornoway House, <br>
+                13 Cleveland Row,<br>
+                London<br>
+                SW1A 1GG <br>
+
+                <!-- <strong class="govuk-tag govuk-tag--turquoise">
+                  Linked to registered office address
+                </strong> -->
+          
+            </dd>
+
+
+              {% else %}
+
+              <dd class="govuk-summary-list__value">
+               <!-- 12 Bressenden Place<br>
+                London<br>
+                England<br>
+                SW1E 5DH <br> -->
+
+                <!-- <strong class="govuk-tag govuk-tag--turquoise">
+                  Linked to registered office address
+                </strong> -->
+                <p class="govuk-body"> Correspondence address is the same as the registered office address </p> 
+              </dd>
+
+              <!-- If no changes have been made, display the default address -->
+              {% endif %}
+              
+             
+               
+              
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                
+              </dd>
+
+              
+            </div>
+
+            
+
+          </dl>
+
+
+
+  
 
 
 <div class="govuk-button-group">
