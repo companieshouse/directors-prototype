@@ -20,7 +20,7 @@ Example usage:
 module.exports = {
 
   "updateFirstName": "Kathryn",
-  "updateMiddleName": "",
+  "updateMiddleName": "Rebecca",
   "updateLastName": "Davis"
 
 }
