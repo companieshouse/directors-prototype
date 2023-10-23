@@ -90,20 +90,18 @@ module.exports = function (router) {
 
   router.post('/update/name', function (req, res) {
     if (req.session.data['updateFirstName'] === 'Sarah') {
+       // Regardless of changes having been made, hitting the [Comtinue] button will set the global variable gChangesMade to equal TRUE. 
+    // This will then display the CHANGES MADE tag on the next page.
+      req.session.data['gChangesMade'] = true;
       res.redirect('/update/confirm-update')
     } else {
+      req.session.data['gChangesMade'] = true;
       // res.redirect goes to whichever page you want
       res.redirect('/update/change?type=update&officer=' + req.session.redirect)
     }
     
   })
 
-  router.post('/update/name', function (req, res) {
-    // Regaedless of changes having been made, hitting the [Comtinue] button will set the global variable gChangesMade to equal TRUE. 
-    // This will then display the CHANGES MADE tag on the next page.
-    req.session.data['gChangesMade'] = true;
-    res.redirect('/update/change?type=update&officer=' + req.session.redirect)
-  })
 
   //trying to get this to work for address update journey
   //router.post('/address-lookup-update-journey/confirm-lookup-postal', function (req, res) {
