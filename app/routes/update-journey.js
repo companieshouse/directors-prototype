@@ -76,6 +76,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/job-title', function (req, res) {
+    req.session.data['gChangesMadeOccupation'] = true;
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
@@ -121,6 +122,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/nationality', function (req, res) {
+
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 

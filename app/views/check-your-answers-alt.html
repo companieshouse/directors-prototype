@@ -22,62 +22,52 @@
 
 <h2 class="govuk-heading-m">Director details</h2>
 
-{{ govukSummaryList({
-        classes: "govuk-!-margin-bottom-9",
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Kathryn Rebecca Baker"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Nationality"
-            },
-            value: {
-              text: "British"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "nationality"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Occupation"
-            },
-            value: {
-              html: "Director"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "occupation"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}     
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Nationality
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['nationalityAppoint'] }}
+     
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> nationality</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Occupation
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['occupationAppoint'] }}
+     
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> occupation</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+ 
 
 
 <dl class="govuk-summary-list">

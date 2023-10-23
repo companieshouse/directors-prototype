@@ -21,6 +21,8 @@ module.exports = {
 
   "updateFirstName": "Kathryn",
   "updateMiddleName": "Rebecca",
-  "updateLastName": "Davis"
+  "updateLastName": "Davis",
+  "nationalityAppoint":"British",
+  "occupationAppoint":"Director",
 
 }

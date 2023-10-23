@@ -68,7 +68,7 @@
               Nationality
             </dt>
             <dd class="govuk-summary-list__value">
-              British
+              {{ data['nationalityAppoint'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="nationality?officer={{details}}">
@@ -82,7 +82,8 @@
                 Occupation
               </dt>
               <dd class="govuk-summary-list__value">
-                  <p class="govuk-body">Director</p>
+                  <p class="govuk-body"> {{ data['occupationAppoint'] }}
+                  </p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="job-title?officer={{details}}">
