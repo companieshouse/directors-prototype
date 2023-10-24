@@ -119,6 +119,8 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     }
   })
 
+  /*NORMAL home address routing is below as it was in V4. Need to make changes for V5 which is using ROA as CA and home address and needs to take user to interrupt and link pages
+  
   router.post('/address-lookup/home-address', function (req, res) {
     // Create a variable called errors
     const errors = []
@@ -144,6 +146,37 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
       res.redirect('/address-lookup/home-address-public')  
     } if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
       res.redirect('/add/243')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/add/243')
+    }
+  }) */
+
+  router.post('/address-lookup/home-address', function (req, res) {
+    // Create a variable called errors
+    const errors = []
+    // Create an if condition
+    // In this if condition it is checking if radio-input is blank
+    if (typeof req.session.data['home-address'] === 'undefined') {
+      // If it is blank then update the errors variable with the error text
+      errors.push({
+        text: 'Select an option',
+        href: '#home-address'
+      })
+      // Show the user the radio input page again
+      res.render('/home-address', {
+        // Declare there are errors
+        errorRadio: true,
+        // List all of the errors on the page
+        errorList: errors
+      })
+    // If everything is fine then do this
+    } if (req.session.data['home-address'] === 'different-address') {
+      res.redirect('/address-lookup/address-lookup-home')
+    } if (req.session.data['home-address'] === 'registered-office-address') {
+      res.redirect('/address-lookup/home-address-public')  
+    /*} if ((req.session.data['home-address'] === 'registered-office-address') && (req.session.data['link-correspondence-address'] === 'yes')) {
+      res.redirect('/add/243') */
     } else {
       // res.redirect goes to whichever page you want
       res.redirect('/add/243')
