@@ -312,7 +312,8 @@
             </dt>
             <dd class="govuk-summary-list__value govuk-!-padding-left-">
               {% if (data['correspondence-address'] === "different-address") %}
-                {{data['postcode'] | reverse}}
+                <!-- {{data['postcode'] }} -->
+                Stornoway House <br> 13 Cleveland Row <br> London <br>SW1A 1GG
               {% else %}
                 The correspondence address is the same as the registered office address
               {% endif %}
@@ -329,7 +330,12 @@
             </dt>
             <dd class="govuk-summary-list__value">
             
-                Stornoway House <br> 13 Cleveland Row <br> London <br>SW1A 1GG
+                {% if (data['home-address'] === "different-address") %}
+                <!-- {{data['postcode'] }} -->
+                70 Wentloog Road <br> Rumney <br> Cardiff <br>CF3 3EA
+              {% else %}
+                15 New Road <br> Cardiff <br> Wales <br> CF5 1BR
+              {% endif %}
 
             
             </dd>
