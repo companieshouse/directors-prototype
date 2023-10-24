@@ -28,7 +28,7 @@
               value: "yes",
               text: "Yes",
               hint: {
-                text: "The director's correspondence address will be recorded as the 'same as the registered office address'. This means future changes will also apply to the director's correspondence address."
+                text: "We'll record the director's correspondence address as the 'same as the registered office address'. This means future changes will also apply to the director's correspondence address."
               }
             },
             {
@@ -40,6 +40,24 @@
             }
           ]
         }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              ‘Same as’ address options
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You can choose to record the director’s:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>correspondence address as the ‘same as the registered office address’</li>
+  <li>home address as the ‘same as the correspondence address’ </li>
+</ul>
+<p>You can only choose one of these options (or none of them). If you select ‘yes’ on this screen, we will not ask if you want to record the home address as the ‘same as the correspondence address’.</p>
+<p>If you record the home address as the ‘same as the correspondence address’, we’ll show the director’s home address on the public online register.</p>
+          </div>
+        </details>
+
         {{ govukButton({
           text: "Continue"
         }) }}
