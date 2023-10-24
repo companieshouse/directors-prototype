@@ -295,7 +295,8 @@
             
             <dd class="govuk-summary-list__value govuk-visually-hidden">
             Change the director's address details
-              
+                
+
             
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -311,10 +312,7 @@
             </dt>
             <dd class="govuk-summary-list__value govuk-!-padding-left-">
               {% if (data['correspondence-address'] === "different-address") %}
-               
-              Stornoway House<br> 13 Cleveland Row<br> London <br> SW1A 1GG
-
-        
+                {{data['postcode'] | reverse}}
               {% else %}
                 The correspondence address is the same as the registered office address
               {% endif %}
@@ -330,19 +328,8 @@
               Home address
             </dt>
             <dd class="govuk-summary-list__value">
-
-              {% if (data['home-address'] === "15-new-road") %}
-              15 New Road<br> Cardiff<br> Wales<br> CF5 1BR
-
-              {% elseif (data['home-address'] === "cleveland-row") %}
-
-              Stornoway House<br> 13 Cleveland Row<br> London <br> SW1A 1GG
-
-              {% elseif (data['home-address'] === "different-address") %}
             
-              7 Wentloog Road<br>Rumney<br>Cardiff<br>Wales<br>CF3 3EA 
-
-              {% endif %}
+                Stornoway House <br> 13 Cleveland Row <br> London <br>SW1A 1GG
 
             
             </dd>
