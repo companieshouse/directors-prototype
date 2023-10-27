@@ -40,7 +40,7 @@ module.exports = function (router) {
   })
 
   router.post('/update/date-of-change', function (req, res) {
-    res.redirect('/check-your-answers-alt')
+    res.redirect('/update/check-your-answers-alt')
   })
 
   //Updating the country of residence page
@@ -166,7 +166,7 @@ module.exports = function (router) {
 
   
   //trying to route to a correct confirmation page but can't make it work! 
-  router.post('/check-your-answers-alt', function (req, res) {
+  router.post('/update/check-your-answers-alt', function (req, res) {
 
     res.redirect('/confirmation-update')
   })
