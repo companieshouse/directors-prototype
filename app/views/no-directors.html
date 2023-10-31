@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Current directors for ZENITH PRINT (UK) LIMITED
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  <!-- Take the user to the confirm company (confirm-company) page instead of back to the previous page -->
+  <a class="govuk-back-link" href="confirm-company">Back</a>
+  {% include "includes/user-bar.html" %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">ZENITH PRINT (UK) LIMITED</span>
+      <h1 class="govuk-heading-l">Current directors</h1>
+      {{ govukButton({
+        text: "Appoint new director",
+        href: "add/name?type=add"
+      }) }} 
+
+      {{ govukWarningText({
+  text: "This company has no directors. A company with no directors risks being struck off. The company must appoint at least one director and tell Companies House within 14 days, or risk prosecution.",
+  iconFallbackText: "Warning"
+      }) }}
+
+    
+
+    </div>
+  </div>
+{% endblock %}
