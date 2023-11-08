@@ -27,6 +27,13 @@ module.exports = function (router) {
     })
   })
 
+  router.post('/update/change-no-update', function (req, res) {
+
+    res.redirect('/directors')
+  })
+
+
+
   router.post('/update/change', function (req, res) {
 
     res.redirect('/update/date-of-change')

@@ -16,7 +16,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/update/change" method="post">
+      <form action="/update/change-no-update" method="post">
       <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
         <h1 class="govuk-heading-l">View and update the director's details</h1>
         <div id="" class="govuk-hint">
@@ -44,22 +44,7 @@
               </a>
             </dd>
 
-            <dd class="govuk-summary-list__value">
-      
-                  <!-- If the variable gChangesMade = TRUE then show the following... -->
-                  {% if data['gChangesMade'] == true %}
-                  
-                  <div class="changes-made">
-                    <strong class="govuk-tag govuk-tag--blue">
-                      Details updated
-                    </strong>
-                    
-                    <p class="govuk-body-s">Pending until submitted and accepted</p>
-                  </div>
-                  <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
-                  {% endif %}
-
-            </dd>
+           
 
           </div>
 
@@ -193,13 +178,20 @@
 
           </dl>
 
-         <!-- <div class="govuk-button-group">
+          <div class="govuk-button-group">
 
             {{ govukButton({
-              text: "Continue"
-            }) }} -->
-          <p class="govuk-body">
-          <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Go back to current directors</a> </p>
+              text: "Go back to current directors",
+              classes: "govuk-button--secondary"
+            }) }} 
+
+
+
+
+
+          
+         <!-- <p class="govuk-body">
+          <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Go back to current directors</a> </p> -->
 
           </form> 
             <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
