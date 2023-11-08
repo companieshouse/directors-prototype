@@ -40,7 +40,7 @@ module.exports = function (router) {
             errorList: errors
         })
     } else {
-        res.redirect( '/add/date-of-birth' )
+        res.redirect( '/add/dates-together' )
     }
    
 
@@ -74,7 +74,7 @@ module.exports = function (router) {
       })
     })
   
-    router.post('/add/date-of-appointment', function (req, res) {
+    router.post('/add/dates-together', function (req, res) {
 
     //if the director details match an existing director, display the duplicate director soft screen
   
