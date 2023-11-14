@@ -1,0 +1,176 @@
+{% set title = "Enter the company authentication code" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{director.name}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/update/change-no-update" method="post">
+      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
+        <h1 class="govuk-heading-l">View and update the director's details</h1>
+        <div id="" class="govuk-hint">
+             If you need to tell us about more than one update, and they happened on different dates, you must submit them separately.
+        </div>
+
+
+        {{ govukInsetText({
+          text: "Any updates you make to a director's details are pending until you’ve submitted this filing, and we’ve accepted it."
+        }) }}
+
+<h2 class="govuk-heading-m">Director details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="name?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+
+           
+
+          </div>
+
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['nationalityAppoint'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="nationality?officer={{details}}">
+                Update<span class="govuk-visually-hidden"> Nationality</span>
+              </a>
+            </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupation
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  <p class="govuk-body"> {{ data['occupationAppoint'] }}
+                  </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="job-title?officer={{details}}">
+                  Update<span class="govuk-visually-hidden"> job title</span>
+                </a>
+              </dd>
+            </div>
+            </dl>
+
+
+<dl class="govuk-summary-list">
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-heading-m">
+             Address details
+            </dt>
+            
+            <dd class="govuk-summary-list__value govuk-visually-hidden">
+            Change the director's address details
+                
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="update-address/correspondence-address">
+              Update<span class="govuk-visually-hidden"> the director's address details. </span>
+              </a>
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+                
+                
+
+               <!-- If the variable gChangesMade = TRUE then show the following... -->
+               {% if data['addressChangesMade'] == true %}
+                  
+               <div class="changes-made">
+                 <strong class="govuk-tag govuk-tag--blue">
+                   Details updated
+                 </strong>
+                 
+                 <p class="govuk-body-s">Pending until submitted and accepted</p>
+               </div>
+               <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+               {% endif %}
+              </dd>
+          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+
+              
+
+              <dd class="govuk-summary-list__value">
+               This director's details are protected
+            </dd>
+
+
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                 This director's details are protected
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                
+              </dd>
+
+              
+            </div>
+
+            
+
+          </dl>
+
+          <div class="govuk-button-group">
+
+            {{ govukButton({
+              text: "Go back to current directors",
+              classes: "govuk-button--secondary"
+            }) }} 
+
+
+
+
+
+          
+         <!-- <p class="govuk-body">
+          <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Go back to current directors</a> </p> -->
+
+          </form> 
+            <!-- The [Cancel updates] link has a query string attached, this being to set the vairable gChangesMade to FALSE -->
+           <!--  <a href="../directors?gChangesMade=false" class="govuk-link govuk-link--no-visited-state">Cancel</a> -->
+
+         </div>
+
+                    <!--  <p><a href="/update/confirm-update" class="govuk-link govuk-!-font-size-14 govuk-!-margin-top-9">Shortcut</a></p> -->
+
+      </div>
+    </div>
+  {% endblock %}
