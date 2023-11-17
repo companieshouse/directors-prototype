@@ -5,7 +5,7 @@ module.exports = function (router) {
     if (req.session.data['confirmUpdate'] == 'yes') {
         res.redirect('/update/confirm-update-stop');
     } else {
-        res.render('update/date-of-change');
+        res.render('update/change-pending-updates');
       }
 
   })
