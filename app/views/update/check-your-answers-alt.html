@@ -16,131 +16,131 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
- <form action="/update/check-your-answers-alt" method="post">
- <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
-<h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
+      <form action="/update/check-your-answers-alt" method="post">
+      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
+      <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
 
-<h2 class="govuk-heading-m">Company details</h2>
+      <h2 class="govuk-heading-m">Company details</h2>
+
+      <dl class="govuk-summary-list" style="width:100%">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ZENITH PRINT (UK) LIMITED
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02050399
+          
+          </dd>
+          
+        </div>
+        
+
+        
+      </dl>
+
+      <h2 class="govuk-heading-m">Director details</h2>
 
 
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Company name
-    </dt>
-    <dd class="govuk-summary-list__value">
-      ZENITH PRINT (UK) LIMITED
-    </dd>
-    
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Company number
-    </dt>
-    <dd class="govuk-summary-list__value">
-      02050399
-     
-    </dd>
-    
-  </div>
-  
+      <dl class="govuk-summary-list" style="width:100%">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" class="govuk-input govuk-!-width-one-third">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nationalityAppoint'] }}
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> nationality</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['occupationAppoint'] }}
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> occupation</span>
+            </a>
+          </dd>
+        </div>
 
-  
-</dl>
-
-<h2 class="govuk-heading-m">Director details</h2>
-
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> name</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Nationality
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['nationalityAppoint'] }}
-     
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> nationality</span>
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Occupation
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['occupationAppoint'] }}
-     
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> occupation</span>
-      </a>
-    </dd>
-  </div>
-
-  
-</dl>
+        
+      </dl>
 
  
 
 
-<dl class="govuk-summary-list">
+    <dl class="govuk-summary-list">
 
-<div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-heading-m">
-             Address details
-            </dt>
-            
-            <dd class="govuk-summary-list__value govuk-visually-hidden">
-            Change the director's address details
+    <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-heading-m">
+                Address details
+                </dt>
                 
-            
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="update-address/correspondence-address">
-              Change<span class="govuk-visually-hidden"> the director's address details. </span>
-              </a>
-            </dd>
+                <dd class="govuk-summary-list__value govuk-visually-hidden">
+                Change the director's address details
+                    
+                
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="update-address/correspondence-address">
+                  Change<span class="govuk-visually-hidden"> the director's address details. </span>
+                  </a>
+                </dd>
 
-            
-          </div>
+                
+              </div>
 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Correspondence address
-              </dt>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Correspondence address
+                  </dt>
 
-              <!-- If address is changed display the updated address -->
-              {% if data['addressChangesMade'] == true %}
+                  <!-- If address is changed display the updated address -->
+                  {% if data['addressChangesMade'] == true %}
 
 
-              <dd class="govuk-summary-list__value">
-                Stornoway House, <br>
-                13 Cleveland Row,<br>
-                London<br>
-                SW1A 1GG <br>
+                  <dd class="govuk-summary-list__value">
+                    Stornoway House, <br>
+                    13 Cleveland Row,<br>
+                    London<br>
+                    SW1A 1GG <br>
 
-                <!-- <strong class="govuk-tag govuk-tag--turquoise">
-                  Linked to registered office address
-                </strong> -->
-          
-            </dd>
+                    <!-- <strong class="govuk-tag govuk-tag--turquoise">
+                      Linked to registered office address
+                    </strong> -->
+              
+                </dd>
+                </div>
 
 
               {% else %}
@@ -158,13 +158,14 @@
               </dd>
 
               <!-- If no changes have been made, display the default address -->
+            </div>
               {% endif %}
               
              
                
               
 
-            </div>
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Home address
@@ -189,22 +190,22 @@
    <h2 class="govuk-heading-m">Date changed</h2>
 
 
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date the details changed
-    </dt>
-    <dd class="govuk-summary-list__value">
-      27 October 2023
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> name</span>
-      </a>
-    </dd>
-  </div>
-  
-</dl> 
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date the details changed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            27 October 2023
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      
+      </dl> 
 
 
 
