@@ -130,5 +130,24 @@ router.post('/sign-out', function (req, res) {
 
 })
 
+router.post('/other-screens/cancel', function (req, res) {
+
+  if (req.session.data['cancel'] === 'yes') {
+
+    res.redirect('../directors')
+    
+  }
+  if (req.session.data['cancel'] === 'no') {
+
+  
+   
+  }
+  else{
+     
+  }
+
+
+})
+
 
 module.exports = router
