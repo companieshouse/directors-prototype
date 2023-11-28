@@ -160,8 +160,7 @@ module.exports = function (router) {
   //setting the flag for address changes made 
   router.post('/address-lookup-update-journey/confirm-lookup-postal', function (req, res) {
 
-    // set the addressChangesMade flag to TRUE
-    req.session.data['addressChangesMade'] = true;
+
 
     //go to the update page
     res.redirect('/update/change')
@@ -186,6 +185,11 @@ module.exports = function (router) {
 
   // linking from correspondence picker page to either link ROA/CA page or to correspondence look up page
   router.post('/update/update-address/correspondence-address', function (req, res) {
+
+    // set the addressChangesMade flag to TRUE
+    req.session.data['addressChangesMade'] = true;
+
+
     // Create a variable called errors
     const errors = []
   
