@@ -187,7 +187,7 @@ module.exports = function (router) {
   router.post('/update/update-address/correspondence-address', function (req, res) {
 
     // set the addressChangesMade flag to TRUE
-    req.session.data['addressChangesMade'] = true;
+   // req.session.data['addressChangesMade'] = true;
 
 
     // Create a variable called errors
