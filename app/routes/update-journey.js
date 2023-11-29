@@ -187,7 +187,7 @@ module.exports = function (router) {
   router.post('/update/update-address/correspondence-address', function (req, res) {
 
     // set the addressChangesMade flag to TRUE
-   // req.session.data['addressChangesMade'] = true;
+    req.session.data['addressChangesMade'] = true;
 
 
     // Create a variable called errors
@@ -220,7 +220,20 @@ module.exports = function (router) {
 
 //from link ROA/CA page to home address page
  router.post('/update/update-address/link-correspondence-address-alt2', function (req, res) {
-  res.redirect('/update/update-address/home-address1')
+
+
+  // standard and secure user information on page
+    res.redirect('/update/update-address/home-address1')
+
+  
+ })
+
+
+ //director protector home address page HERE
+ router.post('/update/update-address/home-address-protected', function (req, res) {
+
+  res.redirect('/update/change-pending-updates-protected')
+
  })
 
 
@@ -249,7 +262,14 @@ module.exports = function (router) {
     // If everything is fine then do this
     } if (req.session.data['home-address1'] === 'registered-office-address') {
       res.redirect('/update/change')
-    } else {
+    } 
+    else if (req.session.data['home-address1'] === 'protected-home-address') {
+      res.redirect('/update/change-pending-updates-protected')
+    }
+    else if (req.session.data['home-address1'] === 'protected-different-address') {
+    res.redirect('/update/update-address/address-lookup-home')
+    }
+    else {
       // res.redirect goes to whichever page you want
       res.redirect('/update/update-address/address-lookup-home')
     }
@@ -301,7 +321,9 @@ module.exports = function (router) {
 
 // from confirm correspondence to where does director live 2
 router.post('/update/update-address/confirm-lookup-postal', function (req, res) {
+
   res.redirect('/update/update-address/home-address2')
+
  })
   
 
@@ -365,5 +387,26 @@ router.post('/update/update-address/static-list-of-addresses', function (req, re
 router.post('/update/update-address/confirm-lookup-home', function (req, res) {
   res.redirect('/update/change')
  })
+
+
+
+
+
+// user has selected Andre (secure) from the director, set a 'secure' flag to TRUE so we know we need to display a secure users details and set the secure path
+
+router.get('/update/change-secure', function (req, res) {
+
+  if (req.session.data['secure-user'] != 'true'){
+
+    req.session.data['secure-user'] = true;
+  }
+  else{
+
+  }
+
+  res.redirect('/update/change-no-update-protected')
+
+ })
+
 
 }

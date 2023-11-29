@@ -25,4 +25,11 @@ module.exports = {
   "nationalityAppoint":"British",
   "occupationAppoint":"Director",
 
+  "secureFirstName": "Andrew",
+  "secureMiddleName": "Robert",
+  "secureLastName": "Jones",
+  "nationalityAppoint":"British",
+  "occupationAppoint":"Director",
+
+
 }

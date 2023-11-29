@@ -17,7 +17,18 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <form action="/update/check-your-answers-alt" method="post">
-      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
+      <span class="govuk-caption-l">  
+        
+        <!-- secure user-->
+        {% if data['secure-user'] == true %}
+
+        {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+               
+        {% else  %}
+        <!-- standard user-->
+        Kathryn Rebecca Davis
+
+        {% endif %}</span>
       <h1 class="govuk-heading-l">Check your answers before submitting the update</h1>
 
       <h2 class="govuk-heading-m">Company details</h2>
@@ -47,6 +58,8 @@
         
       </dl>
 
+      {% if data['secure-user'] != true %}
+
       <h2 class="govuk-heading-m">Director details</h2>
 
 
@@ -56,7 +69,18 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+
+              <!-- secure user-->
+              {% if data['secure-user'] == true %}
+
+              {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+                     
+              {% else  %}
+              <!-- standard user-->
+              {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+      
+              {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -96,6 +120,8 @@
         
       </dl>
 
+      {% endif %}
+
  
 
 
@@ -126,7 +152,7 @@
                   </dt>
 
                   <!-- If address is changed display the updated address -->
-                  {% if data['addressChangesMade'] == true %}
+                  {% if data['addressChangesMade'] == true or ['secure-user'] == true %}
 
 
                   <dd class="govuk-summary-list__value">
@@ -170,9 +196,23 @@
               <dt class="govuk-summary-list__key">
                 Home address
               </dt>
+
+              {% if data['secure-user'] == true %}
+
+
+              <dd class="govuk-summary-list__value">
+                We cannot disclose this home address
+              </dd>
+
+              {% else %}
               <dd class="govuk-summary-list__value">
                 72 Guild Street<br>London<br>SE23 6FH<br> United Kingdom
               </dd>
+              <dd class="govuk-summary-list__actions">
+                
+              </dd>
+              {% endif %}
+
               <dd class="govuk-summary-list__actions">
                 
               </dd>
@@ -196,7 +236,7 @@
             Date the details changed
           </dt>
           <dd class="govuk-summary-list__value">
-            27 October 2023
+            27 November 2023
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">

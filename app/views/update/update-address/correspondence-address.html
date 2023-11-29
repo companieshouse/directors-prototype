@@ -16,8 +16,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/update-address/correspondence-address" method="post">
-      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
-        <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+      <span class="govuk-caption-l">
+        
+        <!-- secure user-->
+        {% if data['secure-user'] == true %}
+
+        {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+               
+        {% else  %}
+        <!-- standard user-->
+        {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+
+        {% endif %}
+       </span>
+        <span class="govuk-caption-l"></span>
 
         {# Radio options to select the correspondence address #}
         {{ govukRadios({

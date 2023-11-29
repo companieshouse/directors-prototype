@@ -15,13 +15,24 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
+      <form action="/update/update-address/link-correspondence-address-alt2" method="post"  >
+      <span class="govuk-caption-l">
+          <!-- secure user-->
+          {% if data['secure-user'] == true %}
+
+          {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+                 
+          {% else  %}
+          <!-- standard user-->
+          Kathryn Rebecca Davis
+  
+          {% endif %}
+      
+      </span>
       <h1 class="govuk-heading-l">
         If the registered office address changes in the future, do you want this to apply to the director's correspondence address too?
       </h1>
-      <form action="/update/update-address/link-correspondence-address-alt2" method="post"  >
-
-     
+      
 
         {{ govukRadios({
           idPrefix: "interview-needs",

@@ -55,17 +55,17 @@
                <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a>
                 <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Remove director</a>
               </p> -->
-      {{ govukButton({
-        text: "View and update details",
-        classes: "govuk-button--secondary",
-        href: "update/change-no-update"
-        
-      }) }}
-      {{ govukButton({
-        text: "Remove director",
-        classes: "govuk-button--secondary govuk-!-margin-left-2",
-        href: "update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
-      }) }}
+              {{ govukButton({
+                text: "View and update details",
+                classes: "govuk-button--secondary",
+                href: "update/change-no-update"
+                
+              }) }}
+              {{ govukButton({
+                text: "Remove director",
+                classes: "govuk-button--secondary govuk-!-margin-left-2",
+                href: "update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
+              }) }}
 
             </div>
             </div>
@@ -73,7 +73,7 @@
 
             <div class="govuk-summary-card govuk-!-margin-bottom-4">
                   <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
-                    <p class="govuk-!-font-weight-bold govuk-!-margin-0">MURRAY, Andrew</p>
+                    <p class="govuk-!-font-weight-bold govuk-!-margin-0">JONES, Andrew Robert</p>
                   </div>
                   <div class="govuk-!-padding-1">
                     <dl class="govuk-summary-list govuk-!-margin-3 almost-full-width">
@@ -105,18 +105,16 @@
                      <!-- <a href="update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}" class="govuk-link govuk-link--no-visited-state">Update details</a> 
                       <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Remove director</a>
                     </p> -->
-          {{ govukButton({
-        text: "View and update details",
-        classes: "govuk-button--secondary",
-        href: "update/change?officer={{officer.links.self}}&type=update&name={{officer.name}}"
-      }) }}
-      {{ govukButton({
-        text: "Remove director",
-        classes: "govuk-button--secondary govuk-!-margin-left-2",
-        href: "update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
-      }) }}
-
-
+                  {{ govukButton({
+                      text: "View and update details",
+                      classes: "govuk-button--secondary",
+                      href: "update/change-secure?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
+                    }) }}
+                    {{ govukButton({
+                      text: "Remove director",
+                      classes: "govuk-button--secondary govuk-!-margin-left-2",
+                      href: "update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
+                    }) }}
                   </div>
                   </div>
 

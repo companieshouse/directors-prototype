@@ -38,7 +38,23 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Director</th>
-              <td class="govuk-table__cell"> {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}</td>
+              <td class="govuk-table__cell"> 
+
+                  <!-- secure user-->
+               {% if data['secure-user'] == true %}
+
+               {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+                      
+               {% else  %}
+               <!-- standard user-->
+               {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+       
+               {% endif %}
+                
+        
+              
+              
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Update submitted</th>

@@ -13,7 +13,7 @@ module.exports = function (router) {
     var apiKey = process.env.CHS_API_KEY
     var n = companyNumber.length
     //Check if the number is blank
-    if (req.session.data['number'] === '') {
+    if (req.session.data['companynumber'] === '') {
       errors.push({
         text: 'Enter the company number',
         href: '#number'

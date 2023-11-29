@@ -16,8 +16,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <form action="/update/update-address/home-address1" method="post">
-      <span class="govuk-caption-l">Kathryn Rebecca Davis </span>
+      <form action="/update/update-address/home-address-protected" method="post">
+      <span class="govuk-caption-l">
+        
+        {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }} 
+      
+      </span>
         {# Radio options to select the home address #}
         {# If condition to see if the correspondence address is the same as the RO #}
         

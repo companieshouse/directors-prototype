@@ -69,22 +69,17 @@ router.get('/auth-code', function (req, res) {
 })
 
 router.post('/auth-code', function (req, res) {
-  var request = require('request')
-  var apiKey = process.env.CHS_API_KEY
-  var companyNumber = req.session.number
-  var options = {
-    'method': 'GET',
-    'url': 'https://api.company-information.service.gov.uk/company/' + companyNumber + '/officers',
-    'headers': {
-      'Authorization': apiKey
-    },
-    'json': true
+
+  //if company number is 8333444 
+  if (req.session.data['companynumber'] === '8333444') {
+
+    res.redirect('./public-co-one-director')
   }
-  request(options, function (error, response) {
-    if (error) throw new Error(error)
-    req.session.officers = response.body
+  else{
+
     res.redirect('/directors#people')
-  })
+ 
+  }
 })
 
 router.get('/', function (req, res) {
