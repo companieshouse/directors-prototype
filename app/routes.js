@@ -70,10 +70,10 @@ router.get('/auth-code', function (req, res) {
 
 router.post('/auth-code', function (req, res) {
 
-  //if company number is 8333444 
-  if (req.session.data['companynumber'] === '8333444') {
+  //if company number is 83334445
+  if (req.session.data['companynumber'] === '83334445') {
 
-    res.redirect('./public-co-one-director')
+    res.redirect('./no-directors')
   }
   else{
 
