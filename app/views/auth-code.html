@@ -39,6 +39,24 @@
               text: "Enter the company authentication code"
             }
           }) }}
+
+          {% elif (data['companynumber'] === "83334445") %}
+
+          {{ govukInput({
+            label: {
+              text: "Enter the company authentication code",
+              classes: "govuk-label--l"
+            },
+            classes: "govuk-input--width-10",
+            hint: {
+              text: "You need the authentication code to submit company information for WESTMINSTER FLOWERS LTD."
+            },
+            id: "authNumber",
+            name: "authNumber",
+            type: "password"
+          }) }}
+
+
         {% else %}
           {{ govukInput({
           label: {
