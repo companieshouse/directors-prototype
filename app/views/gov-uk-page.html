@@ -22,30 +22,15 @@ href: "https://www.gov.uk/topic/business-enterprise/business-auditing-accounting
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-xl">Change your company details</h1>
-      <h2 class="govuk-heading-m">Contents</h2>
-      <ul class="govuk-list">
-  <li>
-    <a class="govuk-link" href="#">Benefits calculators</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Benefit overpayments</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Benefit fraud</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">More</a>
-  </li>
-</ul>
-  </div>
+ 
 
 
 
 
+{% include "includes/gov-uk.html" %}
 
-<!-- <div class="govuk-grid-column-one-third">
+
+<!--  <div class="govuk-grid-column-one-third">
 <aside class="app-related-items" role="complementary">
 <h2 class="govuk-heading-m" id="subsection-title">
 Related links
@@ -70,13 +55,13 @@ More <span class="govuk-visually-hidden">in Subsection</span>
 </ul>
 </nav>
 </aside>
-</div> -->
+</div>  -->
 
 
 
 <div class="govuk-grid-column-two-thirds-from-desktop">
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
-<h3 id="background" class="govuk-heading-m">What the Register of Overseas Entities is</h3>
+<h3 id="appoint-update-remove" class="govuk-heading-m">What the Register of Overseas Entities is</h3>
 <p class="govuk-body">The Register of Overseas Entities came into force in the UK on 1 August 2022 through the new Economic Crime (Transparency and Enforcement) Act 2022. </p>
 <p class="govuk-body">Overseas entities who want to buy, sell or transfer property or land in the UK, must register with Companies House and tell us who their registrable beneficial owners or managing officers are. </p>
 <p class="govuk-body">This will also apply retrospectively to overseas entities who bought property or land on or after:</p>
@@ -98,13 +83,13 @@ iconFallbackText: "Warning"
 }) }}
 <p class="govuk-body">Read the guidance from <a href="https://www.gov.uk/government/publications/overseas-companies-and-limited-liability-partnerships-pg78/practice-guide-78-overseas-companies-and-limited-liability-partnerships#the-register-of-overseas-entities" class="govuk-link">HM Land Registry</a> (England and Wales) and <a href="https://kb.ros.gov.uk/land-and-property-registration/about-register-of-overseas-entities" class="govuk-link">Registers of Scotland</a> for more information on how to update the land register with your Overseas Entity ID.</p>
 
-<h3 id="what-an-overseas-entity-is" class="govuk-heading-m">What an overseas entity is</h3>
+<h3 id="update-psc" class="govuk-heading-m">What an overseas entity is</h3>
 <p class="govuk-body">This is a legal entity, such as a company or other organisation, that has legal personality and is governed by the law of a country or territory outside the UK. The Republic of Ireland is an overseas jurisdiction for the Register of Overseas Entities.</p>
 <a href="https://www.gov.uk/government/publications/find-a-uk-regulated-agent-to-verify-information-for-an-overseas-entity" class="govuk-link">Find a UK-regulated agent to verify information for an overseas entity</a>.</p>
 <p class="govuk-body">Read the <a href="https://www.gov.uk/government/publications/register-of-overseas-entities-guidance-on-registration-and-verification" class="govuk-link">Register of Overseas Entities: guidance on registration and verification</a>.</p>
 
 
-<h3 id="what-a-beneficial-owner-is" class="govuk-heading-m">What a beneficial owner is</h3>
+<h3 id="update-roa" class="govuk-heading-m">What a beneficial owner is</h3>
 <p class="govuk-body">A beneficial owner is any individual or entity that has significant influence or control over the overseas entity. It can be:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>an individual person </li>
@@ -141,7 +126,7 @@ text: "A firm is a partnership, unincorporated association or other entity that 
 }) }}
 
 
-<h3 id="who-can-use-this-service" class="govuk-heading-m">Who can use this service
+<h3 id="change-company-name" class="govuk-heading-m">Who can use this service
 </h3>
 <p class="govuk-body">You can use this service if you work at, or work on behalf of, the overseas entity. </p>
 <p class="govuk-body">It’s quicker and easier for an overseas entity to be registered by the same UK-regulated agent that carried out its <a href="/register/start-merged-with-guidance#what-identity-checks-are-needed" class="govuk-link">verification checks</a>. These can include financial institutions and legal professionals. </p>
@@ -151,7 +136,7 @@ text: "A firm is a partnership, unincorporated association or other entity that 
 <li>the overseas entity has disposed of all property or land in England, Wales or Scotland since 28 February 2022 </li>
 </ul>
 <p class="govuk-body">Contact <a href="javascript:void(0)" class="govuk-link">enquiries@companieshouse.gov.uk</a> for further guidance.</p>
-<h3 id="what-information-you-need-to-submit" class="govuk-heading-m">What information you need to submit</h3>
+<h3 id="change-shares" class="govuk-heading-m">What information you need to submit</h3>
 <p class="govuk-body">You'll need to provide information about the overseas entity, any registrable beneficial owners, and the UK-regulated agent that carried out <a href="/register/start-merged-with-guidance#what-identity-checks-are-needed" class="govuk-link">verification checks</a>. You may also need to provide information about managing officers.</p>
 <p class="govuk-body">You may also need to provide information about <a href="/register/start-merged-with-guidance#how-to-submit-information-about-trusts" class="govuk-link">trusts</a> or <a href="/register/start-merged-with-guidance#how-to-submit-information-about-disposals-of-land-or-property" class="govuk-link">disposals of land</a>.</p>
 <h3 class="govuk-heading-s">Overseas entity information</h3>
@@ -295,7 +280,7 @@ text: "A firm is a partnership, unincorporated association or other entity that 
 
 
 
-<h3 id="what-identity-checks-are-needed" class="govuk-heading-m">What is needed for verification checks</h3>
+<h3 id="change-accounting-date" class="govuk-heading-m">What is needed for verification checks</h3>
 <p class="govuk-body">A UK-regulated agent must complete verification checks on all beneficial owners and managing officers of an overseas entity before it can be registered. It will need to provide an agent assurance code and an overseas entity verification checks statement to confirm that it has done this.</p>
 <p class="govuk-body">They must be based in the UK and supervised under the Money Laundering, Terrorist Financing and Transfer of Funds Regulations 2017. They can be an individual or a corporate entity, such as a financial institution or legal professional.</p>
 {{ govukInsetText({
@@ -312,7 +297,7 @@ The UK-regulated agent’s details provided on the statement must be the same as
 </div>
 
 
-<h3 id="what-information-shown-on-public-register" class="govuk-heading-m">What information will be shown on the public register</h3>
+<h3 id="mortgages" class="govuk-heading-m">What information will be shown on the public register</h3>
 <p class="govuk-body">Most of the information given to Companies House about overseas entities, beneficial owners and managing officers will be publicly available on the Register of Overseas Entities.</p>
 <p class="govuk-body">We will not show:</p>
 <ul class="govuk-list govuk-list--bullet">
