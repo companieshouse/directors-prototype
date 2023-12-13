@@ -78,7 +78,7 @@ module.exports = function (router) {
 
     //if the director details match an existing director, display the duplicate director soft screen
   
-    if (((req.session.data['firstname'] == 'Andrew')|| (req.session.data['firstname'] == 'andrew')) && ((req.session.data['last-name'] == 'Murray')||(req.session.data['last-name'] == 'murray')) ) {
+    if (((req.session.data['firstname'] == 'Sarah')|| (req.session.data['firstname'] == 'sarah')) && ((req.session.data['last-name'] == 'George')||(req.session.data['last-name'] == 'george')) ) {
       res.redirect('/add/duplicate')
     }
     else {
