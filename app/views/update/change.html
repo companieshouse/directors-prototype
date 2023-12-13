@@ -102,6 +102,23 @@
                 Update<span class="govuk-visually-hidden"> Nationality</span>
               </a>
             </dd>
+
+             <dd class="govuk-summary-list__value">
+      
+                  <!-- If the variable gChangesMade = TRUE then show the following... -->
+                  {% if data['gChangesMade'] == true %}
+                  
+                  <div class="changes-made">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      Details updated
+                    </strong>
+                    
+                    <p class="govuk-body-s">Pending until submitted and accepted</p>
+                  </div>
+                  <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+                  {% endif %}
+
+            </dd>
             </div>
 
             <div class="govuk-summary-list__row">
@@ -117,6 +134,23 @@
                   Update<span class="govuk-visually-hidden"> job title</span>
                 </a>
               </dd>
+
+               <dd class="govuk-summary-list__value">
+      
+                  <!-- If the variable gChangesMade = TRUE then show the following... -->
+                  {% if data['gChangesMadeOccupation'] == true %}
+                  
+                  <div class="changes-made">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      Details updated
+                    </strong>
+                    
+                    <p class="govuk-body-s">Pending until submitted and accepted</p>
+                  </div>
+                  <!-- ... otherwise, gChangesMade doesn't equal TRUE so therefore... don't show anything! -->
+                  {% endif %}
+
+            </dd>
             </div>
             </dl>
 
