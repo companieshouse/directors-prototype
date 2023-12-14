@@ -29,7 +29,8 @@ module.exports = {
   "secureMiddleName": "Robert",
   "secureLastName": "Jones",
   "nationalityAppoint":"British",
-  "occupationAppoint":"Director",
+
+  "occupationUpdate":"Director"
 
 
 }
