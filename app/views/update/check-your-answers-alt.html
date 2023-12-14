@@ -65,19 +65,19 @@
 
       <dl class="govuk-summary-list" style="width:100%">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" class="govuk-input govuk-!-width-one-third">
+         <!-- <dt class="govuk-summary-list__key" class="govuk-input govuk-!-width-one-third">
             Name
-          </dt>
-          <dd class="govuk-summary-list__value">
+          </dt> -->
+         <!-- <dd class="govuk-summary-list__value">
 
               <!-- secure user-->
-              {% if data['secure-user'] == true %}
+             <!-- {% if data['secure-user'] == true %}
 
               {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
                      
               {% else  %}
               <!-- standard user-->
-              {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+             <!-- {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
       
               {% endif %}
 
@@ -86,14 +86,14 @@
             <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
-          </dd>
+          </dd> -->
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Nationality
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['nationalityAppoint'] }}
+            {{ data['nationalityUpdate'] }}
           
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -107,7 +107,7 @@
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['occupationAppoint'] }}
+            {{ data['occupationUpdate'] }}
           
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -125,7 +125,7 @@
  
 
 
-    <dl class="govuk-summary-list">
+   <!-- <dl class="govuk-summary-list">
 
     <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key govuk-heading-m">
@@ -152,7 +152,7 @@
                   </dt>
 
                   <!-- If address is changed display the updated address -->
-                  {% if data['addressChangesMade'] == true or ['secure-user'] == true %}
+                 <!-- {% if data['addressChangesMade'] == true or ['secure-user'] == true %}
 
 
                   <dd class="govuk-summary-list__value">
@@ -165,11 +165,11 @@
                       Linked to registered office address
                     </strong> -->
               
-                </dd>
-                </div>
+               <!-- </dd>
+                </div> -->
 
 
-              {% else %}
+              <!-- {% else %}
 
               <dd class="govuk-summary-list__value">
                <!-- 12 Bressenden Place<br>
@@ -180,12 +180,12 @@
                 <!-- <strong class="govuk-tag govuk-tag--turquoise">
                   Linked to registered office address
                 </strong> -->
-                <p class="govuk-body"> Correspondence address is the same as the registered office address </p> 
+              <!--  <p class="govuk-body"> Correspondence address is the same as the registered office address </p> 
               </dd>
 
               <!-- If no changes have been made, display the default address -->
-            </div>
-              {% endif %}
+            <!-- </div>
+              {% endif %} 
               
              
                
@@ -222,7 +222,7 @@
 
             
 
-          </dl>
+          </dl> -->
 
 
 
@@ -236,7 +236,7 @@
             Date the details changed
           </dt>
           <dd class="govuk-summary-list__value">
-            27 November 2023
+            12 December 2023
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
