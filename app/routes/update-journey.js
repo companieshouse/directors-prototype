@@ -130,6 +130,8 @@ module.exports = function (router) {
 
   router.post('/update/nationality', function (req, res) {
 
+    req.session.data['gChangesMadeNationality'] = true;
+
     res.redirect('/update/change?type=update&officer=' + req.session.redirect)
   })
 
