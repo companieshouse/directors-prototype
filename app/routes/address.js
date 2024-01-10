@@ -119,6 +119,36 @@ router.get('/address-lookup/address-lookup-home', function (req, res) {
     }
   })
 
+
+
+  router.post('/address-lookup/link-correspondence-address-alt2', function (req, res) {
+    // Create a variable called errors
+    const errors = []
+
+    // Create an if condition
+    // In this if condition it is checking if radio-input is blank
+    if (typeof req.session.data['yes'] === 'undefined') {
+      // If it is blank then update the errors variable with the error text
+      errors.push({
+        text: 'Select an option',
+        href: '#yes'
+      })
+      // Show the user the radio input page again
+      res.render('/link-correspondence-address-alt2', {
+        // Declare there are errors
+        errorRadio: true,
+        // List all of the errors on the page
+        errorList: errors
+      })
+    // If everything is fine then do this
+    } if (req.session.data['link-correspondence2'] === 'yes') {
+      res.redirect('/address-lookup/address-lookup-home')
+    } else {
+      // res.redirect goes to whichever page you want
+      res.redirect('/address-lookup/address-lookup-postal')
+    }
+  })
+
   /*NORMAL home address routing is below as it was in V4. Need to make changes for V5 which is using ROA as CA and home address and needs to take user to interrupt and link pages
   
   router.post('/address-lookup/home-address', function (req, res) {
@@ -382,6 +412,11 @@ router.post('/add/ap-check-answers/static-list-of-postal-addresses', function (r
 router.post('/add/ap-check-answers/link-correspondence-address-alt2', function (req, res) {
   res.redirect('/add/ap-check-answers/home-address')
 })
+
+
+
+
+
 
 
 router.post('/add/ap-check-answers/home-address', function (req, res) {

@@ -19,10 +19,10 @@
       <h1 class="govuk-heading-l">
         If the registered office address changes in the future, do you want this to apply to the director's correspondence address too?
       </h1>
-      <form action="/address-lookup/link-correspondence-address" method="post" novalidate>
+      <form action="/address-lookup/link-correspondence-address-alt2" method="post" novalidate>
         {{ govukRadios({
-          idPrefix: "interview-needs",
-          name: "interview-needs",
+          idPrefix: "link-correspondence2",
+          name: "link-correspondence2",
           items: [
             {
               value: "yes",
