@@ -1,0 +1,185 @@
+{% set title = "What is the director's correspondence address?" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {{title}}
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/address-lookup/address-manual-postal" method="post">
+      <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
+        <h1 class="govuk-heading-l">{{title}}</h1>
+        <div id="event-name-hint" class="govuk-hint">
+    We'll use this address to send Companies House mail to the director. You can use a business or home address and it does not have to be in the UK.
+          </div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="propertyName">
+    Property name or number
+  </label>
+
+
+
+  <div id="propertyName-hint" class="govuk-hint">
+    For example, &#39;The Mill&#39;, &#39;116&#39; or &#39;Flat 37a&#39;
+  </div>
+
+<input class="govuk-input" id="propertyName" name="propertyName" type="text" aria-describedby="propertyName-hint">
+
+</div>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressOne">
+    Address line 1
+  </label>
+
+<input class="govuk-input" id="addressOne" name="addressOne" type="text">
+
+</div>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressTwo">
+    Address line 2 (optional)
+  </label>
+
+<input class="govuk-input" id="addressTwo" name="addressTwo" type="text">
+
+</div>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="town">
+    City or town
+  </label>
+
+<input class="govuk-input" id="town" name="town" type="text">
+
+</div>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="county">
+    County, state, province or region (optional)
+  </label>
+
+<input class="govuk-input" id="county" name="county" type="text">
+
+</div>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="autocomplete-default" >Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div class="autocomplete-wrapper" id="country"></div>
+
+        </div>
+
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="postcode">
+    Postcode or ZIP
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+
+</div>
+
+
+
+     <!--    {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "propertyName",
+          name: "propertyName"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "addressOne",
+          name: "addressOne"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "addressTwo",
+          name: "addressTwo"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          id: "town",
+          name: "town"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          id: "county",
+          name: "county"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          id: "country",
+          name: "country"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          id: "postcode",
+          name: "postcode"
+        }) }} -->
+
+
+
+        {{ govukInsetText({
+          html: "<h2 class='govuk-heading-m'>What information we'll show on the public online register</h2>
+                <p>We will show this address on the public Companies House register.</p>"
+        }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              My correspondence address is the same as my home address
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We will not show your home address on the public register. However, if you use your home address as your correspondence address, we will show this on the public register. <br> <br> If you run your company from home and do not want your home address available to the public, there is a <a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents/company-formation-agents-and-secretarial-agents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of agents who can provide registered office services (opens in new tab)</a>. <br><br>A quick online search will show other agents who offer similar services. All providers will charge a fee.
+          </div>
+        </details>
+        {{ govukButton({
+          text: "Continue",
+          href: "confirm-lookup-postal"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/country.js"></script>
+
+{% endblock %}
