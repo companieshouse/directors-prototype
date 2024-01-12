@@ -1,4 +1,4 @@
-{% set title = "Where does the director live?" %}
+{% set title = "Find the director’s home address" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
   {{title}}
@@ -19,7 +19,7 @@
       <span class="govuk-caption-l">{{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}</span>
         <h1 class="govuk-heading-l">{{title}}</h1>
          <div id="event-name-hint" class="govuk-hint">
-            Tell us the director's home address. Only give a business address if they also live there.
+          Tell us where the director lives. Only give a business address if they also live there.
         </div>
         
         {{ govukInput({
