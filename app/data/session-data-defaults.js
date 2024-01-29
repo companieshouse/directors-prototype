@@ -25,6 +25,7 @@ module.exports = {
   "nationalityAppoint":"British",
   "occupationAppoint":"Director",
 
+  "secureTitle": "Sir",
   "secureFirstName": "Andrew",
   "secureMiddleName": "Robert",
   "secureLastName": "Jones",

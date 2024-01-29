@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/update/change-no-update" method="post">
-      <span class="govuk-caption-l">{{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }} </span>
+      <span class="govuk-caption-l">{{ data['secureTitle'] }} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }} </span>
         <h1 class="govuk-heading-l">View and update the director's details</h1>
         <div id="" class="govuk-hint">
              If you need to tell us about more than one update, and they happened on different dates, you must submit them separately.
@@ -36,7 +36,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }} 
+              {{ data['secureTitle'] }} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="name?officer={{details}}">
