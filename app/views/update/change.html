@@ -22,11 +22,11 @@
         <!-- secure user-->
         {% if data['secure-user'] == true %}
 
-         {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+         {{ data['secureTitle'] }} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
          
          {% else  %}
          <!-- standard user-->
-         {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+         {{ data['secureTitle'] }} {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
          {% endif %}
 
         </span>
@@ -52,11 +52,11 @@
                <!-- secure user-->
               {% if data['secure-user'] == true %}
 
-               {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+               {{ data['secureTitle'] }} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
                
                {% else  %}
                <!-- standard user-->
-               {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
+               {{ data['secureTitle'] }} {{ data['updateFirstName'] }} {{ data['updateMiddleName'] }} {{ data['updateLastName'] }}
 
                {% endif %}
 

@@ -43,7 +43,7 @@
                   <!-- secure user-->
                {% if data['secure-user'] == true %}
 
-               {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+               {{ data['secureTitle'] }} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
                       
                {% else  %}
                <!-- standard user-->
@@ -58,7 +58,7 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Update submitted</th>
-              <td class="govuk-table__cell"> Nationality <br> Occupation</td>
+              <td class="govuk-table__cell"> Occupation</td>
             </tr>
 
           </tbody>
