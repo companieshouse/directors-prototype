@@ -19,11 +19,11 @@
       <span class="govuk-caption-l"> <!-- secure user-->
         {% if data['secure-user'] == true %}
 
-        {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
+       {{data['titleAppoint']}} {{ data['secureFirstName'] }} {{ data['secureMiddleName'] }} {{ data['secureLastName'] }}
                
         {% else  %}
         <!-- standard user-->
-        {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
+        {{data['titleAppoint']}} {{data['firstname']}} {{data['middle-name']}} {{data['last-name']}}
 
         {% endif %}
         
