@@ -106,7 +106,7 @@
                       <a href="update/remove?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}" class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-4">Remove director</a>
                     </p> -->
                   {{ govukButton({
-                      text: "View and update details",
+                      html: "View and update details <span class=govuk-visually-hidden>Sir Andrew Robert Jones, date of birth November 1982</span>",
                       classes: "govuk-button--secondary",
                       href: "update/change-secure?officer={{officer.links.self}}&type=remove&directorname={{officer.name}}"
                     }) }}
