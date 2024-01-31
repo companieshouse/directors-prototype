@@ -58,9 +58,33 @@
         
       </dl>
 
-      {% if data['secure-user'] != true %}
-
       <h2 class="govuk-heading-m">Director details</h2>
+
+      <dl class="govuk-summary-list" style="width:100%">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Finance director
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> occupation</span>
+            </a>
+          </dd>
+        </div>
+       
+        
+
+        
+      </dl>
+
+       
+
+      <!-- {% if data['secure-user'] != true %} -->
+
+      <!-- <h2 class="govuk-heading-m">Director details</h2>
 
 
       <dl class="govuk-summary-list" style="width:100%">
@@ -86,9 +110,10 @@
             <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
-          </dd> -->
-        </div>
-        <div class="govuk-summary-list__row">
+          </dd> 
+        </div> -->
+
+       <!--  <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Nationality
           </dt>
@@ -101,13 +126,14 @@
               Change<span class="govuk-visually-hidden"> nationality</span>
             </a>
           </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+        </div> 
+        <div class="govuk-summary-list__row"> -->
+         <!--  <dt class="govuk-summary-list__key" >
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['occupationUpdate'] }}
+            <!-- {{ data['occupationUpdate'] }} 
+            Finance director
           
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -120,7 +146,7 @@
         
       </dl>
 
-      {% endif %}
+     <!-- {% endif %} -->
 
  
 
