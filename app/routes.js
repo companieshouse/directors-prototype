@@ -1,31 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Sign in
-require('./routes/sign-in.js')(router)
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
 
-// Company lookup
-require('./routes/company-lookup.js')(router)
+// Add your routes here
 
-// Adding a director
-require('./routes/add-journey.js')(router)
-
-
-
-// Removing a director
-require('./routes/remove-journey.js')(router)
-
-// Change a director
-require('./routes/update-journey.js')(router)
-
-// Address
-require('./routes/address.js')(router)
-
-// confirm update
- require('./routes/confirm-update.js')(router)
-
-
-// Add your routes here - above the module.exports line
 router.get('/directors', function (req, res) {
 
   // Render the confirm company page
@@ -145,4 +127,3 @@ router.post('/other-screens/cancel', function (req, res) {
 })
 
 
-module.exports = router

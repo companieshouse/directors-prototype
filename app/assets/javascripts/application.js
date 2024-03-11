@@ -1,13 +1,13 @@
 /* global $ */
 
-// Warn about using the kit in production
-if (window.console && window.console.info) {
-  window.console.info('GOV.UK Prototype Kit - do not use for production')
-}
+//
+// For guidance on how to add JavaScript see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
 
 //show and hide nationality 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
   // Code snippet for the nationality page
   $('#second-nationality-link').click(function() {
     $('#second-nationality').show();
@@ -23,7 +23,6 @@ $(document).ready(function () {
 
 //show and hide previous names 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
   // Code snippet for the nationality page
   $('#one-previous-name-link').click(function() {
     $('#one-previous-name').show();

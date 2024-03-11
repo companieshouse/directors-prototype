@@ -1,0 +1,87 @@
+2024-03-11T08:53:59.504Z
+cwd: ~/Documents/GitHub/directors-prototype
+package: govuk-prototype-kit@13.16.1
+argv: /usr/local/bin/node ~/.npm/_npx/751a68202a4807b7/node_modules/.bin/govuk-prototype-kit migrate
+Started [Check migration is being applied to a pre v13 prototype]
+Succeeded [Check migration is being applied to a pre v13 prototype]
+2024-03-11T08:54:08.892Z
+cwd: ~/Documents/GitHub/directors-prototype
+package: govuk-prototype-kit@13.16.1
+argv: /usr/local/bin/node ~/Documents/GitHub/directors-prototype/node_modules/.bin/govuk-prototype-kit migrate -- ~/Documents/GitHub/directors-prototype
+Started [Migrate config.js to config.json]
+Started [Update application SCSS file]
+Started [Deleted files that are no longer needed]
+Started [Deleted directories that are no longer needed]
+Started [Delete listen-on-port.js]
+Started [Delete server.js]
+Started [Delete VERSION.txt]
+Started [Delete Procfile]
+Started [Delete start.js]
+Started [Delete app/assets/sass/application-ie8.scss]
+Started [Remove unused directory public]
+Started [Remove unused directory lib]
+Started [Remove unused directory docs]
+Succeeded [Migrate config.js to config.json]
+Succeeded [Delete server.js]
+Succeeded [Delete VERSION.txt]
+Succeeded [Delete listen-on-port.js]
+Succeeded [Delete Procfile]
+Succeeded [Delete start.js]
+Succeeded [Delete app/assets/sass/application-ie8.scss]
+Succeeded [Deleted files that are no longer needed]
+Found [// Add your routes here - above the module.exports line] in [app/routes.js], replacing
+Started [Overwrite app/filters.js]
+Started [Overwrite app/views/layout.html]
+Started [Overwrite app/assets/javascripts/application.js]
+Found [// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you] in [app/assets/sass/application.scss], replacing
+Keeping these lines from old file
+Started [Delete app/assets/images/separator-2x.png]
+Started [Delete app/assets/images/unbranded.ico]
+Started [Update app/filters.js]
+Started [Update app/assets/javascripts/application.js]
+Failed [Overwrite app/views/layout.html]
+Started [Delete app/assets/images/separator.png]
+Started [Delete app/views/includes/scripts.html]
+Started [Delete app/views/includes/head.html]
+Started [Delete app/assets/sass/patterns/_contents-list.scss]
+Started [Delete app/assets/sass/patterns/_pagination.scss]
+Started [Delete app/assets/sass/patterns/_mainstream-guide.scss]
+Started [Delete app/views/layout_unbranded.html]
+Started [Delete app/assets/sass/patterns/_related-items.scss]
+Started [Delete app/assets/sass/patterns/_step-by-step-related.scss]
+Started [Delete app/assets/sass/patterns/_step-by-step-header.scss]
+Started [Delete app/assets/sass/patterns/_task-list.scss]
+Started [Delete app/assets/sass/patterns/_step-by-step-nav.scss]
+Started [Delete app/assets/javascripts/jquery-1.11.3.js]
+Keeping these lines from old file
+Started [Delete app/assets/javascripts/auto-store-data.js]
+Failed [Delete app/views/includes/scripts.html]
+Succeeded [Delete app/assets/images/separator-2x.png]
+Succeeded [Delete app/assets/images/unbranded.ico]
+Succeeded [Delete app/assets/images/separator.png]
+Succeeded [Delete app/views/includes/head.html]
+Succeeded [Delete app/assets/sass/patterns/_pagination.scss]
+Succeeded [Delete app/assets/sass/patterns/_contents-list.scss]
+Succeeded [Delete app/assets/sass/patterns/_mainstream-guide.scss]
+Succeeded [Delete app/views/layout_unbranded.html]
+Succeeded [Delete app/assets/sass/patterns/_step-by-step-header.scss]
+Succeeded [Delete app/assets/sass/patterns/_related-items.scss]
+Succeeded [Delete app/assets/sass/patterns/_step-by-step-related.scss]
+Succeeded [Delete app/assets/sass/patterns/_step-by-step-nav.scss]
+Succeeded [Delete app/assets/javascripts/jquery-1.11.3.js]
+Succeeded [Delete app/assets/sass/patterns/_task-list.scss]
+Succeeded [Update application SCSS file]
+Succeeded [Delete app/assets/javascripts/auto-store-data.js]
+//,// For guidance on how to create routes see:,// https://prototype-kit.service.gov.uk/docs/create-routes,//,,const govukPrototypeKit = require('govuk-prototype-kit'),const router = govukPrototypeKit.requests.setupRouter(),,// Add your routes here,,router.get('/directors', function (req, res) {,,  // Render the confirm company page,  res.render('directors', {,    // To use the company data on that page use the following,    journey: req.session.journey,,    company: req.session.company,,    officers: req.session.officers,  }),}),,router.get('/check-your-answers', function (req, res) {,  // Render the confirm company page,  res.render('check-your-answers', {,    // To use the company data on that page use the following,    company: req.session.company,,    officers: req.session.officers,,    type: req.session.type,,    nameRemove: req.session.removename,,    updateName: req.session.name,  }),}),,router.get('/confirmation', function (req, res) {,  // Render the confirm company page,  res.render('confirmation', {,    // To use the company data on that page use the following,    type: req.session.type,,    company: req.session.company,,    name: req.session.name,,    nameRemove: req.session.removename,  }),}),,router.get('/auth-code', function (req, res) {,// Render the confirm company page,  res.render('auth-code', {,  // To use the company data on that page use the following,    company: req.session.company,  }),}),,router.post('/auth-code', function (req, res) {,,  //if company number is 83334445,  if (req.session.data['companynumber'] === '83334445') {,,    res.redirect('./no-directors'),  },  else{,,    res.redirect('/directors#people'), ,  },}),,router.get('/', function (req, res) {,  req.session.destroy();,  res.render('index', {,  }),}),,router.get('/start', function (req, res) {,  req.session.journey = req.query.journey,  res.render('start', {,  }),}),,router.get('/chs', function (req, res) {,  req.session.journey = req.query.journey,  res.render('chs', {,  }),}),,router.get('/confirmation-statement/task-list', function (req, res) {,  req.session.journey = req.query.journey,  res.render('confirmation-statement/task-list', {,  }),}),,router.post('/sign-out', function (req, res) {,,  if (req.session.data['signOut'] === 'yes') {,,    res.redirect('https://find-and-update.company-information.service.gov.uk/'),    ,  },  if (req.session.data['signOut'] === 'no') {,,    javascript:history.back(),   ,  },  else{,     ,  },,,}),,router.post('/other-screens/cancel', function (req, res) {,,  if (req.session.data['cancel'] === 'yes') {,,    res.redirect('../directors'),    ,  },  if (req.session.data['cancel'] === 'no') {,,  ,   ,  },  else{,     ,  },,,}),,,module.exports = router,
+Succeeded [Update app/assets/javascripts/application.js]
+Found [module.exports = router;,module.exports = router] in [app/routes.js], removing
+Succeeded [Overwrite app/assets/javascripts/application.js]
+Succeeded [Remove unused directory lib]
+Succeeded [Remove unused directory public]
+Succeeded [Update routes file]
+Succeeded [Update app/filters.js]
+Succeeded [Overwrite app/filters.js]
+Succeeded [Remove unused directory docs]
+Succeeded [Deleted directories that are no longer needed]
+ENOENT: no such file or directory, stat '/Users/jamesfrancis/Documents/GitHub/directors-prototype/app/views/layout_unbranded.html'
+Error: ENOENT: no such file or directory, stat '/Users/jamesfrancis/Documents/GitHub/directors-prototype/app/views/layout_unbranded.html'
